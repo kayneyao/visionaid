@@ -3,8 +3,8 @@ import routingpy as rp
 import json
 
 #Instantiate Variables
-coords = [[8.512516, 47.380742], [8.557835, 47.359467]]
-key_ors = "5b3ce3597851110001cf62483c18fce726724c5a8705062fdb07ad7e"
+coords = [[25.019502, 121.539935], [25.021711, 121.541221]]
+key_ors = '5b3ce3597851110001cf62483c18fce726724c5a8705062fdb07ad7e'
 
 #Instantiate OpenRouteService API Client
 api = rp.ORS(api_key=key_ors)
@@ -17,7 +17,7 @@ route = api.directions(
     units='m',
     language='en',
     instructions=True,
-    instructions_format="text")
+    instructions_format='text')
 
 #Write the raw output of the API's Response to a JSON file
 with open('./gps/data.json', 'w') as f:
@@ -36,4 +36,3 @@ for parse in instruction:
     else:
         print(output)
         print('And head straight for ' + str(parse.get('distance')) + ' meters')
-    
