@@ -3,7 +3,7 @@ import routingpy as rp
 import json
 
 #Instantiate Variables
-coords = [[25.019502, 121.539935], [25.021711, 121.541221]]
+coords = [[121.539935, 25.019502], [121.541221, 25.021711]]
 key_ors = '5b3ce3597851110001cf62483c18fce726724c5a8705062fdb07ad7e'
 
 #Instantiate OpenRouteService API Client
