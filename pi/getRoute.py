@@ -9,22 +9,20 @@ api = rp.ORS(api_key=key_ors)
 
 agent = Nominatim(user_agent='Geopy Library')
 
-#ser = serial.Serial('/dev/ttyAMA0', 9600, timeout=5.0)
+ser = serial.Serial('/dev/ttyAMA0', 9600, timeout=5.0)
 
-# def updateCoord():
-# 	dataout = pynmea2.NMEAStreamReader()
-# 	gps = [0,0]
-# 	while 1:
-import asyncio
-# 		newdata = ser.readline()
-# 		n_data = newdata.decode('latin-1')
-# 		if n_data[:6] == '$GNRMC':
-# 			newmsg = pynmea2.parse(n_data)
-# 			lat = newmsg.latitude
-# 			lng = newmsg.longitude
-# 			gps = [lng,lat]
-# 			print(gps)
-# 			return gps
+def updateCoord():
+	gps = [0,0]
+	while 1:
+		newdata = ser.readline()
+		n_data = newdata.decode('latin-1')
+		if n_data[:6] == '$GNGGA':
+			newmsg = pynmea2.parse(n_data)
+			lat = newmsg.latitude
+			lng = newmsg.longitude
+			gps = [lng,lat]
+			print(gps)
+			return gps
 
 def getDestination():
     address = input()
