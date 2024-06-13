@@ -2,7 +2,14 @@ from typing import List, Tuple
 from pyttsx3 import say
 import json
 from geopy import distance as d
+import sys
+sys.path.insert(1,'/home/kanye/GY-85_Raspberry-Pi/i2clibraries')   
+from i2c_adxl345 import *
+from i2c_hmc5883l import *
+from i2c_itg3205 import *
 import numpy as np
+import imufusion
+import asyncio
 import pynmea2
 import serial
 
@@ -40,7 +47,12 @@ def updateGPS():
             return(gps)
         
 def updateIMU():
-    
+    imu = [(0, 0, 0), [0, 0, 0], [0, 0, 0]]
+    acc = i2c_adxl345(1).getAxes()
+    mag = i2c_hmc5883l(1).getAxes()
+    comp = i2c_itg3205(1).getAxes()
+    imu[0] = []
+    return imu
 
 def coordDist(coord1, coord2):
     coord1: Tuple[float, float]
@@ -52,6 +64,11 @@ def coordDist(coord1, coord2):
     dist = d.distance(coord1, coord2).m
     return dist
 
-def output(current, target, waypoint):
-    
+def output(initial, current, target, waypoint):
     say(waypoint[current])
+    initPos = initial
+    
+    currentPosition = updateGPS() - initPos
+    
+    asyncio.sleep(2)
+    
