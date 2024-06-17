@@ -6,17 +6,18 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as anim
 from matplotlib import style
 import sys
-sys.path.insert(1,'./pi/subsystem')
-from subsystem import Sensors
+import os
+sys.path.append(os.path.abspath('./pi/subsystem'))
+from Sensors import *
 import json
 
 sample_rate = 100
 
 class Filter(object):
     def __init__(self,
-                 IMU=List[Tuple[float]],
-                 GPS=List[Tuple[float]],
-                 Time=List[Tuple[float]]):
+                 IMU,
+                 GPS,
+                 Time):
         
         self.offset = imufusion.Offset(sample_rate)
         self.ahrs = imufusion.Ahrs()
@@ -26,6 +27,10 @@ class Filter(object):
                                    10,  # acceleration rejection
                                    10,  # magnetic rejection
                                    5)  # recovery trigger period = 5 seconds
+        
+        self.gyro = []
+        self.mag = []
+        self.T = []
         
         self.gyro.append(IMU[0])
         self.mag.append(IMU[1])
@@ -89,12 +94,21 @@ class Filter(object):
         self.ax1.clear()
         self.ax1.plot(pitch, yaw, roll)
     
-    def update(self, IMU, GPS, Time):
+    def update(self, IMU, GPS):
         self.gyro.append(IMU[0])
         self.mag.append(IMU[1])
         self.acc.append(IMU[2])
         self.GPS.append(GPS)
-        self.T.append(Time)
+        self.T.append(self.T[self.T.len()] + 1)
         
-sensors = Sensors.getSystem()
+Sensors.createSystem(Sensors)
+        
+sensors = Sensors.getSystem(Sensors)
 
+madgwick = Filter(sensors.getIMU(), sensors.getGPS(), 1)
+
+while input() == None:
+    Filter.update(Filter, sensors.getIMU(), sensors.getGPS())
+    Filter.predict(sensors.getIMU(), sensors.getGPS(), sensors.PPS())
+
+Filter.plot()

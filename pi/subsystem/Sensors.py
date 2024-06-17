@@ -16,7 +16,8 @@ class Sensors(object):
               [-0.042233, 1.022789, -0.007579],
               [-0.000608, -0.007579, 1.108518]])
 # 'Combined bias (b)' vector from Magneto
-    b = np.array([-0.011276, 0.014394, -0.049340])   
+    b = np.array([-0.011276, 0.014394, -0.049340])
+    
     
     
     def __init__(self):
@@ -31,7 +32,7 @@ class Sensors(object):
     def getGPS(self):
         coord = [0,0,0]
         while 1:
-            newdata = super.ser.readline()
+            newdata = self.ser.readline()
             n_data = newdata.decode('latin-1')
             if n_data[:6] == '$GNGGA':
                 newmsg = pynmea2.parse(n_data)
@@ -74,9 +75,8 @@ class Sensors(object):
            
         return t
     
+    def createSystem(self):
+        self.system = Sensors()
+    
     def getSystem(self):
         return self.system
-    
-sensor = Sensors()
-    
-print(Sensors.getIMU(sensor))

@@ -2,16 +2,23 @@
 #include <ADXL345.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_HMC5883_U.h>
+#include <NMEAGPS.h>
+#include <GPSport.h>
 #include "ITG3200.h"
 
 ADXL345 adxl; //variable adxl is an instance of the ADXL345 library
 Adafruit_HMC5883_Unified mag = Adafruit_HMC5883_Unified(12345);
 ITG3200 gyro;
 
+NMEAGPS  gps;
+gps_fix  fix;
+
 int error = 0;
 
 void setup(){
   Serial.begin(9600);
+  gpsPort.begin(9600);
+  
 
   gyro.init();
   gyro.zeroCalibrate(200,10);//sample 200 times to calibrate and it will take 200*10ms
@@ -47,6 +54,17 @@ void loop(){
 	ax = xyz[0];
 	ay = xyz[1];
 	az = xyz[2];
+
+  fix = gps.read();
+
+  float lat, lng, alt, time;
+  if(gps.available(gpsPort)) {
+    lat = fix.latitude();
+    lng = fix.longitude();
+    alt = fix.altitude();
+    time = fix.dateTime_ms();
+  }
+
 	Serial.print(event.magnetic.x);
   Serial.print(", ");
   Serial.print(event.magnetic.y);
@@ -63,7 +81,15 @@ void loop(){
   Serial.print(", ");
   Serial.print(ay);
   Serial.print(", ");
-  Serial.println(az);
+  Serial.print(az);
+  Serial.print(", ");
+  Serial.print(lat);
+  Serial.print(", ");
+  Serial.print(lng);
+  Serial.print(", ");
+  Serial.print(alt);
+  Serial.print(", ");
+  Serial.println(time);
 	delay(100);
  
 }
