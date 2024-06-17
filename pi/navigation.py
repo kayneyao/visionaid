@@ -1,18 +1,10 @@
-from typing import List, Tuple
+from typing import Tuple
 from pyttsx3 import say
 import json
 from geopy import distance as d
-import sys
-sys.path.insert(1,'/home/kanye/GY-85_Raspberry-Pi/i2clibraries')   
-from i2c_adxl345 import *
-from i2c_hmc5883l import *
-from i2c_itg3205 import *
-import numpy as np
-import imufusion
 import asyncio
-import pynmea2
-import serial
 
+pastTime = 0
 
 #transcribe directions as english
 def transDir():
@@ -33,26 +25,6 @@ def transDir():
 
     return waypoint
 
-def updateGPS():
-    dataout = pynmea2.NMEAStreamReader()
-    while 1:
-        newdata = ser.readline()
-        n_data = newdata.decode('latin-1')
-        if n_data[:6] == '$GNGGA':
-            newmsg = pynmea2.parse(n_data)
-            lat = newmsg.latitude
-            lng = newmsg.longitude
-            gps = [lng,lat]
-            print(gps)
-            return(gps)
-        
-def updateIMU():
-    imu = [(0, 0, 0), [0, 0, 0], [0, 0, 0]]
-    acc = i2c_adxl345(1).getAxes()
-    mag = i2c_hmc5883l(1).getAxes()
-    comp = i2c_itg3205(1).getAxes()
-    imu[0] = []
-    return imu
 
 def coordDist(coord1, coord2):
     coord1: Tuple[float, float]
@@ -64,11 +36,11 @@ def coordDist(coord1, coord2):
     dist = d.distance(coord1, coord2).m
     return dist
 
-def output(initial, current, target, waypoint):
+def output(initial, current, target, waypoint, time):
     say(waypoint[current])
     initPos = initial
     
-    currentPosition = updateGPS() - initPos
+    currentPosition = Sensors.getGPS() - initPos
     
     asyncio.sleep(2)
     

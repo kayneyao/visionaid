@@ -2,10 +2,15 @@ from typing import List, Tuple
 import imufusion
 import numpy
 from dynarray import DynamicArray
-import pi.subsystem.Sensors as Sensors
+import matplotlib.pyplot as plt
+import matplotlib.animation as anim
+from matplotlib import style
+import sys
+sys.path.insert(1,'./pi/subsystem')
+from subsystem import Sensors
+import json
 
 sample_rate = 100
-big_number = 99999999
 
 class Filter(object):
     def __init__(self,
@@ -31,12 +36,13 @@ class Filter(object):
         self.euler = DynamicArray((None, 3))
         self.stats = DynamicArray((None, 6))
         self.flags = DynamicArray((None, 4))
+        style.use('fivethrityeight')
         
-    def predict(self,
-                IMU=List[Tuple[float]],
-                GPS=List[Tuple[float]],
-                Time=List[Tuple[float]]):
-        self.update(IMU, GPS, Time)
+        self.fig = plt.figure()
+        self.ax1 = self.fig.add_subplot(1, 1, 1, 1)
+        
+    def predict(self):
+        self.update(self.IMU, [0,0,0], self.Time)
         
         i = self.gyro.__len__()
         
@@ -44,6 +50,9 @@ class Filter(object):
         self.ahrs.update(self.gyro[i], self.acc[i], self.mag[i], self.T[i]-self.T[0])
         
         self.euler[i] = self.ahrs.quaternion.to_euler()
+        
+        with open('./data/madgwick.json', 'w') as f:
+            json.dump(self.euler[i], f)
         
         ahrs_internal_states = self.ahrs.internal_states
         self.stats[i] = numpy.array([ahrs_internal_states.acceleration_error,
@@ -59,12 +68,33 @@ class Filter(object):
                                 ahrs_flags.acceleration_recovery,
                                 ahrs_flags.magnetic_recovery])
         
+        
+        
     def pose(self):
         None
         
+    def plot(self, i):
+        graph_data = open()
+        lines = graph_data.split('\n')
+        times = []
+        pitches = []
+        yaws = []
+        rolls = []
+        for line in lines:
+            if len(line) > 1:
+                pitch, yaw, roll = line.split(',')
+                pitches.append(pitch)
+                yaws.append(yaw)
+                rolls.append(roll)
+        self.ax1.clear()
+        self.ax1.plot(pitch, yaw, roll)
+    
     def update(self, IMU, GPS, Time):
         self.gyro.append(IMU[0])
         self.mag.append(IMU[1])
         self.acc.append(IMU[2])
         self.GPS.append(GPS)
         self.T.append(Time)
+        
+sensors = Sensors.getSystem()
+
