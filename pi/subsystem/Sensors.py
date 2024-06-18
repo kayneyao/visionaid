@@ -31,31 +31,34 @@ class Sensors(object):
     
     def getGPS(self):
         coord = [0,0,0]
-        while 1:
-            newdata = self.ser.readline()
-            n_data = newdata.decode('latin-1')
-            if n_data[:6] == '$GNGGA':
-                newmsg = pynmea2.parse(n_data)
-                lat = newmsg.latitude
-                lng = newmsg.longitude
-                alt = newmsg.altitude
-                coord = [lng,lat,alt]
-                # print(gps)
-                return coord
+        newdata = self.ser.readline()
+        n_data = newdata.decode('latin-1')
+        if n_data[:6] == '$GNGGA':
+            newmsg = pynmea2.parse(n_data)
+            lat = newmsg.latitude
+            lng = newmsg.longitude
+            alt = newmsg.altitude
+            tme = newmsg.time
+            coord = [lng,lat,alt]
+            # print(gps)
+            return coord
             
-    def getIMU(self):
+    def getValues(self):
         data = self.ser.readline().decode().split(", ")
         
         mag = list(map(float, data[0:3]))
         gyro = list(map(float, data[3:6]))
         acc = list(map(float, data[6:9]))
+        gps = list(map(float, data[9:12]))
+        time = int(data[12])
         
         mag = self.soft @ (np.array(mag) - self.hard)
         
         acc = self.A @ (np.array(acc) - self.b)
         
-        imu = [mag, gyro, acc]
-        return imu
+        output = [mag, gyro, acc, gps, time]
+        
+        return output
         
     # def absAcc(self, dT):
     #     imu = self.getIMU()

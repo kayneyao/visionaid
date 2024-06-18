@@ -15,10 +15,18 @@ gps_fix  fix;
 
 int error = 0;
 
+int time;
+
+int startTime;
+
 void setup(){
+  startTime = 0;
+
   Serial.begin(9600);
   gpsPort.begin(9600);
   
+  sensor_t sensor;
+  mag.getSensor(&sensor);
 
   gyro.init();
   gyro.zeroCalibrate(200,10);//sample 200 times to calibrate and it will take 200*10ms
@@ -39,6 +47,8 @@ void setup(){
   adxl.setInactivityX(1);
   adxl.setInactivityY(1);
   adxl.setInactivityZ(1);
+
+  pinMode(4, INPUT_PULLUP);
 }
 
 void loop(){
@@ -57,13 +67,17 @@ void loop(){
 
   fix = gps.read();
 
-  float lat, lng, alt, time;
+  // if(digitalRead(4)) time += 1000;
+
+  float lat, lng, alt;
   if(gps.available(gpsPort)) {
     lat = fix.latitude();
     lng = fix.longitude();
     alt = fix.altitude();
     time = fix.dateTime_ms();
   }
+
+  time = millis() - startTime;
 
 	Serial.print(event.magnetic.x);
   Serial.print(", ");
