@@ -23,6 +23,8 @@ class Sensors(object):
     def __init__(self):
         self.ser = serial.Serial('/dev/ttyACM0', 9600, timeout=5.0)
         
+        self.output = [0,0,0,0,0,0,0,0,0,0,0,0]
+        
         # GPIO.setwarnings(False)
         # GPIO.setmode(GPIO.BCM)
         # GPIO.setup(26, GPIO.OUT)
@@ -46,6 +48,9 @@ class Sensors(object):
     def getValues(self):
         data = self.ser.readline().decode().split(", ")
         
+        if data.__len__() != 13:
+            return self.output
+        
         mag = list(map(float, data[0:3]))
         gyro = list(map(float, data[3:6]))
         acc = list(map(float, data[6:9]))
@@ -56,9 +61,11 @@ class Sensors(object):
         
         acc = self.A @ (np.array(acc) - self.b)
         
-        output = [mag, gyro, acc, gps, time]
+        self.output = [mag, gyro, acc, gps, time]
         
-        return output
+        
+        
+        return self.output
         
     # def absAcc(self, dT):
     #     imu = self.getIMU()

@@ -19,6 +19,8 @@ int time;
 
 int startTime;
 
+sensors_event_t event; 
+
 void setup(){
   startTime = 0;
 
@@ -48,11 +50,12 @@ void setup(){
   adxl.setInactivityY(1);
   adxl.setInactivityZ(1);
 
+  
+
   pinMode(4, INPUT_PULLUP);
 }
 
 void loop(){
-  sensors_event_t event; 
   mag.getEvent(&event);
 
   float gx,gy,gz;
@@ -77,7 +80,7 @@ void loop(){
     time = fix.dateTime_ms();
   }
 
-  time = millis() - startTime;
+  long time = millis();
 
 	Serial.print(event.magnetic.x);
   Serial.print(", ");
@@ -104,6 +107,6 @@ void loop(){
   Serial.print(alt);
   Serial.print(", ");
   Serial.println(time);
-	delay(100);
+	delay(70);
  
 }
