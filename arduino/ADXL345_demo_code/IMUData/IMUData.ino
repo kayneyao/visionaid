@@ -13,6 +13,14 @@ ITG3200 gyro;
 NMEAGPS  gps;
 gps_fix  fix;
 
+#define WINDOW_SIZE 5
+
+int INDEX = 0;
+int VALUE = 0;
+int SUM[3];
+int READINGS[3][WINDOW_SIZE];
+int AVERAGED = 0;
+
 int error = 0;
 
 int time;
@@ -50,7 +58,7 @@ void setup(){
   adxl.setInactivityY(1);
   adxl.setInactivityZ(1);
 
-  
+  delay(2000);
 
   pinMode(4, INPUT_PULLUP);
 }
@@ -60,6 +68,14 @@ void loop(){
 
   float gx,gy,gz;
   gyro.getAngularVelocity(&gx,&gy,&gz);
+
+  SUM[0] -= READINGS[0][INDEX];  SUM[1] -= READINGS[1][INDEX];  SUM[2] -= READINGS[2][INDEX];  
+  READINGS[0][INDEX] = gx; READINGS[1][INDEX] = gy; READINGS[2][INDEX] = gz;
+  SUM[0] += gx; SUM[1] += gy; SUM[2] += gz;
+
+  INDEX = (INDEX + 1) % WINDOW_SIZE;
+
+  gx = SUM[0] / WINDOW_SIZE;  gy = SUM[1] / WINDOW_SIZE;  gz = SUM[2] / WINDOW_SIZE;
 
 	double xyz[3];
 	double ax,ay,az;

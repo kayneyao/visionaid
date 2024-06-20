@@ -59,7 +59,7 @@ class Sensors(object):
         
         mag = self.soft @ (np.array(mag) - self.hard)
         
-        acc = self.A @ (np.array(acc) - self.b)
+        # acc = self.A @ (np.array(acc) - self.b)
         
         self.output = [mag, gyro, acc, gps, time]
         
