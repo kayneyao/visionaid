@@ -76,14 +76,14 @@ class Sensors(object):
     #     #linear velo relative to IMU orientation
     #     vel += 
         
-    def PPS(self):
-        cState = GPIO.input(26)
+    # def PPS(self):
+    #     cState = GPIO.input(26)
         
-        if cState > iState:
-            t = t + 1
-        iState = cState
+    #     if cState > iState:
+    #         t = t + 1
+    #     iState = cState
            
-        return t
+    #     return t
     
     def createSystem(self):
         self.system = Sensors()
