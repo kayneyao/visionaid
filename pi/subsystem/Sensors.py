@@ -25,6 +25,15 @@ class Sensors(object):
         
         self.output = [0,0,0,0,0,0,0,0,0,0,0,0]
         
+        self.pitches = []
+        self.rolls = []
+        self.yaws = []
+        
+        self.iT = 0
+        
+        self.pitch = 0
+        self.roll = 0
+        self.yaw = 0
         # GPIO.setwarnings(False)
         # GPIO.setmode(GPIO.BCM)
         # GPIO.setup(26, GPIO.OUT)
@@ -73,8 +82,40 @@ class Sensors(object):
         return t
     
     def gyroOrien(self):
-        x, y, z = self.getValues()[1]
+        Z = self.getValues()
+        x, y, z = Z[1]
+        time = Z[4]
+        dT = time - self.iT
         
+        self.roll += x * dT * 0.001
+        self.pitch += y * dT * 0.001
+        self.yaw += z * dT * 0.001
+    
+        self.iT = time
+        
+        self.pitch += x
+        
+        if(self.pitches.__len__() < 20):
+            self.pitches.pop(0)
+            self.yaws.pop(0)
+            self.rolls.pop(0)
+        self.pitches.append(self.pitch)
+        self.yaws.append(self.yaw)
+        self.rolls.append(self.roll)
+        self.ax[0].clear()
+        self.ax[1].clear()
+        
+        self.ax[2].clear()
+        self.ax[0].plot(self.pitches, "tab:red", label="Pitch")
+        self.ax[1].plot(self.rolls, "tab:green", label="Roll")
+        self.ax[2].plot(self.yaws, "tab:blue", label="Yaw")
+        self.ax[0].grid()
+        self.ax[0].legend()
+        self.ax[1].grid()
+        self.ax[1].legend()
+        
+        self.ax[2].grid()
+        self.ax[2].legend()
     
     def createSystem(self):
         self.system = Sensors()
