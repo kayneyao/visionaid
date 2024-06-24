@@ -80,7 +80,6 @@ void loop() {
   updateGyro();
   updateAcc();
   updateGPS();
-  delay(100);
 }
 
 void updateAcc(){
