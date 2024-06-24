@@ -24,7 +24,7 @@ class Sensors(object):
     def __init__(self):
         self.ser = serial.Serial('/dev/ttyACM0', 9600, timeout=5.0)
         
-        self.output = [0,0,0,0,0,0,0,0,0,0,0,0]
+        self.output = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],0]
         
         self.pitches = []
         self.rolls = []
@@ -65,8 +65,6 @@ class Sensors(object):
         
         self.output = [mag, gyro, acc, gps, time]
         
-        
-        
         return self.output
         
     # def absAcc(self, dT):
@@ -89,7 +87,9 @@ class Sensors(object):
     
     def gyroOrien(self):
         Z = self.getValues()
-        x, y, z = Z[1]
+        x = Z[1][0]
+        y = Z[1][1]
+        z = Z[1][2]
         time = Z[4]
         dT = time - self.iT
         
@@ -99,29 +99,30 @@ class Sensors(object):
     
         self.iT = time
         
-        self.pitch += x
+        print([self.yaw, self.pitch, self.roll])
         
-        if(self.pitches.__len__() > 20):
-            self.pitches.pop(0)
-            self.yaws.pop(0)
-            self.rolls.pop(0)
-        self.pitches.append(self.pitch)
-        self.yaws.append(self.yaw)
-        self.rolls.append(self.roll)
-        self.ax[0].clear()
-        self.ax[1].clear()
         
-        self.ax[2].clear()
-        self.ax[0].plot(self.pitches, "tab:red", label="Pitch")
-        self.ax[1].plot(self.rolls, "tab:green", label="Roll")
-        self.ax[2].plot(self.yaws, "tab:blue", label="Yaw")
-        self.ax[0].grid()
-        self.ax[0].legend()
-        self.ax[1].grid()
-        self.ax[1].legend()
+        # if(self.pitches.__len__() > 20):
+        #     self.pitches.pop(0)
+        #     self.yaws.pop(0)
+        #     self.rolls.pop(0)
+        # self.pitches.append(self.pitch)
+        # self.yaws.append(self.yaw)
+        # self.rolls.append(self.roll)
+        # self.ax[0].clear()
+        # self.ax[1].clear()
         
-        self.ax[2].grid()
-        self.ax[2].legend()
+        # self.ax[2].clear()
+        # self.ax[0].plot(self.pitches, "tab:red", label="Pitch")
+        # self.ax[1].plot(self.rolls, "tab:green", label="Roll")
+        # self.ax[2].plot(self.yaws, "tab:blue", label="Yaw")
+        # self.ax[0].grid()
+        # self.ax[0].legend()
+        # self.ax[1].grid()
+        # self.ax[1].legend()
+        
+        # self.ax[2].grid()
+        # self.ax[2].legend()
     
     def createSystem(self):
         self.system = Sensors()
@@ -131,4 +132,5 @@ class Sensors(object):
     
 sens = Sensors()
 
-sens.gyroOrien()
+while 1:
+    sens.gyroOrien()
