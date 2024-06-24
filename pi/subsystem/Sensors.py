@@ -1,5 +1,6 @@
 import serial
 import pynmea2
+import matplotlib.pyplot as plt
 import numpy as np
 # import RPi.GPIO as GPIO
 
@@ -34,6 +35,11 @@ class Sensors(object):
         self.pitch = 0
         self.roll = 0
         self.yaw = 0
+        
+        self.fig , self.ax = plt.subplots(nrows=3, sharex=True, gridspec_kw={"height_ratios": [3,3,3]})
+        plt.ion()
+        plt.show()
+        
         # GPIO.setwarnings(False)
         # GPIO.setmode(GPIO.BCM)
         # GPIO.setup(26, GPIO.OUT)
@@ -95,7 +101,7 @@ class Sensors(object):
         
         self.pitch += x
         
-        if(self.pitches.__len__() < 20):
+        if(self.pitches.__len__() > 20):
             self.pitches.pop(0)
             self.yaws.pop(0)
             self.rolls.pop(0)
