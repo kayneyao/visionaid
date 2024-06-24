@@ -31,19 +31,6 @@ class Sensors(object):
 
         # GPIO.output(26, GPIO.HIGH)
     
-    def getGPS(self):
-        coord = [0,0,0]
-        newdata = self.ser.readline()
-        n_data = newdata.decode('latin-1')
-        if n_data[:6] == '$GNGGA':
-            newmsg = pynmea2.parse(n_data)
-            lat = newmsg.latitude
-            lng = newmsg.longitude
-            alt = newmsg.altitude
-            tme = newmsg.time
-            coord = [lng,lat,alt]
-            # print(gps)
-            return coord
             
     def getValues(self):
         data = self.ser.readline().decode().split(", ")
@@ -85,8 +72,16 @@ class Sensors(object):
            
         return t
     
+    def gyroOrien(self):
+        x, y, z = self.getValues()[1]
+        
+    
     def createSystem(self):
         self.system = Sensors()
     
     def getSystem(self):
         return self.system
+    
+sens = Sensors()
+
+sens.gyroOrien()
