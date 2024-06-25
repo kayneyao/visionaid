@@ -1,6 +1,7 @@
 #include <Wire.h>
 #include <NMEAGPS.h>
 #include <GPSport.h>
+#include <TimerOne.h>
 
 int ADXLAddress = 0x53;
 int ITGAddress = 0x68;
@@ -35,11 +36,17 @@ int HMCAddress = 0x1E;
 NMEAGPS  gps;
 gps_fix  fix;
 
+long time = 0;
+char userInput;
+
 void setup() {
   // put your setup code here, to run once:
   Wire.begin();
   Serial.begin(9600);
   gpsPort.begin(9600);
+
+  Timer1.initialize(1000);
+  Timer1.attachInterrupt(updateTime);
 
   Wire.beginTransmission(ADXLAddress);
   Wire.write(AccPWR);
@@ -76,10 +83,18 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  updateMag();
-  updateGyro();
-  updateAcc();
-  updateGPS();
+  if(Serial.available() > 0){
+
+    userInput = Serial.read();
+
+      if(userInput == 'g'){
+        updateMag();
+        updateGyro();
+        updateAcc();
+        updateGPS();
+      }
+      
+  }
 }
 
 void updateAcc(){
@@ -94,6 +109,10 @@ void updateAcc(){
   Y = Y/256;
   Z = ( Wire.read()| Wire.read() << 8); // Z-axis value
   Z = Z/256;
+
+  X = X * 9.80665;
+  Y = Y * 9.80665;
+  Z = Z * 9.80665;
 
   Serial.print(", ");
   Serial.print(X);
@@ -132,9 +151,9 @@ void updateMag(){
 
   Wire.requestFrom(HMCAddress, 6, true); // Read 6 registers total, each axis value is stored in 2 registers
 
-  X = (Wire.read()*256 + Wire.read())*0.1;
-  Z = (Wire.read()*256 + Wire.read())*0.1;
-  Y = (Wire.read()*256 + Wire.read())*0.1;
+  X = (Wire.read()*256 + Wire.read())*0.092;
+  Z = (Wire.read()*256 + Wire.read())*0.092;
+  Y = (Wire.read()*256 + Wire.read())*0.092;
 
   // Serial.print(", ");
   Serial.print(X);
@@ -147,11 +166,9 @@ void updateMag(){
 void updateGPS(){
   
   float lat, lng, alt;
-  int time;
   lat = 0.;
   lng = 0.;
   alt = 0.;
-  time = millis();
   if(gps.available(gpsPort)) {
     lat = fix.latitude();
     lng = fix.longitude();
@@ -166,4 +183,8 @@ void updateGPS(){
   Serial.print(alt);
   Serial.print(", ");
   Serial.println(time);
+}
+
+void updateTime(){
+  time += 1;
 }

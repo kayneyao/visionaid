@@ -20,8 +20,8 @@ route = api.directions(
     instructions_format='text')
 
 #Write the raw output of the API's Response to a JSON file
-with open('./gps/data.json', 'w') as f:
-    json.dump(route.raw, f)
+with open('./gps/newdata.json', 'w') as f:
+    json.dump(route.geometry, f)
 
 stored_route = json.load(open('./gps/data.json'))
 instruction = stored_route.get('routes')[0].get('segments')[0].get('steps')
