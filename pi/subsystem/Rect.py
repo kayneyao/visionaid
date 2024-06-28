@@ -21,7 +21,7 @@ else:
     sock.bind((UDP_IP, UDP_PORT))
 
 def main():
-    sens = Sensors()
+    sens = Sensors.Sensors()
     video_flags = OPENGL | DOUBLEBUF
     pygame.init()
     screen = pygame.display.set_mode((640, 480), video_flags)
@@ -35,7 +35,7 @@ def main():
         if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
             break
         if(useQuat):
-            [w, nx, ny, nz] = read_data()
+            [w, nx, ny, nz] = sens.gyroOrien()
         else:
             [yaw, pitch, roll] = sens.gyroOrien()
         if(useQuat):
