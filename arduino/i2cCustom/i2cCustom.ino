@@ -83,18 +83,19 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  if(Serial.available() > 0){
+  // if(Serial.available() > 0){
 
-    userInput = Serial.read();
+  //   userInput = Serial.read();
 
-      if(userInput == 'g'){
-        updateMag();
-        updateGyro();
-        updateAcc();
-        updateGPS();
-      }
+  //     if(userInput == 'g'){
+        
+  //     }
       
-  }
+  // }
+  updateMag();
+  updateGyro();
+  updateAcc();
+  updateGPS();
 }
 
 void updateAcc(){
@@ -150,10 +151,12 @@ void updateMag(){
   Wire.endTransmission();
 
   Wire.requestFrom(HMCAddress, 6, true); // Read 6 registers total, each axis value is stored in 2 registers
-
-  X = (Wire.read()*256 + Wire.read())*0.092;
-  Z = (Wire.read()*256 + Wire.read())*0.092;
-  Y = (Wire.read()*256 + Wire.read())*0.092;
+  
+  if(Wire.available()>=6){
+    X = (Wire.read()*256 + Wire.read())*0.092;
+    Z = (Wire.read()*256 + Wire.read())*0.092;
+    Y = (Wire.read()*256 + Wire.read())*0.092;
+  }
 
   // Serial.print(", ");
   Serial.print(X);
