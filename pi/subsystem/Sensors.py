@@ -14,10 +14,10 @@ class Sensors(object):
     t = 0 
     iState = False
     
-    soft = np.array([[1.414817, -0.016987, 0.064807],
-                [-0.016987, 1.349957, -0.019416],
-                [0.064807, -0.019416, 1.065155]])
-    hard = np.array([0.344155, -14.308739, -14.832437])
+    soft = np.array([[1.924639, -0.001190, -0.037292],
+                [-0.001190, 1.902003, 0.081436],
+                [-0.037292, 0.081436, 2.046809]])
+    hard = np.array([-3.346703, 30.085820, -10.517505])
         
     A = np.array([[1.021179, -0.042233, -0.000608],  # 'A^-1' matrix from Magneto
               [-0.042233, 1.022789, -0.007579],
@@ -57,6 +57,7 @@ class Sensors(object):
     def getValues(self):
         self.ser.write(b'g')
         temp = self.ser.readline().decode().split(", ")
+        print(temp)
         data1 = np.array(temp, dtype=float)
         self.ser.write(b'g')
         temp = self.ser.readline().decode().split(", ")
@@ -73,8 +74,8 @@ class Sensors(object):
         gps = list(map(float, data[9:12]))
         time = int(data[12])
         
-        # mag = self.soft @ (np.array(mag) - self.hard)
-        acc = self.A @ (np.array(acc) - self.b)
+        mag = self.soft @ (np.array(mag) - self.hard)
+        # acc = self.A @ (np.array(acc) - self.b)
 
         self.output = [mag, gyro, acc, gps, time]
         
@@ -243,7 +244,7 @@ class Sensors(object):
         acc = Z[2]
         accNorm = acc / np.linalg.norm(acc)
         
-        D = accNorm
+        D = -accNorm
         E = np.cross(D, magNorm)
         E = E / np.linalg.norm(E)
         N = np.cross(E, D)
@@ -261,9 +262,9 @@ class Sensors(object):
         yg = Z[1][1]
         zg = Z[1][2]
         
-        self.roll += (xg * 0.001 + 0.00355482) * dT
-        self.pitch += (yg * -0.001 + 0.00420793) * dT
-        self.yaw += (zg * 0.001 - 0.00026876) * dT
+        self.roll += (xg * 0.001) * dT
+        self.pitch += (yg * -0.001) * dT
+        self.yaw += (zg * 0.001) * dT
         
         # [y,p,r] = self.gain([1, 5],
         #                     [self.yaw, self.pitch, self.roll],
@@ -272,8 +273,8 @@ class Sensors(object):
                             [self.yaw, self.pitch, self.roll],
                             accMagOrien)
         print(accMagOrien)
-        # return [self.yaw,self.pitch,self.roll]
-        return accMagOrien
+        return [self.yaw,self.pitch,self.roll]
+        # return accMagOrien
     
 
 # ani = anim.FuncAnimation(sens.fig, sens.odomBasic, interval=50)
