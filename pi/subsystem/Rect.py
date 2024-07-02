@@ -10,7 +10,7 @@ useQuat = False   # set true for using quaternions, false for using y,p,r angles
 
 if(useSerial):
     import serial
-    ser = serial.Serial('/dev/ttyUSB0', 38400)
+    ser = serial.Serial('/dev/ttyAMA0', 115200)
 else:
     import socket
 
