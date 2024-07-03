@@ -14,9 +14,17 @@ class Sensors(object):
     t = 0 
     iState = False
     
+    # soft = np.array([[1.416250, 0.058590, 0.135729],
+    #             [0.058590, 1.496296, 0.196961],
+    #             [0.135729, 0.196961, 1.258746]])
+    # hard = np.array([-14.852945, -54.355349, -65.776942])
+    # soft = np.array([[4.37818397e-07, -2.92218222e-07,  6.14973875e-08],
+    #    [-1.73511405e-05, -2.75330302e-06,  1.10445069e-04],
+    #    [-3.71788902e-05, -5.72330620e-05, -7.26765003e-06]])
+    # hard = np.array([-14.852945, -54.355349, -65.776942])
     soft = np.array([[1.924639, -0.001190, -0.037292],
-                [-0.001190, 1.902003, 0.081436],
-                [-0.037292, 0.081436, 2.046809]])
+                     [-0.001190, 1.902003, 0.081436],
+                     [-0.037292, 0.081436, 2.046809]])
     hard = np.array([-3.346703, 30.085820, -10.517505])
         
     A = np.array([[1.021179, -0.042233, -0.000608],  # 'A^-1' matrix from Magneto
@@ -47,8 +55,8 @@ class Sensors(object):
         self.dy = 0
         
 
-        self.pitch = self.initOrien()[1]
-        self.roll = self.initOrien()[2]
+        self.pitch = -self.initOrien()[1]
+        self.roll = -self.initOrien()[2]
         self.yaw = self.initOrien()[0]
         
         self.fig , self.ax = plt.subplots(nrows=3, sharex=True,
@@ -57,16 +65,18 @@ class Sensors(object):
     def getValues(self):
         self.ser.write(b'g')
         temp = self.ser.readline().decode().split(", ")
-        print(temp)
+        if temp.__len__() != 13:
+            return self.output
         data1 = np.array(temp, dtype=float)
         self.ser.write(b'g')
         temp = self.ser.readline().decode().split(", ")
+        if temp.__len__() != 13:
+            return self.output
         data2 = np.array(temp, dtype=float)
         
-        data = (data1 + data2)/2
+        data = (data1 + data2)/2     
         
-        if data.__len__() != 13:
-            return self.output
+        # print(data)
         
         mag = list(map(float, data[0:3]))
         gyro = list(map(float, data[3:6]))
@@ -95,70 +105,42 @@ class Sensors(object):
             self.ser.write(b'g')
             temp = self.ser.readline().decode().split(", ")
             raw_data.append(list(map(float,temp[index*3: index*3+3])))
+            sleep(0.01)
             
         raw_data = np.array(raw_data)
         
-        print(raw_data[1, 0])
+        def ellipsoid_fit(points):
+            # Ellipsoid fit equation: Ax^2 + By^2 + Cz^2 + 2Dxy + 2Exz + 2Fyz + 2Gx + 2Hy + 2Iz + J = 0
+            def residuals(params, x, y, z):
+                A, B, C, D, E, F, G, H, I, J = params
+                return A*x**2 + B*y**2 + C*z**2 + 2*D*x*y + 2*E*x*z + 2*F*y*z + 2*G*x + 2*H*y + 2*I*z + J
+
+            x, y, z = points.T
+            initial_params = np.zeros(10)
+            result = least_squares(residuals, initial_params, args=(x, y, z))
+            return result.x
         
-        def ellipsoid_fit(params, x, y, z):
-            # Ellipsoid parameters
-            center = params[:3]
-            radii = params[3:6]
-            rotation = params[6:9]
+        params = ellipsoid_fit(raw_data)
+        A, B, C, D, E, F, G, H, I, J = params
 
-            # Construct rotation matrix
-            Rx = np.array([[1, 0, 0],
-                           [0, np.cos(rotation[0]), -np.sin(rotation[0])],
-                           [0, np.sin(rotation[0]), np.cos(rotation[0])]])
+        # Hard iron correction (offsets)
+        offset_x = -G/A
+        offset_y = -H/B
+        offset_z = -I/C
 
-            Ry = np.array([[np.cos(rotation[1]), 0, np.sin(rotation[1])],
-                           [0, 1, 0],
-                           [-np.sin(rotation[1]), 0, np.cos(rotation[1])]])
+        # Soft iron correction (scaling and rotation)
+        A, B, C = np.abs([A, B, C])  # Ensure positive diagonal values
+        scale_factors = np.sqrt([A, B, C])
+        D, E, F = D/scale_factors[0], E/scale_factors[0], F/scale_factors[0]
+        correction_matrix = np.array([[A, D, E],
+                                    [D, B, F],
+                                    [E, F, C]])
+        correction_matrix /= scale_factors
 
-            Rz = np.array([[np.cos(rotation[2]), -np.sin(rotation[2]), 0],
-                           [np.sin(rotation[2]), np.cos(rotation[2]), 0],
-                           [0, 0, 1]])
+        return np.array([offset_x, offset_y, offset_z]), np.linalg.inv(correction_matrix)
 
-            R = Rz @ Ry @ Rx
-
-            # Apply transformation
-            transformed_data = np.dot(R, np.array([x, y, z]) - center[:, None])
-            distances = ((transformed_data[0] / radii[0]) ** 2 +
-                         (transformed_data[1] / radii[1]) ** 2 +
-                         (transformed_data[2] / radii[2]) ** 2 - 1)
-            return distances
-
-        # Initial guess for the parameters
-        x_mean, y_mean, z_mean = np.mean(raw_data, axis=0)
-        initial_params = [x_mean, y_mean, z_mean, 1, 1, 1, 0, 0, 0]
-
-        # Optimize to find the best-fit ellipsoid parameters
-        result = least_squares(ellipsoid_fit, initial_params, args=(raw_data[:, 0], raw_data[:, 1], raw_data[:, 2]))
-
-        # Extract the optimized parameters
-        center = result.x[:3]
-        radii = result.x[3:6]
-        rotation = result.x[6:9]
-
-        # Construct rotation matrix
-        Rx = np.array([[1, 0, 0],
-                       [0, np.cos(rotation[0]), -np.sin(rotation[0])],
-                       [0, np.sin(rotation[0]), np.cos(rotation[0])]])
-
-        Ry = np.array([[np.cos(rotation[1]), 0, np.sin(rotation[1])],
-                       [0, 1, 0],
-                       [-np.sin(rotation[1]), 0, np.cos(rotation[1])]])
-
-        Rz = np.array([[np.cos(rotation[2]), -np.sin(rotation[2]), 0],
-                       [np.sin(rotation[2]), np.cos(rotation[2]), 0],
-                       [0, 0, 1]])
-
-        R = Rz @ Ry @ Rx
-
-        soft_iron_matrix = np.diag(1 / radii) @ R
-        inverse_soft_iron_matrix = np.linalg.inv(soft_iron_matrix)
-
-        return center, soft_iron_matrix, inverse_soft_iron_matrix
+        
+        
 
     def odomBasic(self, i):
         Z = self.getValues()
@@ -232,7 +214,9 @@ class Sensors(object):
     def gain(self, ratio, arr1, arr2):
         arr1 = np.array(arr1)
         arr2 = np.array(arr2)
-        return (arr1*ratio[0] + arr2*ratio[1])/(ratio[0] + ratio[1])
+        diff = ( ( arr1 - arr2 + 180 + 360 ) % 360 ) - 180
+        ypr = (360 + arr2 + (ratio[0] * diff / (ratio[0] + ratio[1])) ) % 360
+        return ypr
     
     def gyroOrien(self):
         # Z = np.genfromtxt("./pi/subsystem/sensor.csv", delimiter=",", skip_header=1)
@@ -240,9 +224,9 @@ class Sensors(object):
         # print(Z)
         
         mag = Z[0]
-        magNorm = mag / np.linalg.norm(mag)
+        magNorm = mag / -np.linalg.norm(mag)
         acc = Z[2]
-        accNorm = acc / np.linalg.norm(acc)
+        accNorm = acc / -np.linalg.norm(acc)
         
         D = -accNorm
         E = np.cross(D, magNorm)
@@ -263,7 +247,7 @@ class Sensors(object):
         zg = Z[1][2]
         
         self.roll += (xg * 0.001) * dT
-        self.pitch += (yg * -0.001) * dT
+        self.pitch += (yg * 0.001) * dT
         self.yaw += (zg * 0.001) * dT
         
         # [y,p,r] = self.gain([1, 5],
@@ -271,11 +255,15 @@ class Sensors(object):
         #                     accMagOrien)
         [self.yaw,self.pitch,self.roll] = self.gain([49, 1],
                             [self.yaw, self.pitch, self.roll],
-                            accMagOrien)
-        print(accMagOrien)
+                            [accMagOrien[0], accMagOrien[1], accMagOrien[2]])
+        print(accMagOrien[0])
+        print(self.yaw)
         return [self.yaw,self.pitch,self.roll]
         # return accMagOrien
     
+# sens = Sensors()
+
+# print(sens.calibrate('magnet'))
 
 # ani = anim.FuncAnimation(sens.fig, sens.odomBasic, interval=50)
 
