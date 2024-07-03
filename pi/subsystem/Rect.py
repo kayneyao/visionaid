@@ -102,7 +102,7 @@ def read_data():
         # Waiting for data from udp port 5005
         data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
         line = data.decode('UTF-8').replace('\n', '')
-        print(line)
+        # print(line)
                 
     if(useQuat):
         w = float(line.split('w')[1])
