@@ -149,25 +149,25 @@ class Sensors(object):
         dT = cT - self.iT
         self.iT = cT
         
-        self.roll += (xa * 0.001 + 0.00355482) * dT
-        self.pitch += (ya * 0.001 - 0.00420793) * dT
-        self.yaw += (za * -0.001 + 0.00026876) * dT
+        self.gyroOrien()
         
         r = R.from_euler('zyx', [
             self.yaw,
-            self.pitch,
-            self.roll], degrees=True)
+            -self.pitch,
+            -self.roll], degrees=True)
         
-        r = R.from_euler('xyz', [self.roll, self.pitch, self.yaw], degrees=True)
         r = r.inv()
         
         x = Z[2][0]
         y = Z[2][1]
         z = Z[2][2]
-        [xA, yA, zA] = r.apply([x, y, z - 9.80655]) 
-        # [xA, yA, zA] = self.ahrs.linear_acceleration - r.apply([0,0,9.80655])
         
-        print(r.as_euler('xyz', degrees=True))
+        
+        
+        [xA, yA, zA] = r.apply([x, y, z]) 
+        # [xA, yA, zA] = self.ahrs.linear_acceleration - r.apply([0,0,9.80655])
+        # print(np.array([xA, yA, zA]) - np.array([0, 0, 9.2]))
+        zA -= 9.806526860225
         
         self.dx += xA * (dT/1000)**2
         self.dy += yA * (dT/1000)**2
@@ -178,9 +178,9 @@ class Sensors(object):
         self.temp.append(zA)
         
         self.ax[0].clear()
-        self.ax[1].clear()
+        # self.ax[1].clear()
         self.ax[0].plot(self.posX, self.posY)
-        self.ax[1].plot(self.temp[-10:])
+        # self.ax[1].plot(self.temp[-10:])
 
         self.ax[0].set_title("Orientation")
         self.ax[0].set_ylabel("Y-Axis")
@@ -198,8 +198,8 @@ class Sensors(object):
         accMean = np.mean(acc, 0)
         magMean = np.mean(mag, 0)
         
-        magNorm = magMean / np.linalg.norm(magMean)
-        accNorm = accMean / np.linalg.norm(accMean)
+        magNorm = magMean / -np.linalg.norm(magMean)
+        accNorm = accMean / -np.linalg.norm(accMean)
         
         D = -accNorm
         E = np.cross(D, magNorm)
@@ -211,12 +211,17 @@ class Sensors(object):
                               [N[1], E[1], D[1]],
                               [N[2], E[2], D[2]],]).as_euler('zyx', degrees=True)
         
-    def gain(self, ratio, arr1, arr2):
+    def gainAngle(self, ratio, arr1, arr2):
         arr1 = np.array(arr1)
         arr2 = np.array(arr2)
         diff = ( ( arr1 - arr2 + 180 + 360 ) % 360 ) - 180
         ypr = (360 + arr2 + (ratio[0] * diff / (ratio[0] + ratio[1])) ) % 360
         return ypr
+    
+    def gainPose(self, ratio, arr1, arr2):
+        arr1 = np.array(arr1)
+        arr2 = np.array(arr2)
+        return (arr1 * ratio[0] + arr2 * ratio[1])/(ratio[0] + ratio[1])
     
     def gyroOrien(self):
         # Z = np.genfromtxt("./pi/subsystem/sensor.csv", delimiter=",", skip_header=1)
@@ -253,17 +258,15 @@ class Sensors(object):
         # [y,p,r] = self.gain([1, 5],
         #                     [self.yaw, self.pitch, self.roll],
         #                     accMagOrien)
-        [self.yaw,self.pitch,self.roll] = self.gain([49, 1],
+        [self.yaw,self.pitch,self.roll] = self.gainAngle([0, 1],
                             [self.yaw, self.pitch, self.roll],
                             [accMagOrien[0], accMagOrien[1], accMagOrien[2]])
-        print(accMagOrien[0])
-        print(self.yaw)
-        return [self.yaw,self.pitch,self.roll]
+        return [self.yaw,-self.pitch,-self.roll]
         # return accMagOrien
     
 # sens = Sensors()
 
-# print(sens.calibrate('magnet'))
+# # print(sens.calibrate('magnet'))
 
 # ani = anim.FuncAnimation(sens.fig, sens.odomBasic, interval=50)
 
