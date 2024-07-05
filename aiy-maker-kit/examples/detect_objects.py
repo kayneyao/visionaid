@@ -39,15 +39,15 @@ for frame in vision.get_frames():
     objects = detector.get_objects(frame, threshold=0.4)
     vision.draw_objects(frame, objects, labels)
     
+    
     #if specific classes are detected, print
     for obj in objects:
         label = labels.get(obj.id)
         xpos = (obj.bbox.xmin + obj.bbox.xmax)/2
         ypos = (obj.bbox.ymin + obj.bbox.ymax)/2
-   
-        print(labels)
-    
-    #find where the object is
+        print(label)
+        
+        #find where the object is
         if 'person' in label:
             #if person is on the right right
             if (xpos <100):
@@ -92,29 +92,3 @@ for frame in vision.get_frames():
             #if person is on the left left
             if (xpos>600):
                     print("Car at 10 o'clock")
-            
-
-        if 'parking meter' or 'fire hydrant' in label:
-            #if person is on the right right
-            if (xpos <100):
-            
-                print("Truck at 2 o'clock")
-                
-            #if person is on the right
-            if (xpos<200 and xpos>=100):
-            
-                print("Person at 1 o'clock")
-            #if person is straight
-            if (xpos>=200 and xpos <=400):
-                    print("Person at 12 o'clock")
-                
-            #if person is on the left
-            if (xpos >400 and xpos <500):
-                    print("Person at 11 o'clock")
-                    
-            #if person is on the left left
-            if (xpos>600):
-                    print("Person at 10 o'clock")
-                    
-                
-        
