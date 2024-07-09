@@ -2,7 +2,6 @@
 #include <GPSport.h>
 #include <TimerOne.h>
 
-#include "quaternionFilters.h"
 #include "MPU9250.h"
 
 #define I2Cclock 400000
@@ -179,9 +178,9 @@ void readData(){
     myIMU.readAccelData(myIMU.accelCount);  // Read Accel
 
 //Raw Data -> Real World Units
-    myIMU.ax = (float)myIMU.accelCount[0] * myIMU.aRes * 10.432475383;
-    myIMU.ay = (float)myIMU.accelCount[1] * myIMU.aRes * 10.432475383;
-    myIMU.az = (float)myIMU.accelCount[2] * myIMU.aRes * 10.432475383;
+    myIMU.ax = (float)myIMU.accelCount[0] * myIMU.aRes;
+    myIMU.ay = (float)myIMU.accelCount[1] * myIMU.aRes;
+    myIMU.az = (float)myIMU.accelCount[2] * myIMU.aRes;
 
     myIMU.readGyroData(myIMU.gyroCount);  // Read Gyro
 
@@ -218,6 +217,12 @@ void printMag(){
   Serial.print((float)myIMU.mx); Serial.print(",");
   Serial.print((float)myIMU.my); Serial.print(",");
   Serial.println((float)myIMU.mz);
+}
+
+void printAcc(){
+  Serial.print((float)myIMU.ay); Serial.print(",");
+  Serial.print((float)myIMU.ax); Serial.print(",");
+  Serial.println((float)myIMU.az);
 }
 
 void updateTime(){
@@ -294,7 +299,7 @@ void loop() {
   // MahonyQuaternionUpdate(myIMU.ax, myIMU.ay, myIMU.az, myIMU.gx * DEG_TO_RAD,
   //                        myIMU.gy * DEG_TO_RAD, myIMU.gz * DEG_TO_RAD, myIMU.my,
   //                        myIMU.mx, myIMU.mz, myIMU.deltat);
-  // printMag();
+  // printAcc();
   // delay(100);
   if(Serial.available() > 0){
 

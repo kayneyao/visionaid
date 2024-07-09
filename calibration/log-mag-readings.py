@@ -29,11 +29,11 @@ import matplotlib.pyplot as plt
 
 
 # GLOBAL VARIABLES
-SER_PORT = 'COM4'  # Serial port
+SER_PORT = 'COM9'  # Serial port
 SER_BAUD = 115200  # Serial baud rate
 SAMPLE_FREQ = 10  # Frequency to record magnetometer readings at [Hz]
 T_SAMPLE = 30  # Total time to read mangetometer readings [sec]
-OUTPUT_FILENAME = 'mag-readings.txt'  # Output data file name
+OUTPUT_FILENAME = './calibration/mag-readings.txt'  # Output data file name
 
 
 
@@ -76,7 +76,7 @@ class SerialPort:
             (str): utf-8 decoded message.
         """
         # while self.ser.in_waiting:
-        self.ser.write(b'g')
+        # self.ser.write(b'g')
         bytesToRead = self.ser.readline()
         
         decodedMsg = bytesToRead.decode('utf-8')

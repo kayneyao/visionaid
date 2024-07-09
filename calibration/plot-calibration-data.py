@@ -35,14 +35,14 @@ import matplotlib.pyplot as plt
 
 
 # Define calibration parameters
-A = np.array(   [[1.414817, -0.016987, 0.064807],
-                [-0.016987, 1.349957, -0.019416],
-                [0.064807, -0.019416, 1.065155]])
-b = np.array([0.344155, -14.308739, -14.832437])
+A = np.array(   [[1.798245, -0.116282, -0.054041],
+                [-0.116282, 1.753566, 0.010353],
+                [-0.054041, 0.010353, 1.678659]])
+b = np.array([-10.581534, 48.777247, -39.810874])
 
 
 # Read raw data and apply calibration
-rawData = np.genfromtxt('./mag-readings.txt', delimiter='\t')  # Read raw measurements
+rawData = np.genfromtxt('./calibration/mag-readings.txt', delimiter='\t')  # Read raw measurements
 
 N = len(rawData)
 calibData = np.zeros((N, 3), dtype='float')
