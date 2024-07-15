@@ -10,12 +10,14 @@ from scipy.linalg import expm, block_diag
 # import RPi.GPIO as GPIO
 
 class Sensors(object):
+    COORD_TO_M = 1852
+
     t = 0 
     
-    soft = np.array([[1.798245, -0.116282, -0.054041],
-                [-0.116282, 1.753566, 0.010353],
-                [-0.054041, 0.010353, 1.678659]])
-    hard = np.array([-10.581534, 48.777247, -39.810874])
+    soft = np.array([[1.517200, 0.062251, 0.007047],
+                [0.062251, 1.469370, 0.077574],
+                [0.007047, 0.077574, 1.678985]])
+    hard = np.array([-51.925066, 47.283384, -46.004040])
         
     A = np.array([[0.999265, -0.013986, 0.000582],  # 'A^-1' matrix from Magneto
               [-0.013986, 0.997537, -0.001473],
@@ -45,9 +47,13 @@ class Sensors(object):
         self.pitch = -self.initOrien()[1]
         self.roll = -self.initOrien()[2]
         self.yaw = self.initOrien()[0]
+
+        self.compInit = [R.from_euler('Z', 0, degrees=True), 0, 0, 0, np.empty((1, 2))]
+
         
-        self.fig , self.ax = plt.subplots(nrows=3, sharex=True,
-                                          gridspec_kw={"height_ratios": [6,6,1]})    
+        
+        # self.fig , self.ax = plt.subplots(nrows=3, sharex=True,
+        #                                   gridspec_kw={"height_ratios": [6,6,1]})    
             
     def getValues(self):
         self.ser.write(b'g')
@@ -77,7 +83,7 @@ class Sensors(object):
         
         return self.output
 
-    def complimentary(self, start, end):
+    def complimentary(self, start, end, init=False):
         def init():
             #Use North Direction, Starting Point, and Target Point to Find Trajectory
             target = (start - end)*self.COORD_TO_M
@@ -85,14 +91,15 @@ class Sensors(object):
             north = self.getNorth()
             #Find Initial GPS Values to Use as Origin
             ilat, ilng, ialt = self.getValues()[3]
+
             #Returns Trajectory from Starting Point to Target
             return [R.from_euler(np.acos('z',
                         np.dot(north, target)/(np.linalg.norm(north)*np.linalg.norm(north)),
-                        degrees=False)), ilat, ilng, ialt]
+                        degrees=False)), ilat, ilng, ialt, target]
 
         def update(gain, ilat, ilng, ialt):
-            gps = self.sens.getValues()[3]
-            clat, clng, calt = gps
+            self.gps = self.getValues()[3]
+            clat, clng, calt = self.gps
             #Deg to Rad
             clat *= np.pi/180
             clng *= np.pi/180
@@ -105,22 +112,23 @@ class Sensors(object):
             lng = ilng - clng
             alt = ialt - calt
             #Represent as XYZ Coordinates
-            x = lng * R * np.cos(ilat)
-            y = lat * R
+            x = lng * self.COORD_TO_M * np.cos(ilat)
+            y = lat * self.COORD_TO_M
             z = alt
             #Complimentary Filter
-            [self.dx, self.dy, self.dz] = ([x, y, z]*gain + [self.dx,self.dy,self.dz])/(gain+1)
+            [self.dx, self.dy, self.dz] = (np.array([x, y, z])*gain + np.array([self.dx,self.dy,self.dz]))/(gain+1)
             return [self.dx, self.dy, self.dz]
         
         #Get Initial Values
-        initVal = init()
+        if(init == True):
+            self.compInit = init()
         #Transform to Face Trajectory
-        transform = initVal[0].inv()
+        transform = self.compInit[0].inv()
         #Predict Step
         self.odomBasic(transform=transform)
         #Update Step
-        update(0.02, initVal[1], initVal[2], initVal[3])
-        return np.array([self.dx, self.dy, self.dz], [self.yaw, self.pitch, self.roll])
+        update(0.02, self.compInit[1], self.compInit[2], self.compInit[3])
+        return np.array([[self.dx, self.dy, self.dz], [self.yaw, self.pitch, self.roll]])
     
     def kalman(self, start, end, phi=0.1): #Tracking position and velocity
         ilat, ilng, ialt = self.getValues()[3]
@@ -178,7 +186,7 @@ class Sensors(object):
         kf.update(self.odomBasic())
 
 
-    def odomBasic(self, transform=R.from_euler('xyz', [0,0,0])):
+    def odomBasic(self, transform=R.from_euler('z', 0)):
         Z = self.getValues() #Retreive Sensor Values
         #Calculate Delta Time
         cT = Z[4]
@@ -193,7 +201,7 @@ class Sensors(object):
         y = Z[2][1]
         z = Z[2][2]
         #Transform System Acceleration to World Frame and Remove Gravity
-        [xA, yA, zA] = transform.apply([x, y, z])
+        [xA, yA, zA] = transform.apply(r.apply([x, y, z]))
         zA -= 9.806526860225
         #Integrate State Variables
         self.dx += xA * (self.dT/1000)**2

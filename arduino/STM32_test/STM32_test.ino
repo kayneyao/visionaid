@@ -197,6 +197,10 @@ void readData(){
     myIMU.mz = ((float)myIMU.magCount[2] * myIMU.mRes
                * myIMU.factoryMagCalibration[2] - myIMU.magBias[2]) * 0.092;
   } // if (readByte(MPU9250_ADDRESS, INT_STATUS) & 0x01)
+
+  while(gps.available(gpsPort)){
+    fix = gps.read();
+  }
 }
 
 void printRaw(){
@@ -231,21 +235,12 @@ void updateTime(){
 
 void updateGPS(){
   
-  float lat, lng, alt;
-  lat = 0.;
-  lng = 0.;
-  alt = 0.;
-  if(gps.available(gpsPort)) {
-    lat = fix.latitude();
-    lng = fix.longitude();
-    alt = fix.altitude();
-    time = fix.dateTime_ms();
-  }
-  Serial.print(lat);
+
+  Serial.print(fix.location.lat());
   Serial.print(", ");
-  Serial.print(lng);
+  Serial.print(fix.location.lon());
   Serial.print(", ");
-  Serial.print(alt);
+  Serial.print(fix.alt.int32_000());
   Serial.print(", ");
   Serial.println(time);
 }
@@ -293,24 +288,30 @@ void loop() {
   // byte b = Wire.read();
 
   readData();
+  
 
   // myIMU.updateTime();
 
   // MahonyQuaternionUpdate(myIMU.ax, myIMU.ay, myIMU.az, myIMU.gx * DEG_TO_RAD,
   //                        myIMU.gy * DEG_TO_RAD, myIMU.gz * DEG_TO_RAD, myIMU.my,
   //                        myIMU.mx, myIMU.mz, myIMU.deltat);
-  // printAcc();
+  // printMag();
   // delay(100);
-  if(Serial.available() > 0){
+  if(Serial.available()){
 
     userInput = Serial.read();
 
-      if(userInput == 'g'){
-        printRaw();
-        updateGPS();
-      }
+    if(userInput == 'g'){
+      printRaw();
+      updateGPS();
+    }
       
   }
+  // while(gpsPort.available() > 0){
+  //   byte read = gpsPort.read();
+  //   Serial.write(read);
+  // }
+  
   
   // Serial.print(a); Serial.print(", ");
   // Serial.println(b);
