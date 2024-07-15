@@ -26,11 +26,12 @@ class Navigation(object):
 
         self.gps = [[]]
         self.path = [[]]
+        self.yaw = []
         
         self.estimate = np.empty((1, 2))
 
-        self.start = [[]]
-        self.target = [[]]
+        self.start = []
+        self.target = []
         
 #transcribe directions as english
     def transDir(self, stored):
@@ -100,64 +101,91 @@ class Navigation(object):
 
     def guide(self, orient, distance):
         output = [""]
-        if np.abs(orient) <= 5:
+        if np.abs(orient) <= 10:
             output.append("Head straight. With ")
-            output.append(distance)
+            output.append(np.linalg.norm(distance).astype(np.str_))
             output.append(" more meters until next waypoint.")
-            return output
-        
-        if np.abs(orient) <= 50:
+            return ' '.join(output)
+        elif np.abs(orient) <= 50:
             output.append("Slight Turn ")
         elif np.abs(orient) <= 100 and np.abs(orient) > 50:
             output.append("Turn")
+        else:
+            output.append("Turn Around")
+            return ' '.join(output)
 
         if orient < 0:
             output.append("Left")
         else:
-            output.append("Right")
+            output.append("Right")  
 
-        return output
+        return ' '.join(output)
     
-    def plot(self, gps, fpos, route):
-        plt.scatter(gps[:, 1], gps[:, 0])
-        plt.plot(fpos[:, 0], fpos[:, 1])
-        plt.plot(route[:, 0], route[:, 1])
+    def plot(self, gps, fpos, route, yaw):
+        figure, axis = plt.subplots(2, 1) 
+
+
+        axis[1].scatter(gps[:, 1], gps[:, 0])
+        axis[1].plot(fpos[:, 0], fpos[:, 1])
+        axis[1].plot(route[:, 0], route[:, 1])
+
+        axis[0].plot(yaw)
+
         plt.show()
 
     def navigate(self, plot=False):
         stored = np.array(self.getDirections().get('_geometry'))
 
-        print(stored[-1])
+        step = 0
 
-        
+        start = np.append((np.array(stored[step])*self.COORD_TO_M), 20)     
+        target = np.append((np.array(stored[step + 1])*self.COORD_TO_M), 20)
 
-        step = 1
-
-        start = np.array(stored[step])*self.COORD_TO_M
-        target = np.array(stored[step + 1])*self.COORD_TO_M
-
-        self.estimate = self.sens.complimentary(start, target, init=True)
+        self.estimate = self.sens.complimentary(start, target, initF=True)
 
         while np.linalg.norm(stored[-1] - self.estimate[0][:2]) > 2:
 
-            self.start = np.array(stored[step])*self.COORD_TO_M
-            self.target = np.array(stored[step + 1])*self.COORD_TO_M
+            self.start = np.append((np.array(stored[step])*self.COORD_TO_M), 20)
+            try:
+                self.target = np.append((np.array(stored[step + 1])*self.COORD_TO_M), 20)
+            except IndexError:
+                self.gps.pop(0)
+                self.path.pop(0)
+                self.yaw.pop(0)
+                self.plot((np.array(self.gps)), np.array(self.path)/self.COORD_TO_M, stored, self.yaw)
 
-            self.estimate = self.sens.complimentary(start*self.COORD_TO_M, target*self.COORD_TO_M, init=True)
+            self.estimate = self.sens.complimentary(self.start, self.target, initF=False)
             
             step += 1
 
-            print(start-target)
+            # print(self.target)
+            # print(self.estimate)
+            # print(np.asin((self.target[1] - self.estimate[0][1])/(self.target[0] - self.estimate[0][0])%1)*180/np.pi)
+            # print((self.estimate[1][0] - 180)*2)
+            # print(self.target - self.estimate[0])
+            print(self.guide(np.asin((self.target[1] - self.estimate[0][1])/(self.target[0] - self.estimate[0][0])%1)*180/np.pi  - (self.estimate[1][0] - 180)*2, self.target - self.estimate[0]))
             # print(np.linalg.norm(target - self.estimate[0][:2] - start))
 
-            while np.linalg.norm(target - self.estimate[0][:2] - start) > 0.5:
-                self.estimate = self.sens.complimentary(start, target)
-                self.guide(self.sens.gyroOrien()[0], target - self.estimate[0][:2])
+            while np.linalg.norm(self.target - self.estimate[0]) > 0.4:
+                try:
+                    self.estimate = self.sens.complimentary(self.start, self.target, initF=False)
 
-                self.path.append(self.estimate[0][:2])
-                self.gps.append(self.sens.gps)
+                    self.path.append(self.estimate[0][:2])
+                    self.gps.append(self.sens.gps[:2])
+                    self.yaw.append(2 * (self.estimate[1][0] - 180))
 
-        self.plot((np.array(self.gps) + self.start), self.path, np.array(self.stored.get("_geometry")))
+                except IndexError:
+                    self.gps.pop(0)
+                    self.path.pop(0)
+                    self.yaw.pop(0)
+                    # print(self.gps[0])
+                    # print(self.path[0])
+                    self.plot((np.array(self.gps)), np.array(self.path)/self.COORD_TO_M, stored, self.yaw)
+                    # print(np.array(self.gps)[1700])
+                    # print(stored[5])
+                    # self.plot(np.array(self.gps), stored)
+
+        self.plot((np.array(self.gps) + self.start/self.COORD_TO_M), np.array(self.path)/self.COORD_TO_M, stored)
 
         
 

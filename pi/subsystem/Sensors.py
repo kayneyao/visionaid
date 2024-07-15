@@ -7,6 +7,7 @@ from scipy.spatial.transform import Rotation as R
 from filterpy.kalman import KalmanFilter
 from filterpy.common import Q_discrete_white_noise
 from scipy.linalg import expm, block_diag
+import json
 # import RPi.GPIO as GPIO
 
 class Sensors(object):
@@ -14,10 +15,10 @@ class Sensors(object):
 
     t = 0 
     
-    soft = np.array([[1.517200, 0.062251, 0.007047],
-                [0.062251, 1.469370, 0.077574],
-                [0.007047, 0.077574, 1.678985]])
-    hard = np.array([-51.925066, 47.283384, -46.004040])
+    soft = np.array([[1.686350, 0.061805, 0.053021],
+                [0.061805, 1.649245, 0.123506],
+                [0.053021, 0.123506, 1.781350]])
+    hard = np.array([-39.739560, 65.354347, -30.261158])
         
     A = np.array([[0.999265, -0.013986, 0.000582],  # 'A^-1' matrix from Magneto
               [-0.013986, 0.997537, -0.001473],
@@ -35,7 +36,7 @@ class Sensors(object):
         self.rolls = []
         self.yaws = []
         
-        self.iT = self.getValues()[4]
+        
         
         self.posX = []
         self.posY = []
@@ -44,28 +45,50 @@ class Sensors(object):
         
         self.dx, self.dy, self.dz, self.vx, self.vy, self.vz = 0, 0, 0, 0, 0, 0
 
-        self.pitch = -self.initOrien()[1]
-        self.roll = -self.initOrien()[2]
-        self.yaw = self.initOrien()[0]
+        
 
         self.compInit = [R.from_euler('Z', 0, degrees=True), 0, 0, 0, np.empty((1, 2))]
 
-        
+        self.saved_data = open('./data/serial_data2.txt', 'r').readlines()
+
+        # self.saved_data.pop(0)        
+        # print(self.saved_data[0].split(", "))
+
+        self.iT = self.getValues()[4]
+
+        self.pitch = -self.initOrien()[1]
+        self.roll = -self.initOrien()[2]
+        self.yaw = self.initOrien()[0]
+        # print(self.saved_data)
         
         # self.fig , self.ax = plt.subplots(nrows=3, sharex=True,
         #                                   gridspec_kw={"height_ratios": [6,6,1]})    
             
     def getValues(self):
-        self.ser.write(b'g')
-        temp = self.ser.readline().decode().split(", ")
+        # self.ser.write(b'g')
+        # temp = self.ser.readline().decode().split(", ")
+        # if temp.__len__() != 13:
+        #     return self.output
+        # data1 = np.array(temp, dtype=float)
+
+        # self.ser.write(b'g')
+        # temp = self.ser.readline().decode().split(", ")
+        # if temp.__len__() != 13:
+        #     return self.output
+        # data2 = np.array(temp, dtype=float)
+
+        
+
+        temp = self.saved_data[0].split(", ")
         if temp.__len__() != 13:
             return self.output
+        self.saved_data.pop(0)
         data1 = np.array(temp, dtype=float)
 
-        self.ser.write(b'g')
-        temp = self.ser.readline().decode().split(", ")
+        temp = self.saved_data[0].split(", ")
         if temp.__len__() != 13:
             return self.output
+        self.saved_data.pop(0)
         data2 = np.array(temp, dtype=float)
         
         data = (data1 + data2)/2
@@ -73,61 +96,94 @@ class Sensors(object):
         mag = list(map(float, data[0:3]))
         gyro = list(map(float, data[3:6]))
         acc = list(map(float, data[6:9]))
-        gps = list(map(float, data[9:12]))
+        [lat, lon, alt] = list(map(float, data[9:12]))
         time = int(data[12])
         
         mag = self.soft @ (np.array(mag) - self.hard)
         acc = self.A @ (np.array(acc) - self.b)
 
+        acc *= 9.806526860225
+
+        gps = [lat/5000000 - 25.0202, lon/10000000, alt/1000]
+
         self.output = [mag, gyro, acc, gps, time]
         
         return self.output
+    
+    # def getData(self):
+    #     self.ser.write(b'g')
+    #     temp = .split(", ")
+    #     if temp.__len__() != 13:
+    #         return self.output
+    #     data1 = np.array(temp, dtype=float)
 
-    def complimentary(self, start, end, init=False):
+    #     self.ser.write(b'g')
+    #     temp = self.ser.readline().decode().split(", ")
+    #     if temp.__len__() != 13:
+    #         return self.output
+    #     data2 = np.array(temp, dtype=float)
+        
+    #     data = (data1 + data2)/2
+        
+    #     mag = list(map(float, data[0:3]))
+    #     gyro = list(map(float, data[3:6]))
+    #     acc = list(map(float, data[6:9]))
+    #     gps = list(map(float, data[9:12]))
+    #     time = int(data[12])
+        
+    #     mag = self.soft @ (np.array(mag) - self.hard)
+    #     acc = self.A @ (np.array(acc) - self.b)
+
+
+
+    #     self.output = [mag, gyro, acc, gps, time]
+        
+    #     return self.output
+
+    def complimentary(self, start, end, initF=False):
         def init():
+            Z = self.getValues()
             #Use North Direction, Starting Point, and Target Point to Find Trajectory
-            target = (start - end)*self.COORD_TO_M
-            [self.dx, self.dy, self.dz] = start*self.COORD_TO_M
-            north = self.getNorth()
+            target = (start - end)
+            [self.dx, self.dy, self.dz] = start
+            north = self.getNorth(Z)
             #Find Initial GPS Values to Use as Origin
-            ilat, ilng, ialt = self.getValues()[3]
+            ilat, ilng, ialt = Z[3]
 
             #Returns Trajectory from Starting Point to Target
-            return [R.from_euler(np.acos('z',
+            return [R.from_euler('z',
                         np.dot(north, target)/(np.linalg.norm(north)*np.linalg.norm(north)),
-                        degrees=False)), ilat, ilng, ialt, target]
+                        degrees=False), ilat, ilng, ialt, target]
 
         def update(gain, ilat, ilng, ialt):
             self.gps = self.getValues()[3]
             clat, clng, calt = self.gps
             #Deg to Rad
-            clat *= np.pi/180
-            clng *= np.pi/180
-            calt *= np.pi/180
-            ilat *= np.pi/180
-            ilng *= np.pi/180
-            ialt *= np.pi/180
-            #Calculate Displacement
-            lat = ilat - clat
-            lng = ilng - clng
-            alt = ialt - calt
+            # clat *= np.pi/180
+            # clng *= np.pi/180
+            # ilat *= np.pi/180
+            # ilng *= np.pi/180
+            # #Calculate Displacement
+            # lat = clat - ilat
+            # lng = clng - ilng
             #Represent as XYZ Coordinates
-            x = lng * self.COORD_TO_M * np.cos(ilat)
-            y = lat * self.COORD_TO_M
-            z = alt
+            x = clng * self.COORD_TO_M
+            y = clat * self.COORD_TO_M
+            z = 20
             #Complimentary Filter
             [self.dx, self.dy, self.dz] = (np.array([x, y, z])*gain + np.array([self.dx,self.dy,self.dz]))/(gain+1)
             return [self.dx, self.dy, self.dz]
         
         #Get Initial Values
-        if(init == True):
+        if(initF == True):
             self.compInit = init()
+            print(self.compInit)
         #Transform to Face Trajectory
-        transform = self.compInit[0].inv()
+        Z = self.getValues()
         #Predict Step
-        self.odomBasic(transform=transform)
+        self.odomBasic(Z)
         #Update Step
-        update(0.02, self.compInit[1], self.compInit[2], self.compInit[3])
+        update(1, self.compInit[1], self.compInit[2], self.compInit[3])
         return np.array([[self.dx, self.dy, self.dz], [self.yaw, self.pitch, self.roll]])
     
     def kalman(self, start, end, phi=0.1): #Tracking position and velocity
@@ -186,14 +242,13 @@ class Sensors(object):
         kf.update(self.odomBasic())
 
 
-    def odomBasic(self, transform=R.from_euler('z', 0)):
-        Z = self.getValues() #Retreive Sensor Values
+    def odomBasic(self, Z):
         #Calculate Delta Time
         cT = Z[4]
         self.dT = cT - self.iT
         self.iT = cT
         #Updates Orientation inside Sensors object
-        self.gyroOrien() 
+        self.gyroOrien(Z) 
         #Get Inverse of System Orientation
         r = R.from_euler('zyx', [self.yaw,-self.pitch,-self.roll], degrees=True).inv() 
         #Assign Variables to Acceleromter Readings
@@ -201,7 +256,7 @@ class Sensors(object):
         y = Z[2][1]
         z = Z[2][2]
         #Transform System Acceleration to World Frame and Remove Gravity
-        [xA, yA, zA] = transform.apply(r.apply([x, y, z]))
+        [xA, yA, zA] = r.apply([x, y, z])
         zA -= 9.806526860225
         #Integrate State Variables
         self.dx += xA * (self.dT/1000)**2
@@ -238,9 +293,7 @@ class Sensors(object):
                               [N[1], E[1], D[1]],
                               [N[2], E[2], D[2]],]).as_euler('zyx', degrees=True)
     
-    def getNorth(self):
-        Z = self.getValues()
-        
+    def getNorth(self, Z):
         mag = Z[0]
         magNorm = mag / -np.linalg.norm(mag)
         acc = Z[2]
@@ -260,8 +313,8 @@ class Sensors(object):
         ypr = (360 + arr2 + (ratio[0] * diff / (ratio[0] + ratio[1]))) % 360 #Average
         return ypr
     
-    def gyroOrien(self):
-        Z = self.getValues() #Retreive Sensor Values
+    def gyroOrien(self, Z):
+        # Z = self.getValues()
         #Obtain Unit Vectors of Mag and Accel Measurements
         mag = Z[0] 
         magNorm = mag / -np.linalg.norm(mag)
@@ -291,7 +344,7 @@ class Sensors(object):
         self.pitch += (yg * 0.001) * dT
         self.yaw += (zg * 0.001) * dT
         #Combine Sensor Values
-        [self.yaw,self.pitch,self.roll] = self.gainAngle([49, 1],
+        [self.yaw,self.pitch,self.roll] = self.gainAngle([0, 1],
                             [self.yaw, self.pitch, self.roll],
                             [accMagOrien[0], accMagOrien[1], accMagOrien[2]])
         return [self.yaw,-self.pitch,-self.roll]

@@ -22,7 +22,6 @@ def read_serial_data(port, baud_rate, timeout):
                 
                 # Process the data (e.g., convert to JSON)
                 data = {
-                    "timestamp": time.time(),
                     "data": line
                 }
                 
