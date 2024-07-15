@@ -29,6 +29,11 @@ def path(name):
 # Models
 FACE_DETECTION_MODEL = path('ssd_mobilenet_v2_face_quant_postprocess_edgetpu.tflite')
 OBJECT_DETECTION_MODEL = path('ssd_mobilenet_v2_coco_quant_postprocess_edgetpu.tflite')
+
+#CUSTOM OBJ DETECTION
+CUSTOM_OBJECT_DETECTION_MODEL = path('model.tflite')
+
+
 CLASSIFICATION_MODEL = path('tf2_mobilenet_v2_1.0_224_ptq_edgetpu.tflite')
 CLASSIFICATION_IMPRINTING_MODEL = path('mobilenet_v1_1.0_224_l2norm_quant_edgetpu.tflite')
 MOVENET_MODEL = path('movenet_single_pose_lightning_ptq_edgetpu.tflite')
@@ -36,3 +41,4 @@ MOVENET_MODEL = path('movenet_single_pose_lightning_ptq_edgetpu.tflite')
 # Labels
 CLASSIFICATION_LABELS = path('imagenet_labels.txt')
 OBJECT_DETECTION_LABELS = path('coco_labels.txt')
+CUSTOM_OBJECT_DETECTION_LABELS = path('Road-obstacles_label_map.pbtxt')
