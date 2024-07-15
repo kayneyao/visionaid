@@ -26,7 +26,7 @@ class Sensors(object):
     b = np.array([0.047527, 0.021009, -0.071754])
     
     def __init__(self):
-        self.ser = serial.Serial('COM9', 9600, timeout=5.0)
+        self.ser = serial.Serial('COM3', 9600, timeout=5.0)
         sleep(2)
         
         self.output = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],0]
