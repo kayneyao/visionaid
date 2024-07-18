@@ -8,11 +8,11 @@ from geopy.geocoders import Nominatim
 import Sensors
 # from filterpy.kalman import KalmanFilter
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 # from numpy.linalg import norm
 # from enum import Enum
 # import asyncio
-
 
 class Navigation(object):
     COORD_TO_M = 1852
@@ -94,7 +94,7 @@ class Navigation(object):
             instructions=True,
             instructions_format='text')
 
-        with open('./routes/directions.json', 'w') as f:
+        with open('/home/sophie/visionaid/routes/directions.json', 'w') as f:
             json.dump(route.__dict__, f)
 
         return route.__dict__
@@ -163,7 +163,7 @@ class Navigation(object):
             # print(np.asin((self.target[1] - self.estimate[0][1])/(self.target[0] - self.estimate[0][0])%1)*180/np.pi)
             # print((self.estimate[1][0] - 180)*2)
             # print(self.target - self.estimate[0])
-            print(self.guide(np.asin((self.target[1] - self.estimate[0][1])/(self.target[0] - self.estimate[0][0])%1)*180/np.pi  - (self.estimate[1][0] - 180)*2, self.target - self.estimate[0]))
+            print(self.guide(np.arcsin((self.target[1] - self.estimate[0][1])/(self.target[0] - self.estimate[0][0])%1)*180/np.pi  - (self.estimate[1][0] - 180)*2, self.target - self.estimate[0]))
             # print(np.linalg.norm(target - self.estimate[0][:2] - start))
 
             while np.linalg.norm(self.target - self.estimate[0]) > 0.4:

@@ -1,7 +1,5 @@
 import sys
 sys.path.insert(0, 'aiy-maker-kit/examples')
-import detect_objects
-from num2words import num2words
 from subprocess import call
 import time
 

@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as anim
 import numpy as np
 from scipy.spatial.transform import Rotation as R
-from filterpy.kalman import KalmanFilter
-from filterpy.common import Q_discrete_white_noise
+# from filterpy.kalman import KalmanFilter
+# from filterpy.common import Q_discrete_white_noise
 from scipy.linalg import expm, block_diag
 import json
 # import RPi.GPIO as GPIO
@@ -27,7 +27,7 @@ class Sensors(object):
     b = np.array([0.047527, 0.021009, -0.071754])
     
     def __init__(self):
-        self.ser = serial.Serial('COM3', 9600, timeout=5.0)
+        self.ser = serial.Serial('/dev/ttyACM0', 9600, timeout=5.0)
         sleep(2)
         
         self.output = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],0]
@@ -49,7 +49,7 @@ class Sensors(object):
 
         self.compInit = [R.from_euler('Z', 0, degrees=True), 0, 0, 0, np.empty((1, 2))]
 
-        self.saved_data = open('./data/serial_data2.txt', 'r').readlines()
+        self.saved_data = open('/home/sophie/visionaid/data/serial_data2.txt', 'r').readlines()
 
         # self.saved_data.pop(0)        
         # print(self.saved_data[0].split(", "))
@@ -186,60 +186,60 @@ class Sensors(object):
         update(1, self.compInit[1], self.compInit[2], self.compInit[3])
         return np.array([[self.dx, self.dy, self.dz], [self.yaw, self.pitch, self.roll]])
     
-    def kalman(self, start, end, phi=0.1): #Tracking position and velocity
-        ilat, ilng, ialt = self.getValues()[3]
-
-        dT = self.dT
-        filter = KalmanFilter(dim_x=9, dim_z=3)
-        filter.F = np.array([[1, 0, 0, dT, 0, 0, d2T, 0,   0],
-                                [0, 1, 0, 0,  dT,0, 0,   d2T, 0],
-                                [0, 0, 1, 0,  0, dT,0,   0,   d2T],
-                                [0, 0, 0, 1,  0, 0, dT,  0,   0],
-                                [0, 0, 0, 0,  1, 0, 0,   dT,  0],
-                                [0, 0, 0, 0,  0, 1, 0,   0,   dT],
-                                [0, 0, 0, 0,  0, 0, 1,   0,   0],
-                                [0, 0, 0, 0,  0, 0, 0,   1,   0],
-                                [0, 0, 0, 0,  0, 0, 0,   0,   1]])
-        
-        q = Q_discrete_white_noise(dim=3, dt=dT, var=phi)
-        filter.R = np.array([5, 0, 0],
-                            [0, 5, 0],
-                            [0, 0, 5]).T
-        
-        filter.P = np.eye(9)*100
-
-        filter.Q = block_diag(q, q, q)
-
-        filter.H = np.array([[d2T, 0,   0,   dT, 0, 0, 1, 0, 0], #x
-                             [0,   d2T, 0,   0, dT, 0, 0, 1, 0], #y
-                             [0,   0,   d2T, 0, 0, dT, 0, 0, 1]])#z
-        
-        filter.x = [[0, 0, 0, 0]]
-        
-        def update(ilat, ilng, R):
-
-            clat, clng, calt = self.getValues()[3]
-            # Convert degrees to radians
-            clat *= np.pi/180
-            clng *= np.pi/180
-
-            ilat *= np.pi/180
-            ilng *= np.pi/180
-            
-            # Calculate differences
-            lat = ilat - clat
-            lng = ilng - clng
-            
-            # Calculate x and y
-            x = lng * R * np.cos(ilat)
-            y = lat * R
-
-            kf.update(x, y)
-        
-        kf = init()
-
-        kf.predict()
-        kf.update(self.odomBasic())
+#     def kalman(self, start, end, phi=0.1): #Tracking position and velocity
+#         ilat, ilng, ialt = self.getValues()[3]
+# 
+#         dT = self.dT
+#         filter = KalmanFilter(dim_x=9, dim_z=3)
+#         filter.F = np.array([[1, 0, 0, dT, 0, 0, d2T, 0,   0],
+#                                 [0, 1, 0, 0,  dT,0, 0,   d2T, 0],
+#                                 [0, 0, 1, 0,  0, dT,0,   0,   d2T],
+#                                 [0, 0, 0, 1,  0, 0, dT,  0,   0],
+#                                 [0, 0, 0, 0,  1, 0, 0,   dT,  0],
+#                                 [0, 0, 0, 0,  0, 1, 0,   0,   dT],
+#                                 [0, 0, 0, 0,  0, 0, 1,   0,   0],
+#                                 [0, 0, 0, 0,  0, 0, 0,   1,   0],
+#                                 [0, 0, 0, 0,  0, 0, 0,   0,   1]])
+#         
+#         q = Q_discrete_white_noise(dim=3, dt=dT, var=phi)
+#         filter.R = np.array([5, 0, 0],
+#                             [0, 5, 0],
+#                             [0, 0, 5]).T
+#         
+#         filter.P = np.eye(9)*100
+# 
+#         filter.Q = block_diag(q, q, q)
+# 
+#         filter.H = np.array([[d2T, 0,   0,   dT, 0, 0, 1, 0, 0], #x
+#                              [0,   d2T, 0,   0, dT, 0, 0, 1, 0], #y
+#                              [0,   0,   d2T, 0, 0, dT, 0, 0, 1]])#z
+#         
+#         filter.x = [[0, 0, 0, 0]]
+#         
+#         def update(ilat, ilng, R):
+# 
+#             clat, clng, calt = self.getValues()[3]
+#             # Convert degrees to radians
+#             clat *= np.pi/180
+#             clng *= np.pi/180
+# 
+#             ilat *= np.pi/180
+#             ilng *= np.pi/180
+#             
+#             # Calculate differences
+#             lat = ilat - clat
+#             lng = ilng - clng
+#             
+#             # Calculate x and y
+#             x = lng * R * np.cos(ilat)
+#             y = lat * R
+# 
+#             kf.update(x, y)
+#         
+#         kf = init()
+# 
+#         kf.predict()
+#         kf.update(self.odomBasic())
 
 
     def odomBasic(self, Z):

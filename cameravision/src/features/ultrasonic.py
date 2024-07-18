@@ -5,11 +5,11 @@ import time
 GPIO.setmode(GPIO.BCM)
 #     GPIO.setwarnings(False)
 
-PIN_TRIGGER1 = 23
-PIN_ECHO1 = 24
+PIN_TRIGGER1 = 24
+PIN_ECHO1 = 23
 
-PIN_TRIGGER2 = 6
-PIN_ECHO2 = 5
+PIN_TRIGGER2 = 14
+PIN_ECHO2 = 15
 
 def Ldistance():
 
@@ -30,19 +30,21 @@ def Ldistance():
     time.sleep(0.0001)
 
     GPIO.output(PIN_TRIGGER1, GPIO.LOW)
+    
 
     
     while GPIO.input(PIN_ECHO1)==0:
         pulse_start_time = time.time()
         
-        
     while GPIO.input(PIN_ECHO1)==1:
         pulse_end_time = time.time()
-            
-
+        
+    
     pulse_duration = pulse_end_time - pulse_start_time
     distance = round(pulse_duration * 17150, 2)
     return distance
+        
+    
 
   
 def Rdistance():
@@ -67,16 +69,14 @@ def Rdistance():
     
     while GPIO.input(PIN_ECHO2)==0:
         pulse_start_time = time.time()
-        
-        
-    while GPIO.input(PIN_ECHO2)==1:
+    while GPIO.input(PIN_ECHO2):
         pulse_end_time = time.time()
-            
-
+        
     pulse_duration = pulse_end_time - pulse_start_time
     distance = round(pulse_duration * 17150, 2)
     return distance
 
-# 
-# Ldistance()
-# Rdistance()
+#
+while 1:
+    print('left', Ldistance(), 'right', Rdistance())
+    
