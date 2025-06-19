@@ -1,0 +1,349 @@
+[0.006s] Invoking command in '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces
+[0.016s] -- Found ament_cmake_auto: 1.3.11 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.118s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.165s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.166s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.185s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.201s] -- Loading isaac_ros_common extras
+[0.201s] -- CMAKE_BUILD_TYPE: Release
+[0.215s] -- Looking for pthread.h
+[0.300s] -- Looking for pthread.h - found
+[0.300s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.377s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.378s] -- Found Threads: TRUE  
+[0.389s] -- Found CUDA: /usr/local/cuda (found version "12.9") 
+[0.390s] -- CUDA architectures: 89;86;80;75;70
+[0.390s] -- Loading isaac_ros_common extras (modules)
+[0.437s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.439s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.520s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.543s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.580s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.814s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[0.999s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.226s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.249s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[1.250s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.274s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[1.274s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.274s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.274s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.290s] -- Found PythonExtra: .so  
+[1.334s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.390s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.391s] -- Added test 'lint_cmake' to check CMake code style
+[1.392s] -- Added test 'xmllint' to check XML markup files
+[1.394s] -- Configuring done
+[1.423s] -- Generating done
+[1.431s] -- Build files have been written to: /home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces
+[1.439s] Invoked command in '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces
+[1.440s] Invoking command in '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces -- -j28 -l28
+[1.478s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.485s] [  2%] [34m[1mGenerating version information as YAML[0m
+[1.487s] [  4%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.491s] [  4%] Built target ament_cmake_python_symlink_isaac_ros_visual_slam_interfaces
+[1.540s] [  4%] Built target generate_version_info_target_isaac_ros_visual_slam_interfaces
+[1.631s] running egg_info
+[1.632s] creating isaac_ros_visual_slam_interfaces.egg-info
+[1.632s] writing isaac_ros_visual_slam_interfaces.egg-info/PKG-INFO
+[1.632s] writing dependency_links to isaac_ros_visual_slam_interfaces.egg-info/dependency_links.txt
+[1.632s] writing top-level names to isaac_ros_visual_slam_interfaces.egg-info/top_level.txt
+[1.632s] writing manifest file 'isaac_ros_visual_slam_interfaces.egg-info/SOURCES.txt'
+[1.633s] reading manifest file 'isaac_ros_visual_slam_interfaces.egg-info/SOURCES.txt'
+[1.634s] writing manifest file 'isaac_ros_visual_slam_interfaces.egg-info/SOURCES.txt'
+[1.650s] [  4%] Built target ament_cmake_python_build_isaac_ros_visual_slam_interfaces_egg
+[1.949s] [  4%] Built target isaac_ros_visual_slam_interfaces__cpp
+[1.957s] [  5%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.957s] [  6%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.958s] [  8%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.959s] [  9%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_generator_c.dir/rosidl_generator_c/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__functions.c.o[0m
+[1.960s] [ 11%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_generator_c.dir/rosidl_generator_c/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__functions.c.o[0m
+[1.960s] [ 12%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_generator_c.dir/rosidl_generator_c/isaac_ros_visual_slam_interfaces/srv/detail/reset__functions.c.o[0m
+[1.961s] [ 13%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_generator_c.dir/rosidl_generator_c/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__functions.c.o[0m
+[1.961s] [ 15%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_generator_c.dir/rosidl_generator_c/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__functions.c.o[0m
+[1.962s] [ 16%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_generator_c.dir/rosidl_generator_c/isaac_ros_visual_slam_interfaces/srv/detail/file_path__functions.c.o[0m
+[2.067s] [ 18%] [32m[1mLinking C shared library libisaac_ros_visual_slam_interfaces__rosidl_generator_c.so[0m
+[2.100s] [ 18%] Built target isaac_ros_visual_slam_interfaces__rosidl_generator_c
+[2.109s] [ 20%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[2.109s] [ 20%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[2.109s] [ 22%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[2.316s] [ 23%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/isaac_ros_visual_slam_interfaces/srv/file_path__type_support.cpp.o[0m
+[2.316s] [ 29%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/isaac_ros_visual_slam_interfaces/msg/visual_slam_status__type_support.cpp.o[0m
+[2.316s] [ 29%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/isaac_ros_visual_slam_interfaces/srv/set_slam_pose__type_support.cpp.o[0m
+[2.316s] [ 29%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/isaac_ros_visual_slam_interfaces/srv/get_all_poses__type_support.cpp.o[0m
+[2.316s] [ 29%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/isaac_ros_visual_slam_interfaces/srv/reset__type_support.cpp.o[0m
+[2.316s] [ 30%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/isaac_ros_visual_slam_interfaces/srv/localize_in_map__type_support.cpp.o[0m
+[2.337s] [ 31%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/isaac_ros_visual_slam_interfaces/srv/detail/file_path__type_support.cpp.o[0m
+[2.338s] [ 33%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/isaac_ros_visual_slam_interfaces/srv/detail/reset__type_support.cpp.o[0m
+[2.338s] [ 36%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__type_support.cpp.o[0m
+[2.338s] [ 36%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__type_support.cpp.o[0m
+[2.338s] [ 37%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__type_support.cpp.o[0m
+[2.339s] [ 38%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__type_support.cpp.o[0m
+[2.381s] [ 40%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/isaac_ros_visual_slam_interfaces/srv/detail/dds_fastrtps/reset__type_support.cpp.o[0m
+[2.382s] [ 43%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/isaac_ros_visual_slam_interfaces/srv/detail/dds_fastrtps/set_slam_pose__type_support.cpp.o[0m
+[2.382s] [ 43%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/isaac_ros_visual_slam_interfaces/msg/detail/dds_fastrtps/visual_slam_status__type_support.cpp.o[0m
+[2.383s] [ 44%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/isaac_ros_visual_slam_interfaces/srv/detail/dds_fastrtps/get_all_poses__type_support.cpp.o[0m
+[2.383s] [ 47%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/isaac_ros_visual_slam_interfaces/srv/detail/dds_fastrtps/file_path__type_support.cpp.o[0m
+[2.383s] [ 47%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/isaac_ros_visual_slam_interfaces/srv/detail/dds_fastrtps/localize_in_map__type_support.cpp.o[0m
+[2.467s] [ 52%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/isaac_ros_visual_slam_interfaces/msg/visual_slam_status__type_support.cpp.o[0m
+[2.467s] [ 52%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/isaac_ros_visual_slam_interfaces/srv/set_slam_pose__type_support.cpp.o[0m
+[2.467s] [ 52%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/isaac_ros_visual_slam_interfaces/srv/get_all_poses__type_support.cpp.o[0m
+[2.467s] [ 52%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/isaac_ros_visual_slam_interfaces/srv/reset__type_support.cpp.o[0m
+[2.467s] [ 54%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/isaac_ros_visual_slam_interfaces/srv/file_path__type_support.cpp.o[0m
+[2.467s] [ 55%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/isaac_ros_visual_slam_interfaces/srv/localize_in_map__type_support.cpp.o[0m
+[2.512s] [ 56%] [32m[1mLinking CXX shared library libisaac_ros_visual_slam_interfaces__rosidl_typesupport_c.so[0m
+[2.553s] [ 56%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_c
+[2.569s] [ 61%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/isaac_ros_visual_slam_interfaces/srv/detail/reset__type_support_c.cpp.o[0m
+[2.569s] [ 61%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__type_support_c.cpp.o[0m
+[2.569s] [ 61%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__type_support_c.cpp.o[0m
+[2.569s] [ 62%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__type_support_c.cpp.o[0m
+[2.569s] [ 63%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__type_support_c.cpp.o[0m
+[2.569s] [ 65%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/isaac_ros_visual_slam_interfaces/srv/detail/file_path__type_support_c.cpp.o[0m
+[2.604s] [ 68%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__type_support.c.o[0m
+[2.604s] [ 68%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/isaac_ros_visual_slam_interfaces/srv/detail/reset__type_support.c.o[0m
+[2.604s] [ 69%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__type_support.c.o[0m
+[2.604s] [ 70%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/isaac_ros_visual_slam_interfaces/srv/detail/file_path__type_support.c.o[0m
+[2.604s] [ 72%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__type_support.c.o[0m
+[2.604s] [ 73%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__type_support.c.o[0m
+[2.613s] [ 75%] [32m[1mLinking CXX shared library libisaac_ros_visual_slam_interfaces__rosidl_typesupport_cpp.so[0m
+[2.654s] [ 75%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_cpp
+[2.655s] [ 76%] [32m[1mLinking C shared library libisaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c.so[0m
+[2.678s] [ 76%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c
+[2.806s] [ 77%] [32m[1mLinking CXX shared library libisaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[2.832s] [ 79%] [32m[1mLinking CXX shared library libisaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.855s] [ 79%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cpp
+[2.892s] [ 80%] [32m[1mLinking CXX shared library libisaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[2.892s] [ 80%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cpp
+[2.944s] [ 80%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c
+[2.960s] [ 80%] Built target isaac_ros_visual_slam_interfaces
+[2.977s] [ 81%] [34m[1mGenerating Python code for ROS interfaces[0m
+[3.751s] [ 81%] Built target isaac_ros_visual_slam_interfaces__py
+[3.766s] [ 83%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_generator_py.dir/rosidl_generator_py/isaac_ros_visual_slam_interfaces/msg/_visual_slam_status_s.c.o[0m
+[3.768s] [ 84%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_generator_py.dir/rosidl_generator_py/isaac_ros_visual_slam_interfaces/srv/_set_slam_pose_s.c.o[0m
+[3.768s] [ 86%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_generator_py.dir/rosidl_generator_py/isaac_ros_visual_slam_interfaces/srv/_localize_in_map_s.c.o[0m
+[3.769s] [ 87%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_generator_py.dir/rosidl_generator_py/isaac_ros_visual_slam_interfaces/srv/_get_all_poses_s.c.o[0m
+[3.769s] [ 88%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_generator_py.dir/rosidl_generator_py/isaac_ros_visual_slam_interfaces/srv/_reset_s.c.o[0m
+[3.769s] [ 90%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_generator_py.dir/rosidl_generator_py/isaac_ros_visual_slam_interfaces/srv/_file_path_s.c.o[0m
+[3.876s] [ 91%] [32m[1mLinking C shared library rosidl_generator_py/isaac_ros_visual_slam_interfaces/libisaac_ros_visual_slam_interfaces__rosidl_generator_py.so[0m
+[3.910s] [ 91%] Built target isaac_ros_visual_slam_interfaces__rosidl_generator_py
+[3.925s] [ 95%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/isaac_ros_visual_slam_interfaces/_isaac_ros_visual_slam_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[3.925s] [ 95%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/isaac_ros_visual_slam_interfaces/_isaac_ros_visual_slam_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[3.925s] [ 95%] [32mBuilding C object CMakeFiles/isaac_ros_visual_slam_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/isaac_ros_visual_slam_interfaces/_isaac_ros_visual_slam_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[4.080s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.081s] [ 98%] [32m[1mLinking C shared library rosidl_generator_py/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.081s] [100%] [32m[1mLinking C shared library rosidl_generator_py/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.112s] [100%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[4.112s] [100%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c__pyext
+[4.117s] [100%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_c__pyext
+[4.126s] Invoked command in '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces -- -j28 -l28
+[4.134s] Invoking command in '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces
+[4.139s] -- Install configuration: "Release"
+[4.139s] -- Execute custom install script
+[4.140s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/ament_index/resource_index/rosidl_interfaces/isaac_ros_visual_slam_interfaces
+[4.149s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__functions.h
+[4.157s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__struct.h
+[4.167s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__type_support.h
+[4.174s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/rosidl_generator_c__visibility_control.h
+[4.180s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/visual_slam_status.h
+[4.185s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__functions.h
+[4.192s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__struct.h
+[4.198s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__type_support.h
+[4.204s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__functions.h
+[4.210s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__struct.h
+[4.215s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__type_support.h
+[4.220s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__functions.h
+[4.226s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__struct.h
+[4.233s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__type_support.h
+[4.239s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__functions.h
+[4.245s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__struct.h
+[4.256s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__type_support.h
+[4.262s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__functions.h
+[4.268s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__struct.h
+[4.277s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__type_support.h
+[4.283s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/file_path.h
+[4.288s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/get_all_poses.h
+[4.294s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/localize_in_map.h
+[4.299s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/reset.h
+[4.305s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/set_slam_pose.h
+[4.311s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/environment/library_path.sh
+[4.317s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/environment/library_path.dsv
+[4.322s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__rosidl_typesupport_fastrtps_c.h
+[4.327s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[4.333s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__rosidl_typesupport_fastrtps_c.h
+[4.339s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__rosidl_typesupport_fastrtps_c.h
+[4.344s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__rosidl_typesupport_fastrtps_c.h
+[4.350s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__rosidl_typesupport_fastrtps_c.h
+[4.357s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__rosidl_typesupport_fastrtps_c.h
+[4.363s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__rosidl_typesupport_introspection_c.h
+[4.368s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[4.373s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__rosidl_typesupport_introspection_c.h
+[4.378s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__rosidl_typesupport_introspection_c.h
+[4.385s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__rosidl_typesupport_introspection_c.h
+[4.392s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__rosidl_typesupport_introspection_c.h
+[4.398s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__rosidl_typesupport_introspection_c.h
+[4.404s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__builder.hpp
+[4.410s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__struct.hpp
+[4.416s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__traits.hpp
+[4.423s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__type_support.hpp
+[4.429s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[4.434s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/visual_slam_status.hpp
+[4.441s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__builder.hpp
+[4.447s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__struct.hpp
+[4.452s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__traits.hpp
+[4.459s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__type_support.hpp
+[4.464s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__builder.hpp
+[4.470s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__struct.hpp
+[4.477s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__traits.hpp
+[4.483s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__type_support.hpp
+[4.490s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__builder.hpp
+[4.495s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__struct.hpp
+[4.501s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__traits.hpp
+[4.506s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__type_support.hpp
+[4.512s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__builder.hpp
+[4.517s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__struct.hpp
+[4.522s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__traits.hpp
+[4.529s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__type_support.hpp
+[4.535s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__builder.hpp
+[4.542s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__struct.hpp
+[4.549s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__traits.hpp
+[4.556s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__type_support.hpp
+[4.562s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/file_path.hpp
+[4.567s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/get_all_poses.hpp
+[4.572s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/localize_in_map.hpp
+[4.579s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/reset.hpp
+[4.584s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/set_slam_pose.hpp
+[4.590s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__rosidl_typesupport_fastrtps_cpp.hpp
+[4.595s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[4.602s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__rosidl_typesupport_fastrtps_cpp.hpp
+[4.608s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__rosidl_typesupport_fastrtps_cpp.hpp
+[4.614s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__rosidl_typesupport_fastrtps_cpp.hpp
+[4.620s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__rosidl_typesupport_fastrtps_cpp.hpp
+[4.626s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__rosidl_typesupport_fastrtps_cpp.hpp
+[4.632s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__rosidl_typesupport_introspection_cpp.hpp
+[4.637s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__rosidl_typesupport_introspection_cpp.hpp
+[4.644s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__rosidl_typesupport_introspection_cpp.hpp
+[4.653s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__rosidl_typesupport_introspection_cpp.hpp
+[4.660s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__rosidl_typesupport_introspection_cpp.hpp
+[4.667s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__rosidl_typesupport_introspection_cpp.hpp
+[4.674s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/environment/pythonpath.sh
+[4.682s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/environment/pythonpath.dsv
+[4.689s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces-3.2.5-py3.10.egg-info/PKG-INFO
+[4.694s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces-3.2.5-py3.10.egg-info/SOURCES.txt
+[4.700s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces-3.2.5-py3.10.egg-info/dependency_links.txt
+[4.706s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces-3.2.5-py3.10.egg-info/top_level.txt
+[4.713s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/__init__.py
+[4.718s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/_isaac_ros_visual_slam_interfaces_s.ep.rosidl_typesupport_c.c
+[4.724s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/_isaac_ros_visual_slam_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[4.730s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/_isaac_ros_visual_slam_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[4.735s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[4.740s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[4.746s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[4.751s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/libisaac_ros_visual_slam_interfaces__rosidl_generator_py.so
+[4.756s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/msg/__init__.py
+[4.763s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/msg/_visual_slam_status.py
+[4.770s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/msg/_visual_slam_status_s.c
+[4.777s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/__init__.py
+[4.782s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_file_path.py
+[4.788s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_file_path_s.c
+[4.793s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_get_all_poses.py
+[4.799s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_get_all_poses_s.c
+[4.805s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_localize_in_map.py
+[4.814s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_localize_in_map_s.c
+[4.822s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_reset.py
+[4.829s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_reset_s.c
+[4.835s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_set_slam_pose.py
+[4.842s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_set_slam_pose_s.c
+[4.848s] -- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[4.848s] -- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[4.848s] -- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[4.849s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/msg/VisualSlamStatus.idl
+[4.855s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/GetAllPoses.idl
+[4.862s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/Reset.idl
+[4.870s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/SetSlamPose.idl
+[4.875s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/FilePath.idl
+[4.881s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/LocalizeInMap.idl
+[4.887s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/msg/VisualSlamStatus.msg
+[4.892s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/GetAllPoses.srv
+[4.897s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/GetAllPoses_Request.msg
+[4.902s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/GetAllPoses_Response.msg
+[4.907s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/Reset.srv
+[4.914s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/Reset_Request.msg
+[4.920s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/Reset_Response.msg
+[4.926s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/SetSlamPose.srv
+[4.932s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/SetSlamPose_Request.msg
+[4.940s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/SetSlamPose_Response.msg
+[4.947s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/FilePath.srv
+[4.954s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/FilePath_Request.msg
+[4.960s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/FilePath_Response.msg
+[4.965s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/LocalizeInMap.srv
+[4.971s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/LocalizeInMap_Request.msg
+[4.976s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/LocalizeInMap_Response.msg
+[4.982s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/version_info.yaml
+[4.988s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/ament_index/resource_index/package_run_dependencies/isaac_ros_visual_slam_interfaces
+[4.993s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/ament_index/resource_index/parent_prefix_path/isaac_ros_visual_slam_interfaces
+[4.998s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/environment/ament_prefix_path.sh
+[5.003s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/environment/ament_prefix_path.dsv
+[5.010s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/environment/path.sh
+[5.016s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/environment/path.dsv
+[5.021s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/local_setup.bash
+[5.028s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/local_setup.sh
+[5.034s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/local_setup.zsh
+[5.042s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/local_setup.dsv
+[5.048s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/package.dsv
+[5.054s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/ament_index/resource_index/packages/isaac_ros_visual_slam_interfaces
+[5.060s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/rosidl_cmake-extras.cmake
+[5.066s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[5.072s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[5.078s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[5.085s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[5.092s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[5.099s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[5.105s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfacesConfig.cmake
+[5.110s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfacesConfig-version.cmake
+[5.116s] -- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/package.xml
+[5.123s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_generator_c.so
+[5.123s] -- Set runtime path of "/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_generator_c.so" to ""
+[5.123s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c.so
+[5.123s] -- Set runtime path of "/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[5.123s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c.so
+[5.123s] -- Set runtime path of "/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[5.123s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_c.so
+[5.123s] -- Set runtime path of "/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_c.so" to ""
+[5.123s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[5.124s] -- Set runtime path of "/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[5.124s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cpp.so
+[5.124s] -- Set runtime path of "/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[5.124s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_cpp.so
+[5.124s] -- Set runtime path of "/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_cpp.so" to ""
+[5.153s] Listing '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces'...
+[5.153s] Compiling '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/__init__.py'...
+[5.153s] Listing '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/msg'...
+[5.153s] Compiling '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/msg/__init__.py'...
+[5.153s] Compiling '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/msg/_visual_slam_status.py'...
+[5.153s] Listing '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv'...
+[5.153s] Compiling '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/__init__.py'...
+[5.153s] Compiling '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_file_path.py'...
+[5.153s] Compiling '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_get_all_poses.py'...
+[5.153s] Compiling '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_localize_in_map.py'...
+[5.153s] Compiling '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_reset.py'...
+[5.153s] Compiling '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_set_slam_pose.py'...
+[5.155s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_generator_py.so
+[5.156s] -- Set runtime path of "/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_generator_py.so" to ""
+[5.156s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_generator_cExport.cmake
+[5.156s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_generator_cExport-release.cmake
+[5.156s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[5.156s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cExport-release.cmake
+[5.156s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[5.156s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cExport-release.cmake
+[5.156s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfaces__rosidl_typesupport_cExport.cmake
+[5.156s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfaces__rosidl_typesupport_cExport-release.cmake
+[5.156s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_generator_cppExport.cmake
+[5.156s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[5.156s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cppExport-release.cmake
+[5.156s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[5.156s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cppExport-release.cmake
+[5.157s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfaces__rosidl_typesupport_cppExport.cmake
+[5.157s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfaces__rosidl_typesupport_cppExport-release.cmake
+[5.157s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_generator_pyExport.cmake
+[5.157s] -- Installing: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_generator_pyExport-release.cmake
+[5.158s] Invoked command in '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces

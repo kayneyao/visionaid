@@ -1,0 +1,242 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-46a3607889551e6eee3e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				},
+				{
+					"build" : "isaac_ros_visual_slam_interfaces__py",
+					"jsonFile" : "directory-isaac_ros_visual_slam_interfaces__py-Release-0635f16ec039790523b2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces__py",
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "isaac_ros_visual_slam_interfaces",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_isaac_ros_visual_slam_interfaces_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_isaac_ros_visual_slam_interfaces_egg-Release-314a8653d986af51c128.json",
+					"name" : "ament_cmake_python_build_isaac_ros_visual_slam_interfaces_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_isaac_ros_visual_slam_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_isaac_ros_visual_slam_interfaces-Release-20f3433eb7341dc29776.json",
+					"name" : "ament_cmake_python_symlink_isaac_ros_visual_slam_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_version_info_target_isaac_ros_visual_slam_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_version_info_target_isaac_ros_visual_slam_interfaces-Release-8b41a819a6cd05761080.json",
+					"name" : "generate_version_info_target_isaac_ros_visual_slam_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_visual_slam_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_visual_slam_interfaces-Release-0ba729cc85e4e3e9a6db.json",
+					"name" : "isaac_ros_visual_slam_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_visual_slam_interfaces__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_visual_slam_interfaces__cpp-Release-675be43339aa19eda9f7.json",
+					"name" : "isaac_ros_visual_slam_interfaces__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "isaac_ros_visual_slam_interfaces__py::@4ed0993bf2042a134941",
+					"jsonFile" : "target-isaac_ros_visual_slam_interfaces__py-Release-2a52eaf031ae333438d1.json",
+					"name" : "isaac_ros_visual_slam_interfaces__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_visual_slam_interfaces__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_visual_slam_interfaces__rosidl_generator_c-Release-ba78400e9d2211ee857e.json",
+					"name" : "isaac_ros_visual_slam_interfaces__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_visual_slam_interfaces__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_visual_slam_interfaces__rosidl_generator_py-Release-24356e2c1671ea11ce65.json",
+					"name" : "isaac_ros_visual_slam_interfaces__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_visual_slam_interfaces__rosidl_typesupport_c-Release-326d240380d979d75ff5.json",
+					"name" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_visual_slam_interfaces__rosidl_typesupport_c__pyext-Release-0c0caae3ec49ac853472.json",
+					"name" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_visual_slam_interfaces__rosidl_typesupport_cpp-Release-45c5ce904686914246ce.json",
+					"name" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c-Release-5108338d37a6464254df.json",
+					"name" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c__pyext-Release-d5a5af8662b5b49b47fe.json",
+					"name" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cpp-Release-174fc3c16aaba53f02b2.json",
+					"name" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c-Release-a58f91add86a304defda.json",
+					"name" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c__pyext-Release-fa9bbede0c6982d57a32.json",
+					"name" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cpp-Release-61db46c72ccdb620e887.json",
+					"name" : "isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_visual_slam_interfaces_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_visual_slam_interfaces_uninstall-Release-41a7db2efe9e6901153f.json",
+					"name" : "isaac_ros_visual_slam_interfaces_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-dc253478c9f55d5bd33e.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces",
+		"source" : "/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam_interfaces"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

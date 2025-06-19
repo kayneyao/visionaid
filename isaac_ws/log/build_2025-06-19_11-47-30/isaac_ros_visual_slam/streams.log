@@ -1,0 +1,157 @@
+[0.007s] Invoking command in '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam': AMENT_PREFIX_PATH=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam
+[0.052s] -- The C compiler identification is GNU 11.4.0
+[0.096s] -- The CXX compiler identification is GNU 11.4.0
+[0.101s] -- Detecting C compiler ABI info
+[0.150s] -- Detecting C compiler ABI info - done
+[0.156s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.157s] -- Detecting C compile features
+[0.157s] -- Detecting C compile features - done
+[0.159s] -- Detecting CXX compiler ABI info
+[0.218s] -- Detecting CXX compiler ABI info - done
+[0.223s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.223s] -- Detecting CXX compile features
+[0.223s] -- Detecting CXX compile features - done
+[0.225s] -- Architecture: x86_64
+[0.346s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread 
+[0.349s] -- Found ament_cmake_auto: 1.3.11 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.453s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.496s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.555s] -- Loading isaac_ros_common extras
+[0.555s] -- CMAKE_BUILD_TYPE: Release
+[0.568s] -- Found Threads: TRUE  
+[0.582s] -- Found CUDA: /usr/local/cuda (found version "12.9") 
+[0.582s] -- CUDA architectures: 89;86;80;75;70
+[0.582s] -- Loading isaac_ros_common extras (modules)
+[0.604s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.606s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.611s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.619s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.629s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.655s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.656s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.720s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.737s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.765s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.847s] -- Loading isaac_ros_gxf extras
+[0.956s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.958s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[0.958s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.063s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.090s] -- Found launch_testing_ament_cmake: 1.0.9 (/opt/ros/humble/share/launch_testing_ament_cmake/cmake)
+[1.091s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.109s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[1.112s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[1.112s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.112s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.112s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.129s] -- Found PythonExtra: .so  
+[1.132s] -- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[1.178s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.180s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.180s] -- Configured cppcheck include dirs: /home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include;$<BUILD_INTERFACE:/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include>
+[1.180s] -- Configured cppcheck exclude dirs and/or files: 
+[1.182s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.182s] -- Configured cpplint exclude dirs and/or files: 
+[1.182s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.183s] -- Added test 'lint_cmake' to check CMake code style
+[1.183s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.184s] -- Added test 'uncrustify' to check C / C++ code style
+[1.184s] -- Configured uncrustify additional arguments: 
+[1.185s] -- Added test 'xmllint' to check XML markup files
+[1.186s] -- Configuring done
+[1.240s] -- Generating done
+[1.247s] -- Build files have been written to: /home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam
+[1.256s] Invoked command in '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam' returned '0': AMENT_PREFIX_PATH=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam
+[1.258s] Invoking command in '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam': AMENT_PREFIX_PATH=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam -- -j28 -l28
+[1.297s] [  5%] [32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/visual_slam_node.cpp.o[0m
+[1.297s] [ 11%] [32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/landmarks_vis_helper.cpp.o[0m
+[1.298s] [ 16%] [34m[1mGenerating version information as YAML[0m
+[1.298s] [ 22%] [32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/posegraph_vis_helper.cpp.o[0m
+[1.298s] [ 33%] [32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/visual_slam_impl.cpp.o[0m
+[1.298s] [ 33%] [32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o[0m
+[1.299s] [ 38%] [32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o[0m
+[1.299s] [ 44%] [32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/viz_helper.cpp.o[0m
+[1.299s] [ 50%] [32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/cuvslam_ros_conversion.cpp.o[0m
+[1.299s] [ 55%] [32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/localizer_vis_helper.cpp.o[0m
+[1.300s] [ 61%] [32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/pose_cache.cpp.o[0m
+[1.364s] [ 61%] Built target generate_version_info_target_isaac_ros_visual_slam
+[1.615s] In file included from [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image.hpp:28[m[K,
+[1.615s]                  from [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image_view.hpp:31[m[K,
+[1.615s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/types.hpp:28[m[K,
+[1.615s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/viz_helper.hpp:27[m[K,
+[1.615s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/landmarks_vis_helper.hpp:24[m[K,
+[1.615s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/src/impl/landmarks_vis_helper.cpp:24[m[K:
+[1.615s] [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image_details.hpp:32:10:[m[K [01;31m[Kfatal error: [m[Kvpi/Image.h: No such file or directory
+[1.615s]    32 | #include [01;31m[K"vpi/Image.h"[m[K
+[1.615s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[1.615s] compilation terminated.
+[1.618s] gmake[2]: *** [CMakeFiles/visual_slam_node.dir/build.make:104: CMakeFiles/visual_slam_node.dir/src/impl/landmarks_vis_helper.cpp.o] Error 1
+[1.618s] gmake[2]: *** Waiting for unfinished jobs....
+[1.621s] In file included from [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image.hpp:28[m[K,
+[1.621s]                  from [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image_view.hpp:31[m[K,
+[1.621s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/types.hpp:28[m[K,
+[1.621s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/viz_helper.hpp:27[m[K,
+[1.621s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/src/impl/viz_helper.cpp:20[m[K:
+[1.621s] [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image_details.hpp:32:10:[m[K [01;31m[Kfatal error: [m[Kvpi/Image.h: No such file or directory
+[1.621s]    32 | #include [01;31m[K"vpi/Image.h"[m[K
+[1.621s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[1.621s] compilation terminated.
+[1.623s] gmake[2]: *** [CMakeFiles/visual_slam_node.dir/build.make:174: CMakeFiles/visual_slam_node.dir/src/impl/viz_helper.cpp.o] Error 1
+[1.651s] In file included from [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image.hpp:28[m[K,
+[1.651s]                  from [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image_view.hpp:31[m[K,
+[1.651s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/types.hpp:28[m[K,
+[1.651s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/cuvslam_ros_conversion.hpp:25[m[K,
+[1.651s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/src/impl/posegraph_vis_helper.cpp:23[m[K:
+[1.651s] [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image_details.hpp:32:10:[m[K [01;31m[Kfatal error: [m[Kvpi/Image.h: No such file or directory
+[1.651s]    32 | #include [01;31m[K"vpi/Image.h"[m[K
+[1.651s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[1.651s] compilation terminated.
+[1.654s] gmake[2]: *** [CMakeFiles/visual_slam_node.dir/build.make:146: CMakeFiles/visual_slam_node.dir/src/impl/posegraph_vis_helper.cpp.o] Error 1
+[1.672s] In file included from [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image.hpp:28[m[K,
+[1.672s]                  from [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image_view.hpp:31[m[K,
+[1.672s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/types.hpp:28[m[K,
+[1.672s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include/isaac_ros_visual_slam/visual_slam_node.hpp:26[m[K,
+[1.672s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/src/visual_slam_node.cpp:27[m[K:
+[1.672s] [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image_details.hpp:32:10:[m[K [01;31m[Kfatal error: [m[Kvpi/Image.h: No such file or directory
+[1.672s]    32 | #include [01;31m[K"vpi/Image.h"[m[K
+[1.672s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[1.672s] compilation terminated.
+[1.674s] gmake[2]: *** [CMakeFiles/visual_slam_node.dir/build.make:76: CMakeFiles/visual_slam_node.dir/src/visual_slam_node.cpp.o] Error 1
+[1.700s] In file included from [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image.hpp:28[m[K,
+[1.700s]                  from [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image_view.hpp:31[m[K,
+[1.700s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/types.hpp:28[m[K,
+[1.700s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/cuvslam_ros_conversion.hpp:25[m[K,
+[1.700s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/src/impl/localizer_vis_helper.cpp:22[m[K:
+[1.700s] [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image_details.hpp:32:10:[m[K [01;31m[Kfatal error: [m[Kvpi/Image.h: No such file or directory
+[1.700s]    32 | #include [01;31m[K"vpi/Image.h"[m[K
+[1.700s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[1.700s] compilation terminated.
+[1.702s] gmake[2]: *** [CMakeFiles/visual_slam_node.dir/build.make:118: CMakeFiles/visual_slam_node.dir/src/impl/localizer_vis_helper.cpp.o] Error 1
+[1.711s] In file included from [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image.hpp:28[m[K,
+[1.712s]                  from [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image_view.hpp:31[m[K,
+[1.712s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/types.hpp:28[m[K,
+[1.712s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/cuvslam_ros_conversion.hpp:25[m[K,
+[1.712s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/src/impl/visual_slam_impl.cpp:27[m[K:
+[1.712s] [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image_details.hpp:32:10:[m[K [01;31m[Kfatal error: [m[Kvpi/Image.h: No such file or directory
+[1.712s]    32 | #include [01;31m[K"vpi/Image.h"[m[K
+[1.712s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[1.712s] compilation terminated.
+[1.713s] In file included from [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image.hpp:28[m[K,
+[1.713s]                  from [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image_view.hpp:31[m[K,
+[1.713s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/types.hpp:28[m[K,
+[1.713s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/cuvslam_ros_conversion.hpp:25[m[K,
+[1.713s]                  from [01m[K/home/kanye/Documents/visionaid/isaac_ws/src/isaac_ros_visual_slam/isaac_ros_visual_slam/src/impl/cuvslam_ros_conversion.cpp:19[m[K:
+[1.713s] [01m[K/opt/ros/humble/include/isaac_ros_nitros_image_type/nitros_image_details.hpp:32:10:[m[K [01;31m[Kfatal error: [m[Kvpi/Image.h: No such file or directory
+[1.713s]    32 | #include [01;31m[K"vpi/Image.h"[m[K
+[1.713s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[1.713s] compilation terminated.
+[1.714s] gmake[2]: *** [CMakeFiles/visual_slam_node.dir/build.make:160: CMakeFiles/visual_slam_node.dir/src/impl/visual_slam_impl.cpp.o] Error 1
+[1.716s] gmake[2]: *** [CMakeFiles/visual_slam_node.dir/build.make:90: CMakeFiles/visual_slam_node.dir/src/impl/cuvslam_ros_conversion.cpp.o] Error 1
+[1.716s] gmake[1]: *** [CMakeFiles/Makefile2:161: CMakeFiles/visual_slam_node.dir/all] Error 2
+[1.716s] gmake[1]: *** Waiting for unfinished jobs....
+[1.867s] [ 66%] [32m[1mLinking CXX static library libgtest_main.a[0m
+[1.893s] [ 66%] Built target gtest_main
+[6.124s] [ 72%] [32m[1mLinking CXX static library libgtest.a[0m
+[6.160s] [ 72%] Built target gtest
+[6.161s] gmake: *** [Makefile:146: all] Error 2
+[6.165s] Invoked command in '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam' returned '2': AMENT_PREFIX_PATH=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam -- -j28 -l28

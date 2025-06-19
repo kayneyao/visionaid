@@ -1,0 +1,678 @@
+[0.000000] (-) TimerEvent: {}
+[0.000329] (isaac_ros_visual_slam_interfaces) JobQueued: {'identifier': 'isaac_ros_visual_slam_interfaces', 'dependencies': OrderedDict()}
+[0.000370] (isaac_ros_visual_slam) JobQueued: {'identifier': 'isaac_ros_visual_slam', 'dependencies': OrderedDict([('isaac_ros_visual_slam_interfaces', '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces')])}
+[0.000794] (isaac_ros_visual_slam_interfaces) JobStarted: {'identifier': 'isaac_ros_visual_slam_interfaces'}
+[0.006390] (isaac_ros_visual_slam_interfaces) JobProgress: {'identifier': 'isaac_ros_visual_slam_interfaces', 'progress': 'cmake'}
+[0.007945] (isaac_ros_visual_slam_interfaces) JobProgress: {'identifier': 'isaac_ros_visual_slam_interfaces', 'progress': 'build'}
+[0.007986] (isaac_ros_visual_slam_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces', '--', '-j28', '-l28'], 'cwd': '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'kanye'), ('LC_TIME', 'lzh_TW'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/kanye'), ('OLDPWD', '/home/kanye/Documents/visionaid/isaac_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'lzh_TW'), ('SYSTEMD_EXEC_PID', '2259'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'kanye'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'kanye'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/kanye-Ubuntu16:@/tmp/.ICE-unix/2229,unix/kanye-Ubuntu16:/tmp/.ICE-unix/2229'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'lzh_TW'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/21c8016d_e2d1_416f_86e1_47d2e95f3297'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'lzh_TW'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.Q1BL82'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.113'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'lzh_TW'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'lzh_TW'), ('LC_IDENTIFICATION', 'lzh_TW'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'lzh_TW'), ('LC_PAPER', 'lzh_TW'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.056708] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target isaac_ros_visual_slam_interfaces__rosidl_generator_c\x1b[0m\n'}
+[0.064767] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[  1%] Built target isaac_ros_visual_slam_interfaces__cpp\n'}
+[0.064867] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[  2%] Built target generate_version_info_target_isaac_ros_visual_slam_interfaces\n'}
+[0.071387] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[ 13%] Built target isaac_ros_visual_slam_interfaces__rosidl_generator_c\n'}
+[0.075863] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[ 13%] Built target ament_cmake_python_symlink_isaac_ros_visual_slam_interfaces\n'}
+[0.077346] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[0.078060] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target isaac_ros_visual_slam_interfaces__rosidl_typesupport_cpp\x1b[0m\n'}
+[0.079726] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[0.082406] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[0.084049] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target isaac_ros_visual_slam_interfaces__rosidl_typesupport_c\x1b[0m\n'}
+[0.085168] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[0.091051] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[ 25%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[0.091233] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[ 36%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_cpp\n'}
+[0.092543] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[ 47%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c\n'}
+[0.092729] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[ 58%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[0.093928] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[ 69%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_c\n'}
+[0.099013] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[ 80%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[0.099996] (-) TimerEvent: {}
+[0.113077] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[ 80%] Built target isaac_ros_visual_slam_interfaces\n'}
+[0.130086] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[ 81%] Built target isaac_ros_visual_slam_interfaces__py\n'}
+[0.138606] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target isaac_ros_visual_slam_interfaces__rosidl_generator_py\x1b[0m\n'}
+[0.148990] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[ 91%] Built target isaac_ros_visual_slam_interfaces__rosidl_generator_py\n'}
+[0.156069] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[0.156291] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[0.157642] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target isaac_ros_visual_slam_interfaces__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[0.165011] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[ 94%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.165987] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[ 97%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_c__pyext\n'}
+[0.166286] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[100%] Built target isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[0.200118] (-) TimerEvent: {}
+[0.234220] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[0.234926] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'writing isaac_ros_visual_slam_interfaces.egg-info/PKG-INFO\n'}
+[0.235153] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'writing dependency_links to isaac_ros_visual_slam_interfaces.egg-info/dependency_links.txt\n'}
+[0.235223] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'writing top-level names to isaac_ros_visual_slam_interfaces.egg-info/top_level.txt\n'}
+[0.236680] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b"reading manifest file 'isaac_ros_visual_slam_interfaces.egg-info/SOURCES.txt'\n"}
+[0.237156] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b"writing manifest file 'isaac_ros_visual_slam_interfaces.egg-info/SOURCES.txt'\n"}
+[0.257388] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_isaac_ros_visual_slam_interfaces_egg\n'}
+[0.267638] (isaac_ros_visual_slam_interfaces) CommandEnded: {'returncode': 0}
+[0.268546] (isaac_ros_visual_slam_interfaces) JobProgress: {'identifier': 'isaac_ros_visual_slam_interfaces', 'progress': 'install'}
+[0.279710] (isaac_ros_visual_slam_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces'], 'cwd': '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'kanye'), ('LC_TIME', 'lzh_TW'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/kanye'), ('OLDPWD', '/home/kanye/Documents/visionaid/isaac_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'lzh_TW'), ('SYSTEMD_EXEC_PID', '2259'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'kanye'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'kanye'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/kanye-Ubuntu16:@/tmp/.ICE-unix/2229,unix/kanye-Ubuntu16:/tmp/.ICE-unix/2229'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'lzh_TW'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/21c8016d_e2d1_416f_86e1_47d2e95f3297'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'lzh_TW'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.Q1BL82'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.113'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'lzh_TW'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'lzh_TW'), ('LC_IDENTIFICATION', 'lzh_TW'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'lzh_TW'), ('LC_PAPER', 'lzh_TW'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.287402] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[0.288336] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[0.288518] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/ament_index/resource_index/rosidl_interfaces/isaac_ros_visual_slam_interfaces\n'}
+[0.289363] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__functions.h\n'}
+[0.289561] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__struct.h\n'}
+[0.289715] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__type_support.h\n'}
+[0.289824] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[0.289967] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/visual_slam_status.h\n'}
+[0.290109] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__functions.h\n'}
+[0.290247] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__struct.h\n'}
+[0.290380] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__type_support.h\n'}
+[0.290512] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__functions.h\n'}
+[0.290635] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__struct.h\n'}
+[0.290786] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__type_support.h\n'}
+[0.290945] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__functions.h\n'}
+[0.291102] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__struct.h\n'}
+[0.291254] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__type_support.h\n'}
+[0.291406] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__functions.h\n'}
+[0.291563] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__struct.h\n'}
+[0.291715] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__type_support.h\n'}
+[0.291875] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__functions.h\n'}
+[0.292029] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__struct.h\n'}
+[0.292179] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__type_support.h\n'}
+[0.292337] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/file_path.h\n'}
+[0.292489] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/get_all_poses.h\n'}
+[0.292639] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/localize_in_map.h\n'}
+[0.292797] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/reset.h\n'}
+[0.292944] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/set_slam_pose.h\n'}
+[0.293173] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/environment/library_path.sh\n'}
+[0.293382] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/environment/library_path.dsv\n'}
+[0.294039] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__rosidl_typesupport_fastrtps_c.h\n'}
+[0.294205] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[0.294364] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__rosidl_typesupport_fastrtps_c.h\n'}
+[0.294517] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__rosidl_typesupport_fastrtps_c.h\n'}
+[0.294665] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__rosidl_typesupport_fastrtps_c.h\n'}
+[0.294813] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__rosidl_typesupport_fastrtps_c.h\n'}
+[0.294957] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__rosidl_typesupport_fastrtps_c.h\n'}
+[0.295396] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__rosidl_typesupport_introspection_c.h\n'}
+[0.295541] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[0.295666] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__rosidl_typesupport_introspection_c.h\n'}
+[0.295787] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__rosidl_typesupport_introspection_c.h\n'}
+[0.295914] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__rosidl_typesupport_introspection_c.h\n'}
+[0.296040] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__rosidl_typesupport_introspection_c.h\n'}
+[0.296166] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__rosidl_typesupport_introspection_c.h\n'}
+[0.296721] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__builder.hpp\n'}
+[0.296832] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__struct.hpp\n'}
+[0.296925] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__traits.hpp\n'}
+[0.297016] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__type_support.hpp\n'}
+[0.297128] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[0.297233] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/visual_slam_status.hpp\n'}
+[0.297342] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__builder.hpp\n'}
+[0.297450] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__struct.hpp\n'}
+[0.297556] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__traits.hpp\n'}
+[0.297664] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__type_support.hpp\n'}
+[0.297770] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__builder.hpp\n'}
+[0.297883] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__struct.hpp\n'}
+[0.297990] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__traits.hpp\n'}
+[0.298091] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__type_support.hpp\n'}
+[0.298185] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__builder.hpp\n'}
+[0.298277] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__struct.hpp\n'}
+[0.298371] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__traits.hpp\n'}
+[0.298466] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__type_support.hpp\n'}
+[0.298564] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__builder.hpp\n'}
+[0.298654] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__struct.hpp\n'}
+[0.298739] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__traits.hpp\n'}
+[0.298831] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__type_support.hpp\n'}
+[0.298922] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__builder.hpp\n'}
+[0.299007] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__struct.hpp\n'}
+[0.299094] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__traits.hpp\n'}
+[0.299181] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__type_support.hpp\n'}
+[0.299266] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/file_path.hpp\n'}
+[0.299351] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/get_all_poses.hpp\n'}
+[0.299435] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/localize_in_map.hpp\n'}
+[0.299524] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/reset.hpp\n'}
+[0.299606] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/set_slam_pose.hpp\n'}
+[0.300029] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.300121] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[0.300176] (-) TimerEvent: {}
+[0.300264] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.300344] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.300416] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.300507] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.300591] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.300891] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/msg/detail/visual_slam_status__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.300989] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/file_path__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.301074] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/get_all_poses__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.301171] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/localize_in_map__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.301263] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/reset__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.301344] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/include/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.301470] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/environment/pythonpath.sh\n'}
+[0.301580] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/environment/pythonpath.dsv\n'}
+[0.301789] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces-3.2.5-py3.10.egg-info/PKG-INFO\n'}
+[0.301881] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces-3.2.5-py3.10.egg-info/SOURCES.txt\n'}
+[0.301970] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces-3.2.5-py3.10.egg-info/dependency_links.txt\n'}
+[0.302055] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces-3.2.5-py3.10.egg-info/top_level.txt\n'}
+[0.302536] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/__init__.py\n'}
+[0.302618] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/_isaac_ros_visual_slam_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[0.302694] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/_isaac_ros_visual_slam_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[0.302768] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/_isaac_ros_visual_slam_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[0.302842] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.302924] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.303011] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.303096] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/libisaac_ros_visual_slam_interfaces__rosidl_generator_py.so\n'}
+[0.303185] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/msg/__init__.py\n'}
+[0.303268] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/msg/_visual_slam_status.py\n'}
+[0.303352] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/msg/_visual_slam_status_s.c\n'}
+[0.303435] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/__init__.py\n'}
+[0.303519] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_file_path.py\n'}
+[0.303601] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_file_path_s.c\n'}
+[0.303687] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_get_all_poses.py\n'}
+[0.303768] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_get_all_poses_s.c\n'}
+[0.303857] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_localize_in_map.py\n'}
+[0.303941] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_localize_in_map_s.c\n'}
+[0.304028] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_reset.py\n'}
+[0.304109] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_reset_s.c\n'}
+[0.304192] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_set_slam_pose.py\n'}
+[0.304274] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv/_set_slam_pose_s.c\n'}
+[0.304450] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.304616] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.304772] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/isaac_ros_visual_slam_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[0.304906] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/msg/VisualSlamStatus.idl\n'}
+[0.305021] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/GetAllPoses.idl\n'}
+[0.305138] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/Reset.idl\n'}
+[0.305249] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/SetSlamPose.idl\n'}
+[0.305358] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/FilePath.idl\n'}
+[0.305466] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/LocalizeInMap.idl\n'}
+[0.305570] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/msg/VisualSlamStatus.msg\n'}
+[0.305682] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/GetAllPoses.srv\n'}
+[0.305788] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/GetAllPoses_Request.msg\n'}
+[0.305896] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/GetAllPoses_Response.msg\n'}
+[0.306004] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/Reset.srv\n'}
+[0.306111] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/Reset_Request.msg\n'}
+[0.306213] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/Reset_Response.msg\n'}
+[0.306315] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/SetSlamPose.srv\n'}
+[0.306420] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/SetSlamPose_Request.msg\n'}
+[0.306521] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/SetSlamPose_Response.msg\n'}
+[0.306625] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/FilePath.srv\n'}
+[0.306730] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/FilePath_Request.msg\n'}
+[0.306838] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/FilePath_Response.msg\n'}
+[0.306944] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/LocalizeInMap.srv\n'}
+[0.307052] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/LocalizeInMap_Request.msg\n'}
+[0.307155] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/srv/LocalizeInMap_Response.msg\n'}
+[0.307256] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/version_info.yaml\n'}
+[0.307462] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/ament_index/resource_index/package_run_dependencies/isaac_ros_visual_slam_interfaces\n'}
+[0.307574] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/ament_index/resource_index/parent_prefix_path/isaac_ros_visual_slam_interfaces\n'}
+[0.307678] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/environment/ament_prefix_path.sh\n'}
+[0.307787] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/environment/ament_prefix_path.dsv\n'}
+[0.307899] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/environment/path.sh\n'}
+[0.308003] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/environment/path.dsv\n'}
+[0.308108] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/local_setup.bash\n'}
+[0.308210] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/local_setup.sh\n'}
+[0.308310] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/local_setup.zsh\n'}
+[0.308412] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/local_setup.dsv\n'}
+[0.308489] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/package.dsv\n'}
+[0.314795] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/ament_index/resource_index/packages/isaac_ros_visual_slam_interfaces\n'}
+[0.314909] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[0.315065] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[0.315153] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[0.315311] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[0.315387] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[0.315456] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[0.315499] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[0.315632] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfacesConfig.cmake\n'}
+[0.315709] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfacesConfig-version.cmake\n'}
+[0.315765] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/package.xml\n'}
+[0.315833] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_generator_c.so\n'}
+[0.315997] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[0.316172] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[0.316279] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_c.so\n'}
+[0.316418] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[0.316564] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[0.316704] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_typesupport_cpp.so\n'}
+[0.337805] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b"Listing '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces'...\n"}
+[0.337894] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b"Listing '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/msg'...\n"}
+[0.337928] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b"Listing '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages/isaac_ros_visual_slam_interfaces/srv'...\n"}
+[0.341673] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib/libisaac_ros_visual_slam_interfaces__rosidl_generator_py.so\n'}
+[0.341789] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_generator_cExport.cmake\n'}
+[0.341828] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_generator_cExport-release.cmake\n'}
+[0.341862] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[0.341950] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cExport-release.cmake\n'}
+[0.342058] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[0.342097] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cExport-release.cmake\n'}
+[0.342148] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[0.342197] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfaces__rosidl_typesupport_cExport-release.cmake\n'}
+[0.342226] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_generator_cppExport.cmake\n'}
+[0.342253] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[0.342280] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_typesupport_fastrtps_cppExport-release.cmake\n'}
+[0.342308] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[0.342337] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfaces__rosidl_typesupport_introspection_cppExport-release.cmake\n'}
+[0.342363] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[0.342389] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/isaac_ros_visual_slam_interfaces__rosidl_typesupport_cppExport-release.cmake\n'}
+[0.342417] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_generator_pyExport.cmake\n'}
+[0.342444] (isaac_ros_visual_slam_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/cmake/export_isaac_ros_visual_slam_interfaces__rosidl_generator_pyExport-release.cmake\n'}
+[0.343914] (isaac_ros_visual_slam_interfaces) CommandEnded: {'returncode': 0}
+[0.365567] (isaac_ros_visual_slam_interfaces) JobEnded: {'identifier': 'isaac_ros_visual_slam_interfaces', 'rc': 0}
+[0.366097] (isaac_ros_visual_slam) JobStarted: {'identifier': 'isaac_ros_visual_slam'}
+[0.373339] (isaac_ros_visual_slam) JobProgress: {'identifier': 'isaac_ros_visual_slam', 'progress': 'cmake'}
+[0.374227] (isaac_ros_visual_slam) JobProgress: {'identifier': 'isaac_ros_visual_slam', 'progress': 'build'}
+[0.375241] (isaac_ros_visual_slam) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam', '--', '-j28', '-l28'], 'cwd': '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'kanye'), ('LC_TIME', 'lzh_TW'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/kanye'), ('OLDPWD', '/home/kanye/Documents/visionaid/isaac_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'lzh_TW'), ('SYSTEMD_EXEC_PID', '2259'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'kanye'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'kanye'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/kanye-Ubuntu16:@/tmp/.ICE-unix/2229,unix/kanye-Ubuntu16:/tmp/.ICE-unix/2229'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'lzh_TW'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/21c8016d_e2d1_416f_86e1_47d2e95f3297'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'lzh_TW'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.Q1BL82'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.113'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'lzh_TW'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'lzh_TW'), ('LC_IDENTIFICATION', 'lzh_TW'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'lzh_TW'), ('LC_PAPER', 'lzh_TW'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces:/opt/ros/humble')]), 'shell': False}
+[0.400296] (-) TimerEvent: {}
+[0.424343] (isaac_ros_visual_slam) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target visual_slam_node\x1b[0m\n'}
+[0.424467] (isaac_ros_visual_slam) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target gtest\x1b[0m\n'}
+[0.424673] (isaac_ros_visual_slam) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target gtest_main\x1b[0m\n'}
+[0.435883] (isaac_ros_visual_slam) StdoutLine: {'line': b'[ 11%] Built target generate_version_info_target_isaac_ros_visual_slam\n'}
+[0.436045] (isaac_ros_visual_slam) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/landmarks_vis_helper.cpp.o\x1b[0m\n'}
+[0.436268] (isaac_ros_visual_slam) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/localizer_vis_helper.cpp.o\x1b[0m\n'}
+[0.436476] (isaac_ros_visual_slam) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/visual_slam_node.cpp.o\x1b[0m\n'}
+[0.436554] (isaac_ros_visual_slam) StdoutLine: {'line': b'[ 33%] Built target gtest_main\n'}
+[0.436647] (isaac_ros_visual_slam) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/visual_slam_impl.cpp.o\x1b[0m\n'}
+[0.437167] (isaac_ros_visual_slam) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/cuvslam_ros_conversion.cpp.o\x1b[0m\n'}
+[0.437701] (isaac_ros_visual_slam) StdoutLine: {'line': b'[ 55%] Built target gtest\n'}
+[0.438133] (isaac_ros_visual_slam) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/posegraph_vis_helper.cpp.o\x1b[0m\n'}
+[0.438445] (isaac_ros_visual_slam) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/viz_helper.cpp.o\x1b[0m\n'}
+[0.455564] (isaac_ros_visual_slam) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam_test_message_stream_sequencer.dir/test/test_message_stream_sequencer.cpp.o\x1b[0m\n'}
+[0.500500] (-) TimerEvent: {}
+[0.600899] (-) TimerEvent: {}
+[0.701287] (-) TimerEvent: {}
+[0.801707] (-) TimerEvent: {}
+[0.902023] (-) TimerEvent: {}
+[1.002309] (-) TimerEvent: {}
+[1.102702] (-) TimerEvent: {}
+[1.202993] (-) TimerEvent: {}
+[1.303295] (-) TimerEvent: {}
+[1.403689] (-) TimerEvent: {}
+[1.504044] (-) TimerEvent: {}
+[1.604452] (-) TimerEvent: {}
+[1.704870] (-) TimerEvent: {}
+[1.762727] (isaac_ros_visual_slam) StdoutLine: {'line': b'[ 77%] \x1b[32m\x1b[1mLinking CXX executable isaac_ros_visual_slam_test_message_stream_sequencer\x1b[0m\n'}
+[1.805086] (-) TimerEvent: {}
+[1.836109] (isaac_ros_visual_slam) StdoutLine: {'line': b'[ 77%] Built target isaac_ros_visual_slam_test_message_stream_sequencer\n'}
+[1.905286] (-) TimerEvent: {}
+[2.005678] (-) TimerEvent: {}
+[2.106023] (-) TimerEvent: {}
+[2.206421] (-) TimerEvent: {}
+[2.306839] (-) TimerEvent: {}
+[2.407230] (-) TimerEvent: {}
+[2.507634] (-) TimerEvent: {}
+[2.608048] (-) TimerEvent: {}
+[2.708454] (-) TimerEvent: {}
+[2.808862] (-) TimerEvent: {}
+[2.909262] (-) TimerEvent: {}
+[3.009660] (-) TimerEvent: {}
+[3.110073] (-) TimerEvent: {}
+[3.210464] (-) TimerEvent: {}
+[3.310885] (-) TimerEvent: {}
+[3.411172] (-) TimerEvent: {}
+[3.511548] (-) TimerEvent: {}
+[3.611936] (-) TimerEvent: {}
+[3.712252] (-) TimerEvent: {}
+[3.812636] (-) TimerEvent: {}
+[3.912961] (-) TimerEvent: {}
+[4.013267] (-) TimerEvent: {}
+[4.113655] (-) TimerEvent: {}
+[4.213956] (-) TimerEvent: {}
+[4.314267] (-) TimerEvent: {}
+[4.414663] (-) TimerEvent: {}
+[4.514959] (-) TimerEvent: {}
+[4.615290] (-) TimerEvent: {}
+[4.715691] (-) TimerEvent: {}
+[4.816233] (-) TimerEvent: {}
+[4.916642] (-) TimerEvent: {}
+[5.016996] (-) TimerEvent: {}
+[5.117402] (-) TimerEvent: {}
+[5.217822] (-) TimerEvent: {}
+[5.318246] (-) TimerEvent: {}
+[5.418649] (-) TimerEvent: {}
+[5.519016] (-) TimerEvent: {}
+[5.619345] (-) TimerEvent: {}
+[5.719680] (-) TimerEvent: {}
+[5.820029] (-) TimerEvent: {}
+[5.920353] (-) TimerEvent: {}
+[6.020750] (-) TimerEvent: {}
+[6.121238] (-) TimerEvent: {}
+[6.221538] (-) TimerEvent: {}
+[6.321861] (-) TimerEvent: {}
+[6.422098] (-) TimerEvent: {}
+[6.522369] (-) TimerEvent: {}
+[6.622692] (-) TimerEvent: {}
+[6.722940] (-) TimerEvent: {}
+[6.823245] (-) TimerEvent: {}
+[6.923552] (-) TimerEvent: {}
+[7.023865] (-) TimerEvent: {}
+[7.124184] (-) TimerEvent: {}
+[7.224496] (-) TimerEvent: {}
+[7.324817] (-) TimerEvent: {}
+[7.425049] (-) TimerEvent: {}
+[7.525361] (-) TimerEvent: {}
+[7.625675] (-) TimerEvent: {}
+[7.725966] (-) TimerEvent: {}
+[7.826218] (-) TimerEvent: {}
+[7.926546] (-) TimerEvent: {}
+[8.026856] (-) TimerEvent: {}
+[8.127086] (-) TimerEvent: {}
+[8.227395] (-) TimerEvent: {}
+[8.327715] (-) TimerEvent: {}
+[8.428036] (-) TimerEvent: {}
+[8.528350] (-) TimerEvent: {}
+[8.628669] (-) TimerEvent: {}
+[8.729000] (-) TimerEvent: {}
+[8.829322] (-) TimerEvent: {}
+[8.929636] (-) TimerEvent: {}
+[9.029960] (-) TimerEvent: {}
+[9.130208] (-) TimerEvent: {}
+[9.230513] (-) TimerEvent: {}
+[9.330832] (-) TimerEvent: {}
+[9.431056] (-) TimerEvent: {}
+[9.531319] (-) TimerEvent: {}
+[9.631623] (-) TimerEvent: {}
+[9.731923] (-) TimerEvent: {}
+[9.832230] (-) TimerEvent: {}
+[9.932533] (-) TimerEvent: {}
+[10.032846] (-) TimerEvent: {}
+[10.133161] (-) TimerEvent: {}
+[10.233461] (-) TimerEvent: {}
+[10.333756] (-) TimerEvent: {}
+[10.434067] (-) TimerEvent: {}
+[10.534369] (-) TimerEvent: {}
+[10.634669] (-) TimerEvent: {}
+[10.734996] (-) TimerEvent: {}
+[10.835297] (-) TimerEvent: {}
+[10.935602] (-) TimerEvent: {}
+[11.035923] (-) TimerEvent: {}
+[11.136253] (-) TimerEvent: {}
+[11.236562] (-) TimerEvent: {}
+[11.336868] (-) TimerEvent: {}
+[11.437175] (-) TimerEvent: {}
+[11.537472] (-) TimerEvent: {}
+[11.637769] (-) TimerEvent: {}
+[11.738091] (-) TimerEvent: {}
+[11.838407] (-) TimerEvent: {}
+[11.938715] (-) TimerEvent: {}
+[12.039042] (-) TimerEvent: {}
+[12.139302] (-) TimerEvent: {}
+[12.239598] (-) TimerEvent: {}
+[12.339895] (-) TimerEvent: {}
+[12.440199] (-) TimerEvent: {}
+[12.540501] (-) TimerEvent: {}
+[12.640807] (-) TimerEvent: {}
+[12.741022] (-) TimerEvent: {}
+[12.841324] (-) TimerEvent: {}
+[12.941623] (-) TimerEvent: {}
+[13.041955] (-) TimerEvent: {}
+[13.142257] (-) TimerEvent: {}
+[13.242559] (-) TimerEvent: {}
+[13.342866] (-) TimerEvent: {}
+[13.443169] (-) TimerEvent: {}
+[13.543465] (-) TimerEvent: {}
+[13.643765] (-) TimerEvent: {}
+[13.744066] (-) TimerEvent: {}
+[13.844371] (-) TimerEvent: {}
+[13.944671] (-) TimerEvent: {}
+[14.044995] (-) TimerEvent: {}
+[14.145297] (-) TimerEvent: {}
+[14.245600] (-) TimerEvent: {}
+[14.345895] (-) TimerEvent: {}
+[14.446200] (-) TimerEvent: {}
+[14.546512] (-) TimerEvent: {}
+[14.646827] (-) TimerEvent: {}
+[14.747131] (-) TimerEvent: {}
+[14.847429] (-) TimerEvent: {}
+[14.947731] (-) TimerEvent: {}
+[15.048059] (-) TimerEvent: {}
+[15.148376] (-) TimerEvent: {}
+[15.248679] (-) TimerEvent: {}
+[15.348917] (-) TimerEvent: {}
+[15.449220] (-) TimerEvent: {}
+[15.549511] (-) TimerEvent: {}
+[15.649817] (-) TimerEvent: {}
+[15.750114] (-) TimerEvent: {}
+[15.850354] (-) TimerEvent: {}
+[15.950656] (-) TimerEvent: {}
+[16.050966] (-) TimerEvent: {}
+[16.151263] (-) TimerEvent: {}
+[16.251579] (-) TimerEvent: {}
+[16.351868] (-) TimerEvent: {}
+[16.452147] (-) TimerEvent: {}
+[16.552445] (-) TimerEvent: {}
+[16.652737] (-) TimerEvent: {}
+[16.753041] (-) TimerEvent: {}
+[16.853349] (-) TimerEvent: {}
+[16.953638] (-) TimerEvent: {}
+[17.053934] (-) TimerEvent: {}
+[17.154164] (-) TimerEvent: {}
+[17.254469] (-) TimerEvent: {}
+[17.354777] (-) TimerEvent: {}
+[17.455080] (-) TimerEvent: {}
+[17.555389] (-) TimerEvent: {}
+[17.655692] (-) TimerEvent: {}
+[17.756016] (-) TimerEvent: {}
+[17.856332] (-) TimerEvent: {}
+[17.956641] (-) TimerEvent: {}
+[18.057006] (-) TimerEvent: {}
+[18.157370] (-) TimerEvent: {}
+[18.257708] (-) TimerEvent: {}
+[18.358094] (-) TimerEvent: {}
+[18.458412] (-) TimerEvent: {}
+[18.558727] (-) TimerEvent: {}
+[18.659068] (-) TimerEvent: {}
+[18.759429] (-) TimerEvent: {}
+[18.859736] (-) TimerEvent: {}
+[18.960039] (-) TimerEvent: {}
+[19.060358] (-) TimerEvent: {}
+[19.160733] (-) TimerEvent: {}
+[19.261045] (-) TimerEvent: {}
+[19.361350] (-) TimerEvent: {}
+[19.461678] (-) TimerEvent: {}
+[19.561982] (-) TimerEvent: {}
+[19.662298] (-) TimerEvent: {}
+[19.762523] (-) TimerEvent: {}
+[19.862862] (-) TimerEvent: {}
+[19.963098] (-) TimerEvent: {}
+[20.063334] (-) TimerEvent: {}
+[20.163632] (-) TimerEvent: {}
+[20.263935] (-) TimerEvent: {}
+[20.364207] (-) TimerEvent: {}
+[20.464540] (-) TimerEvent: {}
+[20.564856] (-) TimerEvent: {}
+[20.665165] (-) TimerEvent: {}
+[20.765461] (-) TimerEvent: {}
+[20.865795] (-) TimerEvent: {}
+[20.966135] (-) TimerEvent: {}
+[21.066487] (-) TimerEvent: {}
+[21.166881] (-) TimerEvent: {}
+[21.267259] (-) TimerEvent: {}
+[21.367556] (-) TimerEvent: {}
+[21.467881] (-) TimerEvent: {}
+[21.568190] (-) TimerEvent: {}
+[21.668526] (-) TimerEvent: {}
+[21.768835] (-) TimerEvent: {}
+[21.869152] (-) TimerEvent: {}
+[21.969479] (-) TimerEvent: {}
+[22.069767] (-) TimerEvent: {}
+[22.170138] (-) TimerEvent: {}
+[22.270467] (-) TimerEvent: {}
+[22.370669] (-) TimerEvent: {}
+[22.470871] (-) TimerEvent: {}
+[22.571110] (-) TimerEvent: {}
+[22.671376] (-) TimerEvent: {}
+[22.771671] (-) TimerEvent: {}
+[22.871927] (-) TimerEvent: {}
+[22.972169] (-) TimerEvent: {}
+[23.072423] (-) TimerEvent: {}
+[23.172727] (-) TimerEvent: {}
+[23.272961] (-) TimerEvent: {}
+[23.373200] (-) TimerEvent: {}
+[23.473443] (-) TimerEvent: {}
+[23.573741] (-) TimerEvent: {}
+[23.674079] (-) TimerEvent: {}
+[23.774421] (-) TimerEvent: {}
+[23.874746] (-) TimerEvent: {}
+[23.975076] (-) TimerEvent: {}
+[24.075300] (-) TimerEvent: {}
+[24.175622] (-) TimerEvent: {}
+[24.276003] (-) TimerEvent: {}
+[24.376356] (-) TimerEvent: {}
+[24.476658] (-) TimerEvent: {}
+[24.576960] (-) TimerEvent: {}
+[24.677289] (-) TimerEvent: {}
+[24.777604] (-) TimerEvent: {}
+[24.877897] (-) TimerEvent: {}
+[24.978208] (-) TimerEvent: {}
+[25.078523] (-) TimerEvent: {}
+[25.178860] (-) TimerEvent: {}
+[25.279203] (-) TimerEvent: {}
+[25.379436] (-) TimerEvent: {}
+[25.479682] (-) TimerEvent: {}
+[25.579936] (-) TimerEvent: {}
+[25.680147] (-) TimerEvent: {}
+[25.780447] (-) TimerEvent: {}
+[25.880685] (-) TimerEvent: {}
+[25.980991] (-) TimerEvent: {}
+[26.081227] (-) TimerEvent: {}
+[26.181487] (-) TimerEvent: {}
+[26.281820] (-) TimerEvent: {}
+[26.382142] (-) TimerEvent: {}
+[26.482363] (-) TimerEvent: {}
+[26.582580] (-) TimerEvent: {}
+[26.682878] (-) TimerEvent: {}
+[26.783168] (-) TimerEvent: {}
+[26.883485] (-) TimerEvent: {}
+[26.983793] (-) TimerEvent: {}
+[27.084135] (-) TimerEvent: {}
+[27.184490] (-) TimerEvent: {}
+[27.284839] (-) TimerEvent: {}
+[27.385139] (-) TimerEvent: {}
+[27.485480] (-) TimerEvent: {}
+[27.585794] (-) TimerEvent: {}
+[27.686005] (-) TimerEvent: {}
+[27.786293] (-) TimerEvent: {}
+[27.886588] (-) TimerEvent: {}
+[27.986891] (-) TimerEvent: {}
+[28.087185] (-) TimerEvent: {}
+[28.187506] (-) TimerEvent: {}
+[28.287819] (-) TimerEvent: {}
+[28.388036] (-) TimerEvent: {}
+[28.488370] (-) TimerEvent: {}
+[28.588717] (-) TimerEvent: {}
+[28.688942] (-) TimerEvent: {}
+[28.789202] (-) TimerEvent: {}
+[28.825314] (isaac_ros_visual_slam) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX shared library libvisual_slam_node.so\x1b[0m\n'}
+[28.889321] (-) TimerEvent: {}
+[28.989627] (-) TimerEvent: {}
+[29.089946] (-) TimerEvent: {}
+[29.190189] (-) TimerEvent: {}
+[29.253369] (isaac_ros_visual_slam) StdoutLine: {'line': b'[ 88%] Built target visual_slam_node\n'}
+[29.274189] (isaac_ros_visual_slam) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam.dir/src/visual_slam_main.cpp.o\x1b[0m\n'}
+[29.290301] (-) TimerEvent: {}
+[29.390610] (-) TimerEvent: {}
+[29.490851] (-) TimerEvent: {}
+[29.591059] (-) TimerEvent: {}
+[29.691303] (-) TimerEvent: {}
+[29.791554] (-) TimerEvent: {}
+[29.891881] (-) TimerEvent: {}
+[29.992102] (-) TimerEvent: {}
+[30.092322] (-) TimerEvent: {}
+[30.192631] (-) TimerEvent: {}
+[30.292961] (-) TimerEvent: {}
+[30.393319] (-) TimerEvent: {}
+[30.493625] (-) TimerEvent: {}
+[30.593947] (-) TimerEvent: {}
+[30.694193] (-) TimerEvent: {}
+[30.794506] (-) TimerEvent: {}
+[30.894828] (-) TimerEvent: {}
+[30.995168] (-) TimerEvent: {}
+[31.095513] (-) TimerEvent: {}
+[31.195842] (-) TimerEvent: {}
+[31.296163] (-) TimerEvent: {}
+[31.396484] (-) TimerEvent: {}
+[31.496827] (-) TimerEvent: {}
+[31.597174] (-) TimerEvent: {}
+[31.697507] (-) TimerEvent: {}
+[31.797830] (-) TimerEvent: {}
+[31.898174] (-) TimerEvent: {}
+[31.998510] (-) TimerEvent: {}
+[32.098849] (-) TimerEvent: {}
+[32.199075] (-) TimerEvent: {}
+[32.299303] (-) TimerEvent: {}
+[32.399633] (-) TimerEvent: {}
+[32.499926] (-) TimerEvent: {}
+[32.600244] (-) TimerEvent: {}
+[32.700578] (-) TimerEvent: {}
+[32.800910] (-) TimerEvent: {}
+[32.901136] (-) TimerEvent: {}
+[33.001388] (-) TimerEvent: {}
+[33.101712] (-) TimerEvent: {}
+[33.201942] (-) TimerEvent: {}
+[33.302162] (-) TimerEvent: {}
+[33.402474] (-) TimerEvent: {}
+[33.502779] (-) TimerEvent: {}
+[33.603004] (-) TimerEvent: {}
+[33.703262] (-) TimerEvent: {}
+[33.803564] (-) TimerEvent: {}
+[33.903871] (-) TimerEvent: {}
+[34.004102] (-) TimerEvent: {}
+[34.104404] (-) TimerEvent: {}
+[34.204716] (-) TimerEvent: {}
+[34.305052] (-) TimerEvent: {}
+[34.405368] (-) TimerEvent: {}
+[34.505678] (-) TimerEvent: {}
+[34.606002] (-) TimerEvent: {}
+[34.706314] (-) TimerEvent: {}
+[34.806615] (-) TimerEvent: {}
+[34.906931] (-) TimerEvent: {}
+[35.007127] (-) TimerEvent: {}
+[35.107425] (-) TimerEvent: {}
+[35.207705] (-) TimerEvent: {}
+[35.244901] (isaac_ros_visual_slam) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable isaac_ros_visual_slam\x1b[0m\n'}
+[35.307874] (-) TimerEvent: {}
+[35.408156] (-) TimerEvent: {}
+[35.508440] (-) TimerEvent: {}
+[35.517655] (isaac_ros_visual_slam) StdoutLine: {'line': b'[100%] Built target isaac_ros_visual_slam\n'}
+[35.528415] (isaac_ros_visual_slam) CommandEnded: {'returncode': 0}
+[35.529141] (isaac_ros_visual_slam) JobProgress: {'identifier': 'isaac_ros_visual_slam', 'progress': 'install'}
+[35.530369] (isaac_ros_visual_slam) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam'], 'cwd': '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'kanye'), ('LC_TIME', 'lzh_TW'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/kanye'), ('OLDPWD', '/home/kanye/Documents/visionaid/isaac_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'lzh_TW'), ('SYSTEMD_EXEC_PID', '2259'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'kanye'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'kanye'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/kanye-Ubuntu16:@/tmp/.ICE-unix/2229,unix/kanye-Ubuntu16:/tmp/.ICE-unix/2229'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'lzh_TW'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/21c8016d_e2d1_416f_86e1_47d2e95f3297'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'lzh_TW'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.Q1BL82'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.113'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'lzh_TW'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'lzh_TW'), ('LC_IDENTIFICATION', 'lzh_TW'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'lzh_TW'), ('LC_PAPER', 'lzh_TW'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam_interfaces:/opt/ros/humble')]), 'shell': False}
+[35.538104] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[35.538527] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[35.538619] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/lib/isaac_ros_visual_slam/cuvslam_api_launcher\n'}
+[35.544527] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/lib/libcuvslam.so\n'}
+[35.552173] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/version_info.yaml\n'}
+[35.558915] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/cuvslam_ros_conversion.hpp\n'}
+[35.565045] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/has_subscribers.hpp\n'}
+[35.571533] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/landmarks_vis_helper.hpp\n'}
+[35.577479] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/limited_vector.hpp\n'}
+[35.584371] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/localizer_vis_helper.hpp\n'}
+[35.591195] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/message_stream_sequencer.hpp\n'}
+[35.597300] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/pose_cache.hpp\n'}
+[35.602485] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/posegraph_vis_helper.hpp\n'}
+[35.608002] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/stopwatch.hpp\n'}
+[35.608535] (-) TimerEvent: {}
+[35.614017] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/types.hpp\n'}
+[35.620272] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/visual_slam_impl.hpp\n'}
+[35.626046] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/viz_helper.hpp\n'}
+[35.631460] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/visual_slam_node.hpp\n'}
+[35.636572] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/environment/library_path.sh\n'}
+[35.641545] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/environment/library_path.dsv\n'}
+[35.647667] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/lib/libvisual_slam_node.so\n'}
+[35.653765] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/lib/isaac_ros_visual_slam/isaac_ros_visual_slam\n'}
+[35.659209] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/config/zed.yaml\n'}
+[35.664898] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/launch/isaac_ros_visual_slam.launch.py\n'}
+[35.671716] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/launch/isaac_ros_visual_slam_core.launch.py\n'}
+[35.677646] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/launch/isaac_ros_visual_slam_hawk.launch.py\n'}
+[35.683683] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/launch/isaac_ros_visual_slam_isaac_sim.launch.py\n'}
+[35.689033] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/launch/isaac_ros_visual_slam_realsense.launch.py\n'}
+[35.695591] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/rviz/default.cfg.rviz\n'}
+[35.701345] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/rviz/isaac_sim.cfg.rviz\n'}
+[35.707879] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/rviz/realsense.cfg.rviz\n'}
+[35.708727] (-) TimerEvent: {}
+[35.714266] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/rviz/vslam_keepall.cfg.rviz\n'}
+[35.719523] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/rviz/zed.cfg.rviz\n'}
+[35.726328] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/ament_index/resource_index/package_run_dependencies/isaac_ros_visual_slam\n'}
+[35.732574] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/ament_index/resource_index/parent_prefix_path/isaac_ros_visual_slam\n'}
+[35.738128] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/environment/ament_prefix_path.sh\n'}
+[35.743100] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/environment/ament_prefix_path.dsv\n'}
+[35.748590] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/environment/path.sh\n'}
+[35.753509] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/environment/path.dsv\n'}
+[35.759579] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/local_setup.bash\n'}
+[35.765460] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/local_setup.sh\n'}
+[35.772055] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/local_setup.zsh\n'}
+[35.777159] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/local_setup.dsv\n'}
+[35.783454] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/package.dsv\n'}
+[35.788765] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/ament_index/resource_index/packages/isaac_ros_visual_slam\n'}
+[35.794203] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/ament_index/resource_index/rclcpp_components/isaac_ros_visual_slam\n'}
+[35.800836] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[35.807600] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[35.808916] (-) TimerEvent: {}
+[35.814579] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[35.820818] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/cmake/isaac_ros_visual_slamConfig.cmake\n'}
+[35.827476] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/cmake/isaac_ros_visual_slamConfig-version.cmake\n'}
+[35.832977] (isaac_ros_visual_slam) StdoutLine: {'line': b'-- Symlinking: /home/kanye/Documents/visionaid/isaac_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/package.xml\n'}
+[35.840010] (isaac_ros_visual_slam) CommandEnded: {'returncode': 0}
+[35.848753] (isaac_ros_visual_slam) JobEnded: {'identifier': 'isaac_ros_visual_slam', 'rc': 0}
+[35.849214] (-) EventReactorShutdown: {}
