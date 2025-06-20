@@ -9,8 +9,8 @@ import time
 from machine import I2C, Pin
 
 # Import sensor drivers
-from driver import LSM6DSLTR
-from driver import LIS2MDLTR
+from driver.LI2MDLTR_driver import LSM6DSLTR
+from driver.LSM6DSLTR_driver import LIS2MDLTR
 
 # Initialize I2C bus (example for Raspberry Pi Pico: I2C0 on GP0=SDA, GP1=SCL)
 i2c = I2C(0, sda=Pin(0), scl=Pin(1), freq=400000)
