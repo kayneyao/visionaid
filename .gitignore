@@ -2,5 +2,9 @@
 
 /ros_objdetect/data
 
-.pt
+
+.png
+.jpg
+/venv
+
 
