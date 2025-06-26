@@ -34,7 +34,7 @@ uint8_t LIS2MDL::readID() {
     return readReg(LIS2MDL_REG_WHO_AM_I);
 }
 
-void LIS2MDL::readMagnetometer(int16_t &mx, int16_t &my, int16_t &mz) {
+void LIS2MDL::readData(int16_t &mx, int16_t &my, int16_t &mz) {
     uint8_t buf[6];
     readRegs(LIS2MDL_REG_OUTX_L, buf, 6);
     mx = (int16_t)(buf[1] << 8 | buf[0]);

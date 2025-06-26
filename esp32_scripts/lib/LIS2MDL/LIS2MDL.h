@@ -10,7 +10,7 @@ public:
     bool beginSPI(SPIClass &spi, int csPin);
 
     uint8_t readID();
-    void readMagnetometer(int16_t &mx, int16_t &my, int16_t &mz);
+    void readData(int16_t &mx, int16_t &my, int16_t &mz);
 
 private:
     TwoWire* _wire = nullptr;
