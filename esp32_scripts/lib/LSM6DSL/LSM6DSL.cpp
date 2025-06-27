@@ -74,7 +74,7 @@ void LSM6DSL::readData(int16_t &ax, int16_t &ay, int16_t &az,
 
     ax = (int16_t)(buf[1]  << 8 | buf[0]);
     ay = (int16_t)(buf[3]  << 8 | buf[2]);
-    az = (int16_t)(buf[5] << 8 | buf[4]);
+    az = (int16_t)(buf[5]  << 8 | buf[4]);
 }
 
 void LSM6DSL::writeReg(uint8_t reg, uint8_t val) {
