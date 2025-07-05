@@ -1,0 +1,143 @@
+[0.010s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_gems': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_gxf_extensions/gxf_isaac_gems -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DCMAKE_CUDA_ARCHITECTURES=89 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems
+[0.057s] -- The C compiler identification is GNU 11.4.0
+[0.117s] -- The CXX compiler identification is GNU 11.4.0
+[0.121s] -- Detecting C compiler ABI info
+[0.188s] -- Detecting C compiler ABI info - done
+[0.194s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.194s] -- Detecting C compile features
+[0.194s] -- Detecting C compile features - done
+[0.196s] -- Detecting CXX compiler ABI info
+[0.277s] -- Detecting CXX compiler ABI info - done
+[0.285s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.286s] -- Detecting CXX compile features
+[0.286s] -- Detecting CXX compile features - done
+[0.287s] -- Found ament_cmake_auto: 1.3.11 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.421s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.461s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.517s] -- Loading isaac_ros_common extras
+[0.517s] -- CMAKE_BUILD_TYPE: Release
+[0.531s] -- Looking for pthread.h
+[0.592s] -- Looking for pthread.h - found
+[0.592s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.647s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.647s] -- Found Threads: TRUE  
+[0.653s] -- Found CUDA: /usr/local/cuda-12.8 (found version "12.8") 
+[0.654s] -- CUDA architectures: 89
+[0.654s] -- Loading isaac_ros_common extras (modules)
+[0.674s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.676s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.680s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.686s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.694s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.717s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.718s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.780s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.796s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.819s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.851s] -- Loading isaac_ros_gxf extras
+[0.895s] -- Configuring done
+[0.897s] -- Generating done
+[0.899s] -- Build files have been written to: /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_gems
+[0.908s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_gems' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_gxf_extensions/gxf_isaac_gems -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DCMAKE_CUDA_ARCHITECTURES=89 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems
+[0.908s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_gems': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_gems -- -j22 -l22
+[0.948s] [100%] [34m[1mGenerating version information as YAML[0m
+[1.005s] [100%] Built target generate_version_info_target_gxf_isaac_gems
+[1.016s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_gems' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_gems -- -j22 -l22
+[1.018s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_gems': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_gems
+[1.026s] -- Install configuration: "Release"
+[1.026s] -- Execute custom install script
+[1.027s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/algorithm/string_utils.hpp
+[1.032s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/common/composite_schema_uid.hpp
+[1.036s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/common/pose_frame_uid.hpp
+[1.042s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/composite/composite_from_tensor.hpp
+[1.049s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/composite/composite_view.hpp
+[1.055s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/composite/measure.hpp
+[1.062s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/composite/quantity.hpp
+[1.068s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/composite/schema.hpp
+[1.072s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/composite/schema_tensor_archive.hpp
+[1.080s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/coms/socket.hpp
+[1.086s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/control_types/differential_drive.hpp
+[1.094s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/allocator/allocator_base.hpp
+[1.101s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/allocator/allocators.hpp
+[1.107s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/assert.hpp
+[1.111s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/buffers/algorithm.hpp
+[1.119s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/buffers/buffer.hpp
+[1.126s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/buffers/traits.hpp
+[1.131s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/byte.hpp
+[1.137s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/constants.hpp
+[1.142s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/epsilon.hpp
+[1.149s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/image/image.hpp
+[1.153s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/logger.hpp
+[1.160s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/math/macros.hpp
+[1.165s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/math/pose2.hpp
+[1.171s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/math/pose3.hpp
+[1.177s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/math/so2.hpp
+[1.183s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/math/so3.hpp
+[1.190s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/math/types.hpp
+[1.196s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/math/utils.hpp
+[1.203s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/optional.hpp
+[1.210s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/tensor/sample_cloud.hpp
+[1.218s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/core/tensor/tensor.hpp
+[1.226s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/cuda_utils/launch_utils.hpp
+[1.231s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/cuda_utils/stride_pointer.hpp
+[1.238s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/cuda_utils/stride_pointer_3d.hpp
+[1.245s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/cuda_utils/vector_math.hpp
+[1.250s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/flatscan/flatscan_info.hpp
+[1.257s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/flatscan/flatscan_types.hpp
+[1.263s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/geometry/line.hpp
+[1.267s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/geometry/line_segment.hpp
+[1.273s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/geometry/line_utils.hpp
+[1.278s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/geometry/n_cuboid.hpp
+[1.284s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/geometry/n_sphere.hpp
+[1.289s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/geometry/pinhole.hpp
+[1.293s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/geometry/plane.hpp
+[1.299s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/geometry/polygon.hpp
+[1.305s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/geometry/polyline.hpp
+[1.310s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/geometry/types.hpp
+[1.317s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/gxf_helpers/expected_macro_abstract.hpp
+[1.322s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/gxf_helpers/expected_macro_common.hpp
+[1.326s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/gxf_helpers/expected_macro_cuda.hpp
+[1.331s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/gxf_helpers/expected_macro_gxf.hpp
+[1.335s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/gxf_helpers/expected_macro_isaac.hpp
+[1.343s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/gxf_helpers/image_view.hpp
+[1.348s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/image/color.hpp
+[1.353s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/image/io.hpp
+[1.358s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/image/utils.hpp
+[1.364s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/pose_tree/pose_tree.hpp
+[1.368s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/pose_tree/pose_tree_edge_history.hpp
+[1.373s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/serialization/base64.hpp
+[1.379s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/serialization/json.hpp
+[1.383s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/serialization/json_formatter.hpp
+[1.387s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/sight/sop.hpp
+[1.394s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/sight/sop_asset.hpp
+[1.398s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/sight/sop_image.hpp
+[1.402s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/sight/sop_mesh.hpp
+[1.407s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/sight/sop_point_cloud.hpp
+[1.415s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/sight/sop_style.hpp
+[1.421s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/sight/sop_text.hpp
+[1.427s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/sight/sop_transform.hpp
+[1.435s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/uuid/uuid.hpp
+[1.443s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/gems/video_buffer/allocator.hpp
+[1.450s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/gxf/include/third_party/nlohmann/json.hpp
+[1.456s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/environment/library_path.sh
+[1.464s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/environment/library_path.dsv
+[1.470s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/version_info.yaml
+[1.475s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/ament_index/resource_index/package_run_dependencies/gxf_isaac_gems
+[1.481s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/ament_index/resource_index/parent_prefix_path/gxf_isaac_gems
+[1.486s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/environment/ament_prefix_path.sh
+[1.491s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/environment/ament_prefix_path.dsv
+[1.496s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/environment/path.sh
+[1.503s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/environment/path.dsv
+[1.511s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/local_setup.bash
+[1.516s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/local_setup.sh
+[1.522s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/local_setup.zsh
+[1.527s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/local_setup.dsv
+[1.532s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/package.dsv
+[1.539s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/ament_index/resource_index/packages/gxf_isaac_gems
+[1.545s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/cmake/ament_cmake_export_targets-extras.cmake
+[1.551s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.556s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/cmake/gxf_isaac_gemsConfig.cmake
+[1.562s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/cmake/gxf_isaac_gemsConfig-version.cmake
+[1.568s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/package.xml
+[1.575s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/cmake/export_gxf_isaac_gemsExport.cmake
+[1.577s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_gems' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_gems

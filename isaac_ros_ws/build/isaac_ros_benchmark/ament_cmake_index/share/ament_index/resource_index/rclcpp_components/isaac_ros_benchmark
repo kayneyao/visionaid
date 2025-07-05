@@ -1,0 +1,2 @@
+isaac_ros_benchmark::NitrosPlaybackNode;lib/libnitros_playback_node.so
+isaac_ros_benchmark::NitrosMonitorNode;lib/libnitros_monitor_node.so

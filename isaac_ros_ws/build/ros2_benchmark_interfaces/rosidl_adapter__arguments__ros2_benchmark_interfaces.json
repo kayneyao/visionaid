@@ -1,0 +1,17 @@
+{
+  "package_name": "ros2_benchmark_interfaces",
+  "non_idl_tuples": [
+    "/home/sophie/visionaid/isaac_ros_ws/src/ros2_benchmark/ros2_benchmark_interfaces:msg/TimestampedMessageArray.msg",
+    "/home/sophie/visionaid/isaac_ros_ws/src/ros2_benchmark/ros2_benchmark_interfaces:msg/TopicMessageCount.msg",
+    "/home/sophie/visionaid/isaac_ros_ws/src/ros2_benchmark/ros2_benchmark_interfaces:msg/TopicMessageTimestampArray.msg",
+    "/home/sophie/visionaid/isaac_ros_ws/src/ros2_benchmark/ros2_benchmark_interfaces:srv/GetTopicMessageTimestamps.srv",
+    "/home/sophie/visionaid/isaac_ros_ws/src/ros2_benchmark/ros2_benchmark_interfaces:srv/PlayMessages.srv",
+    "/home/sophie/visionaid/isaac_ros_ws/src/ros2_benchmark/ros2_benchmark_interfaces:srv/SetData.srv",
+    "/home/sophie/visionaid/isaac_ros_ws/src/ros2_benchmark/ros2_benchmark_interfaces:srv/StartLoading.srv",
+    "/home/sophie/visionaid/isaac_ros_ws/src/ros2_benchmark/ros2_benchmark_interfaces:srv/StartMonitoring.srv",
+    "/home/sophie/visionaid/isaac_ros_ws/src/ros2_benchmark/ros2_benchmark_interfaces:srv/StopMonitoring.srv",
+    "/home/sophie/visionaid/isaac_ros_ws/src/ros2_benchmark/ros2_benchmark_interfaces:srv/StartRecording.srv",
+    "/home/sophie/visionaid/isaac_ros_ws/src/ros2_benchmark/ros2_benchmark_interfaces:srv/StopLoading.srv",
+    "/home/sophie/visionaid/isaac_ros_ws/src/ros2_benchmark/ros2_benchmark_interfaces:srv/StopRecording.srv"
+  ]
+}

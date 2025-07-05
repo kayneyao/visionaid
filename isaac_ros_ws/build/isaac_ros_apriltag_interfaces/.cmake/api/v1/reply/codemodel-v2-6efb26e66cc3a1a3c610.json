@@ -1,0 +1,242 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-62dfad6839b4763ab0bb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				},
+				{
+					"build" : "isaac_ros_apriltag_interfaces__py",
+					"jsonFile" : "directory-isaac_ros_apriltag_interfaces__py-Release-747079d5cefff058b587.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_apriltag_interfaces/isaac_ros_apriltag_interfaces__py",
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "isaac_ros_apriltag_interfaces",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_isaac_ros_apriltag_interfaces_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_isaac_ros_apriltag_interfaces_egg-Release-19c7b6539c9fe6b92b7c.json",
+					"name" : "ament_cmake_python_build_isaac_ros_apriltag_interfaces_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_isaac_ros_apriltag_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_isaac_ros_apriltag_interfaces-Release-aff321fc98fe578ba4d5.json",
+					"name" : "ament_cmake_python_symlink_isaac_ros_apriltag_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_version_info_target_isaac_ros_apriltag_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_version_info_target_isaac_ros_apriltag_interfaces-Release-c544a419d7cb8e78fbea.json",
+					"name" : "generate_version_info_target_isaac_ros_apriltag_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_apriltag_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_apriltag_interfaces-Release-906de35b5cb7d83ffd6f.json",
+					"name" : "isaac_ros_apriltag_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_apriltag_interfaces__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_apriltag_interfaces__cpp-Release-e1340e55ecb3e53873bf.json",
+					"name" : "isaac_ros_apriltag_interfaces__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "isaac_ros_apriltag_interfaces__py::@232eb9b77191e96659db",
+					"jsonFile" : "target-isaac_ros_apriltag_interfaces__py-Release-9271047079f893f4172a.json",
+					"name" : "isaac_ros_apriltag_interfaces__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_apriltag_interfaces__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_apriltag_interfaces__rosidl_generator_c-Release-650c5b4f127467e6d0a2.json",
+					"name" : "isaac_ros_apriltag_interfaces__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_apriltag_interfaces__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_apriltag_interfaces__rosidl_generator_py-Release-5b7670820f48bc4d06e2.json",
+					"name" : "isaac_ros_apriltag_interfaces__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_apriltag_interfaces__rosidl_typesupport_c-Release-ec97dce343387c122fd0.json",
+					"name" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_apriltag_interfaces__rosidl_typesupport_c__pyext-Release-e0ab22cf7c8f20f4d198.json",
+					"name" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_apriltag_interfaces__rosidl_typesupport_cpp-Release-87be888ac882ef22a88c.json",
+					"name" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_apriltag_interfaces__rosidl_typesupport_fastrtps_c-Release-6785c115f7885672544e.json",
+					"name" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_apriltag_interfaces__rosidl_typesupport_fastrtps_c__pyext-Release-68458e40408ee9bb6c42.json",
+					"name" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_apriltag_interfaces__rosidl_typesupport_fastrtps_cpp-Release-31729ce919bbf53ce918.json",
+					"name" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_apriltag_interfaces__rosidl_typesupport_introspection_c-Release-51aa3852a433a8e7ffcc.json",
+					"name" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_apriltag_interfaces__rosidl_typesupport_introspection_c__pyext-Release-81234d469ec24c2cabeb.json",
+					"name" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_apriltag_interfaces__rosidl_typesupport_introspection_cpp-Release-9d1a35a10b34e5fe606a.json",
+					"name" : "isaac_ros_apriltag_interfaces__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_apriltag_interfaces_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_apriltag_interfaces_uninstall-Release-9c04a058744f7ce12260.json",
+					"name" : "isaac_ros_apriltag_interfaces_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-edc613bc47fded9c3bf1.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_apriltag_interfaces",
+		"source" : "/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_common/isaac_ros_apriltag_interfaces"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

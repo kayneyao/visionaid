@@ -1,0 +1,22 @@
+[0.346s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/isaac_common_py': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/build/isaac_common_py/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid/isaac_ros_ws/install/isaac_common_py/lib/python3.10/site-packages:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sophie/visionaid/isaac_ros_ws/build/isaac_common_py/build --no-deps symlink_data
+[0.471s] running develop
+[0.538s] running egg_info
+[0.538s] creating isaac_common_py.egg-info
+[0.539s] writing isaac_common_py.egg-info/PKG-INFO
+[0.539s] writing dependency_links to isaac_common_py.egg-info/dependency_links.txt
+[0.539s] writing requirements to isaac_common_py.egg-info/requires.txt
+[0.539s] writing top-level names to isaac_common_py.egg-info/top_level.txt
+[0.539s] writing manifest file 'isaac_common_py.egg-info/SOURCES.txt'
+[0.539s] reading manifest file 'isaac_common_py.egg-info/SOURCES.txt'
+[0.539s] writing manifest file 'isaac_common_py.egg-info/SOURCES.txt'
+[0.556s] running build_ext
+[0.557s] Creating /home/sophie/visionaid/isaac_ros_ws/install/isaac_common_py/lib/python3.10/site-packages/isaac-common-py.egg-link (link to .)
+[0.557s] 
+[0.557s] Installed /home/sophie/visionaid/isaac_ros_ws/build/isaac_common_py
+[0.557s] running symlink_data
+[0.557s] creating /home/sophie/visionaid/isaac_ros_ws/install/isaac_common_py/share/ament_index
+[0.557s] creating /home/sophie/visionaid/isaac_ros_ws/install/isaac_common_py/share/ament_index/resource_index
+[0.557s] creating /home/sophie/visionaid/isaac_ros_ws/install/isaac_common_py/share/ament_index/resource_index/packages
+[0.557s] symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/isaac_common_py/resource/isaac_common_py -> /home/sophie/visionaid/isaac_ros_ws/install/isaac_common_py/share/ament_index/resource_index/packages
+[0.557s] symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/isaac_common_py/package.xml -> /home/sophie/visionaid/isaac_ros_ws/install/isaac_common_py/share/isaac_common_py
+[0.573s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/isaac_common_py' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/build/isaac_common_py/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid/isaac_ros_ws/install/isaac_common_py/lib/python3.10/site-packages:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sophie/visionaid/isaac_ros_ws/build/isaac_common_py/build --no-deps symlink_data

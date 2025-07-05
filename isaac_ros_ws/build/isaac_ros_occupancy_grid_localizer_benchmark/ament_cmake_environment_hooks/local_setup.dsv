@@ -1,0 +1,2 @@
+source;share/isaac_ros_occupancy_grid_localizer_benchmark/environment/ament_prefix_path.sh
+source;share/isaac_ros_occupancy_grid_localizer_benchmark/environment/path.sh

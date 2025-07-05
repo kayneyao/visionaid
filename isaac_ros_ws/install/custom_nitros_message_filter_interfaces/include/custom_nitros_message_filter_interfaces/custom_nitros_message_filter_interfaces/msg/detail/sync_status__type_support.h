@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_message_filter_interfaces/rosidl_generator_c/custom_nitros_message_filter_interfaces/msg/detail/sync_status__type_support.h

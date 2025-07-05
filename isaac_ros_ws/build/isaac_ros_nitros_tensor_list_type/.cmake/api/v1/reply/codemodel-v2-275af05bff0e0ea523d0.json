@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-4d3c4c34e7ed14d15dce.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "isaac_ros_nitros_tensor_list_type",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_version_info_target_isaac_ros_nitros_tensor_list_type::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_version_info_target_isaac_ros_nitros_tensor_list_type-Release-ec7689fcd6a942a066c7.json",
+					"name" : "generate_version_info_target_isaac_ros_nitros_tensor_list_type",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_nitros_tensor_list_type::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_nitros_tensor_list_type-Release-af734f710d3b1ef28dbd.json",
+					"name" : "isaac_ros_nitros_tensor_list_type",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_nitros_tensor_list_type_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_nitros_tensor_list_type_uninstall-Release-b207d60a6e8cefc5f585.json",
+					"name" : "isaac_ros_nitros_tensor_list_type_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-8ad9d904cb859bfeb692.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nitros_tensor_list_type",
+		"source" : "/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_nitros_type/isaac_ros_nitros_tensor_list_type"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

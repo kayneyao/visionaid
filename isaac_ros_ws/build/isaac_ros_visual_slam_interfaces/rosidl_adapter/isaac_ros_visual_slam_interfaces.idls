@@ -1,0 +1,6 @@
+/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_visual_slam_interfaces/rosidl_adapter/isaac_ros_visual_slam_interfaces:msg/VisualSlamStatus.idl
+/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_visual_slam_interfaces/rosidl_adapter/isaac_ros_visual_slam_interfaces:srv/GetAllPoses.idl
+/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_visual_slam_interfaces/rosidl_adapter/isaac_ros_visual_slam_interfaces:srv/Reset.idl
+/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_visual_slam_interfaces/rosidl_adapter/isaac_ros_visual_slam_interfaces:srv/SetSlamPose.idl
+/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_visual_slam_interfaces/rosidl_adapter/isaac_ros_visual_slam_interfaces:srv/FilePath.idl
+/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_visual_slam_interfaces/rosidl_adapter/isaac_ros_visual_slam_interfaces:srv/LocalizeInMap.idl

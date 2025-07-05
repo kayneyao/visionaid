@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nitros_encoder_ticks_type/ament_cmake_core/isaac_ros_nitros_encoder_ticks_typeConfig.cmake

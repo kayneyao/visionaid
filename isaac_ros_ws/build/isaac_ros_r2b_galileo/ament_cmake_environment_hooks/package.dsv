@@ -1,0 +1,4 @@
+source;share/isaac_ros_r2b_galileo/local_setup.bash
+source;share/isaac_ros_r2b_galileo/local_setup.dsv
+source;share/isaac_ros_r2b_galileo/local_setup.sh
+source;share/isaac_ros_r2b_galileo/local_setup.zsh

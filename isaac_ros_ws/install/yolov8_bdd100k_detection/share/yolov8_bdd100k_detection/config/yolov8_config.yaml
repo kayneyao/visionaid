@@ -1,0 +1,25 @@
+model:
+  onnx_file_path: "/home/sophie/visionaid/isaac_ros_ws/models/yolov8_bdd100k/best.onnx"
+  engine_file_path: "/home/sophie/visionaid/isaac_ros_ws/models/yolov8_bdd100k/best.trt"
+  force_engine_update: false
+
+network:
+  image_width: 640
+  image_height: 640
+  input_binding_names: ["images"]
+  output_binding_names: ["output0"]
+
+preprocessing:
+  image_mean: [0.0, 0.0, 0.0]
+  image_stddev: [255.0, 255.0, 255.0]
+  encoding_desired: "rgb8"
+  network_image_encoding: "rgb8"
+
+detection:
+  confidence_threshold: 0.25
+  nms_threshold: 0.45
+  max_detections: 100
+
+topics:
+  input_image: "/camera/color/image_raw"
+  output_detections: "/detections"

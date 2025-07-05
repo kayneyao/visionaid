@@ -1,0 +1,3 @@
+nvidia::isaac_ros::depth_image_proc::PointCloudXyzNode;lib/libpoint_cloud_xyz_node.so
+nvidia::isaac_ros::depth_image_proc::PointCloudXyzrgbNode;lib/libpoint_cloud_xyzrgb_node.so
+nvidia::isaac_ros::depth_image_proc::ConvertMetricNode;lib/libconvert_metric_node.so

@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_segway/ament_cmake_core/gxf_isaac_segwayConfig-version.cmake

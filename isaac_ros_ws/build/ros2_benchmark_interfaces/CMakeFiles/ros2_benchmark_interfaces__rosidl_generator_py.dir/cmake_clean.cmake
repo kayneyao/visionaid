@@ -1,0 +1,33 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/msg/_timestamped_message_array_s.c.o"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/msg/_timestamped_message_array_s.c.o.d"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/msg/_topic_message_count_s.c.o"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/msg/_topic_message_count_s.c.o.d"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/msg/_topic_message_timestamp_array_s.c.o"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/msg/_topic_message_timestamp_array_s.c.o.d"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_get_topic_message_timestamps_s.c.o"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_get_topic_message_timestamps_s.c.o.d"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_play_messages_s.c.o"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_play_messages_s.c.o.d"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_set_data_s.c.o"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_set_data_s.c.o.d"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_start_loading_s.c.o"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_start_loading_s.c.o.d"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_start_monitoring_s.c.o"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_start_monitoring_s.c.o.d"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_start_recording_s.c.o"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_start_recording_s.c.o.d"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_stop_loading_s.c.o"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_stop_loading_s.c.o.d"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_stop_monitoring_s.c.o"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_stop_monitoring_s.c.o.d"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_stop_recording_s.c.o"
+  "CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros2_benchmark_interfaces/srv/_stop_recording_s.c.o.d"
+  "rosidl_generator_py/ros2_benchmark_interfaces/libros2_benchmark_interfaces__rosidl_generator_py.pdb"
+  "rosidl_generator_py/ros2_benchmark_interfaces/libros2_benchmark_interfaces__rosidl_generator_py.so"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/ros2_benchmark_interfaces__rosidl_generator_py.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

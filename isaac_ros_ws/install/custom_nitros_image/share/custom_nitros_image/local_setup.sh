@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_image/ament_cmake_environment_hooks/local_setup.sh

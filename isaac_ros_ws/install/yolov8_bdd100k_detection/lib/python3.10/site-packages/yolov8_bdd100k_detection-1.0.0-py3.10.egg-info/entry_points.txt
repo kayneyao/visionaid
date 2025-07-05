@@ -1,0 +1,3 @@
+[console_scripts]
+detection_processor = scripts.detection_processor:main
+

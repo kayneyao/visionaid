@@ -1,0 +1,22 @@
+[0.345s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_launch_utils': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_launch_utils/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_launch_utils/lib/python3.10/site-packages:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_launch_utils/build --no-deps symlink_data
+[0.487s] running develop
+[0.566s] running egg_info
+[0.567s] creating isaac_ros_launch_utils.egg-info
+[0.567s] writing isaac_ros_launch_utils.egg-info/PKG-INFO
+[0.567s] writing dependency_links to isaac_ros_launch_utils.egg-info/dependency_links.txt
+[0.567s] writing requirements to isaac_ros_launch_utils.egg-info/requires.txt
+[0.567s] writing top-level names to isaac_ros_launch_utils.egg-info/top_level.txt
+[0.567s] writing manifest file 'isaac_ros_launch_utils.egg-info/SOURCES.txt'
+[0.567s] reading manifest file 'isaac_ros_launch_utils.egg-info/SOURCES.txt'
+[0.568s] writing manifest file 'isaac_ros_launch_utils.egg-info/SOURCES.txt'
+[0.588s] running build_ext
+[0.588s] Creating /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_launch_utils/lib/python3.10/site-packages/isaac-ros-launch-utils.egg-link (link to .)
+[0.588s] 
+[0.588s] Installed /home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_launch_utils
+[0.589s] running symlink_data
+[0.589s] creating /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_launch_utils/share/ament_index
+[0.589s] creating /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_launch_utils/share/ament_index/resource_index
+[0.589s] creating /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_launch_utils/share/ament_index/resource_index/packages
+[0.589s] symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_launch_utils/resource/isaac_ros_launch_utils -> /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_launch_utils/share/ament_index/resource_index/packages
+[0.589s] symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_launch_utils/package.xml -> /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_launch_utils/share/isaac_ros_launch_utils
+[0.607s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_launch_utils' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_launch_utils/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_launch_utils/lib/python3.10/site-packages:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_launch_utils/build --no-deps symlink_data

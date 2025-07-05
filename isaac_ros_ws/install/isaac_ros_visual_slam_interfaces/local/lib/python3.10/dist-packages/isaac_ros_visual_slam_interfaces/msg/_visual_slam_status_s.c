@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_visual_slam_interfaces/rosidl_generator_py/isaac_ros_visual_slam_interfaces/msg/_visual_slam_status_s.c

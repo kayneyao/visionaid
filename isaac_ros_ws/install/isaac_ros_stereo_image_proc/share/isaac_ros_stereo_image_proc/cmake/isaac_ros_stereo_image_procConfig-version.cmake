@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_stereo_image_proc/ament_cmake_core/isaac_ros_stereo_image_procConfig-version.cmake

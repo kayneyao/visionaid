@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nvblox_benchmark/ament_cmake_environment_hooks/local_setup.zsh

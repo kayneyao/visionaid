@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>yolov8_bdd100k_detection</name>
+  <version>1.0.0</version>
+  <description>YOLOv8 BDD100K Object Detection with Isaac ROS</description>
+  <maintainer email="your.email@domain.com">Your Name</maintainer>
+  <license>Apache-2.0</license>
+  
+  <depend>isaac_ros_tensor_rt</depend>
+  <depend>isaac_ros_dnn_image_encoder</depend>
+  <depend>isaac_ros_yolov8</depend>
+  <depend>isaac_ros_common</depend>
+  <depend>rclpy</depend>
+  <depend>vision_msgs</depend>
+  
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

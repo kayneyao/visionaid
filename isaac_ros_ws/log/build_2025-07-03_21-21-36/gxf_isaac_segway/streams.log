@@ -1,0 +1,75 @@
+[0.010s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_segway': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_gxf_extensions/gxf_isaac_segway -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DCMAKE_CUDA_ARCHITECTURES=89 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway
+[0.051s] -- The C compiler identification is GNU 11.4.0
+[0.091s] -- The CXX compiler identification is GNU 11.4.0
+[0.095s] -- Detecting C compiler ABI info
+[0.148s] -- Detecting C compiler ABI info - done
+[0.154s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.154s] -- Detecting C compile features
+[0.154s] -- Detecting C compile features - done
+[0.157s] -- Detecting CXX compiler ABI info
+[0.213s] -- Detecting CXX compiler ABI info - done
+[0.219s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.219s] -- Detecting CXX compile features
+[0.220s] -- Detecting CXX compile features - done
+[0.220s] -- Found ament_cmake_auto: 1.3.11 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.320s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.361s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.408s] -- Loading isaac_ros_common extras
+[0.408s] -- CMAKE_BUILD_TYPE: Release
+[0.422s] -- Looking for pthread.h
+[0.471s] -- Looking for pthread.h - found
+[0.471s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.520s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.521s] -- Found Threads: TRUE  
+[0.528s] -- Found CUDA: /usr/local/cuda-12.8 (found version "12.8") 
+[0.529s] -- CUDA architectures: 89
+[0.529s] -- Loading isaac_ros_common extras (modules)
+[0.549s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.551s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.555s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.562s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.571s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.595s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.597s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.670s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.684s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.711s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.754s] -- Loading isaac_ros_gxf extras
+[0.755s] [33mCMake Warning at CMakeLists.txt:32 (message):
+[0.755s]   Unsupported architecture: x86_64.  gxf_isaac_segway is only supported on
+[0.755s]   aarch64 platforms.
+[0.755s] 
+[0.755s] [0m
+[0.794s] -- Configuring done
+[0.797s] -- Generating done
+[0.798s] -- Build files have been written to: /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_segway
+[0.805s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_segway' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_gxf_extensions/gxf_isaac_segway -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DCMAKE_CUDA_ARCHITECTURES=89 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway
+[0.806s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_segway': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_segway -- -j22 -l22
+[0.847s] [100%] [34m[1mGenerating version information as YAML[0m
+[0.906s] [100%] Built target generate_version_info_target_gxf_isaac_segway
+[0.914s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_segway' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_segway -- -j22 -l22
+[0.916s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_segway': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_segway
+[0.919s] -- Install configuration: "Release"
+[0.919s] -- Execute custom install script
+[0.920s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/environment/library_path.sh
+[0.926s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/environment/library_path.dsv
+[0.934s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/version_info.yaml
+[0.940s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/ament_index/resource_index/package_run_dependencies/gxf_isaac_segway
+[0.945s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/ament_index/resource_index/parent_prefix_path/gxf_isaac_segway
+[0.952s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/environment/ament_prefix_path.sh
+[0.959s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/environment/ament_prefix_path.dsv
+[0.965s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/environment/path.sh
+[0.972s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/environment/path.dsv
+[0.978s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/local_setup.bash
+[0.985s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/local_setup.sh
+[0.990s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/local_setup.zsh
+[0.997s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/local_setup.dsv
+[1.003s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/package.dsv
+[1.009s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/ament_index/resource_index/packages/gxf_isaac_segway
+[1.015s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/cmake/ament_cmake_export_targets-extras.cmake
+[1.022s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.026s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/cmake/gxf_isaac_segwayConfig.cmake
+[1.032s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/cmake/gxf_isaac_segwayConfig-version.cmake
+[1.037s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/package.xml
+[1.043s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway/share/gxf_isaac_segway/cmake/export_gxf_isaac_segwayExport.cmake
+[1.045s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_segway' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_segway

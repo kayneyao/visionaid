@@ -1,0 +1,11 @@
+{
+  "package_name": "isaac_ros_visual_slam_interfaces",
+  "non_idl_tuples": [
+    "/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_visual_odometry/isaac_ros_visual_slam_interfaces:msg/VisualSlamStatus.msg",
+    "/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_visual_odometry/isaac_ros_visual_slam_interfaces:srv/GetAllPoses.srv",
+    "/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_visual_odometry/isaac_ros_visual_slam_interfaces:srv/Reset.srv",
+    "/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_visual_odometry/isaac_ros_visual_slam_interfaces:srv/SetSlamPose.srv",
+    "/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_visual_odometry/isaac_ros_visual_slam_interfaces:srv/FilePath.srv",
+    "/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_visual_odometry/isaac_ros_visual_slam_interfaces:srv/LocalizeInMap.srv"
+  ]
+}

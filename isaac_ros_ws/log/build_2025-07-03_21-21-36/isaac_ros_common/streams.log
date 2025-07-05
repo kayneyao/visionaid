@@ -1,0 +1,112 @@
+[0.007s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_common': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_common/isaac_ros_common -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DCMAKE_CUDA_ARCHITECTURES=89 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common
+[0.052s] -- The C compiler identification is GNU 11.4.0
+[0.089s] -- The CXX compiler identification is GNU 11.4.0
+[0.093s] -- Detecting C compiler ABI info
+[0.142s] -- Detecting C compiler ABI info - done
+[0.150s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.150s] -- Detecting C compile features
+[0.150s] -- Detecting C compile features - done
+[0.152s] -- Detecting CXX compiler ABI info
+[0.206s] -- Detecting CXX compiler ABI info - done
+[0.212s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.212s] -- Detecting CXX compile features
+[0.212s] -- Detecting CXX compile features - done
+[0.213s] -- Found ament_cmake_auto: 1.3.11 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.303s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.341s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.403s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.405s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.409s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.414s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.422s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.443s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.444s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.502s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.516s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.538s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.541s] -- Looking for pthread.h
+[0.590s] -- Looking for pthread.h - found
+[0.590s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.641s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.642s] -- Found Threads: TRUE  
+[0.668s] -- Loading isaac_ros_common extras
+[0.668s] -- CMAKE_BUILD_TYPE: Release
+[0.685s] -- Found CUDA: /usr/local/cuda-12.8 (found version "12.8") 
+[0.686s] -- CUDA architectures: 89
+[0.739s] -- Configuring done
+[0.745s] -- Generating done
+[0.747s] -- Build files have been written to: /home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_common
+[0.753s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_common' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_common/isaac_ros_common -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DCMAKE_CUDA_ARCHITECTURES=89 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common
+[0.755s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_common': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_common -- -j22 -l22
+[0.794s] [ 25%] [34m[1mGenerating version information as YAML[0m
+[0.795s] [ 50%] [32mBuilding CXX object CMakeFiles/isaac_ros_common.dir/src/vpi_utilities.cpp.o[0m
+[0.796s] [ 75%] [32mBuilding CXX object CMakeFiles/isaac_ros_common.dir/src/qos.cpp.o[0m
+[0.803s] [ 75%] Built target ament_cmake_python_symlink_isaac_ros_common
+[0.840s] [ 75%] Built target generate_version_info_target_isaac_ros_common
+[0.930s] running egg_info
+[0.931s] creating isaac_ros_common.egg-info
+[0.931s] writing isaac_ros_common.egg-info/PKG-INFO
+[0.931s] writing dependency_links to isaac_ros_common.egg-info/dependency_links.txt
+[0.931s] writing top-level names to isaac_ros_common.egg-info/top_level.txt
+[0.931s] writing manifest file 'isaac_ros_common.egg-info/SOURCES.txt'
+[0.932s] reading manifest file 'isaac_ros_common.egg-info/SOURCES.txt'
+[0.932s] writing manifest file 'isaac_ros_common.egg-info/SOURCES.txt'
+[0.953s] [ 75%] Built target ament_cmake_python_build_isaac_ros_common_egg
+[2.683s] [100%] [32m[1mLinking CXX shared library libisaac_ros_common.so[0m
+[2.753s] [100%] Built target isaac_ros_common
+[2.763s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_common' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_common -- -j22 -l22
+[2.764s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_common': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_common
+[2.768s] -- Install configuration: "Release"
+[2.768s] -- Execute custom install script
+[2.769s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/ament_index/resource_index/isaac_ros_common_cmake_path/isaac_ros_common
+[2.775s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/environment/pythonpath.sh
+[2.781s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/environment/pythonpath.dsv
+[2.787s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages/isaac_ros_common-3.2.5-py3.10.egg-info/PKG-INFO
+[2.793s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages/isaac_ros_common-3.2.5-py3.10.egg-info/SOURCES.txt
+[2.800s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages/isaac_ros_common-3.2.5-py3.10.egg-info/dependency_links.txt
+[2.806s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages/isaac_ros_common-3.2.5-py3.10.egg-info/top_level.txt
+[2.812s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages/isaac_ros_common/__init__.py
+[2.820s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages/isaac_ros_common/qos.py
+[2.827s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/ament_index/resource_index/isaac_ros_common_scripts_path/isaac_ros_common
+[2.833s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/version_info.yaml
+[2.838s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/include/isaac_ros_common/qos.hpp
+[2.845s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/include/isaac_ros_common/vpi_utilities.hpp
+[2.850s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/environment/library_path.sh
+[2.855s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/environment/library_path.dsv
+[2.862s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib/libisaac_ros_common.so
+[2.869s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/cmake/isaac_ros_common-extras-assets.cmake
+[2.875s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/cmake/isaac_ros_common-extras-modules.cmake
+[2.881s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/cmake/isaac_ros_common-extras.cmake
+[2.887s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/cmake/isaac_ros_common-version-info.cmake
+[2.893s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/cmake/modules/FindTENSORRT.cmake
+[2.899s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/ament_index/resource_index/package_run_dependencies/isaac_ros_common
+[2.906s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/ament_index/resource_index/parent_prefix_path/isaac_ros_common
+[2.912s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/environment/ament_prefix_path.sh
+[2.918s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/environment/ament_prefix_path.dsv
+[2.924s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/environment/path.sh
+[2.931s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/environment/path.dsv
+[2.939s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/local_setup.bash
+[2.946s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/local_setup.sh
+[2.952s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/local_setup.zsh
+[2.959s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/local_setup.dsv
+[2.963s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/package.dsv
+[2.969s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/ament_index/resource_index/packages/isaac_ros_common
+[2.975s] -- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/cmake/isaac_ros_common-version-info.cmake
+[2.975s] -- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/cmake/isaac_ros_common-extras.cmake
+[2.975s] -- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/cmake/isaac_ros_common-extras-modules.cmake
+[2.975s] -- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/cmake/isaac_ros_common-extras-assets.cmake
+[2.976s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/cmake/ament_cmake_export_dependencies-extras.cmake
+[2.983s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/cmake/ament_cmake_export_include_directories-extras.cmake
+[2.991s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/cmake/ament_cmake_export_libraries-extras.cmake
+[2.999s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/cmake/isaac_ros_commonConfig.cmake
+[3.004s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/cmake/isaac_ros_commonConfig-version.cmake
+[3.010s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/package.xml
+[3.034s] Listing '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages/isaac_ros_common'...
+[3.035s] Compiling '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages/isaac_ros_common/__init__.py'...
+[3.035s] Compiling '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages/isaac_ros_common/qos.py'...
+[3.037s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin
+[3.038s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin/isaac_ros_generate_bug_report.py
+[3.038s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin/isaac_ros_common-version-info.py
+[3.038s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin/isaac_ros_asset_eula.sh
+[3.038s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin/isaac_ros_version_embed.py
+[3.040s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_common' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_common

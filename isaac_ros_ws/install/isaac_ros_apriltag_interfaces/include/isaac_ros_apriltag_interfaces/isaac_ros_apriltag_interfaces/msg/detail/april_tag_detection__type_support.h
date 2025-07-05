@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_apriltag_interfaces/rosidl_generator_c/isaac_ros_apriltag_interfaces/msg/detail/april_tag_detection__type_support.h
