@@ -1,6 +1,6 @@
 model:
-  onnx_file_path: "/home/sophie/visionaid/isaac_ros_ws/models/yolov8_bdd100k/best.onnx"
-  engine_file_path: "/home/sophie/visionaid/isaac_ros_ws/models/yolov8_bdd100k/best.trt"
+  onnx_file_path: "/home/sophie/visionaid/models/yolov8/best.onnx"
+  engine_file_path: "/home/sophie/visionaid/models/yolov8/best.onnx"
   force_engine_update: false
 
 network:

@@ -1,0 +1,21 @@
+running develop
+running egg_info
+creating scene_description_system.egg-info
+writing scene_description_system.egg-info/PKG-INFO
+writing dependency_links to scene_description_system.egg-info/dependency_links.txt
+writing entry points to scene_description_system.egg-info/entry_points.txt
+writing requirements to scene_description_system.egg-info/requires.txt
+writing top-level names to scene_description_system.egg-info/top_level.txt
+writing manifest file 'scene_description_system.egg-info/SOURCES.txt'
+reading manifest file 'scene_description_system.egg-info/SOURCES.txt'
+writing manifest file 'scene_description_system.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/sophie/visionaid/isaac_ros_ws/install/scene_description_system/lib/python3.10/site-packages/scene-description-system.egg-link (link to .)
+
+Installed /home/sophie/visionaid/isaac_ros_ws/build/scene_description_system
+running symlink_data
+creating /home/sophie/visionaid/isaac_ros_ws/install/scene_description_system/share/ament_index
+creating /home/sophie/visionaid/isaac_ros_ws/install/scene_description_system/share/ament_index/resource_index
+creating /home/sophie/visionaid/isaac_ros_ws/install/scene_description_system/share/ament_index/resource_index/packages
+symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/scene_description_system/resource/scene_description_system -> /home/sophie/visionaid/isaac_ros_ws/install/scene_description_system/share/ament_index/resource_index/packages
+symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/scene_description_system/package.xml -> /home/sophie/visionaid/isaac_ros_ws/install/scene_description_system/share/scene_description_system

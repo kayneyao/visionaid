@@ -1,0 +1,18 @@
+detection_processor:
+  ros__parameters:
+    # Filtering parameters
+    obstacle_timeout: 2.0
+    min_confidence: 0.6
+    max_distance: 10.0
+    
+    # Grid parameters
+    grid_resolution: 0.1
+    grid_size: 200
+    
+    # Class filtering (BDD100K classes)
+    obstacle_classes: [0, 2, 3, 4, 5, 6, 7]  # person, car, truck, bus, train, motorcycle, bicycle
+    traffic_classes: [8, 9]  # traffic light, traffic sign
+    
+    # Clustering parameters
+    cluster_distance: 0.5
+    min_cluster_size: 3

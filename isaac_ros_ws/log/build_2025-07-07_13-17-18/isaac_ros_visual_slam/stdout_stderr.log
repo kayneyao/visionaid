@@ -1,0 +1,89 @@
+-- Architecture: x86_64
+-- Found ament_cmake_auto: 1.3.11 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Loading isaac_ros_common extras
+-- CMAKE_BUILD_TYPE: Release
+-- CUDA architectures: 89
+-- Loading isaac_ros_common extras (modules)
+-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Loading isaac_ros_gxf extras
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_visual_slam
+[35m[1mConsolidate compiler generated dependencies of target visual_slam_node[0m
+[  8%] Built target generate_version_info_target_isaac_ros_visual_slam
+[ 25%] [32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/cuvslam_ros_conversion.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/visual_slam_node.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/viz_helper.cpp.o[0m
+[ 41%] [32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/landmarks_vis_helper.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/localizer_vis_helper.cpp.o[0m
+[ 58%] [32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/pose_cache.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/posegraph_vis_helper.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/visual_slam_node.dir/src/impl/visual_slam_impl.cpp.o[0m
+[ 83%] [32m[1mLinking CXX shared library libvisual_slam_node.so[0m
+[ 83%] Built target visual_slam_node
+[35m[1mConsolidate compiler generated dependencies of target isaac_ros_visual_slam[0m
+[ 91%] [32mBuilding CXX object CMakeFiles/isaac_ros_visual_slam.dir/src/visual_slam_main.cpp.o[0m
+[100%] [32m[1mLinking CXX executable isaac_ros_visual_slam[0m
+[100%] Built target isaac_ros_visual_slam
+-- Install configuration: "Release"
+-- Execute custom install script
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/lib/isaac_ros_visual_slam/cuvslam_api_launcher
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/lib/libcuvslam.so
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/version_info.yaml
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/cuvslam_ros_conversion.hpp
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/has_subscribers.hpp
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/landmarks_vis_helper.hpp
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/limited_vector.hpp
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/localizer_vis_helper.hpp
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/message_stream_sequencer.hpp
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/pose_cache.hpp
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/posegraph_vis_helper.hpp
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/stopwatch.hpp
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/types.hpp
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/visual_slam_impl.hpp
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/impl/viz_helper.hpp
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/include/isaac_ros_visual_slam/visual_slam_node.hpp
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/environment/library_path.sh
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/environment/library_path.dsv
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/lib/libvisual_slam_node.so
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/lib/isaac_ros_visual_slam/isaac_ros_visual_slam
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/config/zed.yaml
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/launch/isaac_ros_visual_slam.launch.py
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/launch/isaac_ros_visual_slam_core.launch.py
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/launch/isaac_ros_visual_slam_hawk.launch.py
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/launch/isaac_ros_visual_slam_isaac_sim.launch.py
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/launch/isaac_ros_visual_slam_realsense.launch.py
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/rviz/default.cfg.rviz
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/rviz/isaac_sim.cfg.rviz
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/rviz/realsense.cfg.rviz
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/rviz/vslam_keepall.cfg.rviz
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/rviz/zed.cfg.rviz
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/ament_index/resource_index/package_run_dependencies/isaac_ros_visual_slam
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/ament_index/resource_index/parent_prefix_path/isaac_ros_visual_slam
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/environment/path.sh
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/environment/path.dsv
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/local_setup.bash
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/local_setup.sh
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/local_setup.zsh
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/local_setup.dsv
+-- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/package.dsv
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/ament_index/resource_index/packages/isaac_ros_visual_slam
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/ament_index/resource_index/rclcpp_components/isaac_ros_visual_slam
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/cmake/ament_cmake_export_libraries-extras.cmake
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/cmake/isaac_ros_visual_slamConfig.cmake
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/cmake/isaac_ros_visual_slamConfig-version.cmake
+-- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/package.xml

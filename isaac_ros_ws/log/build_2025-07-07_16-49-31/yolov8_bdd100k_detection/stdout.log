@@ -1,0 +1,24 @@
+running develop
+running egg_info
+writing yolov8_bdd100k_detection.egg-info/PKG-INFO
+writing dependency_links to yolov8_bdd100k_detection.egg-info/dependency_links.txt
+writing entry points to yolov8_bdd100k_detection.egg-info/entry_points.txt
+writing requirements to yolov8_bdd100k_detection.egg-info/requires.txt
+writing top-level names to yolov8_bdd100k_detection.egg-info/top_level.txt
+reading manifest file 'yolov8_bdd100k_detection.egg-info/SOURCES.txt'
+writing manifest file 'yolov8_bdd100k_detection.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/sophie/visionaid/isaac_ros_ws/install/yolov8_bdd100k_detection/lib/python3.10/site-packages/yolov8-bdd100k-detection.egg-link (link to .)
+Installing detection_processor script to /home/sophie/visionaid/isaac_ros_ws/install/yolov8_bdd100k_detection/lib/yolov8_bdd100k_detection
+Installing yolov8_camera_node script to /home/sophie/visionaid/isaac_ros_ws/install/yolov8_bdd100k_detection/lib/yolov8_bdd100k_detection
+
+Installed /home/sophie/visionaid/isaac_ros_ws/build/yolov8_bdd100k_detection
+running symlink_data
+symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/yolov8_bdd100k_detection/resource/yolov8_bdd100k_detection -> /home/sophie/visionaid/isaac_ros_ws/install/yolov8_bdd100k_detection/share/ament_index/resource_index/packages
+symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/yolov8_bdd100k_detection/package.xml -> /home/sophie/visionaid/isaac_ros_ws/install/yolov8_bdd100k_detection/share/yolov8_bdd100k_detection
+symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/yolov8_bdd100k_detection/launch/yolov8_slam_integration.launch.py -> /home/sophie/visionaid/isaac_ros_ws/install/yolov8_bdd100k_detection/share/yolov8_bdd100k_detection/launch
+symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/yolov8_bdd100k_detection/launch/yolov8_bdd100k_realsense.launch.py -> /home/sophie/visionaid/isaac_ros_ws/install/yolov8_bdd100k_detection/share/yolov8_bdd100k_detection/launch
+symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/yolov8_bdd100k_detection/launch/yolov8_full_pipeline.launch.py -> /home/sophie/visionaid/isaac_ros_ws/install/yolov8_bdd100k_detection/share/yolov8_bdd100k_detection/launch
+symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/yolov8_bdd100k_detection/config/slam_integration_params.yaml -> /home/sophie/visionaid/isaac_ros_ws/install/yolov8_bdd100k_detection/share/yolov8_bdd100k_detection/config
+symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/yolov8_bdd100k_detection/config/yolov8_config.yaml -> /home/sophie/visionaid/isaac_ros_ws/install/yolov8_bdd100k_detection/share/yolov8_bdd100k_detection/config
+symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/yolov8_bdd100k_detection/config/detection_params.yaml -> /home/sophie/visionaid/isaac_ros_ws/install/yolov8_bdd100k_detection/share/yolov8_bdd100k_detection/config

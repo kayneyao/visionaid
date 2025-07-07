@@ -1,0 +1,97 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-544c5a0c3345a903dd5f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "isaac_ros_visual_slam",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_version_info_target_isaac_ros_visual_slam::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_version_info_target_isaac_ros_visual_slam-Release-b9ac94e08c1bdf1fdd5c.json",
+					"name" : "generate_version_info_target_isaac_ros_visual_slam",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_visual_slam::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_visual_slam-Release-cc821445a73d4e86dc43.json",
+					"name" : "isaac_ros_visual_slam",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_visual_slam_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_visual_slam_uninstall-Release-112d2a6fa5318491c9f3.json",
+					"name" : "isaac_ros_visual_slam_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-21412b93e09d90c5ad26.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "visual_slam_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-visual_slam_node-Release-4d6ec19d9b7d4d4fd9f3.json",
+					"name" : "visual_slam_node",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_visual_slam",
+		"source" : "/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_visual_odometry/isaac_ros_visual_slam"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

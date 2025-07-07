@@ -1,8 +1,11 @@
 # generated from colcon_core/shell/template/command_prefix.sh.em
 . "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/package.sh"
+. "/home/sophie/visionaid/isaac_ros_ws/install/isaac_common/share/isaac_common/package.sh"
 . "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/share/isaac_ros_gxf/package.sh"
+. "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_launch_utils/share/isaac_ros_launch_utils/package.sh"
 . "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_tensor_list_interfaces/share/isaac_ros_tensor_list_interfaces/package.sh"
 . "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_test/share/isaac_ros_test/package.sh"
+. "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam_interfaces/share/isaac_ros_visual_slam_interfaces/package.sh"
 . "/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/package.sh"
 . "/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_image_flip/share/gxf_isaac_image_flip/package.sh"
 . "/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_message_compositor/share/gxf_isaac_message_compositor/package.sh"
@@ -20,5 +23,4 @@
 . "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_managed_nitros/share/isaac_ros_managed_nitros/package.sh"
 . "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_tensor_rt/share/isaac_ros_tensor_rt/package.sh"
 . "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_image_proc/share/isaac_ros_image_proc/package.sh"
-. "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_tensor_proc/share/isaac_ros_tensor_proc/package.sh"
-. "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_dnn_image_encoder/share/isaac_ros_dnn_image_encoder/package.sh"
+. "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam/share/isaac_ros_visual_slam/package.sh"

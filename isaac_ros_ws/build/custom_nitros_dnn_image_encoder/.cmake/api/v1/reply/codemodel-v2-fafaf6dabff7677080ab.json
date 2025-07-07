@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-8fe27ac4f36810def75f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "custom_nitros_dnn_image_encoder",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "custom_nitros_dnn_image_encoder_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-custom_nitros_dnn_image_encoder_uninstall-Release-dcbe7329b278d9821684.json",
+					"name" : "custom_nitros_dnn_image_encoder_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_version_info_target_custom_nitros_dnn_image_encoder::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_version_info_target_custom_nitros_dnn_image_encoder-Release-4bd390c78ff50657bb68.json",
+					"name" : "generate_version_info_target_custom_nitros_dnn_image_encoder",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "image_encoder_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-image_encoder_node-Release-861e5ec73dd66e121fda.json",
+					"name" : "image_encoder_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-50920c0f2ac8f9194e6a.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_dnn_image_encoder",
+		"source" : "/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_managed_nitros_examples/custom_nitros_dnn_image_encoder"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
