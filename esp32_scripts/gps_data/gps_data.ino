@@ -38,7 +38,7 @@ void setup()
 
 
   // gnss.setRgbOff();
-  gnss.setRgbOn();
+  gnss.setRgbOn(); 
   // gnss.disablePower();      
 }
 

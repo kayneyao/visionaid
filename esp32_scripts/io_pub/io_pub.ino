@@ -1,5 +1,6 @@
 #include "LIS2MDL.h"
 #include "LSM6DSL.h"
+#include "DFRobot_GNSS.h"
 
 #include <Wire.h>
 #include <string.h>
@@ -14,12 +15,14 @@
 
 #include <sensor_msgs/msg/imu.h>
 #include <sensor_msgs/msg/magnetic_field.h>
+#include <sensor_msgs/msg/nav_sat_fix.h>
 
 #include <rcutils/logging_macros.h>
 
 // Create sensor objects
 LSM6DSL imu;
 LIS2MDL mag;
+DFRobot_GNSS_I2C gnss(&Wire ,GNSS_DEVICE_ADDR);
 
 // ROS 2 components
 typedef struct {
@@ -27,6 +30,7 @@ typedef struct {
   rcl_node_t node;
   rcl_publisher_t imu_pub;
   rcl_publisher_t mag_pub;
+  rcl_publisher_t gnss_pub;
   rcl_timer_t timer;
   rclc_executor_t executor;
   rcl_allocator_t allocator;
@@ -37,6 +41,7 @@ ros2_components ros2;
 // Message instances
 sensor_msgs__msg__Imu imu_msg;
 sensor_msgs__msg__MagneticField mag_msg;
+sensor_msgs__msg__NavSatFix gnss_msg;
 
 // Timer callback: read sensors, stamp, publish
 void callback(rcl_timer_t * timer, int64_t last_call_time) {
@@ -46,15 +51,11 @@ void callback(rcl_timer_t * timer, int64_t last_call_time) {
 }
 
 void setup() {
-    // Configure micro-ROS to use Serial transport via UART0
-  // rmw_uros_set_custom_transport(
-  //   true,
-  //   &Serial,
-  //   arduino_transport_open,
-  //   arduino_transport_close,
-  //   arduino_transport_write,
-  //   arduino_transport_read
-  // );
+  // Initialize GNSS Module
+  gnss.enablePower(); 
+  gnss.setGnss(eGPS_BeiDou_GLONASS);
+  gnss.setRgbOn();
+
   set_microros_transports();
 
   // 1) Initialize support & allocator
@@ -82,9 +83,16 @@ void setup() {
     ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, MagneticField),
     "mag"
   );
+  rclc_publisher_init_default(
+    &ros2.gnss_pub,
+    &ros2.node,
+    ROSIDL_GET_MSG_TYPE_SUPPORT(sensor_msgs, msg, NavSatFix),
+    "gnss"
+  );
 
   sensor_msgs__msg__Imu__init(&imu_msg);
   sensor_msgs__msg__MagneticField__init(&mag_msg);
+  sensor_msgs__msg__NavSatFix__init(&gnss_msg);
 
   // 5) Initialize I2C & sensors
   Wire.begin();
@@ -114,6 +122,11 @@ void setup() {
   imu_msg.header.frame_id.data     = (char *)frame;
   imu_msg.header.frame_id.size     = strlen(frame);
   imu_msg.header.frame_id.capacity = imu_msg.header.frame_id.size + 1;
+
+  const char * gnss_frame = "gnss_link";
+  gnss_msg.header.frame_id.data = (char *)gnss_frame;
+  gnss_msg.header.frame_id.size = strlen(gnss_frame);
+  gnss_msg.header.frame_id.capacity = gnss_msg.header.frame_id.size;
 }
 
 void loop() {
@@ -123,6 +136,15 @@ void loop() {
   float ax, ay, az;
   float gx, gy, gz;
   float mx, my, mz;
+
+  sTim_t utc = gnss.getUTC();
+  sTim_t date = gnss.getDate();
+  sLonLat_t lat = gnss.getLat();
+  sLonLat_t lon = gnss.getLon();
+  double high = gnss.getAlt();
+  uint8_t starUserd = gnss.getNumSatUsed();
+  double sog = gnss.getSog();
+  double cog = gnss.getCog();
 
   imu.readData(ax, ay, az, gx, gy, gz);
   mag.readData(mx, my, mz);
@@ -144,14 +166,26 @@ void loop() {
   mag_msg.magnetic_field.y = my;
   mag_msg.magnetic_field.z = mz;
 
+  // 5) Prepare GNSS message
+
+  gnss_msg.latitude = lat.latitudeDegree;
+  gnss_msg.longitude = lon.lonitudeDegree;
+  gnss_msg.altitude = high;
+
+  gnss_msg.position_covariance_type =
+    sensor_msgs__msg__NavSatFix__COVARIANCE_TYPE_APPROXIMATED;
+  
+
   // 6) Publish both topics
   
   // rclc_executor_spin_some(&ros2.executor, RCL_MS_TO_NS(1));
   imu_msg.header.stamp.sec     = now_ns / 1000000000LL;
   imu_msg.header.stamp.nanosec = now_ns % 1000000000LL;
+  gnss_msg.header.stamp.sec  = utc.hour * 3600 + utc.minute * 60 + utc.second;
 
   mag_msg.header = imu_msg.header;
 
   rcl_publish(&ros2.imu_pub, &imu_msg, NULL);
   rcl_publish(&ros2.mag_pub, &mag_msg, NULL);
+  rcl_publish(&ros2.gnss_pub, &gnss_msg, NULL);
 }
