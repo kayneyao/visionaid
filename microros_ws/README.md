@@ -3,8 +3,7 @@ To setup this folder, run the following commands:
 # Source the ROS 2 installation
 source /opt/ros/$ROS_DISTRO/setup.bash
 
-# Create a workspace and download the micro-ROS tools
-mkdir microros_ws  
+# Enter workspace and download the micro-ROS tools
 cd microros_ws  
 git clone -b $ROS_DISTRO https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
 
