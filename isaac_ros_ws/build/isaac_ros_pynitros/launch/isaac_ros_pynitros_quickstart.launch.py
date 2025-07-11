@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_pynitros/launch/isaac_ros_pynitros_quickstart.launch.py

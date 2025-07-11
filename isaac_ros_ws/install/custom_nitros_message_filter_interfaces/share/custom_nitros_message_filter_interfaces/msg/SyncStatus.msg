@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_managed_nitros_examples/custom_nitros_message_filter_interfaces/msg/SyncStatus.msg

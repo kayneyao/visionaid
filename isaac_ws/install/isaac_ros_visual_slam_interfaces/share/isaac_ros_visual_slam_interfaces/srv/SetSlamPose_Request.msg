@@ -1,1 +1,0 @@
-/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces/rosidl_cmake/srv/SetSlamPose_Request.msg

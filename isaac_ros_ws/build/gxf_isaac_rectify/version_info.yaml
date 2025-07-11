@@ -1,0 +1,10 @@
+build_datetime: '2025-07-03T21:28:58.511455'
+git_branch: main
+git_commit_date: 2025-02-27 16:41:08 -0800
+git_commit_hash: cf10b237aae31a1d8fdbb375238fff637d7c849d
+git_commit_message: 'Merge pull request #56 from NVIDIA-ISAAC-ROS/release-3.2
+
+
+  Isaac 3.2 Update 5'
+git_workspace_dirty: 'No'
+version: 3.2.5

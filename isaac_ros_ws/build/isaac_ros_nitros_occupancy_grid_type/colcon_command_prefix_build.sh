@@ -1,0 +1,11 @@
+# generated from colcon_core/shell/template/command_prefix.sh.em
+. "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/share/isaac_ros_common/package.sh"
+. "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/share/isaac_ros_gxf/package.sh"
+. "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_test/share/isaac_ros_test/package.sh"
+. "/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/share/gxf_isaac_gems/package.sh"
+. "/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_message_compositor/share/gxf_isaac_message_compositor/package.sh"
+. "/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_optimizer/share/gxf_isaac_optimizer/package.sh"
+. "/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_sight/share/gxf_isaac_sight/package.sh"
+. "/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_atlas/share/gxf_isaac_atlas/package.sh"
+. "/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gxf_helpers/share/gxf_isaac_gxf_helpers/package.sh"
+. "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nitros/share/isaac_ros_nitros/package.sh"

@@ -1,0 +1,201 @@
+[0.016s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_tensorops': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages/lib:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_image_pipeline/isaac_ros_gxf_extensions/gxf_isaac_tensorops -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DCMAKE_CUDA_ARCHITECTURES=89 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops
+[0.052s] -- The C compiler identification is GNU 11.4.0
+[0.093s] -- The CXX compiler identification is GNU 11.4.0
+[0.097s] -- Detecting C compiler ABI info
+[0.146s] -- Detecting C compiler ABI info - done
+[0.151s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.151s] -- Detecting C compile features
+[0.151s] -- Detecting C compile features - done
+[0.153s] -- Detecting CXX compiler ABI info
+[0.216s] -- Detecting CXX compiler ABI info - done
+[0.222s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.222s] -- Detecting CXX compile features
+[0.222s] -- Detecting CXX compile features - done
+[0.223s] -- Found ament_cmake_auto: 1.3.11 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.319s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.355s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.405s] -- Loading isaac_ros_common extras
+[0.405s] -- CMAKE_BUILD_TYPE: Release
+[0.421s] -- Looking for pthread.h
+[0.470s] -- Looking for pthread.h - found
+[0.470s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.526s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.526s] -- Found Threads: TRUE  
+[0.532s] -- Found CUDA: /usr/local/cuda-12.8 (found version "12.8") 
+[0.533s] -- CUDA architectures: 89
+[0.533s] -- Loading isaac_ros_common extras (modules)
+[0.553s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.555s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.560s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.566s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.575s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.598s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.600s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.659s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.675s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.702s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.736s] -- Loading isaac_ros_gxf extras
+[0.752s] -- Found CUDAToolkit: /usr/local/cuda-12.8/include (found version "12.8.61") 
+[0.810s] -- Configuring done
+[0.822s] -- Generating done
+[0.824s] -- Build files have been written to: /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_tensorops
+[0.832s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_tensorops' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages/lib:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_image_pipeline/isaac_ros_gxf_extensions/gxf_isaac_tensorops -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DCMAKE_CUDA_ARCHITECTURES=89 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops
+[0.834s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_tensorops': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages/lib:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_tensorops -- -j22 -l22
+[0.879s] [  7%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/components/Frame3D.cpp.o[0m
+[0.879s] [  7%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/components/CameraModel.cpp.o[0m
+[0.879s] [  7%] [34m[1mGenerating version information as YAML[0m
+[0.879s] [  9%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/components/CropAndResize.cpp.o[0m
+[0.879s] [ 11%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/components/ConvertColorFormat.cpp.o[0m
+[0.879s] [ 14%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/components/ImageAdapter.cpp.o[0m
+[0.879s] [ 16%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/components/InterleavedToPlanar.cpp.o[0m
+[0.879s] [ 19%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/components/BBoxGenerator.cpp.o[0m
+[0.880s] [ 23%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/components/Reshape.cpp.o[0m
+[0.880s] [ 28%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/components/Normalize.cpp.o[0m
+[0.880s] [ 28%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/components/Resize.cpp.o[0m
+[0.881s] [ 21%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/tensorops.cpp.o[0m
+[0.882s] [ 30%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/components/TensorStream.cpp.o[0m
+[0.882s] [ 33%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/components/ImageUtils.cpp.o[0m
+[0.882s] [ 35%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/components/detail/ImageAdapterTensorImpl.cpp.o[0m
+[0.882s] [ 38%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/components/TensorOperator.cpp.o[0m
+[0.885s] [ 42%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/ArithmeticOperations.cpp.o[0m
+[0.886s] [ 42%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/components/detail/ImageAdapterVideoBufferImpl.cpp.o[0m
+[0.886s] [ 45%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/components/Undistort.cpp.o[0m
+[0.886s] [ 47%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/ColorConversions.cpp.o[0m
+[0.886s] [ 50%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/BBoxUtils.cpp.o[0m
+[0.892s] [ 52%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/DBScan.cpp.o[0m
+[1.014s] [ 52%] Built target generate_version_info_target_gxf_isaac_tensorops
+[1.045s] [ 54%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/Errors.cpp.o[0m
+[1.343s] [ 57%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/Filters.cpp.o[0m
+[1.550s] [ 59%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/FusedOperations.cpp.o[0m
+[1.649s] [ 61%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/GeometryTransforms.cpp.o[0m
+[1.913s] [ 64%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/IImageWarp.cpp.o[0m
+[2.025s] [ 66%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/OneEuroFilter.cpp.o[0m
+[2.066s] [ 69%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/TensorOperators.cpp.o[0m
+[2.316s] [ 71%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/VPIColorConvertImpl.cpp.o[0m
+[2.523s] [ 73%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/VPIRemapImpl.cpp.o[0m
+[2.664s] [ 76%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/VPIResizeImpl.cpp.o[0m
+[2.947s] [ 78%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/VPIStatusMapping.cpp.o[0m
+[3.214s] [ 80%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/VPIStereoDisparityEstimatorImpl.cpp.o[0m
+[3.324s] [ 83%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/VPITensorOperators.cpp.o[0m
+[3.332s] [ 85%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/NppUtils.cpp.o[0m
+[3.520s] [ 88%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/Array.cpp.o[0m
+[3.689s] [ 90%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/CVError.cpp.o[0m
+[3.791s] [ 92%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/MathTypes.cpp.o[0m
+[3.913s] [ 95%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/Memory.cpp.o[0m
+[4.099s] [ 97%] [32mBuilding CXX object CMakeFiles/gxf_isaac_tensorops.dir/gxf/extensions/tensorops/core/Tensor.cpp.o[0m
+[8.444s] [100%] [32m[1mLinking CXX shared library libgxf_isaac_tensorops.so[0m
+[8.702s] [100%] Built target gxf_isaac_tensorops
+[8.710s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_tensorops' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages/lib:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_tensorops -- -j22 -l22
+[8.711s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_tensorops': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages/lib:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_tensorops
+[8.717s] -- Install configuration: "Release"
+[8.717s] -- Execute custom install script
+[8.717s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/gxf/lib/libgxf_isaac_tensorops.so
+[8.724s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/BBoxGenerator.cpp
+[8.732s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/BBoxGenerator.hpp
+[8.738s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/CameraModel.cpp
+[8.744s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/CameraModel.hpp
+[8.749s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/ConvertColorFormat.cpp
+[8.756s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/ConvertColorFormat.hpp
+[8.762s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/CropAndResize.cpp
+[8.767s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/CropAndResize.hpp
+[8.773s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/Frame3D.cpp
+[8.779s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/Frame3D.hpp
+[8.784s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/ImageAdapter.cpp
+[8.790s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/ImageAdapter.hpp
+[8.795s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/ImageUtils.cpp
+[8.801s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/ImageUtils.hpp
+[8.808s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/InterleavedToPlanar.cpp
+[8.814s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/InterleavedToPlanar.hpp
+[8.820s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/Normalize.cpp
+[8.825s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/Normalize.hpp
+[8.831s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/Reshape.cpp
+[8.837s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/Reshape.hpp
+[8.843s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/Resize.cpp
+[8.849s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/Resize.hpp
+[8.855s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/TensorOperator.cpp
+[8.861s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/TensorOperator.hpp
+[8.867s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/TensorStream.cpp
+[8.874s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/TensorStream.hpp
+[8.880s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/Undistort.cpp
+[8.885s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/Undistort.hpp
+[8.892s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/detail/ImageAdapterTensorImpl.cpp
+[8.897s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/detail/ImageAdapterTensorImpl.hpp
+[8.903s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/detail/ImageAdapterVideoBufferImpl.cpp
+[8.909s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/components/detail/ImageAdapterVideoBufferImpl.hpp
+[8.917s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/ArithmeticOperations.cpp
+[8.924s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/Array.cpp
+[8.930s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/Array.h
+[8.936s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/BBox.h
+[8.943s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/BBoxUtils.cpp
+[8.950s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/BBoxUtils.h
+[8.956s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/CVError.cpp
+[8.962s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/CVError.h
+[8.968s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/CameraModel.h
+[8.974s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/ColorConversions.cpp
+[8.980s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/ComputeEngine.h
+[8.988s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/Core.h
+[8.995s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/DBScan.cpp
+[9.003s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/DBScan.h
+[9.009s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/Errors.cpp
+[9.015s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/Errors.h
+[9.021s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/Filters.cpp
+[9.027s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/Filters.h
+[9.036s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/FusedOperations.cpp
+[9.045s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/GeometryTransforms.cpp
+[9.053s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/IImageWarp.cpp
+[9.058s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/IImageWarp.h
+[9.064s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/ITensorOperatorContext.h
+[9.071s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/ITensorOperatorStream.h
+[9.076s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/Image.h
+[9.082s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/ImageUtils.h
+[9.090s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/MathTypes.cpp
+[9.096s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/MathTypes.h
+[9.102s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/Memory.cpp
+[9.108s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/Memory.h
+[9.115s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/NppUtils.cpp
+[9.123s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/NppUtils.h
+[9.129s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/OneEuroFilter.cpp
+[9.135s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/OneEuroFilter.h
+[9.141s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/Tensor.cpp
+[9.146s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/Tensor.h
+[9.153s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/TensorOperators.cpp
+[9.158s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/TensorOperators.h
+[9.164s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/Traits.h
+[9.172s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/VPIColorConvertImpl.cpp
+[9.178s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/VPIColorConvertImpl.h
+[9.183s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/VPIEnumMapping.h
+[9.188s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/VPIImageWarp.h
+[9.195s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/VPIRemapImpl.cpp
+[9.200s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/VPIRemapImpl.h
+[9.207s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/VPIResizeImpl.cpp
+[9.214s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/VPIResizeImpl.h
+[9.220s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/VPIStatusMapping.cpp
+[9.227s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/VPIStatusMapping.h
+[9.233s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/VPIStereoDisparityEstimatorImpl.cpp
+[9.239s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/VPIStereoDisparityEstimatorImpl.h
+[9.246s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/VPITensorOperators.cpp
+[9.253s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/core/VPITensorOperators.h
+[9.259s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/include/extensions/tensorops/tensorops.cpp
+[9.265s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/version_info.yaml
+[9.271s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/environment/library_path.sh
+[9.278s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/environment/library_path.dsv
+[9.284s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/lib/libgxf_isaac_tensorops.so
+[9.289s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/ament_index/resource_index/package_run_dependencies/gxf_isaac_tensorops
+[9.296s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/ament_index/resource_index/parent_prefix_path/gxf_isaac_tensorops
+[9.301s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/environment/ament_prefix_path.sh
+[9.308s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/environment/ament_prefix_path.dsv
+[9.315s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/environment/path.sh
+[9.321s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/environment/path.dsv
+[9.326s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/local_setup.bash
+[9.332s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/local_setup.sh
+[9.339s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/local_setup.zsh
+[9.345s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/local_setup.dsv
+[9.351s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/package.dsv
+[9.358s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/ament_index/resource_index/packages/gxf_isaac_tensorops
+[9.364s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/cmake/ament_cmake_export_include_directories-extras.cmake
+[9.370s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/cmake/ament_cmake_export_dependencies-extras.cmake
+[9.378s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/cmake/ament_cmake_export_libraries-extras.cmake
+[9.386s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/cmake/gxf_isaac_tensoropsConfig.cmake
+[9.392s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/cmake/gxf_isaac_tensoropsConfig-version.cmake
+[9.398s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_tensorops/share/gxf_isaac_tensorops/package.xml
+[9.406s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_tensorops' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages/lib:/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_tensorops

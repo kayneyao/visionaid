@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-876d9e836fac92c651c0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "isaac_ros_managed_nitros",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_version_info_target_isaac_ros_managed_nitros::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_version_info_target_isaac_ros_managed_nitros-Release-b734efc8a1ddd7ed2d67.json",
+					"name" : "generate_version_info_target_isaac_ros_managed_nitros",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_managed_nitros_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_managed_nitros_uninstall-Release-b8885f426c3f09aca3f0.json",
+					"name" : "isaac_ros_managed_nitros_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-572a86beb5129bf1220e.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_managed_nitros",
+		"source" : "/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_managed_nitros"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

@@ -1,0 +1,4 @@
+/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin/isaac_ros_generate_bug_report.py
+/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin/isaac_ros_common-version-info.py
+/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin/isaac_ros_asset_eula.sh
+/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin/isaac_ros_version_embed.py

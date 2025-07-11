@@ -1,0 +1,21 @@
+running develop
+running egg_info
+creating assistive_navigation_core.egg-info
+writing assistive_navigation_core.egg-info/PKG-INFO
+writing dependency_links to assistive_navigation_core.egg-info/dependency_links.txt
+writing entry points to assistive_navigation_core.egg-info/entry_points.txt
+writing requirements to assistive_navigation_core.egg-info/requires.txt
+writing top-level names to assistive_navigation_core.egg-info/top_level.txt
+writing manifest file 'assistive_navigation_core.egg-info/SOURCES.txt'
+reading manifest file 'assistive_navigation_core.egg-info/SOURCES.txt'
+writing manifest file 'assistive_navigation_core.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/sophie/visionaid/isaac_ros_ws/install/assistive_navigation_core/lib/python3.10/site-packages/assistive-navigation-core.egg-link (link to .)
+
+Installed /home/sophie/visionaid/isaac_ros_ws/build/assistive_navigation_core
+running symlink_data
+creating /home/sophie/visionaid/isaac_ros_ws/install/assistive_navigation_core/share/ament_index
+creating /home/sophie/visionaid/isaac_ros_ws/install/assistive_navigation_core/share/ament_index/resource_index
+creating /home/sophie/visionaid/isaac_ros_ws/install/assistive_navigation_core/share/ament_index/resource_index/packages
+symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/assistive_navigation_core/resource/assistive_navigation_core -> /home/sophie/visionaid/isaac_ros_ws/install/assistive_navigation_core/share/ament_index/resource_index/packages
+symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/assistive_navigation_core/package.xml -> /home/sophie/visionaid/isaac_ros_ws/install/assistive_navigation_core/share/assistive_navigation_core

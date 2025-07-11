@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_bi3d_interfaces/rosidl_generator_py/isaac_ros_bi3d_interfaces/msg/__init__.py

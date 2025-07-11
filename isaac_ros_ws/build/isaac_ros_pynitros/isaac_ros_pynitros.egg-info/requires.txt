@@ -1,0 +1,6 @@
+cuda_python
+posix_ipc
+setuptools
+
+[test]
+pytest

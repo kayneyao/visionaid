@@ -1,0 +1,241 @@
+[0.009s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nova_interfaces': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_common/isaac_ros_nova_interfaces -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DCMAKE_CUDA_ARCHITECTURES=89 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces
+[0.046s] -- The C compiler identification is GNU 11.4.0
+[0.083s] -- The CXX compiler identification is GNU 11.4.0
+[0.088s] -- Detecting C compiler ABI info
+[0.140s] -- Detecting C compiler ABI info - done
+[0.145s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.145s] -- Detecting C compile features
+[0.145s] -- Detecting C compile features - done
+[0.147s] -- Detecting CXX compiler ABI info
+[0.204s] -- Detecting CXX compiler ABI info - done
+[0.210s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.210s] -- Detecting CXX compile features
+[0.210s] -- Detecting CXX compile features - done
+[0.211s] -- Found ament_cmake_auto: 1.3.11 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.305s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.341s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.394s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.397s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.417s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.434s] -- Loading isaac_ros_common extras
+[0.434s] -- CMAKE_BUILD_TYPE: Release
+[0.449s] -- Looking for pthread.h
+[0.503s] -- Looking for pthread.h - found
+[0.504s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.559s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.560s] -- Found Threads: TRUE  
+[0.564s] -- Found CUDA: /usr/local/cuda-12.8 (found version "12.8") 
+[0.565s] -- CUDA architectures: 89
+[0.565s] -- Loading isaac_ros_common extras (modules)
+[0.595s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.596s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.657s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.673s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.694s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.857s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[0.989s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.163s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.179s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[1.179s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.204s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[1.204s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.204s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.204s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.221s] -- Found PythonExtra: .so  
+[1.289s] -- Configuring done
+[1.308s] -- Generating done
+[1.315s] -- Build files have been written to: /home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nova_interfaces
+[1.325s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nova_interfaces' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_common/isaac_ros_nova_interfaces -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DCMAKE_CUDA_ARCHITECTURES=89 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces
+[1.326s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nova_interfaces': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nova_interfaces -- -j22 -l22
+[1.359s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.365s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.365s] [  7%] [34m[1mGenerating version information as YAML[0m
+[1.373s] [  7%] Built target ament_cmake_python_symlink_isaac_ros_nova_interfaces
+[1.418s] [  7%] Built target generate_version_info_target_isaac_ros_nova_interfaces
+[1.517s] running egg_info
+[1.517s] creating isaac_ros_nova_interfaces.egg-info
+[1.517s] writing isaac_ros_nova_interfaces.egg-info/PKG-INFO
+[1.517s] writing dependency_links to isaac_ros_nova_interfaces.egg-info/dependency_links.txt
+[1.517s] writing top-level names to isaac_ros_nova_interfaces.egg-info/top_level.txt
+[1.517s] writing manifest file 'isaac_ros_nova_interfaces.egg-info/SOURCES.txt'
+[1.518s] reading manifest file 'isaac_ros_nova_interfaces.egg-info/SOURCES.txt'
+[1.519s] writing manifest file 'isaac_ros_nova_interfaces.egg-info/SOURCES.txt'
+[1.538s] [  7%] Built target ament_cmake_python_build_isaac_ros_nova_interfaces_egg
+[1.583s] [  7%] Built target isaac_ros_nova_interfaces__cpp
+[1.588s] [ 10%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.589s] [ 15%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.589s] [ 15%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.599s] [ 17%] [32mBuilding C object CMakeFiles/isaac_ros_nova_interfaces__rosidl_generator_c.dir/rosidl_generator_c/isaac_ros_nova_interfaces/msg/detail/encoder_ticks__functions.c.o[0m
+[1.599s] [ 20%] [32mBuilding C object CMakeFiles/isaac_ros_nova_interfaces__rosidl_generator_c.dir/rosidl_generator_c/isaac_ros_nova_interfaces/msg/detail/correlated_timestamp__functions.c.o[0m
+[1.660s] [ 22%] [32m[1mLinking C shared library libisaac_ros_nova_interfaces__rosidl_generator_c.so[0m
+[1.690s] [ 22%] Built target isaac_ros_nova_interfaces__rosidl_generator_c
+[1.699s] [ 30%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.699s] [ 30%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.699s] [ 30%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.805s] [ 32%] [32mBuilding CXX object CMakeFiles/isaac_ros_nova_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/isaac_ros_nova_interfaces/msg/detail/encoder_ticks__type_support.cpp.o[0m
+[1.807s] [ 40%] [32mBuilding CXX object CMakeFiles/isaac_ros_nova_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/isaac_ros_nova_interfaces/msg/encoder_ticks__type_support.cpp.o[0m
+[1.807s] [ 40%] [32mBuilding CXX object CMakeFiles/isaac_ros_nova_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/isaac_ros_nova_interfaces/msg/correlated_timestamp__type_support.cpp.o[0m
+[1.807s] [ 40%] [32mBuilding CXX object CMakeFiles/isaac_ros_nova_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/isaac_ros_nova_interfaces/msg/detail/correlated_timestamp__type_support.cpp.o[0m
+[1.837s] [ 42%] [32mBuilding CXX object CMakeFiles/isaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/isaac_ros_nova_interfaces/msg/detail/dds_fastrtps/encoder_ticks__type_support.cpp.o[0m
+[1.838s] [ 45%] [32mBuilding CXX object CMakeFiles/isaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/isaac_ros_nova_interfaces/msg/detail/dds_fastrtps/correlated_timestamp__type_support.cpp.o[0m
+[1.917s] [ 50%] [32mBuilding CXX object CMakeFiles/isaac_ros_nova_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/isaac_ros_nova_interfaces/msg/correlated_timestamp__type_support.cpp.o[0m
+[1.917s] [ 50%] [32mBuilding CXX object CMakeFiles/isaac_ros_nova_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/isaac_ros_nova_interfaces/msg/encoder_ticks__type_support.cpp.o[0m
+[1.946s] [ 52%] [32m[1mLinking CXX shared library libisaac_ros_nova_interfaces__rosidl_typesupport_c.so[0m
+[1.970s] [ 55%] [32mBuilding C object CMakeFiles/isaac_ros_nova_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/isaac_ros_nova_interfaces/msg/detail/correlated_timestamp__type_support.c.o[0m
+[1.970s] [ 57%] [32mBuilding C object CMakeFiles/isaac_ros_nova_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/isaac_ros_nova_interfaces/msg/detail/encoder_ticks__type_support.c.o[0m
+[1.974s] [ 57%] Built target isaac_ros_nova_interfaces__rosidl_typesupport_c
+[1.997s] [ 60%] [32m[1mLinking C shared library libisaac_ros_nova_interfaces__rosidl_typesupport_introspection_c.so[0m
+[2.019s] [ 60%] Built target isaac_ros_nova_interfaces__rosidl_typesupport_introspection_c
+[2.044s] [ 62%] [32m[1mLinking CXX shared library libisaac_ros_nova_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[2.053s] [ 65%] [32m[1mLinking CXX shared library libisaac_ros_nova_interfaces__rosidl_typesupport_cpp.so[0m
+[2.053s] [ 67%] [32mBuilding CXX object CMakeFiles/isaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/isaac_ros_nova_interfaces/msg/detail/correlated_timestamp__type_support_c.cpp.o[0m
+[2.054s] [ 70%] [32mBuilding CXX object CMakeFiles/isaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/isaac_ros_nova_interfaces/msg/detail/encoder_ticks__type_support_c.cpp.o[0m
+[2.080s] [ 70%] Built target isaac_ros_nova_interfaces__rosidl_typesupport_cpp
+[2.084s] [ 70%] Built target isaac_ros_nova_interfaces__rosidl_typesupport_introspection_cpp
+[2.132s] [ 72%] [32m[1mLinking CXX shared library libisaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.179s] [ 72%] Built target isaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_cpp
+[2.259s] [ 75%] [32m[1mLinking CXX shared library libisaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[2.306s] [ 75%] Built target isaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_c
+[2.322s] [ 75%] Built target isaac_ros_nova_interfaces
+[2.339s] [ 77%] [34m[1mGenerating Python code for ROS interfaces[0m
+[2.707s] [ 77%] Built target isaac_ros_nova_interfaces__py
+[2.723s] [ 82%] [32mBuilding C object CMakeFiles/isaac_ros_nova_interfaces__rosidl_generator_py.dir/rosidl_generator_py/isaac_ros_nova_interfaces/msg/_encoder_ticks_s.c.o[0m
+[2.723s] [ 82%] [32mBuilding C object CMakeFiles/isaac_ros_nova_interfaces__rosidl_generator_py.dir/rosidl_generator_py/isaac_ros_nova_interfaces/msg/_correlated_timestamp_s.c.o[0m
+[2.823s] [ 85%] [32m[1mLinking C shared library rosidl_generator_py/isaac_ros_nova_interfaces/libisaac_ros_nova_interfaces__rosidl_generator_py.so[0m
+[2.853s] [ 85%] Built target isaac_ros_nova_interfaces__rosidl_generator_py
+[2.869s] [ 87%] [32mBuilding C object CMakeFiles/isaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/isaac_ros_nova_interfaces/_isaac_ros_nova_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[2.869s] [ 90%] [32mBuilding C object CMakeFiles/isaac_ros_nova_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/isaac_ros_nova_interfaces/_isaac_ros_nova_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[2.869s] [ 92%] [32mBuilding C object CMakeFiles/isaac_ros_nova_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/isaac_ros_nova_interfaces/_isaac_ros_nova_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[2.948s] [ 95%] [32m[1mLinking C shared library rosidl_generator_py/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.979s] [ 95%] Built target isaac_ros_nova_interfaces__rosidl_typesupport_introspection_c__pyext
+[2.982s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.984s] [100%] [32m[1mLinking C shared library rosidl_generator_py/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.016s] [100%] Built target isaac_ros_nova_interfaces__rosidl_typesupport_c__pyext
+[3.018s] [100%] Built target isaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[3.026s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nova_interfaces' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nova_interfaces -- -j22 -l22
+[3.028s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nova_interfaces': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nova_interfaces
+[3.035s] -- Install configuration: "Release"
+[3.036s] -- Execute custom install script
+[3.036s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/ament_index/resource_index/rosidl_interfaces/isaac_ros_nova_interfaces
+[3.048s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/correlated_timestamp.h
+[3.059s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/correlated_timestamp__functions.h
+[3.070s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/correlated_timestamp__struct.h
+[3.081s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/correlated_timestamp__type_support.h
+[3.092s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/encoder_ticks__functions.h
+[3.104s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/encoder_ticks__struct.h
+[3.111s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/encoder_ticks__type_support.h
+[3.117s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/encoder_ticks.h
+[3.124s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/rosidl_generator_c__visibility_control.h
+[3.130s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/environment/library_path.sh
+[3.143s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/environment/library_path.dsv
+[3.149s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/correlated_timestamp__rosidl_typesupport_fastrtps_c.h
+[3.155s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/encoder_ticks__rosidl_typesupport_fastrtps_c.h
+[3.165s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[3.176s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/correlated_timestamp__rosidl_typesupport_introspection_c.h
+[3.186s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/encoder_ticks__rosidl_typesupport_introspection_c.h
+[3.193s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[3.202s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/correlated_timestamp.hpp
+[3.213s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/correlated_timestamp__builder.hpp
+[3.219s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/correlated_timestamp__struct.hpp
+[3.229s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/correlated_timestamp__traits.hpp
+[3.240s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/correlated_timestamp__type_support.hpp
+[3.253s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/encoder_ticks__builder.hpp
+[3.263s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/encoder_ticks__struct.hpp
+[3.271s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/encoder_ticks__traits.hpp
+[3.277s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/encoder_ticks__type_support.hpp
+[3.284s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/encoder_ticks.hpp
+[3.290s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[3.296s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/correlated_timestamp__rosidl_typesupport_fastrtps_cpp.hpp
+[3.302s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/encoder_ticks__rosidl_typesupport_fastrtps_cpp.hpp
+[3.309s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[3.316s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/correlated_timestamp__rosidl_typesupport_introspection_cpp.hpp
+[3.327s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/include/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces/msg/detail/encoder_ticks__rosidl_typesupport_introspection_cpp.hpp
+[3.337s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/environment/pythonpath.sh
+[3.348s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/environment/pythonpath.dsv
+[3.359s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces-3.2.5-py3.10.egg-info/PKG-INFO
+[3.369s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces-3.2.5-py3.10.egg-info/SOURCES.txt
+[3.378s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces-3.2.5-py3.10.egg-info/dependency_links.txt
+[3.387s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces-3.2.5-py3.10.egg-info/top_level.txt
+[3.397s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/__init__.py
+[3.410s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/_isaac_ros_nova_interfaces_s.ep.rosidl_typesupport_c.c
+[3.419s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/_isaac_ros_nova_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[3.425s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/_isaac_ros_nova_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[3.433s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.445s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.456s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.462s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/libisaac_ros_nova_interfaces__rosidl_generator_py.so
+[3.468s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/msg/__init__.py
+[3.474s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/msg/_correlated_timestamp.py
+[3.480s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/msg/_correlated_timestamp_s.c
+[3.487s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/msg/_encoder_ticks.py
+[3.493s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/msg/_encoder_ticks_s.c
+[3.499s] -- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.499s] -- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.500s] -- Up-to-date symlink: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/isaac_ros_nova_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.500s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/msg/CorrelatedTimestamp.idl
+[3.506s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/msg/EncoderTicks.idl
+[3.512s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/msg/CorrelatedTimestamp.msg
+[3.519s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/msg/EncoderTicks.msg
+[3.530s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/version_info.yaml
+[3.541s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/ament_index/resource_index/package_run_dependencies/isaac_ros_nova_interfaces
+[3.549s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/ament_index/resource_index/parent_prefix_path/isaac_ros_nova_interfaces
+[3.555s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/environment/ament_prefix_path.sh
+[3.561s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/environment/ament_prefix_path.dsv
+[3.568s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/environment/path.sh
+[3.575s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/environment/path.dsv
+[3.584s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/local_setup.bash
+[3.591s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/local_setup.sh
+[3.600s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/local_setup.zsh
+[3.606s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/local_setup.dsv
+[3.612s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/package.dsv
+[3.618s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/ament_index/resource_index/packages/isaac_ros_nova_interfaces
+[3.623s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/rosidl_cmake-extras.cmake
+[3.628s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.634s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.641s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[3.647s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[3.653s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[3.659s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[3.664s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/isaac_ros_nova_interfacesConfig.cmake
+[3.670s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/isaac_ros_nova_interfacesConfig-version.cmake
+[3.675s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/package.xml
+[3.681s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/lib/libisaac_ros_nova_interfaces__rosidl_generator_c.so
+[3.681s] -- Set runtime path of "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/lib/libisaac_ros_nova_interfaces__rosidl_generator_c.so" to ""
+[3.681s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/lib/libisaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_c.so
+[3.681s] -- Set runtime path of "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/lib/libisaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[3.681s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/lib/libisaac_ros_nova_interfaces__rosidl_typesupport_introspection_c.so
+[3.681s] -- Set runtime path of "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/lib/libisaac_ros_nova_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[3.681s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/lib/libisaac_ros_nova_interfaces__rosidl_typesupport_c.so
+[3.681s] -- Set runtime path of "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/lib/libisaac_ros_nova_interfaces__rosidl_typesupport_c.so" to ""
+[3.681s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/lib/libisaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[3.682s] -- Set runtime path of "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/lib/libisaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[3.682s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/lib/libisaac_ros_nova_interfaces__rosidl_typesupport_introspection_cpp.so
+[3.682s] -- Set runtime path of "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/lib/libisaac_ros_nova_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[3.682s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/lib/libisaac_ros_nova_interfaces__rosidl_typesupport_cpp.so
+[3.682s] -- Set runtime path of "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/lib/libisaac_ros_nova_interfaces__rosidl_typesupport_cpp.so" to ""
+[3.703s] Listing '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces'...
+[3.703s] Compiling '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/__init__.py'...
+[3.703s] Listing '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/msg'...
+[3.703s] Compiling '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/msg/__init__.py'...
+[3.703s] Compiling '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/msg/_correlated_timestamp.py'...
+[3.703s] Compiling '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/local/lib/python3.10/dist-packages/isaac_ros_nova_interfaces/msg/_encoder_ticks.py'...
+[3.706s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/lib/libisaac_ros_nova_interfaces__rosidl_generator_py.so
+[3.706s] -- Set runtime path of "/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/lib/libisaac_ros_nova_interfaces__rosidl_generator_py.so" to ""
+[3.707s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/export_isaac_ros_nova_interfaces__rosidl_generator_cExport.cmake
+[3.707s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/export_isaac_ros_nova_interfaces__rosidl_generator_cExport-release.cmake
+[3.707s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/export_isaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[3.707s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/export_isaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_cExport-release.cmake
+[3.707s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/isaac_ros_nova_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[3.707s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/isaac_ros_nova_interfaces__rosidl_typesupport_introspection_cExport-release.cmake
+[3.707s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/isaac_ros_nova_interfaces__rosidl_typesupport_cExport.cmake
+[3.707s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/isaac_ros_nova_interfaces__rosidl_typesupport_cExport-release.cmake
+[3.707s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/export_isaac_ros_nova_interfaces__rosidl_generator_cppExport.cmake
+[3.707s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/export_isaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[3.708s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/export_isaac_ros_nova_interfaces__rosidl_typesupport_fastrtps_cppExport-release.cmake
+[3.708s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/isaac_ros_nova_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[3.708s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/isaac_ros_nova_interfaces__rosidl_typesupport_introspection_cppExport-release.cmake
+[3.708s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/isaac_ros_nova_interfaces__rosidl_typesupport_cppExport.cmake
+[3.708s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/isaac_ros_nova_interfaces__rosidl_typesupport_cppExport-release.cmake
+[3.708s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/export_isaac_ros_nova_interfaces__rosidl_generator_pyExport.cmake
+[3.708s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces/share/isaac_ros_nova_interfaces/cmake/export_isaac_ros_nova_interfaces__rosidl_generator_pyExport-release.cmake
+[3.710s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nova_interfaces' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nova_interfaces

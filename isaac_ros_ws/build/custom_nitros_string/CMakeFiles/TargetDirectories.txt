@@ -1,0 +1,12 @@
+/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_string/CMakeFiles/uninstall.dir
+/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_string/CMakeFiles/custom_nitros_string_uninstall.dir
+/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_string/CMakeFiles/string_encoder_node.dir
+/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_string/CMakeFiles/string_decoder_node.dir
+/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_string/CMakeFiles/generate_version_info_target_custom_nitros_string.dir
+/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_string/CMakeFiles/test.dir
+/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_string/CMakeFiles/edit_cache.dir
+/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_string/CMakeFiles/rebuild_cache.dir
+/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_string/CMakeFiles/list_install_components.dir
+/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_string/CMakeFiles/install.dir
+/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_string/CMakeFiles/install/local.dir
+/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_string/CMakeFiles/install/strip.dir

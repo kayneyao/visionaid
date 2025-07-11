@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-3e5bd330831748cb762c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "isaac_ros_h264_decoder_benchmark",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_version_info_target_isaac_ros_h264_decoder_benchmark::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_version_info_target_isaac_ros_h264_decoder_benchmark-Release-514794375f908e5b582f.json",
+					"name" : "generate_version_info_target_isaac_ros_h264_decoder_benchmark",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_h264_decoder_benchmark_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_h264_decoder_benchmark_uninstall-Release-37dbf27faf863399d5d2.json",
+					"name" : "isaac_ros_h264_decoder_benchmark_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-0bc688061e26306dad5f.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_h264_decoder_benchmark",
+		"source" : "/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_benchmark/benchmarks/isaac_ros_h264_decoder_benchmark"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

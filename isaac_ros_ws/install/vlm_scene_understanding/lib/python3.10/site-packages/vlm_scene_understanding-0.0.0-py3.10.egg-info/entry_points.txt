@@ -1,0 +1,3 @@
+[console_scripts]
+blip2_node = vlm_scene_understanding.blip2_node:main
+

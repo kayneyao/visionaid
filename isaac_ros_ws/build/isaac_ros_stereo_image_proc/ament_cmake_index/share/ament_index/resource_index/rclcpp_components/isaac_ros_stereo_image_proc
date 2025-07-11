@@ -1,0 +1,3 @@
+nvidia::isaac_ros::stereo_image_proc::PointCloudNode;lib/libpoint_cloud_node.so
+nvidia::isaac_ros::stereo_image_proc::DisparityNode;lib/libdisparity_node.so
+nvidia::isaac_ros::stereo_image_proc::DisparityToDepthNode;lib/libdisparity_to_depth_node.so

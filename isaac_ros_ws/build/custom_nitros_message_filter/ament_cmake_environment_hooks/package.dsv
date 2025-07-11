@@ -1,0 +1,4 @@
+source;share/custom_nitros_message_filter/local_setup.bash
+source;share/custom_nitros_message_filter/local_setup.dsv
+source;share/custom_nitros_message_filter/local_setup.sh
+source;share/custom_nitros_message_filter/local_setup.zsh

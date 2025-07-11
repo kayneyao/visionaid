@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-c42976174d83d3ff6b23.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "isaac_ros_nitros_compressed_video_type",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_version_info_target_isaac_ros_nitros_compressed_video_type::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_version_info_target_isaac_ros_nitros_compressed_video_type-Release-ee6c07d8a4d19d775e6d.json",
+					"name" : "generate_version_info_target_isaac_ros_nitros_compressed_video_type",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_nitros_compressed_video_type::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_nitros_compressed_video_type-Release-75729c0daf86e461ee07.json",
+					"name" : "isaac_ros_nitros_compressed_video_type",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_nitros_compressed_video_type_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_nitros_compressed_video_type_uninstall-Release-77ca0eb785a2e77aed7f.json",
+					"name" : "isaac_ros_nitros_compressed_video_type_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-a0f04877433256bb8c11.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nitros_compressed_video_type",
+		"source" : "/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_nitros_type/isaac_ros_nitros_compressed_video_type"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

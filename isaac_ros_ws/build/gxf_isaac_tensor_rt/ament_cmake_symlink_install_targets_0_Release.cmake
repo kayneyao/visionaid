@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_tensor_rt/libgxf_isaac_tensor_rt.so" "TARGETS" "gxf_isaac_tensor_rt" "DESTINATION" "share/gxf_isaac_tensor_rt/gxf/lib")

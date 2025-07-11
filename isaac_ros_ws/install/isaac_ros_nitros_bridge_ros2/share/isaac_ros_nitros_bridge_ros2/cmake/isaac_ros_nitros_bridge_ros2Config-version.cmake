@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nitros_bridge_ros2/ament_cmake_core/isaac_ros_nitros_bridge_ros2Config-version.cmake

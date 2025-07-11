@@ -1,0 +1,106 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-89f20b71158849f43b32.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "isaac_ros_depth_image_proc",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "convert_metric_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-convert_metric_node-Release-803c85a139dea1214742.json",
+					"name" : "convert_metric_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_version_info_target_isaac_ros_depth_image_proc::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_version_info_target_isaac_ros_depth_image_proc-Release-9644ab48816c244abef6.json",
+					"name" : "generate_version_info_target_isaac_ros_depth_image_proc",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_depth_image_proc_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_depth_image_proc_uninstall-Release-a6d54c715fc2c3f2b416.json",
+					"name" : "isaac_ros_depth_image_proc_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "point_cloud_xyz_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-point_cloud_xyz_node-Release-98b5dfcc05119949aefe.json",
+					"name" : "point_cloud_xyz_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "point_cloud_xyzrgb_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-point_cloud_xyzrgb_node-Release-70c06062157ea46fcf43.json",
+					"name" : "point_cloud_xyzrgb_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-3d089efa0b5507a03973.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_depth_image_proc",
+		"source" : "/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_image_pipeline/isaac_ros_depth_image_proc"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_nitros_type/isaac_ros_nitros_pose_cov_stamped_type/include/isaac_ros_nitros_pose_cov_stamped_type/nitros_pose_cov_stamped.hpp

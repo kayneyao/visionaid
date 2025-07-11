@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nova_interfaces/rosidl_typesupport_introspection_c/isaac_ros_nova_interfaces/msg/detail/encoder_ticks__rosidl_typesupport_introspection_c.h

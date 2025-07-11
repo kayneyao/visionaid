@@ -1,0 +1,3 @@
+custom_nitros_image::GpuImageBuilderNode;lib/libgpu_image_builder_node.so
+custom_nitros_image::GpuImageViewerNode;lib/libgpu_image_viewer_node.so
+nvidia::isaac_ros::custom_nitros_image::NitrosImageSwitchNode;lib/libnitros_image_switch_node.so

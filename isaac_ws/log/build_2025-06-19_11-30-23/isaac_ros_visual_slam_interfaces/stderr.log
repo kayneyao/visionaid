@@ -1,9 +1,0 @@
-[31mCMake Error at /usr/share/cmake-3.22/Modules/FindCUDA.cmake:859 (message):
-  Specify CUDA_TOOLKIT_ROOT_DIR
-Call Stack (most recent call first):
-  /opt/ros/humble/share/isaac_ros_common/cmake/isaac_ros_common-extras.cmake:39 (find_package)
-  /opt/ros/humble/share/isaac_ros_common/cmake/isaac_ros_commonConfig.cmake:41 (include)
-  /opt/ros/humble/share/ament_cmake_auto/cmake/ament_auto_find_build_dependencies.cmake:67 (find_package)
-  CMakeLists.txt:31 (ament_auto_find_build_dependencies)
-
-[0m

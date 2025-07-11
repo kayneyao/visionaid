@@ -1,0 +1,97 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-630503c0806f415b9056.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "isaac_ros_hawk_nova_benchmark",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_isaac_ros_hawk_nova_benchmark_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_isaac_ros_hawk_nova_benchmark_egg-Release-a954c4816f6502827220.json",
+					"name" : "ament_cmake_python_build_isaac_ros_hawk_nova_benchmark_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_isaac_ros_hawk_nova_benchmark::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_isaac_ros_hawk_nova_benchmark-Release-67c1aa8d42584a576cb4.json",
+					"name" : "ament_cmake_python_symlink_isaac_ros_hawk_nova_benchmark",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_version_info_target_isaac_ros_hawk_nova_benchmark::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_version_info_target_isaac_ros_hawk_nova_benchmark-Release-b5fd556fa8e652056641.json",
+					"name" : "generate_version_info_target_isaac_ros_hawk_nova_benchmark",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "isaac_ros_hawk_nova_benchmark_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-isaac_ros_hawk_nova_benchmark_uninstall-Release-4420aea113fc55178075.json",
+					"name" : "isaac_ros_hawk_nova_benchmark_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-85503223a04bd2eeb760.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_hawk_nova_benchmark",
+		"source" : "/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_benchmark/benchmarks/isaac_ros_hawk_nova_benchmark"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

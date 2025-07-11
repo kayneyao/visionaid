@@ -1,0 +1,19 @@
+running egg_info
+writing ../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/PKG-INFO
+writing dependency_links to ../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/dependency_links.txt
+writing entry points to ../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/entry_points.txt
+writing requirements to ../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/requires.txt
+writing top-level names to ../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/top_level.txt
+reading manifest file '../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/SOURCES.txt'
+writing manifest file '../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding/lib/python3.10/site-packages/vlm_scene_understanding-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info to /home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding/lib/python3.10/site-packages/vlm_scene_understanding-0.0.0-py3.10.egg-info
+running install_scripts
+Installing blip2_node script to /home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding/lib/vlm_scene_understanding
+writing list of installed files to '/home/sophie/visionaid/isaac_ros_ws/build/vlm_scene_understanding/install.log'

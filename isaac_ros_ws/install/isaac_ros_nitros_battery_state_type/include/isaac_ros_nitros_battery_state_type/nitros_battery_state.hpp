@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_nitros_type/isaac_ros_nitros_battery_state_type/include/isaac_ros_nitros_battery_state_type/nitros_battery_state.hpp

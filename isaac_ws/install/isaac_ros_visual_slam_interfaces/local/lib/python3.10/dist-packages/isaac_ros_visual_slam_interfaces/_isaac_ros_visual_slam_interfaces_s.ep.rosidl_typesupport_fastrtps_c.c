@@ -1,1 +1,0 @@
-/home/kanye/Documents/visionaid/isaac_ws/build/isaac_ros_visual_slam_interfaces/rosidl_generator_py/isaac_ros_visual_slam_interfaces/_isaac_ros_visual_slam_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c

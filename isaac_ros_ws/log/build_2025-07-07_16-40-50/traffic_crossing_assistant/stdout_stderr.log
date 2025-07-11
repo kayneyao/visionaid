@@ -1,0 +1,21 @@
+running develop
+running egg_info
+creating traffic_crossing_assistant.egg-info
+writing traffic_crossing_assistant.egg-info/PKG-INFO
+writing dependency_links to traffic_crossing_assistant.egg-info/dependency_links.txt
+writing entry points to traffic_crossing_assistant.egg-info/entry_points.txt
+writing requirements to traffic_crossing_assistant.egg-info/requires.txt
+writing top-level names to traffic_crossing_assistant.egg-info/top_level.txt
+writing manifest file 'traffic_crossing_assistant.egg-info/SOURCES.txt'
+reading manifest file 'traffic_crossing_assistant.egg-info/SOURCES.txt'
+writing manifest file 'traffic_crossing_assistant.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/sophie/visionaid/isaac_ros_ws/install/traffic_crossing_assistant/lib/python3.10/site-packages/traffic-crossing-assistant.egg-link (link to .)
+
+Installed /home/sophie/visionaid/isaac_ros_ws/build/traffic_crossing_assistant
+running symlink_data
+creating /home/sophie/visionaid/isaac_ros_ws/install/traffic_crossing_assistant/share/ament_index
+creating /home/sophie/visionaid/isaac_ros_ws/install/traffic_crossing_assistant/share/ament_index/resource_index
+creating /home/sophie/visionaid/isaac_ros_ws/install/traffic_crossing_assistant/share/ament_index/resource_index/packages
+symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/traffic_crossing_assistant/resource/traffic_crossing_assistant -> /home/sophie/visionaid/isaac_ros_ws/install/traffic_crossing_assistant/share/ament_index/resource_index/packages
+symbolically linking /home/sophie/visionaid/isaac_ros_ws/build/traffic_crossing_assistant/package.xml -> /home/sophie/visionaid/isaac_ros_ws/install/traffic_crossing_assistant/share/traffic_crossing_assistant

@@ -1,0 +1,36 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from ros2_benchmark_interfaces/msg/TopicMessageCount.msg
+// generated code does not contain a copyright notice
+
+
+module ros2_benchmark_interfaces {
+  module msg {
+    @verbatim (language="comment", text=
+      "SPDX-FileCopyrightText: NVIDIA CORPORATION & AFFILIATES" "\n"
+      "Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved." "\n"
+      "" "\n"
+      "Licensed under the Apache License, Version 2.0 (the \"License\");" "\n"
+      "you may not use this file except in compliance with the License." "\n"
+      "You may obtain a copy of the License at" "\n"
+      "" "\n"
+      "http://www.apache.org/licenses/LICENSE-2.0" "\n"
+      "" "\n"
+      "Unless required by applicable law or agreed to in writing, software" "\n"
+      "distributed under the License is distributed on an \"AS IS\" BASIS," "\n"
+      "WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied." "\n"
+      "See the License for the specific language governing permissions and" "\n"
+      "limitations under the License." "\n"
+      "" "\n"
+      "SPDX-License-Identifier: Apache-2.0")
+    struct TopicMessageCount {
+      @verbatim (language="comment", text=
+        "This message is used to provide the message count for a topic." "\n"
+        "Topic name")
+      string topic_name;
+
+      @verbatim (language="comment", text=
+        "Message count for the topic_name")
+      uint64 message_count;
+    };
+  };
+};

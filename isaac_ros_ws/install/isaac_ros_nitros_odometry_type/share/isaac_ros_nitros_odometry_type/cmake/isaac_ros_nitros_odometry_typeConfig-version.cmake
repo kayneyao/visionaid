@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nitros_odometry_type/ament_cmake_core/isaac_ros_nitros_odometry_typeConfig-version.cmake

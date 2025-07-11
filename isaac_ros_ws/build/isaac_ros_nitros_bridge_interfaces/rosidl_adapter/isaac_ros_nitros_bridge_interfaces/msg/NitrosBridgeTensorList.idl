@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from isaac_ros_nitros_bridge_interfaces/msg/NitrosBridgeTensorList.msg
+// generated code does not contain a copyright notice
+
+#include "isaac_ros_tensor_list_interfaces/msg/Tensor.idl"
+#include "std_msgs/msg/Header.idl"
+
+module isaac_ros_nitros_bridge_interfaces {
+  module msg {
+    struct NitrosBridgeTensorList {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "A list of tensors")
+      sequence<isaac_ros_tensor_list_interfaces::msg::Tensor> tensors;
+
+      int32 pid;
+
+      int32 fd;
+
+      sequence<uint8> cuda_event_handle;
+
+      string uid;
+
+      uint32 device_id;
+    };
+  };
+};

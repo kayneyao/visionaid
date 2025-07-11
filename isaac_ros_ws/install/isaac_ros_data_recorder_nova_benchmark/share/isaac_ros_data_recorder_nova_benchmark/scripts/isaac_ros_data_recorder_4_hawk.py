@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_benchmark/benchmarks/isaac_ros_data_recorder_nova_benchmark/scripts/isaac_ros_data_recorder_4_hawk.py

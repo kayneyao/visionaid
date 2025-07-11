@@ -1,0 +1,4 @@
+[console_scripts]
+detection_processor = yolov8_bdd100k_detection.detection_processor:main
+yolov8_camera_node = yolov8_bdd100k_detection.yolov8_camera_node:main
+

@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nitros/libisaac_ros_nitros.so" "TARGETS" "isaac_ros_nitros" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

@@ -1,0 +1,1 @@
+/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_visual_slam_benchmark/ament_cmake_environment_hooks/local_setup.sh

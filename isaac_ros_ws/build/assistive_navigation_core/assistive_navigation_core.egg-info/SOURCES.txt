@@ -1,0 +1,12 @@
+package.xml
+setup.cfg
+setup.py
+assistive_navigation_core/__init__.py
+assistive_navigation_core.egg-info/PKG-INFO
+assistive_navigation_core.egg-info/SOURCES.txt
+assistive_navigation_core.egg-info/dependency_links.txt
+assistive_navigation_core.egg-info/entry_points.txt
+assistive_navigation_core.egg-info/requires.txt
+assistive_navigation_core.egg-info/top_level.txt
+assistive_navigation_core.egg-info/zip-safe
+resource/assistive_navigation_core

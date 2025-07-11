@@ -1,0 +1,71 @@
+[0.010s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_point_cloud': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_gxf_extensions/gxf_isaac_point_cloud -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DCMAKE_CUDA_ARCHITECTURES=89 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud
+[0.052s] -- The C compiler identification is GNU 11.4.0
+[0.093s] -- The CXX compiler identification is GNU 11.4.0
+[0.098s] -- Detecting C compiler ABI info
+[0.153s] -- Detecting C compiler ABI info - done
+[0.158s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.158s] -- Detecting C compile features
+[0.158s] -- Detecting C compile features - done
+[0.160s] -- Detecting CXX compiler ABI info
+[0.219s] -- Detecting CXX compiler ABI info - done
+[0.224s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.224s] -- Detecting CXX compile features
+[0.225s] -- Detecting CXX compile features - done
+[0.226s] -- Found ament_cmake_auto: 1.3.11 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.324s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.363s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.411s] -- Loading isaac_ros_common extras
+[0.411s] -- CMAKE_BUILD_TYPE: Release
+[0.427s] -- Looking for pthread.h
+[0.483s] -- Looking for pthread.h - found
+[0.483s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.548s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.549s] -- Found Threads: TRUE  
+[0.557s] -- Found CUDA: /usr/local/cuda-12.8 (found version "12.8") 
+[0.557s] -- CUDA architectures: 89
+[0.557s] -- Loading isaac_ros_common extras (modules)
+[0.576s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.578s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.583s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.589s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.598s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.623s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.625s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.690s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.710s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.735s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.775s] -- Loading isaac_ros_gxf extras
+[0.820s] -- Configuring done
+[0.822s] -- Generating done
+[0.824s] -- Build files have been written to: /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_point_cloud
+[0.831s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_point_cloud' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_gxf_extensions/gxf_isaac_point_cloud -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DCMAKE_CUDA_ARCHITECTURES=89 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud
+[0.832s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_point_cloud': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_point_cloud -- -j22 -l22
+[0.874s] [100%] [34m[1mGenerating version information as YAML[0m
+[0.935s] [100%] Built target generate_version_info_target_gxf_isaac_point_cloud
+[0.946s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_point_cloud' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_point_cloud -- -j22 -l22
+[0.948s] Invoking command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_point_cloud': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_point_cloud
+[0.954s] -- Install configuration: "Release"
+[0.954s] -- Execute custom install script
+[0.954s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/gxf/lib/libgxf_isaac_point_cloud.so
+[0.961s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/environment/library_path.sh
+[0.969s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/environment/library_path.dsv
+[0.974s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/version_info.yaml
+[0.980s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/ament_index/resource_index/package_run_dependencies/gxf_isaac_point_cloud
+[0.986s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/ament_index/resource_index/parent_prefix_path/gxf_isaac_point_cloud
+[0.993s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/environment/ament_prefix_path.sh
+[0.999s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/environment/ament_prefix_path.dsv
+[1.006s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/environment/path.sh
+[1.014s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/environment/path.dsv
+[1.022s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/local_setup.bash
+[1.029s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/local_setup.sh
+[1.035s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/local_setup.zsh
+[1.043s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/local_setup.dsv
+[1.050s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/package.dsv
+[1.055s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/ament_index/resource_index/packages/gxf_isaac_point_cloud
+[1.063s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/cmake/ament_cmake_export_targets-extras.cmake
+[1.071s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.076s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/cmake/gxf_isaac_point_cloudConfig.cmake
+[1.083s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/cmake/gxf_isaac_point_cloudConfig-version.cmake
+[1.090s] -- Symlinking: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/package.xml
+[1.096s] -- Installing: /home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud/share/gxf_isaac_point_cloud/cmake/export_gxf_isaac_point_cloudExport.cmake
+[1.099s] Invoked command in '/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_point_cloud' returned '0': AMENT_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common:/opt/ros/humble LD_LIBRARY_PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf/lib:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/lib:${LD_LIBRARY_PATH} PATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/bin:${PATH} PYTHONPATH=/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_point_cloud

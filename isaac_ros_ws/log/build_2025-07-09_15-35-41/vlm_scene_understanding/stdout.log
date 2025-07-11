@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info
+writing ../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/PKG-INFO
+writing dependency_links to ../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/dependency_links.txt
+writing entry points to ../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/entry_points.txt
+writing requirements to ../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/requires.txt
+writing top-level names to ../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/top_level.txt
+writing manifest file '../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/SOURCES.txt'
+reading manifest file '../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/SOURCES.txt'
+writing manifest file '../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/sophie/visionaid/isaac_ros_ws/build/vlm_scene_understanding/build
+creating /home/sophie/visionaid/isaac_ros_ws/build/vlm_scene_understanding/build/lib
+creating /home/sophie/visionaid/isaac_ros_ws/build/vlm_scene_understanding/build/lib/vlm_scene_understanding
+copying vlm_scene_understanding/__init__.py -> /home/sophie/visionaid/isaac_ros_ws/build/vlm_scene_understanding/build/lib/vlm_scene_understanding
+copying vlm_scene_understanding/blip2_node.py -> /home/sophie/visionaid/isaac_ros_ws/build/vlm_scene_understanding/build/lib/vlm_scene_understanding
+running install
+running install_lib
+creating /home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding/lib/python3.10/site-packages/vlm_scene_understanding
+copying /home/sophie/visionaid/isaac_ros_ws/build/vlm_scene_understanding/build/lib/vlm_scene_understanding/__init__.py -> /home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding/lib/python3.10/site-packages/vlm_scene_understanding
+copying /home/sophie/visionaid/isaac_ros_ws/build/vlm_scene_understanding/build/lib/vlm_scene_understanding/blip2_node.py -> /home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding/lib/python3.10/site-packages/vlm_scene_understanding
+byte-compiling /home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding/lib/python3.10/site-packages/vlm_scene_understanding/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding/lib/python3.10/site-packages/vlm_scene_understanding/blip2_node.py to blip2_node.cpython-310.pyc
+running install_data
+creating /home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding/share/ament_index
+creating /home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding/share/ament_index/resource_index
+creating /home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding/share/ament_index/resource_index/packages
+copying resource/vlm_scene_understanding -> /home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding/share/ament_index/resource_index/packages
+copying package.xml -> /home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding/share/vlm_scene_understanding
+running install_egg_info
+Copying ../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info to /home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding/lib/python3.10/site-packages/vlm_scene_understanding-0.0.0-py3.10.egg-info
+running install_scripts
+Installing blip2_node script to /home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding/lib/vlm_scene_understanding
+writing list of installed files to '/home/sophie/visionaid/isaac_ros_ws/build/vlm_scene_understanding/install.log'
