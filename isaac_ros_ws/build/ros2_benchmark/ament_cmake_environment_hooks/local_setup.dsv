@@ -1,4 +1,0 @@
-source;share/ros2_benchmark/environment/ament_prefix_path.sh
-source;share/ros2_benchmark/environment/library_path.sh
-source;share/ros2_benchmark/environment/path.sh
-source;share/ros2_benchmark/environment/pythonpath.sh

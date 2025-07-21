@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_managed_nitros_examples/custom_nitros_dnn_image_encoder/launch/custom_image_isaac_ros_dope_tensor_rt.launch.py

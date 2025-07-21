@@ -8,9 +8,11 @@ setup.py
 ../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/requires.txt
 ../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/top_level.txt
 ../../build/vlm_scene_understanding/vlm_scene_understanding.egg-info/zip-safe
+launch/blip2_scene.launch.py
 resource/vlm_scene_understanding
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
 vlm_scene_understanding/__init__.py
 vlm_scene_understanding/blip2_node.py
+vlm_scene_understanding/button_scene_trigger.py

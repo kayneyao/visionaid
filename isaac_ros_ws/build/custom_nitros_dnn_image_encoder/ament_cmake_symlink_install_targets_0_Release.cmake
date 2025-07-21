@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_dnn_image_encoder/libimage_encoder_node.so" "TARGETS" "image_encoder_node" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

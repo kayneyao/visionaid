@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nitros_bridge_interfaces/rosidl_generator_c/isaac_ros_nitros_bridge_interfaces/msg/nitros_bridge_tensor_list.h

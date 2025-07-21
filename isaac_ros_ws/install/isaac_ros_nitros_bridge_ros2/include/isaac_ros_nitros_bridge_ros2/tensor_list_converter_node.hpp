@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_nitros_bridge/isaac_ros_nitros_bridge_ros2/include/isaac_ros_nitros_bridge_ros2/tensor_list_converter_node.hpp

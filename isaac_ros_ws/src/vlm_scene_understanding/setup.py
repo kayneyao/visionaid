@@ -11,6 +11,9 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+         ('share/' + package_name + '/launch', [
+        'launch/blip2_scene.launch.py'
+    ]),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -22,6 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'blip2_node = vlm_scene_understanding.blip2_node:main',
+            'button_scene_trigger = vlm_scene_understanding.button_scene_trigger:main',
         ],
     },
 )

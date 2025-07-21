@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nitros_correlated_timestamp_type/libisaac_ros_nitros_correlated_timestamp_type.so" "TARGETS" "isaac_ros_nitros_correlated_timestamp_type" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

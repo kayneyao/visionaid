@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_managed_nitros_examples/custom_nitros_string/include/custom_nitros_string/string_decoder_node.hpp

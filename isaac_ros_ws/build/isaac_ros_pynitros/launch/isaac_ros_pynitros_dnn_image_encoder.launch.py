@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_pynitros/launch/isaac_ros_pynitros_dnn_image_encoder.launch.py

@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_benchmark/benchmarks/isaac_ros_triton_benchmark/scripts/isaac_ros_triton_ps_node.py

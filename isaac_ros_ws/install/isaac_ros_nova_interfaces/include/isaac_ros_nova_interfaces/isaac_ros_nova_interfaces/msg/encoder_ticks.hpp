@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nova_interfaces/rosidl_generator_cpp/isaac_ros_nova_interfaces/msg/encoder_ticks.hpp

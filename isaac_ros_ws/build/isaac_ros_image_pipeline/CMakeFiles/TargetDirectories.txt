@@ -1,9 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_image_pipeline/CMakeFiles/uninstall.dir
-/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_image_pipeline/CMakeFiles/isaac_ros_image_pipeline_uninstall.dir
-/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_image_pipeline/CMakeFiles/test.dir
-/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_image_pipeline/CMakeFiles/edit_cache.dir
-/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_image_pipeline/CMakeFiles/rebuild_cache.dir
-/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_image_pipeline/CMakeFiles/list_install_components.dir
-/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_image_pipeline/CMakeFiles/install.dir
-/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_image_pipeline/CMakeFiles/install/local.dir
-/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_image_pipeline/CMakeFiles/install/strip.dir

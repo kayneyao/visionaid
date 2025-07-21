@@ -1,4 +1,0 @@
-source;share/gxf_isaac_depth_image_proc/local_setup.bash
-source;share/gxf_isaac_depth_image_proc/local_setup.dsv
-source;share/gxf_isaac_depth_image_proc/local_setup.sh
-source;share/gxf_isaac_depth_image_proc/local_setup.zsh

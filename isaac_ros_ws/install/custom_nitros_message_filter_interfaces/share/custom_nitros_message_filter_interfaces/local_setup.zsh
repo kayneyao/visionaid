@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/build/custom_nitros_message_filter_interfaces/ament_cmake_environment_hooks/local_setup.zsh

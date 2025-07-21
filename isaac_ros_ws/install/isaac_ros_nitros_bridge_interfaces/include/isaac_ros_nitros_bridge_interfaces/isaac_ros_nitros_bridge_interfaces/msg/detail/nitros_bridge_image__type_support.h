@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nitros_bridge_interfaces/rosidl_generator_c/isaac_ros_nitros_bridge_interfaces/msg/detail/nitros_bridge_image__type_support.h

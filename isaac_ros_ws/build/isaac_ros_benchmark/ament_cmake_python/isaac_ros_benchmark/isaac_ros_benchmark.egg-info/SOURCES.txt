@@ -1,9 +1,0 @@
-setup.py
-isaac_ros_benchmark/__init__.py
-isaac_ros_benchmark/isaac_ros_tensor_utility.py
-isaac_ros_benchmark/model_converter.py
-isaac_ros_benchmark/nitros_monitor_utility.py
-isaac_ros_benchmark.egg-info/PKG-INFO
-isaac_ros_benchmark.egg-info/SOURCES.txt
-isaac_ros_benchmark.egg-info/dependency_links.txt
-isaac_ros_benchmark.egg-info/top_level.txt

@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_gxf_extensions/gxf_isaac_messages/gxf/extensions/messages/imu_message.hpp

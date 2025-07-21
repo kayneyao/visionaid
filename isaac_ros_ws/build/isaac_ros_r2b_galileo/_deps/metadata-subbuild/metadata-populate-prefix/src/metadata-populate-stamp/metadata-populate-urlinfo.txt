@@ -1,3 +1,0 @@
-repository='external project URL'
-module='https://api.ngc.nvidia.com/v2/resources/org/nvidia/team/isaac/r2bdataset2024/1/files?redirect=true&path=r2b_galileo/metadata.yaml'
-tag=''

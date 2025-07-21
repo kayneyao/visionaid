@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/src/traffic_crossing_assistant/setup.py

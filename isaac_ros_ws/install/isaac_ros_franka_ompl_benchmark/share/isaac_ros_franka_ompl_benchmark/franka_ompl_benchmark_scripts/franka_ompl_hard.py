@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_benchmark/benchmarks/isaac_ros_moveit_benchmark/isaac_ros_moveit_robot_benchmark/franka/isaac_ros_franka_ompl_benchmark/franka_ompl_benchmark_scripts/franka_ompl_hard.py

@@ -1,8 +1,0 @@
-setup.py
-isaac_ros_ess_benchmark/__init__.py
-isaac_ros_ess_benchmark/ess_benchmark_utility.py
-isaac_ros_ess_benchmark/ess_model_utility.py
-isaac_ros_ess_benchmark.egg-info/PKG-INFO
-isaac_ros_ess_benchmark.egg-info/SOURCES.txt
-isaac_ros_ess_benchmark.egg-info/dependency_links.txt
-isaac_ros_ess_benchmark.egg-info/top_level.txt

@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_moveit_benchmark/ament_cmake_python/isaac_ros_moveit_benchmark/isaac_ros_moveit_benchmark.egg-info/SOURCES.txt

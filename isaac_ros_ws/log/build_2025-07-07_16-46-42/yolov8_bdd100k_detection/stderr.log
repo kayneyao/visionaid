@@ -1,5 +1,0 @@
-  File "/home/sophie/visionaid/isaac_ros_ws/install/yolov8_bdd100k_detection/lib/python3.10/site-packages/yolov8_bdd100k_detection/yolov8_camera_node.py", line 25
-    self.declare_parameter('confidence_threshold', 0.20')
-                                                       ^
-SyntaxError: unterminated string literal (detected at line 25)
-

@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/build/gxf_isaac_gxf_helpers/ament_cmake_environment_hooks/local_setup.bash
