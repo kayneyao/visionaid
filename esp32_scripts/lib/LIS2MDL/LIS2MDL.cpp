@@ -27,8 +27,11 @@ void LIS2MDL::readData(float &mx, float &my, float &mz) {
     int16_t rawX = int16_t(Wire.read() | (Wire.read() << 8));
     int16_t rawY = int16_t(Wire.read() | (Wire.read() << 8));
     int16_t rawZ = int16_t(Wire.read() | (Wire.read() << 8));
+    // mx = rawX * MAG_SENS;
+    // my = rawY * MAG_SENS;
+    // mz = rawZ * MAG_SENS;
     mx = rawX * MAG_SENS;
-    my = rawY * MAG_SENS;
+    my = -rawY * MAG_SENS;
     mz = rawZ * MAG_SENS;
 }
 

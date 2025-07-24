@@ -48,8 +48,11 @@ void LSM6DSL::readData(float &ax, float &ay, float &az,
     int16_t rx = int16_t(buf[0] | (buf[1] << 8));
     int16_t ry = int16_t(buf[2] | (buf[3] << 8));
     int16_t rz = int16_t(buf[4] | (buf[5] << 8));
-    ax = rx * ACC_SENS;
-    ay = ry * ACC_SENS;
+    // ax = rx * ACC_SENS;
+    // ay = ry * ACC_SENS;
+    // az = rz * ACC_SENS;
+    ax = -ry * ACC_SENS;
+    ay = rx * ACC_SENS;
     az = rz * ACC_SENS;
 
     // gyro
@@ -57,8 +60,11 @@ void LSM6DSL::readData(float &ax, float &ay, float &az,
     int16_t gx_raw = int16_t(buf[0] | (buf[1] << 8));
     int16_t gy_raw = int16_t(buf[2] | (buf[3] << 8));
     int16_t gz_raw = int16_t(buf[4] | (buf[5] << 8));
-    gx = gx_raw * GYR_SENS;
-    gy = gy_raw * GYR_SENS;
+    // gx = gx_raw * GYR_SENS;
+    // gy = gy_raw * GYR_SENS;
+    // gz = gz_raw * GYR_SENS;
+    gx = -gy_raw * GYR_SENS;
+    gy = gx_raw * GYR_SENS;
     gz = gz_raw * GYR_SENS;
 }
 
