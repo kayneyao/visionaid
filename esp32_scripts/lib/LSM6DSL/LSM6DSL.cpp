@@ -6,6 +6,8 @@
 #define REG_CTRL1_XL   0x10
 #define REG_CTRL2_G    0x11
 #define REG_CTRL3_C    0x12
+#define REG_CTRL5_C    0x00
+#define REG_CTRL8_XL   0x17
 #define REG_OUTX_L_G   0x22
 #define REG_OUTX_L_XL  0x28
 
@@ -19,9 +21,12 @@ bool LSM6DSL::beginI2C(TwoWire &wire, uint8_t addr) {
     _wire->begin();
     if (readReg(REG_WHO_AM_I) != WHO_AM_I_ID) return false;
 
-    writeReg(REG_CTRL3_C, 0x44 | 0x04);
-    writeReg(REG_CTRL1_XL, 0x40 | 0x00);
+    
+    writeReg(REG_CTRL1_XL, 0x42);
     writeReg(REG_CTRL2_G,  0x40 | 0x00);
+    writeReg(REG_CTRL3_C, 0x44 | 0x04);
+    writeReg(REG_CTRL5_C, 0x00);
+    writeReg(REG_CTRL8_XL, 0x10)
     return true;
 }
 

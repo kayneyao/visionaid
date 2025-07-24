@@ -3,6 +3,8 @@
 #define REG_WHO_AM_I   0x4F
 #define WHO_AM_I_ID    0x40
 #define REG_CFG_A      0x60
+#define REG_CFG_B      0x61
+#define REG_CFG_C      0x62
 #define REG_STATUS     0x67
 #define REG_OUTX_L     0x68
 
@@ -14,7 +16,9 @@ bool LIS2MDL::beginI2C(TwoWire &wire, uint8_t addr) {
     _useSPI = false;
     _wire->begin();
     if (readReg(REG_WHO_AM_I) != WHO_AM_I_ID) return false;
-    writeReg(REG_CFG_A, 0x80);
+    writeReg(REG_CFG_A, 0x8C);
+    writeReg(REG_CFG_B, 0x03);
+    writeReg(REG_CFG_C, 0x10);
     return true;
 }
 
