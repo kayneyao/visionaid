@@ -7,7 +7,6 @@
 class LIS2MDL {
 public:
     bool beginI2C(TwoWire &wire, uint8_t addr = 0x1E);
-    bool beginSPI(SPIClass &spi, int csPin);
 
     // Read magnetic field in Tesla
     void readData(float &mx, float &my, float &mz);
