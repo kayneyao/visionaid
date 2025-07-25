@@ -1,10 +1,11 @@
 #include "LIS2MDL.h"
 #include "LSM6DSL.h"
 
+#include <Arduino.h>
 #include <Wire.h>
 #include <string.h>
 
-#include <micro_ros_arduino.h>
+#include <micro_ros_platformio.h>
 #include <rmw_microros/rmw_microros.h>
 #include <rcl/rcl.h>
 #include <rcl/error_handling.h>
@@ -16,6 +17,15 @@
 #include <sensor_msgs/msg/magnetic_field.h>
 
 #include <rcutils/logging_macros.h>
+
+#if !defined(MICRO_ROS_TRANSPORT_ARDUINO_SERIAL)
+#error This example is only avaliable for Arduino framework with serial transport.
+#endif
+
+
+#define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){error_loop();}}
+#define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){}}
+
 
 // Create sensor objects
 LSM6DSL imu;
@@ -32,6 +42,7 @@ typedef struct {
   rcl_allocator_t allocator;
 } ros2_components;
 
+
 ros2_components ros2;
 
 // Message instances
@@ -42,20 +53,12 @@ sensor_msgs__msg__MagneticField mag_msg;
 void callback(rcl_timer_t * timer, int64_t last_call_time) {
   RCLC_UNUSED(last_call_time);
   RCLC_UNUSED(timer);
-
 }
 
 void setup() {
-    // Configure micro-ROS to use Serial transport via UART0
-  // rmw_uros_set_custom_transport(
-  //   true,
-  //   &Serial,
-  //   arduino_transport_open,
-  //   arduino_transport_close,
-  //   arduino_transport_write,
-  //   arduino_transport_read
-  // );
-  set_microros_transports();
+  Serial.begin(115200);
+  set_microros_serial_transports(Serial);
+  delay(2000);
 
   // 1) Initialize support & allocator
   ros2.allocator = rcl_get_default_allocator();
@@ -118,40 +121,40 @@ void setup() {
 
 void loop() {
   rmw_uros_sync_session(20);
-  int64_t now_ns = rmw_uros_epoch_nanos();
-  // Spin executor
-  float ax, ay, az;
-  float gx, gy, gz;
-  float mx, my, mz;
+    int64_t now_ns = rmw_uros_epoch_nanos();
+    // Spin executor
+    float ax, ay, az;
+    float gx, gy, gz;
+    float mx, my, mz;
 
-  imu.readData(ax, ay, az, gx, gy, gz);
-  mag.readData(mx, my, mz);
+    imu.readData(ax, ay, az, gx, gy, gz);
+    mag.readData(mx, my, mz);
 
-  // 1) Timestamp via synchronized clock
+    // 1) Timestamp via synchronized clock
   
 
-  // 3) Fill IMU data (casts to double)
-  imu_msg.linear_acceleration.x = ax;
-  imu_msg.linear_acceleration.y = ay;
-  imu_msg.linear_acceleration.z = az;
-  imu_msg.angular_velocity.x    = gx;
-  imu_msg.angular_velocity.y    = gy;
-  imu_msg.angular_velocity.z    = gz;
+    // 3) Fill IMU data (casts to double)
+    imu_msg.linear_acceleration.x = ax;
+    imu_msg.linear_acceleration.y = ay;
+    imu_msg.linear_acceleration.z = az;
+    imu_msg.angular_velocity.x    = gx;
+    imu_msg.angular_velocity.y    = gy;
+    imu_msg.angular_velocity.z    = gz;
 
-  // 4) Prepare magnetometer message
-  
-  mag_msg.magnetic_field.x = mx;
-  mag_msg.magnetic_field.y = my;
-  mag_msg.magnetic_field.z = mz;
+    // 4) Prepare magnetometer message
+    
+    mag_msg.magnetic_field.x = mx;
+    mag_msg.magnetic_field.y = my;
+    mag_msg.magnetic_field.z = mz;
 
-  // 6) Publish both topics
-  
-  // rclc_executor_spin_some(&ros2.executor, RCL_MS_TO_NS(1));
-  imu_msg.header.stamp.sec     = now_ns / 1000000000LL;
-  imu_msg.header.stamp.nanosec = now_ns % 1000000000LL;
+    // 6) Publish both topics
+    
+    // rclc_executor_spin_some(&ros2.executor, RCL_MS_TO_NS(1));
+    imu_msg.header.stamp.sec     = now_ns / 1000000000LL;
+    imu_msg.header.stamp.nanosec = now_ns % 1000000000LL;
 
-  mag_msg.header = imu_msg.header;
+    mag_msg.header = imu_msg.header;
 
-  rcl_publish(&ros2.imu_pub, &imu_msg, NULL);
-  rcl_publish(&ros2.mag_pub, &mag_msg, NULL);
+    RCSOFTCHECK(rcl_publish(&ros2.imu_pub, &imu_msg, NULL));
+    RCSOFTCHECK(rcl_publish(&ros2.mag_pub, &mag_msg, NULL));
 }

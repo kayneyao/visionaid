@@ -15,7 +15,7 @@ void setup() {
   Serial.println("=== Sensor Demo: LSM6DSL + LIS2MDL ===");
 
   // Initialize I2C (default SDA=21, SCL=22 on ESP32)
-  Wire.begin(8, 10);
+  Wire.begin(   );
 
   // Initialize LSM6DSL (accelerometer + gyroscope)
   if (!imu.beginI2C(Wire)) {
