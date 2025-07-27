@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
+"""
+Taiwan Traffic Detection Processor - Updated for 17-class system
+"""
 
 import rclpy
 from rclpy.node import Node
 from vision_msgs.msg import Detection2DArray
-from geometry_msgs.msg import PointStamped, PoseArray, Pose
+from geometry_msgs.msg import PointStamped, PoseArray, Pose, Quaternion
 from nav_msgs.msg import OccupancyGrid
-from std_msgs.msg import Header
 import numpy as np
 from collections import defaultdict
 import time
@@ -13,190 +15,238 @@ import time
 class DetectionProcessor(Node):
     def __init__(self):
         super().__init__('detection_processor')
-        
+
         # Parameters
-        self.declare_parameter('obstacle_timeout', 2.0)  # seconds
+        self.declare_parameter('obstacle_timeout', 2.0)
         self.declare_parameter('min_confidence', 0.6)
-        self.declare_parameter('max_distance', 10.0)  # meters
-        self.declare_parameter('grid_resolution', 0.1)  # meters per cell
-        self.declare_parameter('grid_size', 200)  # cells
-        
+        self.declare_parameter('max_distance', 10.0)
+        self.declare_parameter('grid_resolution', 0.1)
+        self.declare_parameter('grid_size', 200)
+        self.declare_parameter('filter_classes', [])
+
         self.obstacle_timeout = self.get_parameter('obstacle_timeout').value
         self.min_confidence = self.get_parameter('min_confidence').value
         self.max_distance = self.get_parameter('max_distance').value
         self.grid_resolution = self.get_parameter('grid_resolution').value
         self.grid_size = self.get_parameter('grid_size').value
+        self.filter_classes = self.get_parameter('filter_classes').value
+
+        # FIXED: Taiwan 17-class mapping
+        self.class_names = {
+            0: 'bicycle', 1: 'bus', 2: 'car', 3: 'crossing_crosswalk',
+            4: 'crossing_green_light', 5: 'crossing_red_light', 
+            6: 'irrelevant_crosswalk', 7: 'irrelevant_green_light',
+            8: 'irrelevant_red_light', 9: 'motorcycle', 10: 'pedestrian',
+            11: 'sidewalk', 12: 'truck', 13: 'crosswalk',
+            14: 'red_light', 15: 'green_light', 16: 'tree'
+        }
         
-        # Subscribers
-        self.detection_sub = self.create_subscription(
-            Detection2DArray,
-            '/camera/detections',
-            self.detection_callback,
-            10
-        )
-        
-        self.obstacle_sub = self.create_subscription(
-            PointStamped,
-            '/obstacles/points',
-            self.obstacle_callback,
-            10
-        )
-        
-        # Publishers
-        self.filtered_detections_pub = self.create_publisher(
-            Detection2DArray,
-            '/detections/filtered',
-            10
-        )
-        
-        self.obstacle_poses_pub = self.create_publisher(
-            PoseArray,
-            '/obstacles/poses',
-            10
-        )
-        
-        self.obstacle_grid_pub = self.create_publisher(
-            OccupancyGrid,
-            '/obstacles/grid',
-            10
-        )
-        
-        # Internal state
+        # Taiwan priorities for decision tree integration
+        self.taiwan_priorities = {
+            'critical': [3, 4, 5],      # crossing_crosswalk, Taiwan lights
+            'safety': [0, 1, 2, 9, 10, 12],  # vehicles, pedestrian
+            'fallback': [13, 14, 15],   # generic traffic
+            'context': [6, 7, 8, 11, 16]  # background elements
+        }
+
+        # State
         self.obstacle_history = defaultdict(list)
         self.detection_stats = defaultdict(int)
-        
-        # Timer for periodic processing
-        self.timer = self.create_timer(0.1, self.process_obstacles)
-        
-        self.get_logger().info('Detection Processor initialized')
-    
-    def detection_callback(self, msg):
-        """Process incoming detections"""
-        filtered_detections = Detection2DArray()
-        filtered_detections.header = msg.header
-        
-        for detection in msg.detections:
-            if detection.results:
-                confidence = detection.results[0].hypothesis.score
-                class_id = detection.results[0].hypothesis.class_id
+
+        # Subscriptions & Publications
+        self.detection_sub = self.create_subscription(
+            Detection2DArray, '/camera/detections',
+            self.detection_callback, 10)
+
+        self.obstacle_sub = self.create_subscription(
+            PointStamped, '/obstacles/points',  
+            self.obstacle_callback, 10)
+
+        self.filtered_detections_pub = self.create_publisher(
+            Detection2DArray, '/detections/filtered', 10)
+
+        self.obstacle_poses_pub = self.create_publisher(
+            PoseArray, '/obstacles/poses', 10)
+
+        self.obstacle_grid_pub = self.create_publisher(
+            OccupancyGrid, '/obstacles/grid', 10)
+
+        # Timers
+        self.create_timer(0.1, self.process_obstacles)
+        self.create_timer(1.0, self.log_detection_stats)
+
+        self.get_logger().info('Taiwan Detection Processor initialized')
+
+    def detection_callback(self, msg: Detection2DArray):
+        """Filter detections with Taiwan priorities"""
+        filtered = Detection2DArray()
+        filtered.header = msg.header
+
+        for det in msg.detections:
+            if not det.results:
+                continue
+
+            hyp = det.results[0].hypothesis
+            # FIXED: Convert string class_id back to int
+            try:
+                cid = int(hyp.class_id)
+            except ValueError:
+                self.get_logger().warning(f'Invalid class_id: {hyp.class_id}')
+                continue
                 
-                # Update statistics
-                self.detection_stats[class_id] += 1
-                
-                # Filter by confidence
-                if confidence >= self.min_confidence:
-                    filtered_detections.detections.append(detection)
-        
-        # Publish filtered detections
-        self.filtered_detections_pub.publish(filtered_detections)
-    
-    def obstacle_callback(self, msg):
-        """Process obstacle points"""
-        current_time = time.time()
-        
-        # Calculate distance
-        distance = np.sqrt(msg.point.x**2 + msg.point.y**2 + msg.point.z**2)
-        
-        # Filter by distance
-        if distance <= self.max_distance:
-            # Add to history with timestamp
-            obstacle_data = {
-                'point': msg.point,
-                'timestamp': current_time,
-                'distance': distance
-            }
-            
-            # Use grid cell as key for clustering nearby obstacles
-            grid_x = int(msg.point.x / self.grid_resolution)
-            grid_y = int(msg.point.y / self.grid_resolution)
-            grid_key = (grid_x, grid_y)
-            
-            self.obstacle_history[grid_key].append(obstacle_data)
-    
+            conf = float(hyp.score)
+
+            # Update stats
+            self.detection_stats[cid] += 1
+
+            # Class filter
+            if self.filter_classes and cid not in self.filter_classes:
+                continue
+
+            # Taiwan-specific confidence thresholds
+            min_conf = self.get_taiwan_threshold(cid)
+            if conf >= min_conf:
+                filtered.detections.append(det)
+
+        self.filtered_detections_pub.publish(filtered)
+
+    def get_taiwan_threshold(self, class_id: int) -> float:
+        """Get Taiwan-specific confidence thresholds"""
+        if class_id in self.taiwan_priorities['critical']:
+            return 0.5  # Lower threshold for critical Taiwan classes
+        elif class_id in self.taiwan_priorities['safety']:
+            return self.min_confidence  # Standard threshold for safety
+        elif class_id in self.taiwan_priorities['fallback']:
+            return 0.7  # Higher threshold for fallback classes
+        else:
+            return self.min_confidence  # Default threshold
+
+    def obstacle_callback(self, msg: PointStamped):
+        """Collect obstacle points, filter by distance, cluster by grid cell."""
+        now = time.time()
+        x, y, z = msg.point.x, msg.point.y, msg.point.z
+        dist = np.hypot(np.hypot(x, y), z)
+        if dist > self.max_distance:
+            return
+
+        gx = int(x / self.grid_resolution)
+        gy = int(y / self.grid_resolution)
+        key = (gx, gy)
+
+        self.obstacle_history[key].append({
+            'point': msg.point,
+            'ts': now
+        })
+
     def process_obstacles(self):
-        """Process and publish obstacle information"""
-        current_time = time.time()
-        
-        # Clean up old obstacles
-        for grid_key in list(self.obstacle_history.keys()):
-            self.obstacle_history[grid_key] = [
-                obs for obs in self.obstacle_history[grid_key]
-                if current_time - obs['timestamp'] <= self.obstacle_timeout
+        """Prune stale obstacles, then publish poses and occupancy grid."""
+        now = time.time()
+
+        # Remove old entries
+        for key in list(self.obstacle_history):
+            pts = [
+                o for o in self.obstacle_history[key]
+                if now - o['ts'] <= self.obstacle_timeout
             ]
-            
-            # Remove empty entries
-            if not self.obstacle_history[grid_key]:
-                del self.obstacle_history[grid_key]
-        
-        # Create pose array for current obstacles
+            if pts:
+                self.obstacle_history[key] = pts
+            else:
+                del self.obstacle_history[key]
+
         self.publish_obstacle_poses()
-        
-        # Create occupancy grid
         self.publish_obstacle_grid()
-    
+
     def publish_obstacle_poses(self):
-        """Publish obstacle poses for visualization"""
-        pose_array = PoseArray()
-        pose_array.header.stamp = self.get_clock().now().to_msg()
-        pose_array.header.frame_id = 'camera_color_optical_frame'
-        
-        for grid_key, obstacles in self.obstacle_history.items():
-            if obstacles:
-                # Average position of obstacles in this grid cell
-                avg_x = np.mean([obs['point'].x for obs in obstacles])
-                avg_y = np.mean([obs['point'].y for obs in obstacles])
-                avg_z = np.mean([obs['point'].z for obs in obstacles])
-                
-                pose = Pose()
-                pose.position.x = avg_x
-                pose.position.y = avg_y
-                pose.position.z = avg_z
-                pose.orientation.w = 1.0
-                
-                pose_array.poses.append(pose)
-        
-        self.obstacle_poses_pub.publish(pose_array)
-    
+        """Average each grid‐cell cluster into one Pose for visualization."""
+        array = PoseArray()
+        array.header.stamp = self.get_clock().now().to_msg()
+        array.header.frame_id = 'camera_color_optical_frame'
+
+        for (gx, gy), pts in self.obstacle_history.items():
+            xs = [p['point'].x for p in pts]
+            ys = [p['point'].y for p in pts]
+            zs = [p['point'].z for p in pts]
+
+            pose = Pose()
+            pose.position.x = float(np.mean(xs))
+            pose.position.y = float(np.mean(ys))
+            pose.position.z = float(np.mean(zs))
+            pose.orientation = Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)
+
+            array.poses.append(pose)
+
+        self.obstacle_poses_pub.publish(array)
+
     def publish_obstacle_grid(self):
-        """Publish occupancy grid for navigation"""
+        """Build and publish a binary occupancy grid around the camera."""
         grid = OccupancyGrid()
         grid.header.stamp = self.get_clock().now().to_msg()
         grid.header.frame_id = 'camera_color_optical_frame'
-        
-        # Grid info
-        grid.info.resolution = self.grid_resolution
-        grid.info.width = self.grid_size
-        grid.info.height = self.grid_size
-        grid.info.origin.position.x = -self.grid_size * self.grid_resolution / 2
-        grid.info.origin.position.y = -self.grid_size * self.grid_resolution / 2
-        grid.info.origin.orientation.w = 1.0
-        
-        # Initialize grid data
-        grid_data = np.zeros((self.grid_size, self.grid_size), dtype=np.int8)
-        
-        # Mark obstacle cells
-        for grid_key, obstacles in self.obstacle_history.items():
-            if obstacles:
-                grid_x, grid_y = grid_key
-                
-                # Convert to grid coordinates
-                grid_x_idx = grid_x + self.grid_size // 2
-                grid_y_idx = grid_y + self.grid_size // 2
-                
-                # Check bounds
-                if 0 <= grid_x_idx < self.grid_size and 0 <= grid_y_idx < self.grid_size:
-                    # Mark as occupied (100 = occupied, 0 = free, -1 = unknown)
-                    grid_data[grid_y_idx, grid_x_idx] = 100
-        
-        # Flatten and publish
-        grid.data = grid_data.flatten().tolist()
+
+        info = grid.info
+        info.resolution = self.grid_resolution
+        info.width = self.grid_size
+        info.height = self.grid_size
+
+        half = self.grid_size * self.grid_resolution / 2.0
+        info.origin.position.x = -half
+        info.origin.position.y = -half
+        info.origin.orientation = Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)
+
+        # Initialize all cells as free (0)
+        data = np.zeros((self.grid_size, self.grid_size), dtype=np.int8)
+
+        # Mark occupied cells
+        for (gx, gy), pts in self.obstacle_history.items():
+            ix = gx + self.grid_size // 2
+            iy = gy + self.grid_size // 2
+            if 0 <= ix < self.grid_size and 0 <= iy < self.grid_size:
+                data[iy, ix] = 100  # occupied
+
+        grid.data = data.flatten().tolist()
         self.obstacle_grid_pub.publish(grid)
+
+    def log_detection_stats(self):
+        """Log Taiwan detection statistics"""
+        if not self.detection_stats:
+            return
+
+        # Group by Taiwan priorities
+        critical_stats = []
+        safety_stats = []
+        fallback_stats = []
+        context_stats = []
+
+        for cid, count in self.detection_stats.items():
+            class_name = self.class_names.get(cid, f'class_{cid}')
+            stat_str = f"{class_name}:{count}"
+            
+            if cid in self.taiwan_priorities['critical']:
+                critical_stats.append(stat_str)
+            elif cid in self.taiwan_priorities['safety']:
+                safety_stats.append(stat_str)
+            elif cid in self.taiwan_priorities['fallback']:
+                fallback_stats.append(stat_str)
+            else:
+                context_stats.append(stat_str)
+
+        # Log with Taiwan context
+        if critical_stats:
+            self.get_logger().info(f'🇹🇼 Taiwan Critical: {", ".join(critical_stats)}')
+        if safety_stats:
+            self.get_logger().info(f'🚨 Safety Classes: {", ".join(safety_stats)}')
+        if fallback_stats:
+            self.get_logger().info(f'🔄 Fallback Classes: {", ".join(fallback_stats)}')
+        if context_stats:
+            self.get_logger().info(f'📋 Context Classes: {", ".join(context_stats)}')
+
+        self.detection_stats.clear()
 
 def main(args=None):
     rclpy.init(args=args)
-    
+    node = DetectionProcessor()
+
     try:
-        node = DetectionProcessor()
         rclpy.spin(node)
     except KeyboardInterrupt:
         pass

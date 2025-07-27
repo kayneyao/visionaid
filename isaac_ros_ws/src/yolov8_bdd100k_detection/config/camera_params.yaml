@@ -1,7 +1,8 @@
+
 yolov8_camera_node:
   ros__parameters:
-    # Model configuration
-    model_path: "/home/sophie/visionaid/models/yolov8/best.onnx"
+    # Model configuration - FIXED PATH
+    model_path: "/home/sophie/visionaid-1/models/yolov8/17class/taiwan.onnx"
     confidence_threshold: 0.5
     inference_rate: 30.0
     
@@ -18,3 +19,7 @@ yolov8_camera_node:
     # Performance tuning
     max_detections: 50
     nms_threshold: 0.4
+    
+    # Taiwan 17-class specific
+    class_count: 17
+    enable_taiwan_priorities: true

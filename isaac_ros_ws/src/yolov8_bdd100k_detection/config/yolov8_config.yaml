@@ -1,7 +1,9 @@
+# Taiwan Traffic Safety System Configuration
 model:
-  onnx_file_path: "/home/sophie/visionaid/models/yolov8/best.onnx"
-  engine_file_path: "/home/sophie/visionaid/models/yolov8/best.onnx"
+  onnx_file_path: "/home/sophie/visionaid-1/models/yolov8/17class/taiwan.onnx"
+  engine_file_path: "/home/sophie/visionaid-1/models/yolov8/17class/taiwan.onnx"
   force_engine_update: false
+  class_count: 17  # Taiwan 17-class system
 
 network:
   image_width: 640
@@ -16,10 +18,18 @@ preprocessing:
   network_image_encoding: "rgb8"
 
 detection:
-  confidence_threshold: 0.25
-  nms_threshold: 0.45
-  max_detections: 100
+  confidence_threshold: 0.5  # Consistent with camera_params
+  nms_threshold: 0.4        # Consistent with camera_params
+  max_detections: 50        # Consistent with camera_params
 
 topics:
   input_image: "/camera/color/image_raw"
-  output_detections: "/detections"
+  output_detections: "/camera/detections"
+
+# Taiwan class priorities for decision tree integration
+taiwan_classes:
+  critical_crossing: [3, 4, 5]    # crossing_crosswalk, Taiwan lights
+  safety_vehicles: [0, 1, 2, 9, 12]  # All vehicles
+  safety_pedestrian: [10]         # Pedestrian
+  fallback_traffic: [13, 14, 15]  # Generic traffic elements
+  context_classes: [6, 7, 8, 11, 16]  # Background context

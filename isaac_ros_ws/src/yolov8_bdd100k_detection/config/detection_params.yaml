@@ -1,18 +1,36 @@
-detection_processor:
-  ros__parameters:
-    # Filtering parameters
-    obstacle_timeout: 2.0
-    min_confidence: 0.6
-    max_distance: 10.0
-    
-    # Grid parameters
-    grid_resolution: 0.1
-    grid_size: 200
-    
-    # Class filtering (BDD100K classes)
-    obstacle_classes: [0, 2, 3, 4, 5, 6, 7]  # person, car, truck, bus, train, motorcycle, bicycle
-    traffic_classes: [8, 9]  # traffic light, traffic sign
-    
-    # Clustering parameters
-    cluster_distance: 0.5
-    min_cluster_size: 3
+# Taiwan-Specific Detection Parameters
+# Optimized for your 17-class traffic safety system
+
+taiwan_detection_params:
+  # Taiwan Spatial Classification Thresholds
+  crossing_crosswalk_threshold: 0.7      # Your key innovation - high confidence
+  crossing_light_threshold: 0.65         # Taiwan traffic lights
+  irrelevant_element_threshold: 0.5      # Background context
+  
+  # Safety-Critical Thresholds
+  vehicle_detection_threshold: 0.6       # Cars, buses, motorcycles, trucks
+  pedestrian_detection_threshold: 0.65   # Critical for safety
+  
+  # Fallback Detection Thresholds
+  generic_traffic_threshold: 0.7         # Generic lights/crosswalks
+  
+  # Distance-based filtering
+  max_detection_distance: 15.0           # meters
+  safety_zone_distance: 5.0              # meters
+  
+  # Temporal filtering
+  detection_persistence: 3               # frames
+  confidence_smoothing: 0.8              # temporal confidence decay
+
+# Audio Feedback Configuration
+audio_feedback:
+  taiwan_messages:
+    crossing_detected: "Your crossing path detected. Analyzing safety conditions."
+    crossing_red: "Taiwan crossing signal shows red. Do not cross."
+    crossing_green: "Taiwan crossing signal green. Proceed with caution."
+    vehicle_alert: "Vehicle approaching. Exercise caution."
+    safe_crossing: "Path appears clear. Safe to proceed."
+  
+  volume: 0.8
+  speech_rate: 1.0
+  language: 'en-US'
