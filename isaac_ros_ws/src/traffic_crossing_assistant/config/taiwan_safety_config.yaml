@@ -1,0 +1,76 @@
+# Taiwan Traffic Safety System - Complete Configuration
+# Includes ego motion compensation parameters
+
+ego_motion_compensator:
+  ros__parameters:
+    motion_threshold: 0.1               # m/s - threshold for significant motion
+    confidence_penalty: 0.2             # Confidence reduction during motion
+    tracking_window: 2.0                # seconds for tracking history
+    vehicle_classes: [0, 1, 2, 9, 12]   # Taiwan vehicle classes
+    
+    # Camera parameters (RealSense D435)
+    camera_fx: 617.0
+    camera_fy: 617.0
+    camera_cx: 320.0
+    camera_cy: 240.0
+    
+    # Motion compensation factors
+    max_compensation_factor: 0.5        # Maximum compensation applied
+    angular_velocity_threshold: 0.2     # rad/s
+
+vehicle_movement_analyzer:
+  ros__parameters:
+    vehicle_confidence_threshold: 0.6
+    horizontal_threat_distance: 15.0    # meters
+    motion_velocity_threshold: 2.0      # m/s
+    hhigh_threat_vehicles: [0, 1, 2, 9, 12] # bicycle, bus, car, motorcycle, truck
+    medium_threat_vehicles: [0]         # bicycle
+
+taiwan_crossing_analyzer:
+  ros__parameters:
+    crossing_crosswalk_threshold: 0.7   # Your 85.5% mAP50 innovation
+    generic_crosswalk_threshold: 0.6
+    spatial_authority_weight: 0.4
+    irrelevant_crosswalk_threshold: 0.5  # Class 6 - background context
+    fallback_crosswalk_threshold: 0.5    # Class 13 - generic fallback
+    taiwan_classes_map:                  # Your 17-class mapping
+      crossing_crosswalk: 3
+      irrelevant_crosswalk: 6
+      crosswalk: 13
+     # High authority weight
+
+traffic_light_analyzer:
+  ros__parameters:
+    red_light_threshold: 0.6            # Conservative threshold
+    green_light_threshold: 0.6          # Conservative threshold
+    use_reliable_classes: true          # Classes 14, 15 only
+
+decision_engine:
+  ros__parameters:
+    vehicle_override_enabled: true      # Priority 1 absolute override
+    crossing_authority_weight: 0.4      # Priority 2 (your innovation)
+    traffic_authority_weight: 0.3       # Priority 3 conservative
+    high_confidence_threshold: 0.8
+    medium_confidence_threshold: 0.6
+    low_confidence_threshold: 0.4
+
+    
+# NEW: VLM Integration parameters
+multimodal_safety_coordinator:
+  ros__parameters:
+    vlm_model_name: "llava-hf/llava-v1.6-mistral-7b-hf"
+    max_response_words: 10
+    vlm_timeout_seconds: 5.0
+    enable_auto_explanations: true
+    explanation_priority_urgent: 1
+    vlm_processing_queue_size: 3        # Queue size for VLM requests
+    device_map: "auto"                  # GPU/CPU device mapping
+    torch_dtype: "float16"              # Memory optimization
+    load_in_4bit: true       
+
+enhanced_audio_system:
+  ros__parameters:
+    speech_rate_short: 180              # Fast for safety alerts
+    speech_rate_long: 160               # Slower for explanations
+    safety_message_priority: 1
+    vlm_explanation_priority: 3

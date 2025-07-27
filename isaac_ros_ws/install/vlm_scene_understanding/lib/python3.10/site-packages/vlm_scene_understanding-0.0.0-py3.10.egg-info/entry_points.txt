@@ -1,4 +1,0 @@
-[console_scripts]
-blip2_node = vlm_scene_understanding.blip2_node:main
-button_scene_trigger = vlm_scene_understanding.button_scene_trigger:main
-

@@ -3,14 +3,36 @@
 <package format="3">
   <name>traffic_crossing_assistant</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="sophiehsuu@gmail.com">sophie</maintainer>
-  <license>TODO: License declaration</license>
+  <description>Taiwan Traffic Safety System with 3-Priority Hierarchy</description>
+  <maintainer email="your_email@example.com">sophie</maintainer>
+  <license>Apache License 2.0</license>
+
+  <depend>rclpy</depend>
+  <depend>vision_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>yolov8_detection</depend>
+  <depend>vision_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>rtabmap_msgs</depend>
+  <depend>transformers</depend>
+  <depend>torch</depend>
+  <depend>torchvision</depend>
+  <depend>python3-transformers</depend>
+  <depend>python3-torch</depend>
+  <depend>python3-speechrecognition</depend>
+  <depend>python3-pyaudio</depend>
+
+
+
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
-  <test_depend>python3-pytest</test_depend>
 
   <export>
     <build_type>ament_python</build_type>
