@@ -21,7 +21,6 @@ setup(
     maintainer_email='sophiehsuu@gmail.com',
     description='Taiwan 17-class traffic safety detection system',
     license='Apache License 2.0',
-    tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'yolov8_camera_node = yolov8_detection.yolov8_camera_node:main',

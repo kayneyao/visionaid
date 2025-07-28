@@ -21,7 +21,6 @@ setup(
     maintainer_email='sophiehsuu@gmail.com',
     description='BLIP-2 VLM for scene understanding in assistive navigation',
     license='Apache-2.0',
-    tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'blip2_node = vlm_scene_understanding.blip2_node:main',

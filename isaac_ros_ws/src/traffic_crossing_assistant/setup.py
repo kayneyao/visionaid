@@ -21,7 +21,6 @@ setup(
     maintainer_email='your_email@example.com',
     description='Taiwan Traffic Safety System with 3-Priority Hierarchy',
     license='Apache License 2.0',
-    tests_require=['pytest'],
     entry_points={
     'console_scripts': [
         # Your existing entries
@@ -29,7 +28,6 @@ setup(
         'taiwan_crossing_analyzer = traffic_crossing_assistant.taiwan_crossing_analyzer:main',
         'traffic_light_analyzer = traffic_crossing_assistant.traffic_light_analyzer:main',
         'decision_engine = traffic_crossing_assistant.decision_engine:main',
-        'audio_feedback_system = traffic_crossing_assistant.audio_feedback_system:main',
         'ego_motion_compensator = traffic_crossing_assistant.ego_motion_compensator:main',
         
         # VLM Integration (ADD THESE)
