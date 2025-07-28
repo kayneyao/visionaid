@@ -2,3 +2,5 @@
 
 .pt
 /microros_ws/*/
+
+/isaac_ros_ws/src/*

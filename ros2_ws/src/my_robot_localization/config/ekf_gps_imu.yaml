@@ -1,0 +1,72 @@
+# Robot Localization Configuration (EKF & NavSat)
+
+# EKF & NavSat common settings frequency: 50.0  # filter update rate (Hz)
+sensor_timeout: 1.0
+# full 3D mode
+two_d_mode: false
+print_diagnostics: false
+
+# TF & output
+publish_tf: true
+publish_acceleration: true
+publish_velocity: true
+map_frame: odom
+odom_frame: odom
+base_link_frame: base_link
+world_frame: odom
+
+# Process noise covariance Q (12×12 diagonal matrix)
+# Order: [aX, aY, aZ, ωX, ωY, ωZ, b_aX, b_aY, b_aZ, b_ωX, b_ωY, b_ωZ]
+process_noise_covariance:
+  rows: 12
+  cols: 12
+  data:
+    - [8.34e-07, 0,        0,        0,        0,        0,        0,        0,        0,        0,        0,        0]
+    - [0,        1.46e-02, 0,        0,        0,        0,        0,        0,        0,        0,        0,        0]
+    - [0,        0,        9.71e-03, 0,        0,        0,        0,        0,        0,        0,        0,        0]
+    - [0,        0,        0,        4.58e-07, 0,        0,        0,        0,        0,        0,        0,        0]
+    - [0,        0,        0,        0,        1.03e-08, 0,        0,        0,        0,        0,        0,        0]
+    - [0,        0,        0,        0,        0,        1.17e-08, 0,        0,        0,        0,        0,        0]
+    - [0,        0,        0,        0,        0,        0,        2.03e-07, 0,        0,        0,        0,        0]
+    - [0,        0,        0,        0,        0,        0,        0,        1.89e-07, 0,        0,        0,        0]
+    - [0,        0,        0,        0,        0,        0,        0,        0,        9.27e-08, 0,        0,        0]
+    - [0,        0,        0,        0,        0,        0,        0,        0,        0,        1.17e-07, 0,        0]
+    - [0,        0,        0,        0,        0,        0,        0,        0,        0,        0,        1.02e-09, 0]
+    - [0,        0,        0,        0,        0,        0,        0,        0,        0,        0,        0,        6.75e-11]
+
+# IMU input (used by ekf_node)
+imu0: /sensors/imu
+imu0_config:
+  - false; false; false
+  - true;  true;  true
+  - true;  true;  true
+imu0_queue_size: 50
+imu0_remove_gravitational_acceleration: true
+
+# GPS input (used by navsat_transform_node)
+gps0: /sensors/gps
+gps0_config:
+  - true; true; true
+  - false; false; false
+gps0_queue_size: 10
+
+# Odometry input (EKF fusing GPS->odom)
+odom0: /odometry/gps
+odom0_config:
+  - true; true; true
+  - false; false; false
+  - false; false; false
+  - false; false; false
+odom0_queue_size: 10
+``` EKF Parameters: `config/ekf_gps_imu.yaml`
+```yaml
+# EKF + IMU + GPS-Odom Configuration
+frequency: 50.0                # filter update rate (Hz)
+sensor_timeout: 1.0           # timeout for incoming messages (s)
+two_d_mode: false             # full 3D fusion
+print_diagnostics: false
+
+# Frame setup for TF broadcast
+publish_tf: true
+publish_acceleration: true
+publish_velocity: true

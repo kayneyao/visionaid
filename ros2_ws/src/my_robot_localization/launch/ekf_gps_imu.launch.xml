@@ -1,0 +1,21 @@
+<launch>
+  <!-- Static TF: base_link -> imu_link -->
+  <node pkg="tf2_ros" exec="static_transform_publisher" name="base_to_imu_broadcaster" output="screen">
+    <param name="args" value="0 0 0 0 0 0 base_link imu_link"/>
+  </node>
+
+  <!-- EKF: fuse IMU + GPS → odom -->
+  <node pkg="robot_localization" exec="ekf_node" name="ekf_filter" output="screen">
+    <rosparam command="load" file="$(find my_robot_localization)/config/robot_localization.yaml"/>
+    <remap from="/imu/data" to="/sensors/imu"/>
+    <remap from="/odometry/gps" to="/odometry/gps"/>
+    <param name="publish_tf" value="true"/>
+  </node>
+
+  <!-- NavSat Transform: GPS fix -> odometry/gps -->
+  <node pkg="robot_localization" exec="navsat_transform_node" name="navsat_transform" output="screen">
+    <rosparam command="load" file="$(find my_robot_localization)/config/robot_localization.yaml"/>
+    <remap from="/gps/fix" to="/sensors/gps"/>
+    <remap from="/odometry/filtered" to="/odometry/gps"/>
+  </node>
+</launch>
