@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Taiwan Traffic Detection Processor - Updated for 17-class system
+Traffic Detection Processor - Updated for 11-class system
+2-Priority Safety System: Vehicles > Traffic Lights
 """
 
 import rclpy
@@ -31,22 +32,24 @@ class DetectionProcessor(Node):
         self.grid_size = self.get_parameter('grid_size').value
         self.filter_classes = self.get_parameter('filter_classes').value
 
-        # FIXED: Taiwan 17-class mapping
+        # NEW: 11-class mapping
         self.class_names = {
-            0: 'bicycle', 1: 'bus', 2: 'car', 3: 'crossing_crosswalk',
-            4: 'crossing_green_light', 5: 'crossing_red_light', 
-            6: 'irrelevant_crosswalk', 7: 'irrelevant_green_light',
-            8: 'irrelevant_red_light', 9: 'motorcycle', 10: 'pedestrian',
-            11: 'sidewalk', 12: 'truck', 13: 'crosswalk',
-            14: 'red_light', 15: 'green_light', 16: 'tree'
+            0: 'bicycle', 1: 'bus', 2: 'car', 3: 'crosswalk',
+            4: 'greenlight', 5: 'motorcycle', 6: 'pedestrian',
+            7: 'redlight', 8: 'sidewalk', 9: 'truck', 10: 'yellowlight'
         }
         
-        # Taiwan priorities for decision tree integration
-        self.taiwan_priorities = {
-            'critical': [3, 4, 5],      # crossing_crosswalk, Taiwan lights
-            'safety': [0, 1, 2, 9, 10, 12],  # vehicles, pedestrian
-            'fallback': [13, 14, 15],   # generic traffic
-            'context': [6, 7, 8, 11, 16]  # background elements
+        # NEW: 2-Priority Safety System
+        self.safety_priorities = {
+            # Priority 1: Vehicle Safety (ABSOLUTE OVERRIDE)
+            'vehicles': [1, 2, 5, 9],           # bus, car, motorcycle, truck
+            
+            # Priority 2: Traffic Lights  
+            'traffic_lights': [4, 7, 10],      # greenlight, redlight, yellowlight
+            
+            # Context classes (no safety override)
+            'pedestrian_context': [0, 6],      # bicycle, pedestrian (cross together)
+            'infrastructure': [3, 8]           # crosswalk, sidewalk
         }
 
         # State

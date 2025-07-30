@@ -23,3 +23,59 @@ isaac_ros_ws/src/isaac_ros_image_pipeline/
 isaac_ros_ws/build/
 isaac_ros_ws/install/
 isaac_ros_ws/log/
+
+yolo_training/
+
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ROS 2 Additional
+*.bag
+*.db3
+
+# Model Files - KEEP ONNX, EXCLUDE OTHERS
+*.engine
+*.weights
+*.pth
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary Files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Logs and Performance Data
+*.out
+*.err
+performance_*.txt
+benchmark_*.json

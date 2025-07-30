@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Traffic Light Analyzer - Priority 3 Safety Component
-Conservative analysis using reliable red_light/green_light classes (14, 15)
+Traffic Light Analyzer - Priority 2 Safety Component
+Updated for 11-class model with all 3 traffic light colors
 """
 
 import rclpy
@@ -13,21 +13,24 @@ from enum import Enum
 class TrafficLightState(Enum):
     RED = "red"
     GREEN = "green"
+    YELLOW = "yellow"
     UNKNOWN = "unknown"
 
 class TrafficLightAnalyzer(Node):
     def __init__(self):
         super().__init__('traffic_light_analyzer')
         
-        # Reliable traffic light classes (avoiding problematic Taiwan-specific variants)
+        # NEW: 11-class traffic light mapping (all 3 colors)
         self.traffic_light_classes = {
-            14: 'red_light',    # Class 14 - Original, more reliable
-            15: 'green_light'   # Class 15 - Original, more reliable
+            4: 'greenlight',    # Class 4 - Go signal
+            7: 'redlight',      # Class 7 - Stop signal
+            10: 'yellowlight'   # Class 10 - Caution signal
         }
         
-        # Conservative confidence thresholds
-        self.red_light_threshold = 0.6   # Conservative for safety
-        self.green_light_threshold = 0.6 # Conservative for safety
+        # Confidence thresholds for each light type
+        self.red_light_threshold = 0.6      # Conservative for safety
+        self.green_light_threshold = 0.6    # Conservative for safety  
+        self.yellow_light_threshold = 0.6   # Conservative for safety
         
         # Subscriptions
         self.detection_sub = self.create_subscription(
@@ -41,8 +44,8 @@ class TrafficLightAnalyzer(Node):
         self.signal_confidence_pub = self.create_publisher(
             Float32, '/traffic_light_confidence', 10)
         
-        self.get_logger().info('🚦 Traffic Light Analyzer initialized (Priority 3)')
-        self.get_logger().info('Using reliable classes: red_light (14), green_light (15)')
+        self.get_logger().info('🚦 Traffic Light Analyzer initialized (Priority 2)')
+        self.get_logger().info('Using all 3 colors: greenlight (4), redlight (7), yellowlight (10)')
     
     def detection_callback(self, msg: Detection2DArray):
         """Analyze traffic light detections with conservative approach"""
@@ -60,7 +63,8 @@ class TrafficLightAnalyzer(Node):
         """Extract reliable traffic light detections"""
         lights = {
             'red_lights': [],
-            'green_lights': []
+            'green_lights': [],
+            'yellow_lights': []
         }
         
         for detection in detections:
@@ -70,15 +74,19 @@ class TrafficLightAnalyzer(Node):
             class_id = int(detection.results[0].hypothesis.class_id)
             confidence = detection.results[0].hypothesis.score
             
-            # Only use reliable original traffic light classes
-            if class_id == 14 and confidence >= self.red_light_threshold:  # red_light
+            # NEW: Use all 3 traffic light classes
+            if class_id == 4 and confidence >= self.green_light_threshold:  # greenlight
+                lights['green_lights'].append({
+                    'confidence': confidence,
+                    'bbox': detection.bbox
+                })
+            elif class_id == 7 and confidence >= self.red_light_threshold:  # redlight
                 lights['red_lights'].append({
                     'confidence': confidence,
                     'bbox': detection.bbox
                 })
-                
-            elif class_id == 15 and confidence >= self.green_light_threshold:  # green_light
-                lights['green_lights'].append({
+            elif class_id == 10 and confidence >= self.yellow_light_threshold:  # yellowlight
+                lights['yellow_lights'].append({
                     'confidence': confidence,
                     'bbox': detection.bbox
                 })
@@ -99,6 +107,12 @@ class TrafficLightAnalyzer(Node):
             best_green = max(light_detections['green_lights'],
                            key=lambda x: x['confidence'])
             return TrafficLightState.GREEN, best_green['confidence']
+        
+        # Priority 3: Yellow light detection (proceed with caution)
+        if light_detections['yellow_lights']:
+            best_yellow = max(light_detections['yellow_lights'],
+                              key=lambda x: x['confidence'])
+            return TrafficLightState.YELLOW, best_yellow['confidence']
         
         # No reliable signal detected
         return TrafficLightState.UNKNOWN, 0.0
@@ -121,6 +135,8 @@ class TrafficLightAnalyzer(Node):
             self.get_logger().info(f'🔴 RED LIGHT detected (conf: {confidence:.3f}) - DO NOT CROSS')
         elif signal_state == TrafficLightState.GREEN:
             self.get_logger().info(f'🟢 GREEN LIGHT detected (conf: {confidence:.3f}) - Proceed with caution')
+        elif signal_state == TrafficLightState.YELLOW:
+            self.get_logger().info(f'🟡 YELLOW LIGHT detected (conf: {confidence:.3f}) - Proceed with caution')
         else:
             self.get_logger().info('⚪ No traffic signal detected - Manual verification required')
 

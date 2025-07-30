@@ -1,9 +1,9 @@
-# Taiwan Traffic Safety System Configuration
+# 11-Class Traffic Safety System Configuration
 model:
-  onnx_file_path: "/home/sophie/visionaid-1/models/yolov8/17class/taiwan.onnx"
-  engine_file_path: "/home/sophie/visionaid-1/models/yolov8/17class/taiwan.onnx"
+  onnx_file_path: "/home/sophie/visionaid-1/yolo_training/11classnew/models/fresh_11class.onnx"
+  engine_file_path: "/home/sophie/visionaid-1/yolo_training/11classnew/models/fresh_11class.onnx"
   force_engine_update: false
-  class_count: 17  # Taiwan 17-class system
+  class_count: 11  # NEW: 11-class system
 
 network:
   image_width: 640
@@ -26,10 +26,14 @@ topics:
   input_image: "/camera/color/image_raw"
   output_detections: "/camera/detections"
 
-# Taiwan class priorities for decision tree integration
-taiwan_classes:
-  critical_crossing: [3, 4, 5]    # crossing_crosswalk, Taiwan lights
-  safety_vehicles: [0, 1, 2, 9, 12]  # All vehicles
-  safety_pedestrian: [10]         # Pedestrian
-  fallback_traffic: [13, 14, 15]  # Generic traffic elements
-  context_classes: [6, 7, 8, 11, 16]  # Background context
+# NEW: 2-Priority Safety System
+safety_priorities:
+  # Priority 1: Vehicle Safety (ABSOLUTE OVERRIDE)
+  vehicles: [1, 2, 5, 9]        # bus, car, motorcycle, truck
+  
+  # Priority 2: Traffic Lights
+  traffic_lights: [4, 7, 10]   # greenlight, redlight, yellowlight
+  
+  # Context classes (no safety override)
+  pedestrian_context: [0, 6]   # bicycle, pedestrian (cross together)
+  infrastructure: [3, 8]       # crosswalk, sidewalk

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Taiwan 17-Class Traffic Safety YOLOv8 Camera Node - GPU ONLY
-Forces GPU execution with proper ONNX Runtime provider configuration
+11-Class Traffic Safety YOLOv8 Camera Node - GPU ONLY
+Updated for fresh 11-class model with 2-priority safety system
 """
 
 import rclpy
@@ -23,27 +23,28 @@ class YOLOv8CameraNode(Node):
     def __init__(self):
         super().__init__('yolov8_camera_node')
         
-        # Taiwan 17-class mapping
+        # NEW: 11-class mapping
         self.class_names = {
-            0: 'bicycle', 1: 'bus', 2: 'car', 3: 'crossing_crosswalk',
-            4: 'crossing_green_light', 5: 'crossing_red_light', 
-            6: 'irrelevant_crosswalk', 7: 'irrelevant_green_light',
-            8: 'irrelevant_red_light', 9: 'motorcycle', 10: 'pedestrian',
-            11: 'sidewalk', 12: 'truck', 13: 'crosswalk',
-            14: 'red_light', 15: 'green_light', 16: 'tree'
+            0: 'bicycle', 1: 'bus', 2: 'car', 3: 'crosswalk',
+            4: 'greenlight', 5: 'motorcycle', 6: 'pedestrian',
+            7: 'redlight', 8: 'sidewalk', 9: 'truck', 10: 'yellowlight'
         }
         
-        # Taiwan class priorities for decision tree integration
-        self.taiwan_priorities = {
-            'critical_crossing': [3, 4, 5],      # Your research innovation
-            'safety_vehicles': [0, 1, 2, 9, 12], # Vehicle safety
-            'safety_pedestrian': [10],           # Pedestrian safety
-            'fallback_traffic': [13, 14, 15],    # Fallback signals
-            'context_classes': [6, 7, 8, 11, 16] # Background context
+        # NEW: 2-Priority Safety System
+        self.safety_priorities = {
+            # Priority 1: Vehicle Safety (ABSOLUTE OVERRIDE)
+            'vehicles': [1, 2, 5, 9],           # bus, car, motorcycle, truck
+            
+            # Priority 2: Traffic Lights
+            'traffic_lights': [4, 7, 10],      # greenlight, redlight, yellowlight
+            
+            # Context classes (no safety override)
+            'pedestrian_context': [0, 6],      # bicycle, pedestrian (cross together)
+            'infrastructure': [3, 8]           # crosswalk, sidewalk
         }
         
         # Parameters
-        self.declare_parameter('model_path', '/home/sophie/visionaid-1/models/yolov8/17class/taiwan.onnx')
+        self.declare_parameter('model_path', '/home/sophie/visionaid-1/yolo_training/11classnew/models/fresh_11class.onnx')
         self.declare_parameter('confidence_threshold', 0.5)
         self.declare_parameter('nms_threshold', 0.4)
         self.declare_parameter('max_detections', 50)

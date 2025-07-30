@@ -1,0 +1,9 @@
+[0.963s] Invoking command in '/home/sophie/visionaid-1/build/scene_description_system': PYTHONPATH=/home/sophie/visionaid-1/build/scene_description_system/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid-1/install/scene_description_system/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sophie/visionaid-1/build/scene_description_system/build --no-deps symlink_data
+[1.072s] /home/sophie/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[1.072s]   warnings.warn(msg)
+[1.100s] usage: setup.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+[1.100s]    or: setup.py --help [cmd1 cmd2 ...]
+[1.100s]    or: setup.py --help-commands
+[1.100s]    or: setup.py cmd --help
+[1.100s] 
+[1.100s] error: option --editable not recognized

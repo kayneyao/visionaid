@@ -1,12 +1,14 @@
-# Taiwan Traffic Safety System - Complete Configuration
-# Includes ego motion compensation parameters
+# 11-Class Traffic Safety System - Complete Configuration
+# Updated for 2-priority system: Vehicles > Traffic Lights
 
 ego_motion_compensator:
   ros__parameters:
     motion_threshold: 0.1               # m/s - threshold for significant motion
     confidence_penalty: 0.2             # Confidence reduction during motion
     tracking_window: 2.0                # seconds for tracking history
-    vehicle_classes: [0, 1, 2, 9, 12]   # Taiwan vehicle classes
+    vehicle_classes: [1, 2, 5, 9]       # NEW: Only motorized vehicles
+    compensation_smoothing: 0.8         # Smoothing factor for compensation
+    max_compensation_factor: 0.5        # Maximum compensation applied
     
     # Camera parameters (RealSense D435)
     camera_fx: 617.0
@@ -15,7 +17,6 @@ ego_motion_compensator:
     camera_cy: 240.0
     
     # Motion compensation factors
-    max_compensation_factor: 0.5        # Maximum compensation applied
     angular_velocity_threshold: 0.2     # rad/s
 
 vehicle_movement_analyzer:
@@ -23,39 +24,41 @@ vehicle_movement_analyzer:
     vehicle_confidence_threshold: 0.6
     horizontal_threat_distance: 15.0    # meters
     motion_velocity_threshold: 2.0      # m/s
-    hhigh_threat_vehicles: [0, 1, 2, 9, 12] # bicycle, bus, car, motorcycle, truck
-    medium_threat_vehicles: [0]         # bicycle
+    ttc_safety_threshold: 4.0           # seconds - time to collision threshold
+    tracking_window: 2.0                # seconds for velocity calculation
+    high_threat_vehicles: [1, 2, 5, 9]  # NEW: bus, car, motorcycle, truck only
+    
+    # RealSense D435 camera intrinsics
+    camera_intrinsics:
+      fx: 617.0                         # Focal length X
+      fy: 617.0                         # Focal length Y
+      cx: 320.0                         # Principal point X
+      cy: 240.0                         # Principal point Y
 
-taiwan_crossing_analyzer:
+crosswalk_analyzer:
   ros__parameters:
-    crossing_crosswalk_threshold: 0.7   # Your 85.5% mAP50 innovation
-    generic_crosswalk_threshold: 0.6
-    spatial_authority_weight: 0.4
-    irrelevant_crosswalk_threshold: 0.5  # Class 6 - background context
-    fallback_crosswalk_threshold: 0.5    # Class 13 - generic fallback
-    taiwan_classes_map:                  # Your 17-class mapping
-      crossing_crosswalk: 3
-      irrelevant_crosswalk: 6
-      crosswalk: 13
-     # High authority weight
+    crosswalk_threshold: 0.6            # Context detection threshold
+    crosswalk_class: 3                  # NEW: Single crosswalk class
 
 traffic_light_analyzer:
   ros__parameters:
-    red_light_threshold: 0.6            # Conservative threshold
-    green_light_threshold: 0.6          # Conservative threshold
-    use_reliable_classes: true          # Classes 14, 15 only
+    red_light_threshold: 0.6            # redlight (class 7)
+    green_light_threshold: 0.6          # greenlight (class 4) 
+    yellow_light_threshold: 0.6         # yellowlight (class 10)
+    traffic_light_classes:              # NEW: All 3 colors
+      greenlight: 4
+      redlight: 7
+      yellowlight: 10
 
 decision_engine:
   ros__parameters:
     vehicle_override_enabled: true      # Priority 1 absolute override
-    crossing_authority_weight: 0.4      # Priority 2 (your innovation)
-    traffic_authority_weight: 0.3       # Priority 3 conservative
+    traffic_light_weight: 0.8           # Priority 2 weight
     high_confidence_threshold: 0.8
     medium_confidence_threshold: 0.6
     low_confidence_threshold: 0.4
 
-    
-# NEW: VLM Integration parameters
+# VLM Integration parameters (unchanged)
 multimodal_safety_coordinator:
   ros__parameters:
     vlm_model_name: "llava-hf/llava-v1.6-mistral-7b-hf"
@@ -74,3 +77,5 @@ enhanced_audio_system:
     speech_rate_long: 160               # Slower for explanations
     safety_message_priority: 1
     vlm_explanation_priority: 3
+    enable_ttc_announcements: true      # Announce time-to-collision
+    enable_velocity_announcements: true # Announce vehicle velocities

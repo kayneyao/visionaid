@@ -1,0 +1,1080 @@
+[0.061s] [34mcolcon[0m [1;30mDEBUG[0m [32mCommand line arguments: ['/usr/bin/colcon', 'build', '--symlink-install', '--cmake-clean-cache'][0m
+[0.061s] [34mcolcon[0m [1;30mDEBUG[0m [32mParsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=22, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=True, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x72b70a73b430>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x72b70a73ae60>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x72b70a73ae60>>)[0m
+[0.088s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) check parameters
+[0.089s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) check parameters
+[0.089s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) check parameters
+[0.089s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) check parameters
+[0.089s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) discover
+[0.089s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) discover
+[0.089s] [34mcolcon.colcon_core.package_discovery[0m [1;30mINFO[0m Crawling recursively for packages in '/home/sophie/visionaid-1'
+[0.089s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.089s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore'
+[0.089s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore_ament_install'
+[0.089s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_pkg']
+[0.089s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_pkg'
+[0.089s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_meta']
+[0.089s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_meta'
+[0.089s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ros']
+[0.089s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ros'
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['cmake', 'python']
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'cmake'
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python'
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['python_setup_py']
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python_setup_py'
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extension 'ignore'
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) ignored
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extension 'ignore'
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) ignored
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws) by extensions ['ignore', 'ignore_ament_install']
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws) by extension 'ignore'
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws) by extension 'ignore_ament_install'
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws) by extensions ['colcon_pkg']
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws) by extension 'colcon_pkg'
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws) by extensions ['colcon_meta']
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws) by extension 'colcon_meta'
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws) by extensions ['ros']
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws) by extension 'ros'
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws) by extensions ['cmake', 'python']
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws) by extension 'cmake'
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws) by extension 'python'
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws) by extensions ['python_setup_py']
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws) by extension 'python_setup_py'
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/build) by extensions ['ignore', 'ignore_ament_install']
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/build) by extension 'ignore'
+[0.091s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/build) ignored
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/install) by extensions ['ignore', 'ignore_ament_install']
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/install) by extension 'ignore'
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/install) ignored
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/log) by extensions ['ignore', 'ignore_ament_install']
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/log) by extension 'ignore'
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/log) ignored
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src) by extensions ['ignore', 'ignore_ament_install']
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src) by extension 'ignore'
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src) by extension 'ignore_ament_install'
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src) by extensions ['colcon_pkg']
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src) by extension 'colcon_pkg'
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src) by extensions ['colcon_meta']
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src) by extension 'colcon_meta'
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src) by extensions ['ros']
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src) by extension 'ros'
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src) by extensions ['cmake', 'python']
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src) by extension 'cmake'
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src) by extension 'python'
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src) by extensions ['python_setup_py']
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src) by extension 'python_setup_py'
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/assistive_navigation_core) by extensions ['ignore', 'ignore_ament_install']
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/assistive_navigation_core) by extension 'ignore'
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/assistive_navigation_core) by extension 'ignore_ament_install'
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/assistive_navigation_core) by extensions ['colcon_pkg']
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/assistive_navigation_core) by extension 'colcon_pkg'
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/assistive_navigation_core) by extensions ['colcon_meta']
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/assistive_navigation_core) by extension 'colcon_meta'
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/assistive_navigation_core) by extensions ['ros']
+[0.092s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/assistive_navigation_core) by extension 'ros'
+[0.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'isaac_ros_ws/src/assistive_navigation_core' with type 'ros.ament_python' and name 'assistive_navigation_core'[0m
+[0.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/gps_navigation_system) by extensions ['ignore', 'ignore_ament_install']
+[0.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/gps_navigation_system) by extension 'ignore'
+[0.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/gps_navigation_system) by extension 'ignore_ament_install'
+[0.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/gps_navigation_system) by extensions ['colcon_pkg']
+[0.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/gps_navigation_system) by extension 'colcon_pkg'
+[0.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/gps_navigation_system) by extensions ['colcon_meta']
+[0.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/gps_navigation_system) by extension 'colcon_meta'
+[0.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/gps_navigation_system) by extensions ['ros']
+[0.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/gps_navigation_system) by extension 'ros'
+[0.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'isaac_ros_ws/src/gps_navigation_system' with type 'ros.ament_python' and name 'gps_navigation_system'[0m
+[0.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_benchmark) by extensions ['ignore', 'ignore_ament_install']
+[0.094s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_benchmark) by extension 'ignore'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_benchmark) by extension 'ignore_ament_install'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_benchmark) by extensions ['colcon_pkg']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_benchmark) by extension 'colcon_pkg'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_benchmark) by extensions ['colcon_meta']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_benchmark) by extension 'colcon_meta'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_benchmark) by extensions ['ros']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_benchmark) by extension 'ros'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_benchmark) by extensions ['cmake', 'python']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_benchmark) by extension 'cmake'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_benchmark) by extension 'python'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_benchmark) by extensions ['python_setup_py']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_benchmark) by extension 'python_setup_py'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_common) by extensions ['ignore', 'ignore_ament_install']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_common) by extension 'ignore'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_common) by extension 'ignore_ament_install'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_common) by extensions ['colcon_pkg']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_common) by extension 'colcon_pkg'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_common) by extensions ['colcon_meta']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_common) by extension 'colcon_meta'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_common) by extensions ['ros']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_common) by extension 'ros'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_common) by extensions ['cmake', 'python']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_common) by extension 'cmake'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_common) by extension 'python'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_common) by extensions ['python_setup_py']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_common) by extension 'python_setup_py'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_dnn_inference) by extensions ['ignore', 'ignore_ament_install']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_dnn_inference) by extension 'ignore'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_dnn_inference) by extension 'ignore_ament_install'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_dnn_inference) by extensions ['colcon_pkg']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_dnn_inference) by extension 'colcon_pkg'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_dnn_inference) by extensions ['colcon_meta']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_dnn_inference) by extension 'colcon_meta'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_dnn_inference) by extensions ['ros']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_dnn_inference) by extension 'ros'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_dnn_inference) by extensions ['cmake', 'python']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_dnn_inference) by extension 'cmake'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_dnn_inference) by extension 'python'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_dnn_inference) by extensions ['python_setup_py']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_dnn_inference) by extension 'python_setup_py'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_image_pipeline) by extensions ['ignore', 'ignore_ament_install']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_image_pipeline) by extension 'ignore'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_image_pipeline) by extension 'ignore_ament_install'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_image_pipeline) by extensions ['colcon_pkg']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_image_pipeline) by extension 'colcon_pkg'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_image_pipeline) by extensions ['colcon_meta']
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_image_pipeline) by extension 'colcon_meta'
+[0.095s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_image_pipeline) by extensions ['ros']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_image_pipeline) by extension 'ros'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_image_pipeline) by extensions ['cmake', 'python']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_image_pipeline) by extension 'cmake'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_image_pipeline) by extension 'python'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_image_pipeline) by extensions ['python_setup_py']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_image_pipeline) by extension 'python_setup_py'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_nitros) by extensions ['ignore', 'ignore_ament_install']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_nitros) by extension 'ignore'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_nitros) by extension 'ignore_ament_install'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_nitros) by extensions ['colcon_pkg']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_nitros) by extension 'colcon_pkg'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_nitros) by extensions ['colcon_meta']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_nitros) by extension 'colcon_meta'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_nitros) by extensions ['ros']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_nitros) by extension 'ros'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_nitros) by extensions ['cmake', 'python']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_nitros) by extension 'cmake'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_nitros) by extension 'python'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_nitros) by extensions ['python_setup_py']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_nitros) by extension 'python_setup_py'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_visual_odometry) by extensions ['ignore', 'ignore_ament_install']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_visual_odometry) by extension 'ignore'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_visual_odometry) by extension 'ignore_ament_install'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_visual_odometry) by extensions ['colcon_pkg']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_visual_odometry) by extension 'colcon_pkg'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_visual_odometry) by extensions ['colcon_meta']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_visual_odometry) by extension 'colcon_meta'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_visual_odometry) by extensions ['ros']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_visual_odometry) by extension 'ros'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_visual_odometry) by extensions ['cmake', 'python']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_visual_odometry) by extension 'cmake'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_visual_odometry) by extension 'python'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_visual_odometry) by extensions ['python_setup_py']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/isaac_ros_visual_odometry) by extension 'python_setup_py'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/ros2_benchmark) by extensions ['ignore', 'ignore_ament_install']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/ros2_benchmark) by extension 'ignore'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/ros2_benchmark) by extension 'ignore_ament_install'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/ros2_benchmark) by extensions ['colcon_pkg']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/ros2_benchmark) by extension 'colcon_pkg'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/ros2_benchmark) by extensions ['colcon_meta']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/ros2_benchmark) by extension 'colcon_meta'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/ros2_benchmark) by extensions ['ros']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/ros2_benchmark) by extension 'ros'
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/ros2_benchmark) by extensions ['cmake', 'python']
+[0.096s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/ros2_benchmark) by extension 'cmake'
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/ros2_benchmark) by extension 'python'
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/ros2_benchmark) by extensions ['python_setup_py']
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/ros2_benchmark) by extension 'python_setup_py'
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/scene_description_system) by extensions ['ignore', 'ignore_ament_install']
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/scene_description_system) by extension 'ignore'
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/scene_description_system) by extension 'ignore_ament_install'
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/scene_description_system) by extensions ['colcon_pkg']
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/scene_description_system) by extension 'colcon_pkg'
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/scene_description_system) by extensions ['colcon_meta']
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/scene_description_system) by extension 'colcon_meta'
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/scene_description_system) by extensions ['ros']
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/scene_description_system) by extension 'ros'
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'isaac_ros_ws/src/scene_description_system' with type 'ros.ament_python' and name 'scene_description_system'[0m
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/shared_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/shared_interfaces) by extension 'ignore'
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/shared_interfaces) by extension 'ignore_ament_install'
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/shared_interfaces) by extensions ['colcon_pkg']
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/shared_interfaces) by extension 'colcon_pkg'
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/shared_interfaces) by extensions ['colcon_meta']
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/shared_interfaces) by extension 'colcon_meta'
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/shared_interfaces) by extensions ['ros']
+[0.097s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/shared_interfaces) by extension 'ros'
+[0.098s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'isaac_ros_ws/src/shared_interfaces' with type 'ros.ament_cmake' and name 'shared_interfaces'[0m
+[0.098s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/traffic_crossing_assistant) by extensions ['ignore', 'ignore_ament_install']
+[0.098s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/traffic_crossing_assistant) by extension 'ignore'
+[0.098s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/traffic_crossing_assistant) by extension 'ignore_ament_install'
+[0.098s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/traffic_crossing_assistant) by extensions ['colcon_pkg']
+[0.098s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/traffic_crossing_assistant) by extension 'colcon_pkg'
+[0.098s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/traffic_crossing_assistant) by extensions ['colcon_meta']
+[0.098s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/traffic_crossing_assistant) by extension 'colcon_meta'
+[0.098s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/traffic_crossing_assistant) by extensions ['ros']
+[0.098s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/traffic_crossing_assistant) by extension 'ros'
+[0.098s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'isaac_ros_ws/src/traffic_crossing_assistant' with type 'ros.ament_python' and name 'traffic_crossing_assistant'[0m
+[0.098s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/vlm_scene_understanding) by extensions ['ignore', 'ignore_ament_install']
+[0.098s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/vlm_scene_understanding) by extension 'ignore'
+[0.098s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/vlm_scene_understanding) by extension 'ignore_ament_install'
+[0.098s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/vlm_scene_understanding) by extensions ['colcon_pkg']
+[0.098s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/vlm_scene_understanding) by extension 'colcon_pkg'
+[0.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/vlm_scene_understanding) by extensions ['colcon_meta']
+[0.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/vlm_scene_understanding) by extension 'colcon_meta'
+[0.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/vlm_scene_understanding) by extensions ['ros']
+[0.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/vlm_scene_understanding) by extension 'ros'
+[0.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'isaac_ros_ws/src/vlm_scene_understanding' with type 'ros.ament_python' and name 'vlm_scene_understanding'[0m
+[0.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/yolov8_detection) by extensions ['ignore', 'ignore_ament_install']
+[0.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/yolov8_detection) by extension 'ignore'
+[0.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/yolov8_detection) by extension 'ignore_ament_install'
+[0.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/yolov8_detection) by extensions ['colcon_pkg']
+[0.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/yolov8_detection) by extension 'colcon_pkg'
+[0.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/yolov8_detection) by extensions ['colcon_meta']
+[0.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/yolov8_detection) by extension 'colcon_meta'
+[0.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/yolov8_detection) by extensions ['ros']
+[0.099s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(isaac_ros_ws/src/yolov8_detection) by extension 'ros'
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'isaac_ros_ws/src/yolov8_detection' with type 'ros.ament_python' and name 'yolov8_detection'[0m
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extension 'ignore'
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) ignored
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models) by extensions ['ignore', 'ignore_ament_install']
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models) by extension 'ignore'
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models) by extension 'ignore_ament_install'
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models) by extensions ['colcon_pkg']
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models) by extension 'colcon_pkg'
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models) by extensions ['colcon_meta']
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models) by extension 'colcon_meta'
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models) by extensions ['ros']
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models) by extension 'ros'
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models) by extensions ['cmake', 'python']
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models) by extension 'cmake'
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models) by extension 'python'
+[0.101s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models) by extensions ['python_setup_py']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models) by extension 'python_setup_py'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8) by extensions ['ignore', 'ignore_ament_install']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8) by extension 'ignore'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8) by extension 'ignore_ament_install'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8) by extensions ['colcon_pkg']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8) by extension 'colcon_pkg'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8) by extensions ['colcon_meta']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8) by extension 'colcon_meta'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8) by extensions ['ros']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8) by extension 'ros'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8) by extensions ['cmake', 'python']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8) by extension 'cmake'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8) by extension 'python'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8) by extensions ['python_setup_py']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8) by extension 'python_setup_py'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/17class) by extensions ['ignore', 'ignore_ament_install']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/17class) by extension 'ignore'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/17class) by extension 'ignore_ament_install'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/17class) by extensions ['colcon_pkg']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/17class) by extension 'colcon_pkg'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/17class) by extensions ['colcon_meta']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/17class) by extension 'colcon_meta'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/17class) by extensions ['ros']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/17class) by extension 'ros'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/17class) by extensions ['cmake', 'python']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/17class) by extension 'cmake'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/17class) by extension 'python'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/17class) by extensions ['python_setup_py']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/17class) by extension 'python_setup_py'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/old) by extensions ['ignore', 'ignore_ament_install']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/old) by extension 'ignore'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/old) by extension 'ignore_ament_install'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/old) by extensions ['colcon_pkg']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/old) by extension 'colcon_pkg'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/old) by extensions ['colcon_meta']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/old) by extension 'colcon_meta'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/old) by extensions ['ros']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/old) by extension 'ros'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/old) by extensions ['cmake', 'python']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/old) by extension 'cmake'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/old) by extension 'python'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/old) by extensions ['python_setup_py']
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(models/yolov8/old) by extension 'python_setup_py'
+[0.102s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect) by extensions ['ignore', 'ignore_ament_install']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect) by extension 'ignore'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect) by extension 'ignore_ament_install'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect) by extensions ['colcon_pkg']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect) by extension 'colcon_pkg'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect) by extensions ['colcon_meta']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect) by extension 'colcon_meta'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect) by extensions ['ros']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect) by extension 'ros'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect) by extensions ['cmake', 'python']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect) by extension 'cmake'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect) by extension 'python'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect) by extensions ['python_setup_py']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect) by extension 'python_setup_py'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect/src) by extensions ['ignore', 'ignore_ament_install']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect/src) by extension 'ignore'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect/src) by extension 'ignore_ament_install'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect/src) by extensions ['colcon_pkg']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect/src) by extension 'colcon_pkg'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect/src) by extensions ['colcon_meta']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect/src) by extension 'colcon_meta'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect/src) by extensions ['ros']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect/src) by extension 'ros'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect/src) by extensions ['cmake', 'python']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect/src) by extension 'cmake'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect/src) by extension 'python'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect/src) by extensions ['python_setup_py']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(obj_detect/src) by extension 'python_setup_py'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws) by extensions ['ignore', 'ignore_ament_install']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws) by extension 'ignore'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws) by extension 'ignore_ament_install'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws) by extensions ['colcon_pkg']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws) by extension 'colcon_pkg'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws) by extensions ['colcon_meta']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws) by extension 'colcon_meta'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws) by extensions ['ros']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws) by extension 'ros'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws) by extensions ['cmake', 'python']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws) by extension 'cmake'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws) by extension 'python'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws) by extensions ['python_setup_py']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws) by extension 'python_setup_py'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws/build) by extensions ['ignore', 'ignore_ament_install']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws/build) by extension 'ignore'
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws/build) ignored
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws/install) by extensions ['ignore', 'ignore_ament_install']
+[0.103s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws/install) by extension 'ignore'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws/install) ignored
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws/log) by extensions ['ignore', 'ignore_ament_install']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws/log) by extension 'ignore'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(ros2_ws/log) ignored
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs) by extensions ['ignore', 'ignore_ament_install']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs) by extension 'ignore'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs) by extension 'ignore_ament_install'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs) by extensions ['colcon_pkg']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs) by extension 'colcon_pkg'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs) by extensions ['colcon_meta']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs) by extension 'colcon_meta'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs) by extensions ['ros']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs) by extension 'ros'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs) by extensions ['cmake', 'python']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs) by extension 'cmake'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs) by extension 'python'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs) by extensions ['python_setup_py']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs) by extension 'python_setup_py'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect) by extensions ['ignore', 'ignore_ament_install']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect) by extension 'ignore'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect) by extension 'ignore_ament_install'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect) by extensions ['colcon_pkg']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect) by extension 'colcon_pkg'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect) by extensions ['colcon_meta']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect) by extension 'colcon_meta'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect) by extensions ['ros']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect) by extension 'ros'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect) by extensions ['cmake', 'python']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect) by extension 'cmake'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect) by extension 'python'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect) by extensions ['python_setup_py']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect) by extension 'python_setup_py'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect/predict) by extensions ['ignore', 'ignore_ament_install']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect/predict) by extension 'ignore'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect/predict) by extension 'ignore_ament_install'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect/predict) by extensions ['colcon_pkg']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect/predict) by extension 'colcon_pkg'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect/predict) by extensions ['colcon_meta']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect/predict) by extension 'colcon_meta'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect/predict) by extensions ['ros']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect/predict) by extension 'ros'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect/predict) by extensions ['cmake', 'python']
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect/predict) by extension 'cmake'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect/predict) by extension 'python'
+[0.104s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect/predict) by extensions ['python_setup_py']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(runs/detect/predict) by extension 'python_setup_py'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training) by extensions ['ignore', 'ignore_ament_install']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training) by extension 'ignore'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training) by extension 'ignore_ament_install'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training) by extensions ['colcon_pkg']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training) by extension 'colcon_pkg'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training) by extensions ['colcon_meta']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training) by extension 'colcon_meta'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training) by extensions ['ros']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training) by extension 'ros'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training) by extensions ['cmake', 'python']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training) by extension 'cmake'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training) by extension 'python'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training) by extensions ['python_setup_py']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training) by extension 'python_setup_py'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8) by extensions ['ignore', 'ignore_ament_install']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8) by extension 'ignore'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8) by extension 'ignore_ament_install'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8) by extensions ['colcon_pkg']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8) by extension 'colcon_pkg'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8) by extensions ['colcon_meta']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8) by extension 'colcon_meta'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8) by extensions ['ros']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8) by extension 'ros'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8) by extensions ['cmake', 'python']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8) by extension 'cmake'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8) by extension 'python'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8) by extensions ['python_setup_py']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8) by extension 'python_setup_py'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8/weights) by extensions ['ignore', 'ignore_ament_install']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8/weights) by extension 'ignore'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8/weights) by extension 'ignore_ament_install'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8/weights) by extensions ['colcon_pkg']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8/weights) by extension 'colcon_pkg'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8/weights) by extensions ['colcon_meta']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8/weights) by extension 'colcon_meta'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8/weights) by extensions ['ros']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8/weights) by extension 'ros'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8/weights) by extensions ['cmake', 'python']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8/weights) by extension 'cmake'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8/weights) by extension 'python'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8/weights) by extensions ['python_setup_py']
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/bdd100k_yolov8/weights) by extension 'python_setup_py'
+[0.105s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/config) by extensions ['ignore', 'ignore_ament_install']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/config) by extension 'ignore'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/config) by extension 'ignore_ament_install'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/config) by extensions ['colcon_pkg']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/config) by extension 'colcon_pkg'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/config) by extensions ['colcon_meta']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/config) by extension 'colcon_meta'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/config) by extensions ['ros']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/config) by extension 'ros'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/config) by extensions ['cmake', 'python']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/config) by extension 'cmake'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/config) by extension 'python'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/config) by extensions ['python_setup_py']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/config) by extension 'python_setup_py'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data) by extensions ['ignore', 'ignore_ament_install']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data) by extension 'ignore'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data) by extension 'ignore_ament_install'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data) by extensions ['colcon_pkg']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data) by extension 'colcon_pkg'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data) by extensions ['colcon_meta']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data) by extension 'colcon_meta'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data) by extensions ['ros']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data) by extension 'ros'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data) by extensions ['cmake', 'python']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data) by extension 'cmake'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data) by extension 'python'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data) by extensions ['python_setup_py']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data) by extension 'python_setup_py'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset) by extensions ['ignore', 'ignore_ament_install']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset) by extension 'ignore'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset) by extension 'ignore_ament_install'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset) by extensions ['colcon_pkg']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset) by extension 'colcon_pkg'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset) by extensions ['colcon_meta']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset) by extension 'colcon_meta'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset) by extensions ['ros']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset) by extension 'ros'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset) by extensions ['cmake', 'python']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset) by extension 'cmake'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset) by extension 'python'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset) by extensions ['python_setup_py']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset) by extension 'python_setup_py'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test) by extensions ['ignore', 'ignore_ament_install']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test) by extension 'ignore'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test) by extension 'ignore_ament_install'
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test) by extensions ['colcon_pkg']
+[0.106s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test) by extension 'colcon_pkg'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test) by extensions ['colcon_meta']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test) by extension 'colcon_meta'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test) by extensions ['ros']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test) by extension 'ros'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test) by extensions ['cmake', 'python']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test) by extension 'cmake'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test) by extension 'python'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test) by extensions ['python_setup_py']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test) by extension 'python_setup_py'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/images) by extensions ['ignore', 'ignore_ament_install']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/images) by extension 'ignore'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/images) by extension 'ignore_ament_install'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/images) by extensions ['colcon_pkg']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/images) by extension 'colcon_pkg'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/images) by extensions ['colcon_meta']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/images) by extension 'colcon_meta'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/images) by extensions ['ros']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/images) by extension 'ros'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/images) by extensions ['cmake', 'python']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/images) by extension 'cmake'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/images) by extension 'python'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/images) by extensions ['python_setup_py']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/images) by extension 'python_setup_py'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/labels) by extensions ['ignore', 'ignore_ament_install']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/labels) by extension 'ignore'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/labels) by extension 'ignore_ament_install'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/labels) by extensions ['colcon_pkg']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/labels) by extension 'colcon_pkg'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/labels) by extensions ['colcon_meta']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/labels) by extension 'colcon_meta'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/labels) by extensions ['ros']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/labels) by extension 'ros'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/labels) by extensions ['cmake', 'python']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/labels) by extension 'cmake'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/labels) by extension 'python'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/labels) by extensions ['python_setup_py']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/test/labels) by extension 'python_setup_py'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train) by extensions ['ignore', 'ignore_ament_install']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train) by extension 'ignore'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train) by extension 'ignore_ament_install'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train) by extensions ['colcon_pkg']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train) by extension 'colcon_pkg'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train) by extensions ['colcon_meta']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train) by extension 'colcon_meta'
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train) by extensions ['ros']
+[0.107s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train) by extension 'ros'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train) by extensions ['cmake', 'python']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train) by extension 'cmake'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train) by extension 'python'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train) by extensions ['python_setup_py']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train) by extension 'python_setup_py'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/images) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/images) by extension 'ignore'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/images) by extension 'ignore_ament_install'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/images) by extensions ['colcon_pkg']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/images) by extension 'colcon_pkg'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/images) by extensions ['colcon_meta']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/images) by extension 'colcon_meta'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/images) by extensions ['ros']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/images) by extension 'ros'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/images) by extensions ['cmake', 'python']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/images) by extension 'cmake'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/images) by extension 'python'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/images) by extensions ['python_setup_py']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/images) by extension 'python_setup_py'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/labels) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/labels) by extension 'ignore'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/labels) by extension 'ignore_ament_install'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/labels) by extensions ['colcon_pkg']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/labels) by extension 'colcon_pkg'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/labels) by extensions ['colcon_meta']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/labels) by extension 'colcon_meta'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/labels) by extensions ['ros']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/labels) by extension 'ros'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/labels) by extensions ['cmake', 'python']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/labels) by extension 'cmake'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/labels) by extension 'python'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/labels) by extensions ['python_setup_py']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/train/labels) by extension 'python_setup_py'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid) by extension 'ignore'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid) by extension 'ignore_ament_install'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid) by extensions ['colcon_pkg']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid) by extension 'colcon_pkg'
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid) by extensions ['colcon_meta']
+[0.108s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid) by extension 'colcon_meta'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid) by extensions ['ros']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid) by extension 'ros'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid) by extensions ['cmake', 'python']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid) by extension 'cmake'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid) by extension 'python'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid) by extensions ['python_setup_py']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid) by extension 'python_setup_py'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/images) by extensions ['ignore', 'ignore_ament_install']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/images) by extension 'ignore'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/images) by extension 'ignore_ament_install'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/images) by extensions ['colcon_pkg']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/images) by extension 'colcon_pkg'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/images) by extensions ['colcon_meta']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/images) by extension 'colcon_meta'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/images) by extensions ['ros']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/images) by extension 'ros'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/images) by extensions ['cmake', 'python']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/images) by extension 'cmake'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/images) by extension 'python'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/images) by extensions ['python_setup_py']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/images) by extension 'python_setup_py'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/labels) by extensions ['ignore', 'ignore_ament_install']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/labels) by extension 'ignore'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/labels) by extension 'ignore_ament_install'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/labels) by extensions ['colcon_pkg']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/labels) by extension 'colcon_pkg'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/labels) by extensions ['colcon_meta']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/labels) by extension 'colcon_meta'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/labels) by extensions ['ros']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/labels) by extension 'ros'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/labels) by extensions ['cmake', 'python']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/labels) by extension 'cmake'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/labels) by extension 'python'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/labels) by extensions ['python_setup_py']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/data/taiwan_traffic_dataset/valid/labels) by extension 'python_setup_py'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs) by extensions ['ignore', 'ignore_ament_install']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs) by extension 'ignore'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs) by extension 'ignore_ament_install'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs) by extensions ['colcon_pkg']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs) by extension 'colcon_pkg'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs) by extensions ['colcon_meta']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs) by extension 'colcon_meta'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs) by extensions ['ros']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs) by extension 'ros'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs) by extensions ['cmake', 'python']
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs) by extension 'cmake'
+[0.109s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs) by extension 'python'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs) by extensions ['python_setup_py']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs) by extension 'python_setup_py'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect) by extensions ['ignore', 'ignore_ament_install']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect) by extension 'ignore'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect) by extension 'ignore_ament_install'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect) by extensions ['colcon_pkg']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect) by extension 'colcon_pkg'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect) by extensions ['colcon_meta']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect) by extension 'colcon_meta'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect) by extensions ['ros']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect) by extension 'ros'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect) by extensions ['cmake', 'python']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect) by extension 'cmake'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect) by extension 'python'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect) by extensions ['python_setup_py']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect) by extension 'python_setup_py'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect/val) by extensions ['ignore', 'ignore_ament_install']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect/val) by extension 'ignore'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect/val) by extension 'ignore_ament_install'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect/val) by extensions ['colcon_pkg']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect/val) by extension 'colcon_pkg'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect/val) by extensions ['colcon_meta']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect/val) by extension 'colcon_meta'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect/val) by extensions ['ros']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect/val) by extension 'ros'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect/val) by extensions ['cmake', 'python']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect/val) by extension 'cmake'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect/val) by extension 'python'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect/val) by extensions ['python_setup_py']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/runs/detect/val) by extension 'python_setup_py'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts) by extensions ['ignore', 'ignore_ament_install']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts) by extension 'ignore'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts) by extension 'ignore_ament_install'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts) by extensions ['colcon_pkg']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts) by extension 'colcon_pkg'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts) by extensions ['colcon_meta']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts) by extension 'colcon_meta'
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts) by extensions ['ros']
+[0.110s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts) by extension 'ros'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts) by extensions ['cmake', 'python']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts) by extension 'cmake'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts) by extension 'python'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts) by extensions ['python_setup_py']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts) by extension 'python_setup_py'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs) by extensions ['ignore', 'ignore_ament_install']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs) by extension 'ignore'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs) by extension 'ignore_ament_install'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs) by extensions ['colcon_pkg']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs) by extension 'colcon_pkg'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs) by extensions ['colcon_meta']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs) by extension 'colcon_meta'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs) by extensions ['ros']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs) by extension 'ros'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs) by extensions ['cmake', 'python']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs) by extension 'cmake'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs) by extension 'python'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs) by extensions ['python_setup_py']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs) by extension 'python_setup_py'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect) by extensions ['ignore', 'ignore_ament_install']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect) by extension 'ignore'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect) by extension 'ignore_ament_install'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect) by extensions ['colcon_pkg']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect) by extension 'colcon_pkg'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect) by extensions ['colcon_meta']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect) by extension 'colcon_meta'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect) by extensions ['ros']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect) by extension 'ros'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect) by extensions ['cmake', 'python']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect) by extension 'cmake'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect) by extension 'python'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect) by extensions ['python_setup_py']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect) by extension 'python_setup_py'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect/val) by extensions ['ignore', 'ignore_ament_install']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect/val) by extension 'ignore'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect/val) by extension 'ignore_ament_install'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect/val) by extensions ['colcon_pkg']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect/val) by extension 'colcon_pkg'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect/val) by extensions ['colcon_meta']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect/val) by extension 'colcon_meta'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect/val) by extensions ['ros']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect/val) by extension 'ros'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect/val) by extensions ['cmake', 'python']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect/val) by extension 'cmake'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect/val) by extension 'python'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect/val) by extensions ['python_setup_py']
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/runs/detect/val) by extension 'python_setup_py'
+[0.111s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training) by extensions ['ignore', 'ignore_ament_install']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training) by extension 'ignore'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training) by extension 'ignore_ament_install'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training) by extensions ['colcon_pkg']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training) by extension 'colcon_pkg'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training) by extensions ['colcon_meta']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training) by extension 'colcon_meta'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training) by extensions ['ros']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training) by extension 'ros'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training) by extensions ['cmake', 'python']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training) by extension 'cmake'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training) by extension 'python'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training) by extensions ['python_setup_py']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training) by extension 'python_setup_py'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification) by extensions ['ignore', 'ignore_ament_install']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification) by extension 'ignore'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification) by extension 'ignore_ament_install'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification) by extensions ['colcon_pkg']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification) by extension 'colcon_pkg'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification) by extensions ['colcon_meta']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification) by extension 'colcon_meta'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification) by extensions ['ros']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification) by extension 'ros'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification) by extensions ['cmake', 'python']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification) by extension 'cmake'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification) by extension 'python'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification) by extensions ['python_setup_py']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification) by extension 'python_setup_py'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification/weights) by extensions ['ignore', 'ignore_ament_install']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification/weights) by extension 'ignore'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification/weights) by extension 'ignore_ament_install'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification/weights) by extensions ['colcon_pkg']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification/weights) by extension 'colcon_pkg'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification/weights) by extensions ['colcon_meta']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification/weights) by extension 'colcon_meta'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification/weights) by extensions ['ros']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification/weights) by extension 'ros'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification/weights) by extensions ['cmake', 'python']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification/weights) by extension 'cmake'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification/weights) by extension 'python'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification/weights) by extensions ['python_setup_py']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/scripts/taiwan_17class_training/final_spatial_classification/weights) by extension 'python_setup_py'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training) by extensions ['ignore', 'ignore_ament_install']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training) by extension 'ignore'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training) by extension 'ignore_ament_install'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training) by extensions ['colcon_pkg']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training) by extension 'colcon_pkg'
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training) by extensions ['colcon_meta']
+[0.112s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training) by extension 'colcon_meta'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training) by extensions ['ros']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training) by extension 'ros'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training) by extensions ['cmake', 'python']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training) by extension 'cmake'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training) by extension 'python'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training) by extensions ['python_setup_py']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training) by extension 'python_setup_py'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification) by extensions ['ignore', 'ignore_ament_install']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification) by extension 'ignore'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification) by extension 'ignore_ament_install'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification) by extensions ['colcon_pkg']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification) by extension 'colcon_pkg'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification) by extensions ['colcon_meta']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification) by extension 'colcon_meta'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification) by extensions ['ros']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification) by extension 'ros'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification) by extensions ['cmake', 'python']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification) by extension 'cmake'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification) by extension 'python'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification) by extensions ['python_setup_py']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification) by extension 'python_setup_py'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification/weights) by extensions ['ignore', 'ignore_ament_install']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification/weights) by extension 'ignore'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification/weights) by extension 'ignore_ament_install'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification/weights) by extensions ['colcon_pkg']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification/weights) by extension 'colcon_pkg'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification/weights) by extensions ['colcon_meta']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification/weights) by extension 'colcon_meta'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification/weights) by extensions ['ros']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification/weights) by extension 'ros'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification/weights) by extensions ['cmake', 'python']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification/weights) by extension 'cmake'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification/weights) by extension 'python'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification/weights) by extensions ['python_setup_py']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification/weights) by extension 'python_setup_py'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2) by extensions ['ignore', 'ignore_ament_install']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2) by extension 'ignore'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2) by extension 'ignore_ament_install'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2) by extensions ['colcon_pkg']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2) by extension 'colcon_pkg'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2) by extensions ['colcon_meta']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2) by extension 'colcon_meta'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2) by extensions ['ros']
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2) by extension 'ros'
+[0.113s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2) by extensions ['cmake', 'python']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2) by extension 'cmake'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2) by extension 'python'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2) by extensions ['python_setup_py']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2) by extension 'python_setup_py'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2/weights) by extensions ['ignore', 'ignore_ament_install']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2/weights) by extension 'ignore'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2/weights) by extension 'ignore_ament_install'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2/weights) by extensions ['colcon_pkg']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2/weights) by extension 'colcon_pkg'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2/weights) by extensions ['colcon_meta']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2/weights) by extension 'colcon_meta'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2/weights) by extensions ['ros']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2/weights) by extension 'ros'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2/weights) by extensions ['cmake', 'python']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2/weights) by extension 'cmake'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2/weights) by extension 'python'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2/weights) by extensions ['python_setup_py']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification2/weights) by extension 'python_setup_py'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3) by extensions ['ignore', 'ignore_ament_install']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3) by extension 'ignore'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3) by extension 'ignore_ament_install'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3) by extensions ['colcon_pkg']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3) by extension 'colcon_pkg'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3) by extensions ['colcon_meta']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3) by extension 'colcon_meta'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3) by extensions ['ros']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3) by extension 'ros'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3) by extensions ['cmake', 'python']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3) by extension 'cmake'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3) by extension 'python'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3) by extensions ['python_setup_py']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3) by extension 'python_setup_py'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3/weights) by extensions ['ignore', 'ignore_ament_install']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3/weights) by extension 'ignore'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3/weights) by extension 'ignore_ament_install'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3/weights) by extensions ['colcon_pkg']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3/weights) by extension 'colcon_pkg'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3/weights) by extensions ['colcon_meta']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3/weights) by extension 'colcon_meta'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3/weights) by extensions ['ros']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3/weights) by extension 'ros'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3/weights) by extensions ['cmake', 'python']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3/weights) by extension 'cmake'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3/weights) by extension 'python'
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3/weights) by extensions ['python_setup_py']
+[0.114s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(yolo_training/taiwan_17class_training/final_spatial_classification3/weights) by extension 'python_setup_py'
+[0.114s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) using defaults
+[0.114s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) discover
+[0.114s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) using defaults
+[0.115s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) discover
+[0.115s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) using defaults
+[0.124s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) check parameters
+[0.124s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) discover
+[0.124s] [34mcolcon.colcon_core.prefix_path.colcon[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install' in the environment variable COLCON_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/ur5_robotiq_85_description' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/ur5_gripper_moveit_config' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/traffic_crossing_assistant' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/shared_interfaces' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/scene_description_system' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/ros2_benchmark_interfaces' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam_interfaces' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_test_cmake' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_test' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_pynitros' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nitros_bridge_interfaces' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_tensor_list_interfaces' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_pointcloud_interfaces' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_launch_utils' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.124s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_triton' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_sight' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_ros_messages' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_ros_cuda' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_range_scan_processing' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_optimizer' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages_throttler' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_message_compositor' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_localization' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_image_flip' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_hesai' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gxf_helpers' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_atlas' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_flatscan_localization' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_cuda' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_argus' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_timestamp_correlator' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_bi3d_interfaces' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_apriltag_interfaces' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_common_py' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_common' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gps_navigation_system' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/custom_nitros_message_filter_interfaces' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.ament[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/assistive_navigation_core' in the environment variable AMENT_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/ur5_robotiq_85_description' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/ur5_gripper_moveit_config' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/shared_interfaces' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/ros2_benchmark_interfaces' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_visual_slam_interfaces' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_test_cmake' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nitros_bridge_interfaces' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_tensor_list_interfaces' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_pointcloud_interfaces' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_nova_interfaces' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_triton' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_sight' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_segway' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_ros_messages' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_ros_cuda' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_range_scan_processing' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_point_cloud' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.125s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_optimizer' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages_throttler' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_messages' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_message_compositor' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_localization' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_image_flip' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_hesai' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gxf_helpers' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_atlas' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_gems' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_flatscan_localization' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_cuda' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_argus' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_gxf' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/gxf_isaac_timestamp_correlator' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_common' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_bi3d_interfaces' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_apriltag_interfaces' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/isaac_common' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_ros.prefix_path.catkin[0m [1;30mWARNING[0m [33mThe path '/home/sophie/visionaid/isaac_ros_ws/install/custom_nitros_message_filter_interfaces' in the environment variable CMAKE_PREFIX_PATH doesn't exist[0m
+[0.126s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 0 installed packages in /home/sophie/visionaid-1/isaac_ros_ws/install[0m
+[0.127s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 381 installed packages in /opt/ros/humble[0m
+[0.128s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) using defaults
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'assistive_navigation_core' build argument 'cmake_args' from command line to 'None'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'assistive_navigation_core' build argument 'cmake_target' from command line to 'None'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'assistive_navigation_core' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'assistive_navigation_core' build argument 'cmake_clean_cache' from command line to 'True'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'assistive_navigation_core' build argument 'cmake_clean_first' from command line to 'False'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'assistive_navigation_core' build argument 'cmake_force_configure' from command line to 'False'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'assistive_navigation_core' build argument 'ament_cmake_args' from command line to 'None'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'assistive_navigation_core' build argument 'catkin_cmake_args' from command line to 'None'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'assistive_navigation_core' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'assistive_navigation_core' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sophie/visionaid-1/build/assistive_navigation_core', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sophie/visionaid-1/install/assistive_navigation_core', 'merge_install': False, 'path': '/home/sophie/visionaid-1/isaac_ros_ws/src/assistive_navigation_core', 'symlink_install': True, 'test_result_base': None}[0m
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'gps_navigation_system' build argument 'cmake_args' from command line to 'None'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'gps_navigation_system' build argument 'cmake_target' from command line to 'None'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'gps_navigation_system' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'gps_navigation_system' build argument 'cmake_clean_cache' from command line to 'True'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'gps_navigation_system' build argument 'cmake_clean_first' from command line to 'False'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'gps_navigation_system' build argument 'cmake_force_configure' from command line to 'False'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'gps_navigation_system' build argument 'ament_cmake_args' from command line to 'None'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'gps_navigation_system' build argument 'catkin_cmake_args' from command line to 'None'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'gps_navigation_system' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.157s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'gps_navigation_system' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sophie/visionaid-1/build/gps_navigation_system', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sophie/visionaid-1/install/gps_navigation_system', 'merge_install': False, 'path': '/home/sophie/visionaid-1/isaac_ros_ws/src/gps_navigation_system', 'symlink_install': True, 'test_result_base': None}[0m
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'scene_description_system' build argument 'cmake_args' from command line to 'None'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'scene_description_system' build argument 'cmake_target' from command line to 'None'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'scene_description_system' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'scene_description_system' build argument 'cmake_clean_cache' from command line to 'True'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'scene_description_system' build argument 'cmake_clean_first' from command line to 'False'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'scene_description_system' build argument 'cmake_force_configure' from command line to 'False'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'scene_description_system' build argument 'ament_cmake_args' from command line to 'None'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'scene_description_system' build argument 'catkin_cmake_args' from command line to 'None'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'scene_description_system' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'scene_description_system' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sophie/visionaid-1/build/scene_description_system', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sophie/visionaid-1/install/scene_description_system', 'merge_install': False, 'path': '/home/sophie/visionaid-1/isaac_ros_ws/src/scene_description_system', 'symlink_install': True, 'test_result_base': None}[0m
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'shared_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'shared_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'shared_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'shared_interfaces' build argument 'cmake_clean_cache' from command line to 'True'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'shared_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'shared_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'shared_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'shared_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'shared_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'shared_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sophie/visionaid-1/build/shared_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sophie/visionaid-1/install/shared_interfaces', 'merge_install': False, 'path': '/home/sophie/visionaid-1/isaac_ros_ws/src/shared_interfaces', 'symlink_install': True, 'test_result_base': None}[0m
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vlm_scene_understanding' build argument 'cmake_args' from command line to 'None'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vlm_scene_understanding' build argument 'cmake_target' from command line to 'None'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vlm_scene_understanding' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vlm_scene_understanding' build argument 'cmake_clean_cache' from command line to 'True'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vlm_scene_understanding' build argument 'cmake_clean_first' from command line to 'False'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vlm_scene_understanding' build argument 'cmake_force_configure' from command line to 'False'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vlm_scene_understanding' build argument 'ament_cmake_args' from command line to 'None'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vlm_scene_understanding' build argument 'catkin_cmake_args' from command line to 'None'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vlm_scene_understanding' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'vlm_scene_understanding' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sophie/visionaid-1/build/vlm_scene_understanding', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sophie/visionaid-1/install/vlm_scene_understanding', 'merge_install': False, 'path': '/home/sophie/visionaid-1/isaac_ros_ws/src/vlm_scene_understanding', 'symlink_install': True, 'test_result_base': None}[0m
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolov8_detection' build argument 'cmake_args' from command line to 'None'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolov8_detection' build argument 'cmake_target' from command line to 'None'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolov8_detection' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolov8_detection' build argument 'cmake_clean_cache' from command line to 'True'
+[0.158s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolov8_detection' build argument 'cmake_clean_first' from command line to 'False'
+[0.159s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolov8_detection' build argument 'cmake_force_configure' from command line to 'False'
+[0.159s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolov8_detection' build argument 'ament_cmake_args' from command line to 'None'
+[0.159s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolov8_detection' build argument 'catkin_cmake_args' from command line to 'None'
+[0.159s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'yolov8_detection' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.159s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'yolov8_detection' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sophie/visionaid-1/build/yolov8_detection', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sophie/visionaid-1/install/yolov8_detection', 'merge_install': False, 'path': '/home/sophie/visionaid-1/isaac_ros_ws/src/yolov8_detection', 'symlink_install': True, 'test_result_base': None}[0m
+[0.159s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'traffic_crossing_assistant' build argument 'cmake_args' from command line to 'None'
+[0.159s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'traffic_crossing_assistant' build argument 'cmake_target' from command line to 'None'
+[0.159s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'traffic_crossing_assistant' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.159s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'traffic_crossing_assistant' build argument 'cmake_clean_cache' from command line to 'True'
+[0.159s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'traffic_crossing_assistant' build argument 'cmake_clean_first' from command line to 'False'
+[0.159s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'traffic_crossing_assistant' build argument 'cmake_force_configure' from command line to 'False'
+[0.159s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'traffic_crossing_assistant' build argument 'ament_cmake_args' from command line to 'None'
+[0.159s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'traffic_crossing_assistant' build argument 'catkin_cmake_args' from command line to 'None'
+[0.159s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'traffic_crossing_assistant' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.159s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'traffic_crossing_assistant' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/sophie/visionaid-1/build/traffic_crossing_assistant', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': True, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/sophie/visionaid-1/install/traffic_crossing_assistant', 'merge_install': False, 'path': '/home/sophie/visionaid-1/isaac_ros_ws/src/traffic_crossing_assistant', 'symlink_install': True, 'test_result_base': None}[0m
+[0.159s] [34mcolcon.colcon_core.executor[0m [1;30mINFO[0m Executing jobs using 'parallel' executor
+[0.160s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete[0m
+[0.160s] [34mcolcon.colcon_ros.task.ament_python.build[0m [1;30mINFO[0m Building ROS package in '/home/sophie/visionaid-1/isaac_ros_ws/src/yolov8_detection' with build type 'ament_python'
+[0.160s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('yolov8_detection', 'ament_prefix_path')
+[0.161s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.161s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/hook/ament_prefix_path.ps1'
+[0.162s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/hook/ament_prefix_path.dsv'
+[0.162s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/hook/ament_prefix_path.sh'
+[0.162s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.162s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.164s] [34mcolcon.colcon_ros.task.ament_python.build[0m [1;30mINFO[0m Building ROS package in '/home/sophie/visionaid-1/isaac_ros_ws/src/assistive_navigation_core' with build type 'ament_python'
+[0.165s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('assistive_navigation_core', 'ament_prefix_path')
+[0.165s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/sophie/visionaid-1/install/assistive_navigation_core/share/assistive_navigation_core/hook/ament_prefix_path.ps1'
+[0.165s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/sophie/visionaid-1/install/assistive_navigation_core/share/assistive_navigation_core/hook/ament_prefix_path.dsv'
+[0.165s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/sophie/visionaid-1/install/assistive_navigation_core/share/assistive_navigation_core/hook/ament_prefix_path.sh'
+[0.165s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.165s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.167s] [34mcolcon.colcon_ros.task.ament_python.build[0m [1;30mINFO[0m Building ROS package in '/home/sophie/visionaid-1/isaac_ros_ws/src/gps_navigation_system' with build type 'ament_python'
+[0.168s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('gps_navigation_system', 'ament_prefix_path')
+[0.168s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/sophie/visionaid-1/install/gps_navigation_system/share/gps_navigation_system/hook/ament_prefix_path.ps1'
+[0.169s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/sophie/visionaid-1/install/gps_navigation_system/share/gps_navigation_system/hook/ament_prefix_path.dsv'
+[0.169s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/sophie/visionaid-1/install/gps_navigation_system/share/gps_navigation_system/hook/ament_prefix_path.sh'
+[0.169s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.170s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.173s] [34mcolcon.colcon_ros.task.ament_python.build[0m [1;30mINFO[0m Building ROS package in '/home/sophie/visionaid-1/isaac_ros_ws/src/scene_description_system' with build type 'ament_python'
+[0.173s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('scene_description_system', 'ament_prefix_path')
+[0.173s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/sophie/visionaid-1/install/scene_description_system/share/scene_description_system/hook/ament_prefix_path.ps1'
+[0.174s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/sophie/visionaid-1/install/scene_description_system/share/scene_description_system/hook/ament_prefix_path.dsv'
+[0.174s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/sophie/visionaid-1/install/scene_description_system/share/scene_description_system/hook/ament_prefix_path.sh'
+[0.174s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.174s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.176s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/sophie/visionaid-1/isaac_ros_ws/src/shared_interfaces' with build type 'ament_cmake'
+[0.176s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/sophie/visionaid-1/isaac_ros_ws/src/shared_interfaces'
+[0.176s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.176s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.178s] [34mcolcon.colcon_ros.task.ament_python.build[0m [1;30mINFO[0m Building ROS package in '/home/sophie/visionaid-1/isaac_ros_ws/src/vlm_scene_understanding' with build type 'ament_python'
+[0.179s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('vlm_scene_understanding', 'ament_prefix_path')
+[0.179s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/sophie/visionaid-1/install/vlm_scene_understanding/share/vlm_scene_understanding/hook/ament_prefix_path.ps1'
+[0.179s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/sophie/visionaid-1/install/vlm_scene_understanding/share/vlm_scene_understanding/hook/ament_prefix_path.dsv'
+[0.180s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/sophie/visionaid-1/install/vlm_scene_understanding/share/vlm_scene_understanding/hook/ament_prefix_path.sh'
+[0.180s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.180s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.313s] [34mcolcon.colcon_core.task.python.build[0m [1;30mINFO[0m Building Python package in '/home/sophie/visionaid-1/isaac_ros_ws/src/yolov8_detection'
+[0.314s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.314s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.447s] [34mcolcon.colcon_core.task.python.build[0m [1;30mINFO[0m Building Python package in '/home/sophie/visionaid-1/isaac_ros_ws/src/assistive_navigation_core'
+[0.447s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.447s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.577s] [34mcolcon.colcon_core.task.python.build[0m [1;30mINFO[0m Building Python package in '/home/sophie/visionaid-1/isaac_ros_ws/src/gps_navigation_system'
+[0.577s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.577s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.716s] [34mcolcon.colcon_core.task.python.build[0m [1;30mINFO[0m Building Python package in '/home/sophie/visionaid-1/isaac_ros_ws/src/scene_description_system'
+[0.716s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.716s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.721s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/sophie/visionaid-1/build/shared_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sophie/visionaid/isaac_ros_ws/install/vlm_scene_understanding:/home/sophie/visionaid/isaac_ros_ws/install/traffic_crossing_assistant:/home/sophie/visionaid/isaac_ros_ws/install/scene_description_system:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_test:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_pynitros:/home/sophie/visionaid/isaac_ros_ws/install/isaac_ros_launch_utils:/home/sophie/visionaid/isaac_ros_ws/install/isaac_common_py:/home/sophie/visionaid/isaac_ros_ws/install/gps_navigation_system:/home/sophie/visionaid/isaac_ros_ws/install/assistive_navigation_core:/home/sophie/visionaid-1/isaac_ros_ws/install/yolov8_detection:/opt/ros/humble /usr/bin/cmake /home/sophie/visionaid-1/isaac_ros_ws/src/shared_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/sophie/visionaid-1/install/shared_interfaces[0m
+[0.857s] [34mcolcon.colcon_core.task.python.build[0m [1;30mINFO[0m Building Python package in '/home/sophie/visionaid-1/isaac_ros_ws/src/vlm_scene_understanding'
+[0.857s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.857s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[1.128s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/sophie/visionaid-1/build/assistive_navigation_core': PYTHONPATH=/home/sophie/visionaid-1/build/assistive_navigation_core/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid-1/install/assistive_navigation_core/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sophie/visionaid-1/build/assistive_navigation_core/build --no-deps symlink_data[0m
+[1.135s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/sophie/visionaid-1/build/gps_navigation_system': PYTHONPATH=/home/sophie/visionaid-1/build/gps_navigation_system/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid-1/install/gps_navigation_system/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sophie/visionaid-1/build/gps_navigation_system/build --no-deps symlink_data[0m
+[1.136s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/sophie/visionaid-1/build/scene_description_system': PYTHONPATH=/home/sophie/visionaid-1/build/scene_description_system/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid-1/install/scene_description_system/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sophie/visionaid-1/build/scene_description_system/build --no-deps symlink_data[0m
+[1.140s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/sophie/visionaid-1/build/yolov8_detection': PYTHONPATH=/home/sophie/visionaid-1/build/yolov8_detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sophie/visionaid-1/build/yolov8_detection/build --no-deps symlink_data[0m
+[1.150s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/sophie/visionaid-1/build/vlm_scene_understanding': PYTHONPATH=/home/sophie/visionaid-1/build/vlm_scene_understanding/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid-1/install/vlm_scene_understanding/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sophie/visionaid-1/build/vlm_scene_understanding/build --no-deps symlink_data[0m
+[1.281s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/sophie/visionaid-1/build/assistive_navigation_core' returned '1': PYTHONPATH=/home/sophie/visionaid-1/build/assistive_navigation_core/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid-1/install/assistive_navigation_core/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sophie/visionaid-1/build/assistive_navigation_core/build --no-deps symlink_data[0m
+[1.449s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mclosing loop[0m
+[1.449s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mloop closed[0m
+[1.449s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete finished with '1'[0m
+[1.449s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoining thread[0m
+[1.455s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.456s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.456s] [34mcolcon.colcon_notification.desktop_notification[0m [1;30mINFO[0m Sending desktop notification using 'notify2'
+[1.464s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoined thread[0m
+[1.465s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/sophie/visionaid-1/install/local_setup.ps1'
+[1.466s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/sophie/visionaid-1/install/_local_setup_util_ps1.py'
+[1.467s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/sophie/visionaid-1/install/setup.ps1'
+[1.467s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/sophie/visionaid-1/install/local_setup.sh'
+[1.468s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/sophie/visionaid-1/install/_local_setup_util_sh.py'
+[1.468s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/sophie/visionaid-1/install/setup.sh'
+[1.468s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/sophie/visionaid-1/install/local_setup.bash'
+[1.469s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/sophie/visionaid-1/install/setup.bash'
+[1.469s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/sophie/visionaid-1/install/local_setup.zsh'
+[1.469s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/sophie/visionaid-1/install/setup.zsh'

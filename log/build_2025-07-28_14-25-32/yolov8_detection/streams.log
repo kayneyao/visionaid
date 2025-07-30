@@ -1,0 +1,9 @@
+[0.979s] Invoking command in '/home/sophie/visionaid-1/build/yolov8_detection': PYTHONPATH=/home/sophie/visionaid-1/build/yolov8_detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sophie/visionaid-1/build/yolov8_detection/build --no-deps symlink_data
+[1.083s] /home/sophie/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:289: UserWarning: Unknown distribution option: 'tests_require'
+[1.084s]   warnings.warn(msg)
+[1.112s] usage: setup.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+[1.112s]    or: setup.py --help [cmd1 cmd2 ...]
+[1.112s]    or: setup.py --help-commands
+[1.112s]    or: setup.py cmd --help
+[1.112s] 
+[1.112s] error: option --editable not recognized

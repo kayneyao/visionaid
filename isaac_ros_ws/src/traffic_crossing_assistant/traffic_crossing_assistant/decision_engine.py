@@ -1,133 +1,112 @@
 #!/usr/bin/env python3
 """
-Decision Engine - Main Coordinator for 3-Priority Hierarchy
-Implements: Vehicles → Taiwan Crossing Path → Traffic Lights
+Decision Engine - Central Safety Coordinator
+Updated for 2-Priority System: Vehicles > Traffic Lights
+Removed Taiwan-specific crossing analysis (simplified system)
 """
 
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Bool, String, Float32
+from std_msgs.msg import String, Bool, Float32
 from enum import Enum
 
 class CrossingDecision(Enum):
-    DONT_CROSS = "DONT_CROSS"
-    CROSS = "CROSS"
+    SAFE_TO_CROSS = "SAFE_TO_CROSS"
+    WAIT_FOR_VEHICLES = "WAIT_FOR_VEHICLES"
+    WAIT_FOR_TRAFFIC_LIGHT = "WAIT_FOR_TRAFFIC_LIGHT"
     MANUAL = "MANUAL"
 
 class DecisionEngine(Node):
     def __init__(self):
         super().__init__('decision_engine')
         
-        # State tracking for 3-priority system
-        self.immediate_danger = False           # Priority 1
-        self.crossing_path_confirmed = False    # Priority 2
-        self.spatial_confidence = 0.0          # Priority 2 confidence
-        self.traffic_light_state = "unknown"   # Priority 3
-        self.signal_confidence = 0.0           # Priority 3 confidence
+        # NEW: 2-Priority Safety System Parameters
+        self.declare_parameter('vehicle_override_enabled', True)    # Priority 1 absolute override
+        self.declare_parameter('traffic_light_weight', 0.8)        # Priority 2 weight
+        self.declare_parameter('high_confidence_threshold', 0.8)
+        self.declare_parameter('medium_confidence_threshold', 0.6)
+        self.declare_parameter('low_confidence_threshold', 0.4)
         
-        # Priority weights based on your research
-        self.priority_weights = {
-            'vehicle_authority': 1.0,      # Absolute override
-            'crossing_authority': 0.4,     # Your 85.5% mAP50 innovation
-            'traffic_authority': 0.3       # Conservative signal analysis
-        }
+        # Load parameters
+        self.vehicle_override_enabled = self.get_parameter('vehicle_override_enabled').value
+        self.traffic_light_weight = self.get_parameter('traffic_light_weight').value
+        self.high_confidence_threshold = self.get_parameter('high_confidence_threshold').value
+        self.medium_confidence_threshold = self.get_parameter('medium_confidence_threshold').value
+        self.low_confidence_threshold = self.get_parameter('low_confidence_threshold').value
         
-        # Subscriptions - Priority 1: Vehicle Movement
-        self.danger_sub = self.create_subscription(
-            Bool, '/immediate_crossing_danger',
-            self.immediate_danger_callback, 10)
+        # State tracking
+        self.vehicle_threat_detected = False
+        self.traffic_light_state = "unknown"
+        self.traffic_light_confidence = 0.0
         
-        # Subscriptions - Priority 2: Taiwan Crossing Path
-        self.crossing_sub = self.create_subscription(
-            Bool, '/crossing_path_confirmed',
-            self.crossing_path_callback, 10)
+        # Subscriptions - NEW: Simplified 2-priority system
+        # Priority 1: Vehicle threats (absolute override)
+        self.vehicle_threat_sub = self.create_subscription(
+            Bool, '/traffic_safety/immediate_crossing_danger',
+            self.vehicle_threat_callback, 10)
         
-        self.spatial_conf_sub = self.create_subscription(
-            Float32, '/spatial_classification_confidence',
-            self.spatial_confidence_callback, 10)
-        
-        # Subscriptions - Priority 3: Traffic Lights
-        self.traffic_sub = self.create_subscription(
+        # Priority 2: Traffic lights
+        self.traffic_light_sub = self.create_subscription(
             String, '/traffic_light_state',
             self.traffic_light_callback, 10)
         
-        self.signal_conf_sub = self.create_subscription(
+        self.traffic_confidence_sub = self.create_subscription(
             Float32, '/traffic_light_confidence',
-            self.signal_confidence_callback, 10)
+            self.traffic_confidence_callback, 10)
         
         # Publishers
         self.decision_pub = self.create_publisher(
-            String, '/crossing_decision', 10)
+            String, '/traffic_safety/crossing_decision', 10)
         
         self.reasoning_pub = self.create_publisher(
-            String, '/decision_reasoning', 10)
+            String, '/traffic_safety/decision_reasoning', 10)
         
         # Timer for decision making (10 Hz)
         self.create_timer(0.1, self.make_crossing_decision)
         
-        self.get_logger().info('🧠 Decision Engine initialized')
-        self.get_logger().info('Priority: Vehicles → Taiwan Crossing (85.5% mAP50) → Traffic Lights')
+        self.get_logger().info('🧠 Decision Engine initialized - 2-Priority System')
+        self.get_logger().info('Priority 1: Vehicles (ABSOLUTE) | Priority 2: Traffic Lights')
     
     # Priority 1 callbacks
-    def immediate_danger_callback(self, msg: Bool):
-        self.immediate_danger = msg.data
+    def vehicle_threat_callback(self, msg: Bool):
+        self.vehicle_threat_detected = msg.data
     
     # Priority 2 callbacks  
-    def crossing_path_callback(self, msg: Bool):
-        self.crossing_path_confirmed = msg.data
-    
-    def spatial_confidence_callback(self, msg: Float32):
-        self.spatial_confidence = msg.data
-    
-    # Priority 3 callbacks
     def traffic_light_callback(self, msg: String):
         self.traffic_light_state = msg.data
     
-    def signal_confidence_callback(self, msg: Float32):
-        self.signal_confidence = msg.data
+    def traffic_confidence_callback(self, msg: Float32):
+        self.traffic_light_confidence = msg.data
     
     def make_crossing_decision(self):
-        """Implement 3-priority hierarchy decision logic"""
+        """Implement 2-priority hierarchy decision logic"""
         
-        # PRIORITY 1: Vehicle Movement Analysis (Absolute Override)
-        if self.immediate_danger:
-            decision = CrossingDecision.DONT_CROSS
-            reasoning = "PRIORITY 1: Immediate vehicle danger detected - DO NOT CROSS"
+        # PRIORITY 1: Vehicle Threat Analysis (Absolute Override)
+        if self.vehicle_threat_detected:
+            decision = CrossingDecision.WAIT_FOR_VEHICLES
+            reasoning = "PRIORITY 1: Immediate vehicle threat detected - Wait for vehicles to clear"
             confidence = 0.95
             
-        # PRIORITY 2: Taiwan Crossing Path Authority (Your 85.5% mAP50 Innovation)
-        elif self.crossing_path_confirmed and self.spatial_confidence > 0.7:
-            # Your Taiwan spatial classification detected - proceed to traffic analysis
-            if self.traffic_light_state == "red":
-                decision = CrossingDecision.DONT_CROSS
-                reasoning = f"PRIORITY 2+3: Taiwan crossing confirmed (conf: {self.spatial_confidence:.3f}) + RED LIGHT detected"
-                confidence = self.spatial_confidence * 0.4 + self.signal_confidence * 0.3
-                
-            elif self.traffic_light_state == "green":
-                decision = CrossingDecision.CROSS
-                reasoning = f"PRIORITY 2+3: Taiwan crossing confirmed (conf: {self.spatial_confidence:.3f}) + GREEN LIGHT - Proceed with caution"
-                confidence = self.spatial_confidence * 0.4 + self.signal_confidence * 0.3
-                
-            else:  # No traffic signal
-                decision = CrossingDecision.MANUAL
-                reasoning = f"PRIORITY 2: Taiwan crossing confirmed (conf: {self.spatial_confidence:.3f}) - No traffic signal detected, manual verification required"
-                confidence = self.spatial_confidence * 0.4
-        
-        # PRIORITY 3: Traffic Light Analysis Only (No crossing path confirmed)
+        # PRIORITY 2: Traffic Light Analysis
         elif self.traffic_light_state == "red":
-            decision = CrossingDecision.DONT_CROSS
-            reasoning = f"PRIORITY 3: RED LIGHT detected (conf: {self.signal_confidence:.3f}) - DO NOT CROSS"
-            confidence = self.signal_confidence * 0.3
+            decision = CrossingDecision.WAIT_FOR_TRAFFIC_LIGHT
+            reasoning = f"PRIORITY 2: RED LIGHT detected (conf: {self.traffic_light_confidence:.3f}) - Wait for green light"
+            confidence = self.traffic_light_confidence * self.traffic_light_weight
             
         elif self.traffic_light_state == "green":
-            decision = CrossingDecision.MANUAL
-            reasoning = f"PRIORITY 3: GREEN LIGHT detected (conf: {self.signal_confidence:.3f}) but no crossing path confirmed - Manual verification required"
-            confidence = self.signal_confidence * 0.3
-        
-        # Default: Insufficient information
+            decision = CrossingDecision.SAFE_TO_CROSS
+            reasoning = f"PRIORITY 2: GREEN LIGHT detected (conf: {self.traffic_light_confidence:.3f}) - Safe to cross"
+            confidence = self.traffic_light_confidence * self.traffic_light_weight
+            
+        elif self.traffic_light_state == "yellow":
+            decision = CrossingDecision.WAIT_FOR_TRAFFIC_LIGHT
+            reasoning = f"PRIORITY 2: YELLOW LIGHT detected (conf: {self.traffic_light_confidence:.3f}) - Proceed with caution"
+            confidence = self.traffic_light_confidence * self.traffic_light_weight
+            
+        # Default: No clear signal
         else:
             decision = CrossingDecision.MANUAL
-            reasoning = "Insufficient information for safe crossing decision - Manual verification required"
+            reasoning = "No clear traffic signal detected - Manual verification required"
             confidence = 0.1
         
         # Publish decision
@@ -147,9 +126,9 @@ class DecisionEngine(Node):
         self.reasoning_pub.publish(reasoning_msg)
         
         # Log decision
-        if decision == CrossingDecision.DONT_CROSS:
+        if decision == CrossingDecision.MANUAL:
             self.get_logger().warn(f'🚨 {decision.value}: {reasoning}')
-        elif decision == CrossingDecision.CROSS:
+        elif decision == CrossingDecision.SAFE_TO_CROSS:
             self.get_logger().info(f'✅ {decision.value}: {reasoning}')
         else:
             self.get_logger().info(f'⚠️ {decision.value}: {reasoning}')
