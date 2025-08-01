@@ -39,6 +39,7 @@ class VehicleMovementAnalyzer(Node):
         # Safety parameters
         self.declare_parameter('horizontal_threat_distance', 15.0)  # meters
         self.declare_parameter('vehicle_confidence_threshold', 0.6)
+        self.declare_parameter('car_specific_threshold', 0.4)       # Lower threshold for cars
         self.declare_parameter('motion_velocity_threshold', 2.0)    # m/s
         self.declare_parameter('ttc_safety_threshold', 4.0)        # seconds - time to collision
         self.declare_parameter('tracking_window', 2.0)             # seconds for velocity calculation

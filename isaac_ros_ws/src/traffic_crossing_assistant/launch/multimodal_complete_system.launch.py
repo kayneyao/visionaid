@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 Complete Multimodal Taiwan Traffic Safety System - Enhanced Audio Only
+Updated for 11-class, 2-priority system
 """
 
 import os
@@ -14,28 +15,28 @@ def generate_launch_description():
         'config', 'taiwan_safety_config.yaml')
     
     return LaunchDescription([
-        # Your existing YOLOv8 detection system
+        # YOLOv8 detection system - UPDATED FOR 11-CLASS
         Node(
             package='yolov8_detection',
             executable='yolov8_camera_node',
             name='taiwan_traffic_detector',
             parameters=[{
-                'model_path': '/home/sophie/visionaid-1/models/yolov8/17class/taiwan.onnx',
+                'model_path': '/home/sophie/visionaid-1/yolo_training/11classnew/runs/balanced_augmented_training/balanced_augmented_11class/weights/balanced.onnx',
                 'confidence_threshold': 0.5,
             }],
             output='screen'
         ),
         
-        # Your 3-priority hierarchy (Layer 1: Structured)
+        # 2-Priority hierarchy system (Priority 1: Vehicles, Priority 2: Traffic Lights)
         Node(package='traffic_crossing_assistant', executable='vehicle_movement_analyzer', parameters=[config_file]),
-        Node(package='traffic_crossing_assistant', executable='taiwan_crossing_analyzer', parameters=[config_file]),
+        Node(package='traffic_crossing_assistant', executable='crosswalk_analyzer', parameters=[config_file]),
         Node(package='traffic_crossing_assistant', executable='traffic_light_analyzer', parameters=[config_file]),
         Node(package='traffic_crossing_assistant', executable='decision_engine', parameters=[config_file]),
         
         # VLM integration (Layer 2: Natural Language)
         Node(package='traffic_crossing_assistant', executable='multimodal_safety_coordinator', parameters=[config_file]),
         
-        # ONLY enhanced audio system (no basic audio_feedback_system)
+        # Enhanced audio system
         Node(
             package='traffic_crossing_assistant',
             executable='enhanced_audio_system',

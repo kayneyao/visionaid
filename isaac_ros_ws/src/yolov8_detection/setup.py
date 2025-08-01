@@ -19,7 +19,7 @@ setup(
     zip_safe=True,
     maintainer='sophie',
     maintainer_email='sophiehsuu@gmail.com',
-    description='Taiwan 17-class traffic safety detection system',
+    description='Taiwan 11-class traffic safety detection system',
     license='Apache License 2.0',
     entry_points={
         'console_scripts': [

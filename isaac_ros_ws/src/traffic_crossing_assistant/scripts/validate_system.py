@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Quick system validation script"""
+"""Quick system validation script - Updated for 11-class, 2-priority system"""
 
 import rclpy
 from rclpy.node import Node
@@ -14,13 +14,15 @@ class SystemValidator(Node):
         """Check if all required nodes are available"""
         required_executables = [
             'vehicle_movement_analyzer',
-            'taiwan_crossing_analyzer', 
+            'crosswalk_analyzer', 
             'traffic_light_analyzer',
             'decision_engine',
-            'audio_feedback_system'
+            'audio_feedback_system',
+            'enhanced_audio_system',
+            'multimodal_safety_coordinator'
         ]
         
-        self.get_logger().info('🔍 Validating Taiwan traffic safety system...')
+        self.get_logger().info('🔍 Validating 11-class traffic safety system...')
         
         for executable in required_executables:
             try:

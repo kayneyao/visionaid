@@ -1,5 +1,4 @@
-# Taiwan-Specific Detection Parameters
-# Optimized for your 17-class traffic safety system
+# Optimized for your 11-class traffic safety system
 
 taiwan_detection_params:
   # Taiwan Spatial Classification Thresholds

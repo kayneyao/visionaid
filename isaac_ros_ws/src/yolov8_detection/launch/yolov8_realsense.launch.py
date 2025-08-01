@@ -17,8 +17,8 @@ def generate_launch_description():
     # Model path argument
     model_path_arg = DeclareLaunchArgument(
         'model_path',
-        default_value='/home/sophie/visionaid-1/models/yolov8/17class/taiwan.onnx',
-        description='Path to Taiwan 17-class ONNX model')
+        default_value='/home/sophie/visionaid-1/yolo_training/11classnew/runs/balanced_augmented_training/balanced_augmented_11class/weights/balanced.onnx',
+        description='Path to Balanced Augmented 11-class ONNX model')
     
     # RealSense camera launch with optimized settings
     realsense_launch = IncludeLaunchDescription(
@@ -48,7 +48,7 @@ def generate_launch_description():
     yolov8_node = Node(
         package='yolov8_detection',
         executable='yolov8_camera_node',
-        name='taiwan_traffic_detector',
+        name='traffic_detector_11class',
         parameters=[{
             'model_path': LaunchConfiguration('model_path'),
             'confidence_threshold': 0.5,

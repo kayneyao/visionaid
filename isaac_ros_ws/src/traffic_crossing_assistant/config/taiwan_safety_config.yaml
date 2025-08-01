@@ -21,12 +21,13 @@ ego_motion_compensator:
 
 vehicle_movement_analyzer:
   ros__parameters:
-    vehicle_confidence_threshold: 0.6
-    horizontal_threat_distance: 15.0    # meters
-    motion_velocity_threshold: 2.0      # m/s
-    ttc_safety_threshold: 4.0           # seconds - time to collision threshold
-    tracking_window: 2.0                # seconds for velocity calculation
-    high_threat_vehicles: [1, 2, 5, 9]  # NEW: bus, car, motorcycle, truck only
+    vehicle_confidence_threshold: 0.45      # Lowered from 0.6 for better car detection
+    car_specific_threshold: 0.4             # Even lower threshold specifically for cars
+    horizontal_threat_distance: 15.0        # meters
+    motion_velocity_threshold: 2.0          # m/s
+    ttc_safety_threshold: 4.0               # seconds - time to collision threshold
+    tracking_window: 2.0                    # seconds for velocity calculation
+    high_threat_vehicles: [1, 2, 5, 9]      # NEW: bus, car, motorcycle, truck only
     
     # RealSense D435 camera intrinsics
     camera_intrinsics:

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 Traffic Crossing Assistant - Standalone Launch
+Updated for 11-class, 2-priority system
 For testing the safety logic independently
 """
 
@@ -16,8 +17,9 @@ def generate_launch_description():
     )
     
     return LaunchDescription([
+        # 2-Priority system components
         Node(package='traffic_crossing_assistant', executable='vehicle_movement_analyzer', parameters=[config_file]),
-        Node(package='traffic_crossing_assistant', executable='taiwan_crossing_analyzer', parameters=[config_file]),
+        Node(package='traffic_crossing_assistant', executable='crosswalk_analyzer', parameters=[config_file]),
         Node(package='traffic_crossing_assistant', executable='traffic_light_analyzer', parameters=[config_file]),
         Node(package='traffic_crossing_assistant', executable='decision_engine', parameters=[config_file]),
         Node(package='traffic_crossing_assistant', executable='audio_feedback_system', parameters=[config_file]),

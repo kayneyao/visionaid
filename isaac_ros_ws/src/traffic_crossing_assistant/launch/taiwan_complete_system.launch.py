@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Taiwan Complete Traffic Safety System - Enhanced 3D Detection
+Taiwan Complete Traffic Safety System - 11-Class 2-Priority System
 Full integration with RealSense depth, ego-motion compensation, and TTC analysis
+Updated for: bicycle, bus, car, crosswalk, greenlight, motorcycle, pedestrian, redlight, sidewalk, truck, yellowlight
 """
 
 import os
@@ -25,8 +26,8 @@ def generate_launch_description():
     # Launch arguments
     model_path_arg = DeclareLaunchArgument(
         'model_path',
-        default_value='/home/sophie/visionaid-1/models/yolov8/17class/taiwan.onnx',
-        description='Path to Taiwan 17-class ONNX model'
+        default_value='/home/sophie/visionaid-1/yolo_training/11classnew/runs/balanced_augmented_training/balanced_augmented_11class/weights/balanced.onnx',
+        description='Path to Balanced Augmented 11-class ONNX model'
     )
     
     enable_audio_arg = DeclareLaunchArgument(
@@ -86,22 +87,22 @@ def generate_launch_description():
         output='screen'
     )
     
-    # Taiwan Crossing Analyzer (Priority 2: Your 85.5% mAP50 Innovation)
-    crossing_analyzer = Node(
+    # Crosswalk Analyzer (Context Information)
+    crosswalk_analyzer = Node(
         package='traffic_crossing_assistant',
-        executable='taiwan_crossing_analyzer',
-        name='taiwan_crossing_analyzer',
+        executable='crosswalk_analyzer',
+        name='crosswalk_analyzer',
         parameters=[taiwan_config],
         remappings=[
             ('/camera/detections', '/camera/detections'),
-            ('/crossing_path_confirmed', '/traffic_safety/crossing_path_confirmed'),
-            ('/spatial_classification_confidence', '/traffic_safety/spatial_classification_confidence'),
-            ('/taiwan_crossing_status', '/traffic_safety/taiwan_crossing_status')
+            ('/crosswalk_detected', '/traffic_safety/crosswalk_detected'),
+            ('/crosswalk_confidence', '/traffic_safety/crosswalk_confidence'),
+            ('/crosswalk_status', '/traffic_safety/crosswalk_status')
         ],
         output='screen'
     )
     
-    # Traffic Light Analyzer (Priority 3: Conservative Signal Analysis)
+    # Traffic Light Analyzer (Priority 2: Signal Analysis)
     traffic_analyzer = Node(
         package='traffic_crossing_assistant',
         executable='traffic_light_analyzer',
@@ -115,7 +116,7 @@ def generate_launch_description():
         output='screen'
     )
     
-    # Main Decision Engine (3-Priority Hierarchy)
+    # Main Decision Engine (2-Priority Hierarchy)
     decision_engine = Node(
         package='traffic_crossing_assistant',
         executable='decision_engine',
@@ -123,8 +124,6 @@ def generate_launch_description():
         parameters=[taiwan_config],
         remappings=[
             ('/immediate_crossing_danger', '/traffic_safety/immediate_crossing_danger'),
-            ('/crossing_path_confirmed', '/traffic_safety/crossing_path_confirmed'),
-            ('/spatial_classification_confidence', '/traffic_safety/spatial_classification_confidence'),
             ('/traffic_light_state', '/traffic_safety/traffic_light_state'),
             ('/traffic_light_confidence', '/traffic_safety/traffic_light_confidence'),
             ('/crossing_decision', '/traffic_safety/crossing_decision'),
@@ -173,19 +172,19 @@ def generate_launch_description():
         enable_audio_arg,
         enable_ttc_arg,
         
-        # Detection system (your excellent 96.35% pedestrian, 85.91% vehicle performance)
+        # Detection system (11-class model)
         yolov8_launch,
         
         # Enhanced 3D depth-aware components
         ego_motion,                    # Enhanced ego-motion compensation
         vehicle_analyzer,              # Priority 1: 3D depth-aware vehicle analysis
         
-        # Priority hierarchy components
-        crossing_analyzer,             # Priority 2: Taiwan crossing innovation  
-        traffic_analyzer,              # Priority 3: Traffic light analysis
+        # 2-Priority hierarchy components
+        crosswalk_analyzer,            # Context: Crosswalk detection
+        traffic_analyzer,              # Priority 2: Traffic light analysis
         
         # Decision coordination
-        decision_engine,
+        decision_engine,               # 2-priority decision system
         
         # User interface
         multimodal_coordinator,        # VLM integration

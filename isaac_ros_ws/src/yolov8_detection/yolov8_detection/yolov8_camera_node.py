@@ -44,7 +44,7 @@ class YOLOv8CameraNode(Node):
         }
         
         # Parameters
-        self.declare_parameter('model_path', '/home/sophie/visionaid-1/yolo_training/11classnew/models/fresh_11class.onnx')
+        self.declare_parameter('model_path', '/home/sophie/visionaid-1/yolo_training/11classnew/runs/balanced_augmented_training/balanced_augmented_11class/weights/balanced.onnx')
         self.declare_parameter('confidence_threshold', 0.5)
         self.declare_parameter('nms_threshold', 0.4)
         self.declare_parameter('max_detections', 50)
@@ -90,7 +90,7 @@ class YOLOv8CameraNode(Node):
         # Initialize model with GPU requirements
         if self.initialize_model_gpu():
             self.get_logger().info('✅ Taiwan Traffic Detection Node Ready (GPU MODE)')
-            self.get_logger().info(f'🇹🇼 17-class Taiwan model loaded: {self.model_path}')
+            self.get_logger().info(f'🇹🇼 11-class Taiwan model loaded: {self.model_path}')
         else:
             self.get_logger().error('❌ Failed to initialize Taiwan model with GPU')
             raise RuntimeError("Failed to initialize GPU model")
@@ -102,7 +102,7 @@ class YOLOv8CameraNode(Node):
         self.create_timer(10.0, self.log_gpu_status)
     
     def initialize_model_gpu(self):
-        """Initialize Taiwan 17-class YOLO model with FORCED GPU execution"""
+        """Initialize Taiwan 11-class YOLO model with FORCED GPU execution"""
         try:
             if not Path(self.model_path).exists():
                 self.get_logger().error(f'Model file not found: {self.model_path}')
@@ -137,12 +137,12 @@ class YOLOv8CameraNode(Node):
                 self.get_logger().info('✅ PyTorch model moved to GPU')
             
             # Verify class count
-            if hasattr(self.model, 'names') and len(self.model.names) != 17:
-                self.get_logger().warning(f'Expected 17 classes, got {len(self.model.names)}')
+            if hasattr(self.model, 'names') and len(self.model.names) != 11:
+                self.get_logger().warning(f'Expected 11 classes, got {len(self.model.names)}')
             
             # Log Taiwan-specific classes
             self.get_logger().info('Taiwan spatial classification classes:')
-            for idx in self.taiwan_priorities['critical_crossing']:
+            for idx in self.safety_priorities['vehicles']:
                 if idx < len(self.class_names):
                     self.get_logger().info(f'  {idx}: {self.class_names[idx]}')
             
@@ -251,16 +251,14 @@ class YOLOv8CameraNode(Node):
     
     def get_taiwan_priority(self, class_id: int) -> float:
         """Assign priority for decision tree integration"""
-        if class_id in self.taiwan_priorities['critical_crossing']:
-            return 1.0  # Highest priority for your research innovation
-        elif class_id in self.taiwan_priorities['safety_vehicles']:
-            return 0.9  # High priority for vehicle safety
-        elif class_id in self.taiwan_priorities['safety_pedestrian']:
-            return 0.9  # High priority for pedestrian safety
-        elif class_id in self.taiwan_priorities['fallback_traffic']:
-            return 0.8  # Medium priority for fallback signals
-        elif class_id in self.taiwan_priorities['context_classes']:
-            return 0.6  # Lower priority for context
+        if class_id in self.safety_priorities['vehicles']:
+            return 1.0  # Highest priority for vehicle safety
+        elif class_id in self.safety_priorities['traffic_lights']:
+            return 0.8  # High priority for traffic lights
+        elif class_id in self.safety_priorities['pedestrian_context']:
+            return 0.6  # Medium priority for pedestrian context
+        elif class_id in self.safety_priorities['infrastructure']:
+            return 0.4  # Lower priority for infrastructure
         else:
             return 0.5  # Default priority
     
@@ -275,14 +273,15 @@ class YOLOv8CameraNode(Node):
                 x1, y1, x2, y2, conf, cls_id = box
                 cls_id = int(cls_id)
                 
-                # Color coding based on Taiwan priorities
-                if cls_id in self.taiwan_priorities['critical_crossing']:
-                    color = (0, 255, 0)  # Green for Taiwan innovations
-                elif cls_id in self.taiwan_priorities['safety_vehicles'] or \
-                     cls_id in self.taiwan_priorities['safety_pedestrian']:
-                    color = (0, 0, 255)  # Red for safety-critical
-                elif cls_id in self.taiwan_priorities['fallback_traffic']:
-                    color = (255, 0, 0)  # Blue for fallback
+                # Color coding based on safety priorities
+                if cls_id in self.safety_priorities['vehicles']:
+                    color = (0, 0, 255)  # Red for vehicles (highest priority)
+                elif cls_id in self.safety_priorities['traffic_lights']:
+                    color = (0, 255, 255)  # Yellow for traffic lights
+                elif cls_id in self.safety_priorities['pedestrian_context']:
+                    color = (255, 0, 0)  # Blue for pedestrian context
+                elif cls_id in self.safety_priorities['infrastructure']:
+                    color = (0, 255, 0)  # Green for infrastructure
                 else:
                     color = (128, 128, 128)  # Gray for context
                 

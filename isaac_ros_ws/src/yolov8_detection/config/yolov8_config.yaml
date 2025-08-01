@@ -1,7 +1,7 @@
 # 11-Class Traffic Safety System Configuration
 model:
-  onnx_file_path: "/home/sophie/visionaid-1/yolo_training/11classnew/models/fresh_11class.onnx"
-  engine_file_path: "/home/sophie/visionaid-1/yolo_training/11classnew/models/fresh_11class.onnx"
+  onnx_file_path: "/home/sophie/visionaid-1/yolo_training/11classnew/runs/balanced_augmented_training/balanced_augmented_11class/weights/balanced.onnx"
+  engine_file_path: "/home/sophie/visionaid-1/yolo_training/11classnew/runs/balanced_augmented_training/balanced_augmented_11class/weights/balanced.onnx"
   force_engine_update: false
   class_count: 11  # NEW: 11-class system
 
@@ -18,9 +18,16 @@ preprocessing:
   network_image_encoding: "rgb8"
 
 detection:
-  confidence_threshold: 0.5  # Consistent with camera_params
+  confidence_threshold: 0.65  # Even higher threshold to reduce false positives
   nms_threshold: 0.4        # Consistent with camera_params
   max_detections: 50        # Consistent with camera_params
+  
+  # Class-specific thresholds for better performance
+  class_specific_thresholds:
+    car: 0.35               # Lower threshold for car class (Class 2)
+    bus: 0.90               # Very high threshold for bus (eliminate false positives)
+    motorcycle: 0.45        # Slightly lower for motorcycle  
+    truck: 0.7              # Higher threshold for truck
 
 topics:
   input_image: "/camera/color/image_raw"
