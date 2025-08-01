@@ -51,7 +51,7 @@ def generate_launch_description():
         name='traffic_detector_11class',
         parameters=[{
             'model_path': LaunchConfiguration('model_path'),
-            'confidence_threshold': 0.5,
+            'confidence_threshold': 0.3,  # Lower global threshold since we use class-specific thresholds
             'nms_threshold': 0.4,
             'max_detections': 50,
             'inference_rate': 30.0,

@@ -43,6 +43,29 @@ class YOLOv8CameraNode(Node):
             'infrastructure': [3, 8]           # crosswalk, sidewalk
         }
         
+        # NEW: Class-specific confidence thresholds (lowered for temporal filtering)
+        self.class_confidence_thresholds = {
+            0: 0.8,   # bicycle - lowered for temporal filtering
+            1: 0.8,   # bus - lowered for temporal filtering
+            2: 0.8,   # car - lowered for temporal filtering
+            3: 0.5,   # crosswalk - lowered for temporal filtering
+            4: 0.7,   # greenlight - lowered for temporal filtering
+            5: 0.8,   # motorcycle - lowered for temporal filtering
+            6: 0.5,   # pedestrian - lowered for temporal filtering
+            7: 0.7,   # redlight - lowered for temporal filtering
+            8: 0.5,   # sidewalk - lowered for temporal filtering
+            9: 0.8,   # truck - lowered for temporal filtering
+            10: 0.7   # yellowlight - lowered for temporal filtering
+        }
+        
+        # NEW: Temporal consistency filter to eliminate glitch false positives
+        self.temporal_filter = {
+            'detection_history': {},  # Track detections per class
+            'min_consecutive_frames': 3,  # Must be detected for 3 consecutive frames
+            'max_frames_without_detection': 2,  # Allow 2 frames gap
+            'frame_count': 0
+        }
+        
         # Parameters
         self.declare_parameter('model_path', '/home/sophie/visionaid-1/yolo_training/11classnew/runs/balanced_augmented_training/balanced_augmented_11class/weights/balanced.onnx')
         self.declare_parameter('confidence_threshold', 0.5)
@@ -69,6 +92,16 @@ class YOLOv8CameraNode(Node):
             raise RuntimeError("GPU required but CUDA not available")
         
         self.get_logger().info(f'✅ CUDA available - GPU: {torch.cuda.get_device_name(0)}')
+        
+        # Log class-specific thresholds and temporal filter settings
+        self.get_logger().info('🎯 Class-specific confidence thresholds:')
+        for class_id, threshold in self.class_confidence_thresholds.items():
+            class_name = self.class_names.get(class_id, f'class_{class_id}')
+            self.get_logger().info(f'   {class_name} (Class {class_id}): {threshold}')
+        
+        self.get_logger().info('⏱️ Temporal filter settings:')
+        self.get_logger().info(f'   Min consecutive frames: {self.temporal_filter["min_consecutive_frames"]}')
+        self.get_logger().info(f'   Max frames without detection: {self.temporal_filter["max_frames_without_detection"]}')
         
         # Publishers
         self.detection_pub = self.create_publisher(
@@ -200,7 +233,7 @@ class YOLOv8CameraNode(Node):
             raise RuntimeError(f"GPU inference required but failed: {e}")
     
     def convert_to_detection_array(self, results, header):
-        """Convert YOLO results to ROS Detection2DArray with Taiwan priorities"""
+        """Convert YOLO results to ROS Detection2DArray with temporal filtering and class-specific thresholds"""
         detection_array = Detection2DArray()
         detection_array.header = header
         
@@ -209,11 +242,24 @@ class YOLOv8CameraNode(Node):
         
         boxes = results.boxes.cpu().numpy()
         
+        # Update temporal filter with current detections
+        self.update_temporal_filter(boxes.data)
+        
         # Sort by Taiwan priority for decision tree integration
         detections_with_priority = []
         for i, box in enumerate(boxes.data):
             x1, y1, x2, y2, conf, cls_id = box
             cls_id = int(cls_id)
+            
+            # Apply class-specific confidence threshold
+            class_threshold = self.class_confidence_thresholds.get(cls_id, self.confidence_threshold)
+            if conf < class_threshold:
+                continue  # Skip detections below class-specific threshold
+            
+            # Apply temporal consistency filter
+            if not self.is_temporally_consistent(cls_id):
+                continue  # Skip detections that aren't temporally consistent
+            
             priority = self.get_taiwan_priority(cls_id)
             
             detections_with_priority.append({
@@ -262,8 +308,57 @@ class YOLOv8CameraNode(Node):
         else:
             return 0.5  # Default priority
     
+    def update_temporal_filter(self, detections):
+        """Update temporal filter with current frame detections"""
+        self.temporal_filter['frame_count'] += 1
+        current_frame = self.temporal_filter['frame_count']
+        
+        # Get unique class IDs from current detections
+        current_classes = set()
+        for box in detections:
+            cls_id = int(box[5])
+            current_classes.add(cls_id)
+        
+        # Update detection history for each class
+        for class_id in range(11):  # All 11 classes
+            if class_id not in self.temporal_filter['detection_history']:
+                self.temporal_filter['detection_history'][class_id] = []
+            
+            history = self.temporal_filter['detection_history'][class_id]
+            
+            if class_id in current_classes:
+                # Class detected in current frame
+                history.append(current_frame)
+            else:
+                # Class not detected in current frame
+                if history and (current_frame - history[-1]) > self.temporal_filter['max_frames_without_detection']:
+                    # Clear old history if gap is too large
+                    history.clear()
+        
+        # Clean up old history entries (keep only recent frames)
+        max_history_age = self.temporal_filter['min_consecutive_frames'] + self.temporal_filter['max_frames_without_detection']
+        for class_id in self.temporal_filter['detection_history']:
+            history = self.temporal_filter['detection_history'][class_id]
+            # Remove entries older than max_history_age
+            history[:] = [frame for frame in history if (current_frame - frame) <= max_history_age]
+    
+    def is_temporally_consistent(self, class_id):
+        """Check if a class has been detected consistently enough"""
+        if class_id not in self.temporal_filter['detection_history']:
+            return False
+        
+        history = self.temporal_filter['detection_history'][class_id]
+        if len(history) < self.temporal_filter['min_consecutive_frames']:
+            return False
+        
+        # Check if we have enough recent detections
+        current_frame = self.temporal_filter['frame_count']
+        recent_detections = [frame for frame in history if (current_frame - frame) <= self.temporal_filter['max_frames_without_detection']]
+        
+        return len(recent_detections) >= self.temporal_filter['min_consecutive_frames']
+    
     def create_annotated_image(self, image, results):
-        """Create annotated image with Taiwan class priorities"""
+        """Create annotated image with Taiwan class priorities - show ALL detections for debugging"""
         annotated = image.copy()
         
         if results.boxes is not None:
@@ -273,23 +368,43 @@ class YOLOv8CameraNode(Node):
                 x1, y1, x2, y2, conf, cls_id = box
                 cls_id = int(cls_id)
                 
-                # Color coding based on safety priorities
-                if cls_id in self.safety_priorities['vehicles']:
-                    color = (0, 0, 255)  # Red for vehicles (highest priority)
-                elif cls_id in self.safety_priorities['traffic_lights']:
-                    color = (0, 255, 255)  # Yellow for traffic lights
-                elif cls_id in self.safety_priorities['pedestrian_context']:
-                    color = (255, 0, 0)  # Blue for pedestrian context
-                elif cls_id in self.safety_priorities['infrastructure']:
-                    color = (0, 255, 0)  # Green for infrastructure
+                # Get class-specific threshold for color coding
+                class_threshold = self.class_confidence_thresholds.get(cls_id, self.confidence_threshold)
+                
+                # Color coding based on safety priorities and threshold status
+                if conf >= class_threshold:
+                    # Detections that pass threshold - solid colors
+                    if cls_id in self.safety_priorities['vehicles']:
+                        color = (0, 0, 255)  # Red for vehicles (highest priority)
+                    elif cls_id in self.safety_priorities['traffic_lights']:
+                        color = (0, 255, 255)  # Yellow for traffic lights
+                    elif cls_id in self.safety_priorities['pedestrian_context']:
+                        color = (255, 0, 0)  # Blue for pedestrian context
+                    elif cls_id in self.safety_priorities['infrastructure']:
+                        color = (0, 255, 0)  # Green for infrastructure
+                    else:
+                        color = (128, 128, 128)  # Gray for context
                 else:
-                    color = (128, 128, 128)  # Gray for context
+                    # Detections below threshold - dashed/dotted appearance (lighter colors)
+                    if cls_id in self.safety_priorities['vehicles']:
+                        color = (100, 100, 255)  # Light red for vehicles
+                    elif cls_id in self.safety_priorities['traffic_lights']:
+                        color = (100, 255, 255)  # Light yellow for traffic lights
+                    elif cls_id in self.safety_priorities['pedestrian_context']:
+                        color = (255, 100, 100)  # Light blue for pedestrian context
+                    elif cls_id in self.safety_priorities['infrastructure']:
+                        color = (100, 255, 100)  # Light green for infrastructure
+                    else:
+                        color = (180, 180, 180)  # Light gray for context
                 
                 # Draw bounding box
                 cv2.rectangle(annotated, (int(x1), int(y1)), (int(x2), int(y2)), color, 2)
                 
-                # Draw label
-                label = f"{self.class_names.get(cls_id, 'unknown')}:{conf:.2f}"
+                # Draw label with threshold and temporal filter status
+                class_name = self.class_names.get(cls_id, 'unknown')
+                threshold_status = "PASS" if conf >= class_threshold else "FAIL"
+                temporal_status = "TEMP" if self.is_temporally_consistent(cls_id) else "GLITCH"
+                label = f"{class_name}:{conf:.2f} ({threshold_status}/{temporal_status})"
                 cv2.putText(annotated, label, (int(x1), int(y1-10)), 
                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
         
