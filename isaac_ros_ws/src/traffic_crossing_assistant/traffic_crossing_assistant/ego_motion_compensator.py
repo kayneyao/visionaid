@@ -55,6 +55,16 @@ class EgoMotionCompensator(Node):
             Odometry, '/rtabmap/odom',
             self.odometry_callback, 10)
         
+        # Alternative odometry sources if RTAB-Map is not available
+        self.alt_odom_sub = self.create_subscription(
+            Odometry, '/odom',
+            self.odometry_callback, 10)
+        
+        # Also try local map odometry
+        self.local_odom_sub = self.create_subscription(
+            Odometry, '/odom_local_map',
+            self.odometry_callback, 10)
+        
         self.detection_sub = self.create_subscription(
             Detection2DArray, '/camera/detections',
             self.detection_callback, 10)
@@ -203,8 +213,9 @@ class EgoMotionCompensator(Node):
         # Add motion compensation metadata
         detection.bbox.size_x *= (1.0 + compensation_factor * 0.1)  # Slight size adjustment
         
-        # Store compensation factor for statistics
-        detection.compensation_factor = compensation_factor
+        # Store compensation factor for statistics (use a custom attribute or skip)
+        # Note: Detection2D doesn't have compensation_factor attribute
+        # We'll track this in our internal statistics instead
         
         return detection
     

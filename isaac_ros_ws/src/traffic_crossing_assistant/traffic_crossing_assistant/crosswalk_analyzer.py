@@ -20,8 +20,8 @@ class CrosswalkAnalyzer(Node):
             3: 'crosswalk'  # Class 3 - Single crosswalk class
         }
         
-        # Context detection threshold
-        self.crosswalk_threshold = 0.6
+        # Context detection threshold (matching YOLOv8 camera node exactly)
+        self.crosswalk_threshold = 0.5      # crosswalk - lowered for temporal filtering
         
         # Subscriptions
         self.detection_sub = self.create_subscription(

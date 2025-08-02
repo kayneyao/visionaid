@@ -45,23 +45,23 @@ class YOLOv8CameraNode(Node):
         
         # NEW: Class-specific confidence thresholds (lowered for temporal filtering)
         self.class_confidence_thresholds = {
-            0: 0.8,   # bicycle - lowered for temporal filtering
-            1: 0.8,   # bus - lowered for temporal filtering
-            2: 0.8,   # car - lowered for temporal filtering
+            0: 0.55,   # bicycle - lowered for temporal filtering
+            1: 0.55,   # bus - lowered for temporal filtering
+            2: 0.55,   # car - lowered for temporal filtering
             3: 0.5,   # crosswalk - lowered for temporal filtering
-            4: 0.7,   # greenlight - lowered for temporal filtering
-            5: 0.8,   # motorcycle - lowered for temporal filtering
+            4: 0.2,   # greenlight - very low for small objects
+            5: 0.65,   # motorcycle - lowered for temporal filtering
             6: 0.5,   # pedestrian - lowered for temporal filtering
-            7: 0.7,   # redlight - lowered for temporal filtering
+            7: 0.2,   # redlight - very low for small objects
             8: 0.5,   # sidewalk - lowered for temporal filtering
-            9: 0.8,   # truck - lowered for temporal filtering
-            10: 0.7   # yellowlight - lowered for temporal filtering
+            9: 0.7,   # truck - lowered for temporal filtering
+            10: 0.2   # yellowlight - very low for small objects
         }
         
         # NEW: Temporal consistency filter to eliminate glitch false positives
         self.temporal_filter = {
             'detection_history': {},  # Track detections per class
-            'min_consecutive_frames': 3,  # Must be detected for 3 consecutive frames
+            'min_consecutive_frames': 2,  # Must be detected for 2 consecutive frames
             'max_frames_without_detection': 2,  # Allow 2 frames gap
             'frame_count': 0
         }
@@ -106,6 +106,10 @@ class YOLOv8CameraNode(Node):
         # Publishers
         self.detection_pub = self.create_publisher(
             Detection2DArray, 'detections', 10)
+        
+        # Raw detections publisher (before filtering)
+        self.raw_detection_pub = self.create_publisher(
+            Detection2DArray, 'detections/raw', 10)
         
         if self.publish_images:
             self.image_pub = self.create_publisher(
@@ -220,6 +224,10 @@ class YOLOv8CameraNode(Node):
             detection_array = self.convert_to_detection_array(results[0], msg.header)
             self.detection_pub.publish(detection_array)
             
+            # Publish raw detections (before filtering)
+            raw_detection_array = self.convert_to_raw_detection_array(results[0], msg.header)
+            self.raw_detection_pub.publish(raw_detection_array)
+            
             # Publish annotated image if enabled
             if self.publish_images and results[0].boxes is not None:
                 annotated_image = self.create_annotated_image(cv_image, results[0])
@@ -241,6 +249,7 @@ class YOLOv8CameraNode(Node):
             return detection_array
         
         boxes = results.boxes.cpu().numpy()
+
         
         # Update temporal filter with current detections
         self.update_temporal_filter(boxes.data)
@@ -256,9 +265,10 @@ class YOLOv8CameraNode(Node):
             if conf < class_threshold:
                 continue  # Skip detections below class-specific threshold
             
-            # Apply temporal consistency filter
-            if not self.is_temporally_consistent(cls_id):
-                continue  # Skip detections that aren't temporally consistent
+            # Apply temporal consistency filter (but bypass for traffic lights)
+            if cls_id not in self.safety_priorities['traffic_lights']:  # Skip temporal filter for traffic lights
+                if not self.is_temporally_consistent(cls_id):
+                    continue  # Skip detections that aren't temporally consistent
             
             priority = self.get_taiwan_priority(cls_id)
             
@@ -274,6 +284,39 @@ class YOLOv8CameraNode(Node):
         # Convert to Detection2D messages
         for det_info in detections_with_priority:
             box = det_info['box']
+            x1, y1, x2, y2, conf, cls_id = box
+            cls_id = int(cls_id)
+            
+            detection = Detection2D()
+            
+            # Bounding box
+            detection.bbox.center.position.x = float((x1 + x2) / 2)
+            detection.bbox.center.position.y = float((y1 + y2) / 2)
+            detection.bbox.size_x = float(x2 - x1)
+            detection.bbox.size_y = float(y2 - y1)
+            
+            # Classification result
+            hypothesis = ObjectHypothesisWithPose()
+            hypothesis.hypothesis.class_id = str(cls_id)
+            hypothesis.hypothesis.score = float(conf)
+            
+            detection.results.append(hypothesis)
+            detection_array.detections.append(detection)
+        
+        return detection_array
+    
+    def convert_to_raw_detection_array(self, results, header):
+        """Convert YOLO results to ROS Detection2DArray WITHOUT filtering (raw detections)"""
+        detection_array = Detection2DArray()
+        detection_array.header = header
+        
+        if results.boxes is None:
+            return detection_array
+        
+        boxes = results.boxes.cpu().numpy()
+        
+        # Convert ALL detections without any filtering
+        for box in boxes.data:
             x1, y1, x2, y2, conf, cls_id = box
             cls_id = int(cls_id)
             
@@ -348,14 +391,21 @@ class YOLOv8CameraNode(Node):
             return False
         
         history = self.temporal_filter['detection_history'][class_id]
-        if len(history) < self.temporal_filter['min_consecutive_frames']:
+        
+        # Special treatment for traffic lights (small objects) - require fewer consecutive frames
+        if class_id in self.safety_priorities['traffic_lights']:
+            min_frames = 1  # Traffic lights only need 1 frame (very permissive)
+        else:
+            min_frames = self.temporal_filter['min_consecutive_frames']
+        
+        if len(history) < min_frames:
             return False
         
         # Check if we have enough recent detections
         current_frame = self.temporal_filter['frame_count']
         recent_detections = [frame for frame in history if (current_frame - frame) <= self.temporal_filter['max_frames_without_detection']]
         
-        return len(recent_detections) >= self.temporal_filter['min_consecutive_frames']
+        return len(recent_detections) >= min_frames
     
     def create_annotated_image(self, image, results):
         """Create annotated image with Taiwan class priorities - show ALL detections for debugging"""

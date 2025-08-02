@@ -27,10 +27,10 @@ class TrafficLightAnalyzer(Node):
             10: 'yellowlight'   # Class 10 - Caution signal
         }
         
-        # Confidence thresholds for each light type
-        self.red_light_threshold = 0.6      # Conservative for safety
-        self.green_light_threshold = 0.6    # Conservative for safety  
-        self.yellow_light_threshold = 0.6   # Conservative for safety
+        # Confidence thresholds (matching YOLOv8 camera node exactly)
+        self.red_light_threshold = 0.2      # redlight - very low for small objects
+        self.green_light_threshold = 0.2    # greenlight - very low for small objects  
+        self.yellow_light_threshold = 0.2   # yellowlight - very low for small objects
         
         # Subscriptions
         self.detection_sub = self.create_subscription(
@@ -50,8 +50,20 @@ class TrafficLightAnalyzer(Node):
     def detection_callback(self, msg: Detection2DArray):
         """Analyze traffic light detections with conservative approach"""
         
+        # Debug: Log all detections
+        for detection in msg.detections:
+            if detection.results:
+                class_id = int(detection.results[0].hypothesis.class_id)
+                confidence = detection.results[0].hypothesis.score
+                if class_id in [4, 7, 10]:  # Traffic light classes
+                    self.get_logger().info(f'🚦 Traffic Light Detected: Class {class_id}, Confidence: {confidence:.3f}')
+        
         # Extract traffic light detections
         light_detections = self.extract_traffic_light_detections(msg.detections)
+        
+        # Debug: Log extracted detections
+        total_lights = len(light_detections['red_lights']) + len(light_detections['green_lights']) + len(light_detections['yellow_lights'])
+        self.get_logger().info(f'🚦 Extracted {total_lights} traffic lights: R={len(light_detections["red_lights"])}, G={len(light_detections["green_lights"])}, Y={len(light_detections["yellow_lights"])}')
         
         # Apply conservative traffic light analysis
         signal_state, confidence = self.analyze_traffic_signals(light_detections)

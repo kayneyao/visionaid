@@ -29,6 +29,7 @@ setup(
             'traffic_light_analyzer = traffic_crossing_assistant.traffic_light_analyzer:main',
             'decision_engine = traffic_crossing_assistant.decision_engine:main',
             'ego_motion_compensator = traffic_crossing_assistant.ego_motion_compensator:main',
+            'simple_3d_analyzer = traffic_crossing_assistant.simple_3d_analyzer:main',
             
             # Audio and feedback systems
             'audio_feedback_system = traffic_crossing_assistant.audio_feedback_system:main',
