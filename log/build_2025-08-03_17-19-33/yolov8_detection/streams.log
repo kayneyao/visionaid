@@ -1,0 +1,34 @@
+[0.600s] Invoking command in '/home/sophie/visionaid-1/build/yolov8_detection': PYTHONPATH=/home/sophie/visionaid-1/build/yolov8_detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/sophie/visionaid-1/build/yolov8_detection/build
+[0.819s] running develop
+[0.990s] Invoked command in '/home/sophie/visionaid-1/build/yolov8_detection' returned '0': PYTHONPATH=/home/sophie/visionaid-1/build/yolov8_detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/sophie/visionaid-1/build/yolov8_detection/build
+[0.992s] Invoking command in '/home/sophie/visionaid-1/isaac_ros_ws/src/yolov8_detection': PYTHONPATH=/home/sophie/visionaid-1/build/yolov8_detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/yolov8_detection build --build-base /home/sophie/visionaid-1/build/yolov8_detection/build install --record /home/sophie/visionaid-1/build/yolov8_detection/install.log --single-version-externally-managed install_data --force
+[1.226s] running egg_info
+[1.235s] writing ../../../build/yolov8_detection/yolov8_detection.egg-info/PKG-INFO
+[1.235s] writing dependency_links to ../../../build/yolov8_detection/yolov8_detection.egg-info/dependency_links.txt
+[1.235s] writing entry points to ../../../build/yolov8_detection/yolov8_detection.egg-info/entry_points.txt
+[1.235s] writing requirements to ../../../build/yolov8_detection/yolov8_detection.egg-info/requires.txt
+[1.236s] writing top-level names to ../../../build/yolov8_detection/yolov8_detection.egg-info/top_level.txt
+[1.253s] reading manifest file '../../../build/yolov8_detection/yolov8_detection.egg-info/SOURCES.txt'
+[1.253s] writing manifest file '../../../build/yolov8_detection/yolov8_detection.egg-info/SOURCES.txt'
+[1.254s] running build
+[1.254s] running build_py
+[1.254s] copying yolov8_detection/yolov8_camera_node.py -> /home/sophie/visionaid-1/build/yolov8_detection/build/lib/yolov8_detection
+[1.254s] running install
+[1.257s] running install_lib
+[1.265s] copying /home/sophie/visionaid-1/build/yolov8_detection/build/lib/yolov8_detection/yolov8_camera_node.py -> /home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages/yolov8_detection
+[1.266s] byte-compiling /home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages/yolov8_detection/yolov8_camera_node.py to yolov8_camera_node.cpython-310.pyc
+[1.268s] running install_data
+[1.268s] copying resource/yolov8_detection -> /home/sophie/visionaid-1/install/yolov8_detection/share/ament_index/resource_index/packages
+[1.268s] copying package.xml -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection
+[1.268s] copying launch/yolov8_realsense.launch.py -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/launch
+[1.268s] copying config/camera_params.yaml -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/config
+[1.268s] copying config/detection_params.yaml -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/config
+[1.268s] copying config/yolov8_config.yaml -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/config
+[1.268s] running install_egg_info
+[1.277s] removing '/home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages/yolov8_detection-0.0.0-py3.10.egg-info' (and everything under it)
+[1.277s] Copying ../../../build/yolov8_detection/yolov8_detection.egg-info to /home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages/yolov8_detection-0.0.0-py3.10.egg-info
+[1.278s] running install_scripts
+[1.314s] Installing detection_processor script to /home/sophie/visionaid-1/install/yolov8_detection/lib/yolov8_detection
+[1.314s] Installing yolov8_camera_node script to /home/sophie/visionaid-1/install/yolov8_detection/lib/yolov8_detection
+[1.314s] writing list of installed files to '/home/sophie/visionaid-1/build/yolov8_detection/install.log'
+[1.341s] Invoked command in '/home/sophie/visionaid-1/isaac_ros_ws/src/yolov8_detection' returned '0': PYTHONPATH=/home/sophie/visionaid-1/build/yolov8_detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/yolov8_detection build --build-base /home/sophie/visionaid-1/build/yolov8_detection/build install --record /home/sophie/visionaid-1/build/yolov8_detection/install.log --single-version-externally-managed install_data --force

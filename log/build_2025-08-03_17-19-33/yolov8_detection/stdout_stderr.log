@@ -1,0 +1,30 @@
+running develop
+running egg_info
+writing ../../../build/yolov8_detection/yolov8_detection.egg-info/PKG-INFO
+writing dependency_links to ../../../build/yolov8_detection/yolov8_detection.egg-info/dependency_links.txt
+writing entry points to ../../../build/yolov8_detection/yolov8_detection.egg-info/entry_points.txt
+writing requirements to ../../../build/yolov8_detection/yolov8_detection.egg-info/requires.txt
+writing top-level names to ../../../build/yolov8_detection/yolov8_detection.egg-info/top_level.txt
+reading manifest file '../../../build/yolov8_detection/yolov8_detection.egg-info/SOURCES.txt'
+writing manifest file '../../../build/yolov8_detection/yolov8_detection.egg-info/SOURCES.txt'
+running build
+running build_py
+copying yolov8_detection/yolov8_camera_node.py -> /home/sophie/visionaid-1/build/yolov8_detection/build/lib/yolov8_detection
+running install
+running install_lib
+copying /home/sophie/visionaid-1/build/yolov8_detection/build/lib/yolov8_detection/yolov8_camera_node.py -> /home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages/yolov8_detection
+byte-compiling /home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages/yolov8_detection/yolov8_camera_node.py to yolov8_camera_node.cpython-310.pyc
+running install_data
+copying resource/yolov8_detection -> /home/sophie/visionaid-1/install/yolov8_detection/share/ament_index/resource_index/packages
+copying package.xml -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection
+copying launch/yolov8_realsense.launch.py -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/launch
+copying config/camera_params.yaml -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/config
+copying config/detection_params.yaml -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/config
+copying config/yolov8_config.yaml -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/config
+running install_egg_info
+removing '/home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages/yolov8_detection-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../../build/yolov8_detection/yolov8_detection.egg-info to /home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages/yolov8_detection-0.0.0-py3.10.egg-info
+running install_scripts
+Installing detection_processor script to /home/sophie/visionaid-1/install/yolov8_detection/lib/yolov8_detection
+Installing yolov8_camera_node script to /home/sophie/visionaid-1/install/yolov8_detection/lib/yolov8_detection
+writing list of installed files to '/home/sophie/visionaid-1/build/yolov8_detection/install.log'

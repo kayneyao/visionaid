@@ -1,0 +1,27 @@
+# Audio Feedback Configuration for Taiwan Traffic Safety
+
+audio_system:
+  ros__parameters:
+    # TTS Engine Settings
+    engine: "espeak"                      # Use espeak for simplicity
+    language: "en"                        # English language
+    speech_rate: 180                      # Words per minute (clear understanding)
+    volume: 0.9                           # Volume level
+    
+    # Message Timing
+    priority_message_delay: 0.5           # Seconds between priority messages
+    normal_message_delay: 2.0             # Seconds between normal messages
+    max_queue_length: 10                  # Maximum queued messages
+    
+    # Taiwan-specific message customization
+    enable_detailed_reasoning: false      # Simplified messages for clarity
+    repeat_critical_messages: true       # Repeat danger messages
+    critical_repeat_count: 2              # Number of repeats for danger
+    
+    # Audio priorities (lower number = higher priority)
+    message_priorities:
+      vehicle_danger: 1                   # Immediate vehicle threats
+      red_light: 2                        # Traffic light stop commands  
+      crossing_guidance: 3                # Safe crossing guidance
+      manual_verification: 4              # Manual check requests
+      system_status: 5                    # General information

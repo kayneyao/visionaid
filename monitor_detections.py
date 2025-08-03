@@ -80,12 +80,12 @@ class DetectionMonitor(Node):
         )
         
         # Always subscribe to visualization to monitor filtered detections
-        self.viz_sub = self.create_subscription(
-            Image,
-            '/camera/detections/visualization',
-            self.viz_callback,
-            10
-        )
+            self.viz_sub = self.create_subscription(
+                Image,
+                '/camera/detections/visualization',
+                self.viz_callback,
+                10
+            )
         
         if self.show_viz:
             cv2.namedWindow('YOLOv8 Detections', cv2.WINDOW_NORMAL)
@@ -190,8 +190,8 @@ class DetectionMonitor(Node):
     
     def viz_callback(self, msg):
         """Display visualization image and track filtered detections"""
-        try:
-            cv_image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
+            try:
+                cv_image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
             
             # Count colored bounding boxes in the image to estimate raw detections
             # Look for colored rectangles (detection boxes)
@@ -258,7 +258,7 @@ class DetectionMonitor(Node):
                 cv2.imshow('YOLOv8 Detections', cv_image)
                 cv2.waitKey(1)
                 
-        except Exception as e:
+            except Exception as e:
             self.get_logger().error(f'Error processing visualization: {e}')
     
     def display_stats(self):

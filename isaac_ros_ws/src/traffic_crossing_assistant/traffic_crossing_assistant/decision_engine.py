@@ -74,11 +74,11 @@ class DecisionEngine(Node):
         
         # Priority 2: Traffic lights
         self.traffic_light_sub = self.create_subscription(
-            String, '/traffic_safety/traffic_light_state',
+            String, '/traffic_light_state',
             self.traffic_light_callback, 10)
         
         self.traffic_confidence_sub = self.create_subscription(
-            Float32, '/traffic_safety/traffic_light_confidence',
+            Float32, '/traffic_light_confidence',
             self.traffic_confidence_callback, 10)
         
         # Publishers
@@ -142,7 +142,12 @@ class DecisionEngine(Node):
                 pass  # Don't clear the state
             elif time_since_last_light > self.traffic_light_memory_duration:
                 # Clear only if it's been long enough since last detection
-                self.traffic_light_state = msg.data
+                self.traffic_light_state = "unknown"
+                self.get_logger().info(f'⚠️ Traffic light cleared after {self.traffic_light_memory_duration}s')
+        
+        # Update current state
+        if msg.data != "unknown":
+            self.traffic_light_state = msg.data
     
     def traffic_confidence_callback(self, msg: Float32):
         import time
@@ -154,7 +159,9 @@ class DecisionEngine(Node):
         else:  # Zero confidence
             # Only clear if enough time has passed
             if current_time - self.last_traffic_light_time > self.traffic_light_memory_duration:
-                self.traffic_light_confidence = msg.data
+                self.traffic_light_confidence = 0.0
+                self.get_logger().info(f'⚠️ Traffic light confidence cleared after {self.traffic_light_memory_duration}s')
+            # Otherwise keep the last known confidence
     
     def make_crossing_decision(self):
         """Implement 2-priority hierarchy decision logic with temporal stability"""

@@ -27,10 +27,18 @@ class TrafficLightAnalyzer(Node):
             10: 'yellowlight'   # Class 10 - Caution signal
         }
         
-        # Confidence thresholds (matching YOLOv8 camera node exactly)
-        self.red_light_threshold = 0.2      # redlight - very low for small objects
-        self.green_light_threshold = 0.2    # greenlight - very low for small objects  
-        self.yellow_light_threshold = 0.2   # yellowlight - very low for small objects
+        # Declare parameters for configurable thresholds
+        self.declare_parameter('red_light_threshold', 0.4)  # Lowered for sensitivity
+        self.declare_parameter('green_light_threshold', 0.4)  # Lowered for sensitivity (was 0.75)
+        self.declare_parameter('yellow_light_threshold', 0.6)
+        
+        # Load parameters from config
+        self.red_light_threshold = self.get_parameter('red_light_threshold').value
+        self.green_light_threshold = self.get_parameter('green_light_threshold').value
+        self.yellow_light_threshold = self.get_parameter('yellow_light_threshold').value
+        
+        # Log the safety-focused thresholds
+        self.get_logger().info(f'🚦 Traffic Light Thresholds: Red={self.red_light_threshold}, Green={self.green_light_threshold} (SAFETY), Yellow={self.yellow_light_threshold}')
         
         # Subscriptions
         self.detection_sub = self.create_subscription(
@@ -46,6 +54,7 @@ class TrafficLightAnalyzer(Node):
         
         self.get_logger().info('🚦 Traffic Light Analyzer initialized (Priority 2)')
         self.get_logger().info('Using all 3 colors: greenlight (4), redlight (7), yellowlight (10)')
+        self.get_logger().info('⚠️ SAFETY: Green light threshold increased to prevent red/green confusion')
     
     def detection_callback(self, msg: Detection2DArray):
         """Analyze traffic light detections with conservative approach"""
@@ -106,19 +115,27 @@ class TrafficLightAnalyzer(Node):
         return lights
     
     def analyze_traffic_signals(self, light_detections):
-        """Conservative traffic signal analysis"""
+        """Conservative traffic signal analysis with enhanced safety for green lights"""
         
         # Priority 1: Red light detection (safety first)
         if light_detections['red_lights']:
             best_red = max(light_detections['red_lights'], 
                           key=lambda x: x['confidence'])
+            self.get_logger().info(f'🔴 SAFETY: Red light detected with confidence {best_red["confidence"]:.3f}')
             return TrafficLightState.RED, best_red['confidence']
         
-        # Priority 2: Green light detection (proceed with caution)
+        # Priority 2: Green light detection (proceed with EXTREME caution)
         if light_detections['green_lights']:
             best_green = max(light_detections['green_lights'],
                            key=lambda x: x['confidence'])
-            return TrafficLightState.GREEN, best_green['confidence']
+            
+            # ADDITIONAL SAFETY CHECK: Require very high confidence for green lights
+            if best_green['confidence'] >= 0.6:  # Lowered from 0.8 for sensitivity (was extra high threshold for safety)
+                self.get_logger().info(f'🟢 SAFETY: Green light confirmed with HIGH confidence {best_green["confidence"]:.3f}')
+                return TrafficLightState.GREEN, best_green['confidence']
+            else:
+                self.get_logger().warn(f'⚠️ SAFETY: Green light detected but confidence too low ({best_green["confidence"]:.3f} < 0.6) - treating as unknown')
+                return TrafficLightState.UNKNOWN, 0.0
         
         # Priority 3: Yellow light detection (proceed with caution)
         if light_detections['yellow_lights']:

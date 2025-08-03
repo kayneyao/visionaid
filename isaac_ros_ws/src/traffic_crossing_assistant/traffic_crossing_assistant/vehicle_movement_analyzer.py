@@ -230,7 +230,6 @@ class VehicleMovementAnalyzer(Node):
         self.immediate_danger_pub.publish(danger_msg)
         
         # Debug: Log what we're publishing with timestamp
-        import time
         current_time = time.time()
         debug_msg = String()
         debug_msg.data = f'📤 PUBLISHING: immediate_danger={immediate_danger}, ttc={ttc_info["min_ttc"]:.1f}s at {current_time:.3f}'
@@ -474,6 +473,17 @@ class VehicleMovementAnalyzer(Node):
                     # Calculate relative velocity
                     relative_velocity = self.calculate_relative_velocity(self.vehicle_tracks[vehicle_id])
                     max_velocity = max(max_velocity, relative_velocity)
+                    
+                    # Calculate TTC for 3D vehicles
+                    if relative_velocity > 0:
+                        distance = math.sqrt(vehicle['position_3d'].x**2 + vehicle['position_3d'].y**2)
+                        ttc = distance / relative_velocity
+                        if ttc < min_ttc:
+                            min_ttc = ttc
+                            threatening_vehicle = vehicle['class_name']
+                            
+                            if ttc < ttc_threshold:
+                                immediate_danger = True
             else:
                 # 2D analysis (when depth is unavailable)
                 threat_level = vehicle.get('threat_level', 0.0)

@@ -1,0 +1,25 @@
+
+yolov8_camera_node:
+  ros__parameters:
+    # Model configuration - UPDATED FOR BALANCED AUGMENTED 11-CLASS SYSTEM
+    model_path: "/home/sophie/visionaid-1/yolo_training/11classnew/runs/balanced_augmented_training/balanced_augmented_11class/weights/balanced.onnx"
+    confidence_threshold: 0.5
+    inference_rate: 30.0
+    
+    # Camera configuration
+    camera_width: 640
+    camera_height: 480
+    camera_fps: 30
+    enable_depth: true
+    
+    # Publishing options
+    publish_detection_images: true
+    publish_raw_images: true
+    
+    # Performance tuning
+    max_detections: 50
+    nms_threshold: 0.4
+    
+    # 11-Class system configuration
+    class_count: 11
+    enable_11class_priorities: true
