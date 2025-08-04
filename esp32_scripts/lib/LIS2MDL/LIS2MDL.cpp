@@ -1,5 +1,11 @@
 #include "LIS2MDL.h"
 
+#define OFFSET_X_REG_L 0x45
+#define OFFSET_X_REG_H 0x46
+#define OFFSET_Y_REG_L 0x47
+#define OFFSET_Y_REG_H 0x48
+#define OFFSET_Z_REG_L 0x49
+#define OFFSET_Z_REG_H 0x4A
 #define REG_WHO_AM_I   0x4F
 #define WHO_AM_I_ID    0x40
 #define REG_CFG_A      0x60
@@ -8,7 +14,7 @@
 #define REG_STATUS     0x67
 #define REG_OUTX_L     0x68
 
-static constexpr float MAG_SENS = 1.5e-7f;
+static constexpr float MAG_SENS = 1.5e-1;
 
 bool LIS2MDL::beginI2C(TwoWire &wire, uint8_t addr) {
     _wire = &wire;
@@ -16,6 +22,13 @@ bool LIS2MDL::beginI2C(TwoWire &wire, uint8_t addr) {
     _useSPI = false;
     _wire->begin();
     if (readReg(REG_WHO_AM_I) != WHO_AM_I_ID) return false;
+    writeReg(OFFSET_X_REG_L, 0x00);
+    writeReg(OFFSET_X_REG_H, 0x00);
+    writeReg(OFFSET_Y_REG_L, 0x00);
+    writeReg(OFFSET_Y_REG_H, 0x00);
+    writeReg(OFFSET_Z_REG_L, 0x00);
+    writeReg(OFFSET_Z_REG_H, 0x00);
+
     writeReg(REG_CFG_A, 0x8C);
     writeReg(REG_CFG_B, 0x03);
     writeReg(REG_CFG_C, 0x10);
@@ -31,12 +44,12 @@ void LIS2MDL::readData(float &mx, float &my, float &mz) {
     int16_t rawX = int16_t(Wire.read() | (Wire.read() << 8));
     int16_t rawY = int16_t(Wire.read() | (Wire.read() << 8));
     int16_t rawZ = int16_t(Wire.read() | (Wire.read() << 8));
-    // mx = rawX * MAG_SENS;
-    // my = rawY * MAG_SENS;
-    // mz = rawZ * MAG_SENS;
     mx = rawX * MAG_SENS;
-    my = -rawY * MAG_SENS;
+    my = rawY * MAG_SENS;
     mz = rawZ * MAG_SENS;
+    // mx = rawX * MAG_SENS;
+    // my = -rawY * MAG_SENS;
+    // mz = rawZ * MAG_SENS;
 }
 
 void LIS2MDL::writeReg(uint8_t reg, uint8_t val) {

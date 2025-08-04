@@ -10,6 +10,16 @@
 
 static constexpr float MAG_SENS = 1.5e-7f;
 
+const float hard_iron[3] = {
+  2.82, -1.33, -2.60
+};
+
+const float soft_iron[3][3] = {
+  {0.981, 0.017, -0.012},
+  {0.017, 1.015, 0.014},
+  {-0.012, 0.014, 1.006}
+};
+
 bool LIS2MDL::beginI2C(TwoWire &wire, uint8_t addr) {
     _wire = &wire;
     _i2cAddr = addr;
@@ -22,7 +32,7 @@ bool LIS2MDL::beginI2C(TwoWire &wire, uint8_t addr) {
     return true;
 }
 
-void LIS2MDL::readData(float &mx, float &my, float &mz) {
+void LIS2MDL::readData(float &mx, float &my, float &mz, bool calib) {
     Wire.beginTransmission(_i2cAddr);
     Wire.write(REG_OUTX_L);
     Wire.endTransmission(false);
@@ -37,6 +47,26 @@ void LIS2MDL::readData(float &mx, float &my, float &mz) {
     mx = rawX * MAG_SENS;
     my = -rawY * MAG_SENS;
     mz = rawZ * MAG_SENS;
+
+    if(calib){
+        float hcal_mx, hcal_my, hcal_mz;
+
+        float mag_data[3]; 
+
+        hcal_mx = mx - hard_iron[0];
+        hcal_my = my - hard_iron[1];
+        hcal_mz = mz - hard_iron[2];
+
+        for(int i = 0; i < 3; i++){
+          mag_data[i] = (soft_iron[i][0] * hcal_mx) +
+                        (soft_iron[i][1] * hcal_my) +
+                        (soft_iron[i][2] * hcal_mz);
+        }
+
+        mx = mag_data[0];
+        my = mag_data[1];
+        mz = mag_data[2];
+    }
 }
 
 void LIS2MDL::writeReg(uint8_t reg, uint8_t val) {

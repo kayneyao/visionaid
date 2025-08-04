@@ -8,16 +8,16 @@ LSM6DSL imu;
 LIS2MDL mag;
 
 const float hard_iron[3] = {
-  3.61, 0.20, 3.34
+  2.82, -1.33, -2.60
 };
 
 const float soft_iron[3][3] = {
-  {1.002, -0.025, -0.011},
-  {-0.025, 1.013, 0.010},
-  {-0.011, 0.010, 0.986}
+  {0.981, 0.017, -0.012},
+  {0.017, 1.015, 0.014},
+  {-0.012, 0.014, 1.006}
 };
 
-const float mag_field = 34.77;
+const float mag_field = 42.88;
 
 void setup() {
   Serial.begin(115200);
@@ -31,13 +31,13 @@ void setup() {
 
   // Initialize LSM6DSL (accelerometer + gyroscope)
   if (!imu.beginI2C(Wire)) {
-    // Serial.println("Failed to initialize LSM6DSL!");
+    Serial.println("Failed to initialize LSM6DSL!");
     while (1) delay(1000);
   }
 
   // Initialize LIS2MDL (magnetometer)
   if (!mag.beginI2C(Wire)) {
-    // Serial.println("Failed to initialize LIS2MDL!");
+    Serial.println("Failed to initialize LIS2MDL!");
     while (1) delay(1000);
   }
 
@@ -58,9 +58,9 @@ void loop() {
                gx, gy, gz);
   mag.readData(mx, my, mz);
 
-  hcal_mx = mx*1000000 - hard_iron[0];
-  hcal_my = my*1000000 - hard_iron[1];
-  hcal_mz = mz*1000000 - hard_iron[2];
+  hcal_mx = mx - hard_iron[0];
+  hcal_my = my - hard_iron[1];
+  hcal_mz = mz - hard_iron[2];
 
   for(int i = 0; i < 3; i++){
     mag_data[i] = (soft_iron[i][0] * hcal_mx) +
@@ -82,31 +82,31 @@ void loop() {
 
   // Print magnetometer data
   // Serial.print("Raw:");
-  // Serial.print(int(mx*1000000*10)); Serial.print(",");
-  // Serial.print(int(my*1000000*10)); Serial.print(",");
-  // Serial.println(int(mz*1000000*10));
+  // Serial.print(int(mx*10)); Serial.print(",");
+  // Serial.print(int(my*10)); Serial.print(",");
+  // Serial.println(int(mz*10));
 
   // Serial.print("Cal:");
   Serial.print(int(mag_data[0]*10)); Serial.print(",");
   Serial.print(int(mag_data[1]*10)); Serial.print(",");
-  Serial.print(int(mag_data[2]*10)); Serial.println("");
+  Serial.println(int(mag_data[2]*10));
 
-  Serial.print("Uni:");
-  Serial.print(0); Serial.print(",");
-  Serial.print(0); Serial.print(",");
-  Serial.print(0); Serial.print(",");
+  // Serial.print("Uni:");
+  // Serial.print(0); Serial.print(",");
+  // Serial.print(0); Serial.print(",");
+  // Serial.print(0); Serial.print(",");
 
-  // // Print gyroscope data
-  // Serial.print("Gyro  [deg/s]  : ");
-  Serial.print(0); Serial.print(",");
-  Serial.print(0); Serial.print(",");
-  Serial.print(0); Serial.print(",");
+  // // // Print gyroscope data
+  // // Serial.print("Gyro  [deg/s]  : ");
+  // Serial.print(0); Serial.print(",");
+  // Serial.print(0); Serial.print(",");
+  // Serial.print(0); Serial.print(",");
 
-  // Print magnetometer data
-  // Serial.print("Raw:");
-  Serial.print(int(mx*1000000)); Serial.print(",");
-  Serial.print(int(my*1000000)); Serial.print(",");
-  Serial.println(int(mz*1000000));
+  // // Print magnetometer data
+  // // Serial.print("Raw:");
+  // Serial.print(mx); Serial.print(",");
+  // Serial.print(my); Serial.print(",");
+  // Serial.println(mz);
 
   
 

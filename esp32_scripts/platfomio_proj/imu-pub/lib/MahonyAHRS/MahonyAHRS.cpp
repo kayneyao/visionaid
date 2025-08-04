@@ -53,6 +53,12 @@ Mahony::Mahony()
 	invSampleFreq = 1.0f / DEFAULT_SAMPLE_FREQ;
 }
 
+void Mahony::begin(float sampleFrequency, float Kp = twoKpDef/2, float Ki = twoKiDef/2){
+	invSampleFreq = 1.0f / sampleFrequency;
+	this->twoKp = Kp*2;
+	this->twoKi = Ki*2;
+}
+
 void Mahony::update(float gx, float gy, float gz, float ax, float ay, float az, float mx, float my, float mz)
 {
 	float recipNorm;
@@ -267,7 +273,6 @@ void Mahony::computeAngles()
 	yaw = atan2f(q1*q2 + q0*q3, 0.5f - q2*q2 - q3*q3);
 	anglesComputed = 1;
 }
-
 
 //============================================================================================
 // END OF CODE

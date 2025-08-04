@@ -11,8 +11,10 @@ void setup() {
   Serial.begin(115200);
 
   delay(200);
-
-  // Serial.println("=== Sensor Demo: LSM6DSL + LIS2MDL ===");
+  for(int i = 0; i < 10; i++){
+    Serial.println("=== Sensor Demo: LSM6DSL + LIS2MDL ===");
+    delay(1000);
+  }
 
   // Initialize I2C (default SDA=21, SCL=22 on ESP32)
   Wire.begin(8, 10);

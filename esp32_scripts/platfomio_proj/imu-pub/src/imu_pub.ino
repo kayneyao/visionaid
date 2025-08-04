@@ -1,5 +1,6 @@
 #include "LIS2MDL.h"
 #include "LSM6DSL.h"
+#include "MahonyAHRS.h"
 
 #include <Arduino.h>
 #include <Wire.h>
@@ -26,10 +27,14 @@
 #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){error_loop();}}
 #define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){}}
 
+static constexpr float IMU_SAMPLE_FREQ = 50.0f;
 
 // Create sensor objects
 LSM6DSL imu;
 LIS2MDL mag;
+Mahony ahrs;
+
+
 
 // ROS 2 components
 typedef struct {
@@ -59,6 +64,8 @@ void setup() {
   Serial.begin(115200);
   set_microros_serial_transports(Serial);
   delay(2000);
+
+  ahrs.begin(100.0f);
 
   // 1) Initialize support & allocator
   ros2.allocator = rcl_get_default_allocator();
@@ -101,7 +108,7 @@ void setup() {
   }
 
   // 6) Create timer (50 Hz)
-  const unsigned long period_ms = 20;
+  const unsigned long period_ms = 10;
   rclc_timer_init_default(
     &ros2.timer,
     &ros2.support,
@@ -120,41 +127,49 @@ void setup() {
 }
 
 void loop() {
-  rmw_uros_sync_session(20);
-    int64_t now_ns = rmw_uros_epoch_nanos();
-    // Spin executor
-    float ax, ay, az;
-    float gx, gy, gz;
-    float mx, my, mz;
+  rmw_uros_sync_session(10);
+  int64_t now_ns = rmw_uros_epoch_nanos();
+  // Spin executor
+  float ax, ay, az;
+  float gx, gy, gz;
+  float mx, my, mz;
 
-    imu.readData(ax, ay, az, gx, gy, gz);
-    mag.readData(mx, my, mz);
+  imu.readData(ax, ay, az, gx, gy, gz);
+  mag.readData(mx, my, mz, true);
+  // 1) Timestamp via synchronized clock
 
-    // 1) Timestamp via synchronized clock
   
 
-    // 3) Fill IMU data (casts to double)
-    imu_msg.linear_acceleration.x = ax;
-    imu_msg.linear_acceleration.y = ay;
-    imu_msg.linear_acceleration.z = az;
-    imu_msg.angular_velocity.x    = gx;
-    imu_msg.angular_velocity.y    = gy;
-    imu_msg.angular_velocity.z    = gz;
+  // 3) Fill IMU data (casts to double)
+  imu_msg.linear_acceleration.x = ax;
+  imu_msg.linear_acceleration.y = ay;
+  imu_msg.linear_acceleration.z = az;
+  imu_msg.angular_velocity.x    = gx;
+  imu_msg.angular_velocity.y    = gy;
+  imu_msg.angular_velocity.z    = gz;
+  // 4) Prepare magnetometer message
+  
+  mag_msg.magnetic_field.x = mx;
+  mag_msg.magnetic_field.y = my;
+  mag_msg.magnetic_field.z = mz;
 
-    // 4) Prepare magnetometer message
-    
-    mag_msg.magnetic_field.x = mx;
-    mag_msg.magnetic_field.y = my;
-    mag_msg.magnetic_field.z = mz;
+  ahrs.update(
+    gx, gy, gz,
+    ax, ay, az,
+    mx, my, mz
+  );
 
-    // 6) Publish both topics
-    
-    // rclc_executor_spin_some(&ros2.executor, RCL_MS_TO_NS(1));
-    imu_msg.header.stamp.sec     = now_ns / 1000000000LL;
-    imu_msg.header.stamp.nanosec = now_ns % 1000000000LL;
+  imu_msg.orientation.x = ahrs.getQ1();
+  imu_msg.orientation.y = ahrs.getQ2();
+  imu_msg.orientation.z = ahrs.getQ3();
+  imu_msg.orientation.w = ahrs.getQ0();
+  
+  // rclc_executor_spin_some(&ros2.executor, RCL_MS_TO_NS(1));
+  imu_msg.header.stamp.sec     = now_ns / 1000000000LL;
+  imu_msg.header.stamp.nanosec = now_ns % 1000000000LL;
 
-    mag_msg.header = imu_msg.header;
+  mag_msg.header = imu_msg.header;
 
-    RCSOFTCHECK(rcl_publish(&ros2.imu_pub, &imu_msg, NULL));
-    RCSOFTCHECK(rcl_publish(&ros2.mag_pub, &mag_msg, NULL));
+  RCSOFTCHECK(rcl_publish(&ros2.imu_pub, &imu_msg, NULL));
+  RCSOFTCHECK(rcl_publish(&ros2.mag_pub, &mag_msg, NULL));
 }

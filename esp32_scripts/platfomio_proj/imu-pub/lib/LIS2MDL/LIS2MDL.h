@@ -9,7 +9,7 @@ public:
     bool beginI2C(TwoWire &wire, uint8_t addr = 0x1E);
 
     // Read magnetic field in Tesla
-    void readData(float &mx, float &my, float &mz);
+    void readData(float &mx, float &my, float &mz, bool calib);
 
 private:
     TwoWire*  _wire = nullptr;

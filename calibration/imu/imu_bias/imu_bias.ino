@@ -18,7 +18,21 @@
 #define CFG_REG_C  0x62
 #define OUTX_L_M   0x68
 
-// helper: write one byte to a reg
+// How long to log in RAW mode (milliseconds)
+const unsigned long LOG_DURATION_MS = 14400000UL; // e.g. 4 h
+
+// Hard-iron offsets (µT)
+const float hard_iron[3] = {
+  2.82f, -1.33f, -2.60f
+};
+// Soft-iron correction matrix
+const float soft_iron[3][3] = {
+  {0.981f, 0.017f, -0.012f},
+  {0.017f, 1.015f,  0.014f},
+  {-0.012f,0.014f,  1.006f}
+};
+
+// helper: write one byte
 void i2cWrite(uint8_t addr, uint8_t reg, uint8_t val) {
   Wire.beginTransmission(addr);
   Wire.write(reg);
@@ -36,92 +50,97 @@ int16_t i2cRead16(uint8_t addr, uint8_t reg) {
   return (int16_t)(hi << 8 | lo);
 }
 
-// -- INITIALIZATION MODES --
-
+// RAW IMU setup: 104 Hz ±2 g/±245 dps, filters OFF
 void initIMURaw() {
-  // Basic 104 Hz, ±2 g / ±245 dps, filters OFF
-  i2cWrite(LSM6DSL_ADDR, CTRL1_XL, 0x40);  // ODR_XL=104Hz, FS_XL=±2 g
-  i2cWrite(LSM6DSL_ADDR, CTRL2_G,  0x40);  // ODR_G=104Hz, FS_G=±245 dps
-  i2cWrite(LSM6DSL_ADDR, CTRL8_XL, 0x00);  // LPF2 off, composite off
-  i2cWrite(LSM6DSL_ADDR, CTRL5_C,  0x00);  // self-test off
+  i2cWrite(LSM6DSL_ADDR, CTRL1_XL, 0x40);
+  i2cWrite(LSM6DSL_ADDR, CTRL2_G,  0x40);
+  i2cWrite(LSM6DSL_ADDR, CTRL8_XL, 0x00);
+  i2cWrite(LSM6DSL_ADDR, CTRL5_C,  0x00);
 }
 
+// RAW mag setup: 100 Hz, temp-comp ON, no LPF/offset, no BDU
 void initMagRaw() {
-  // 100 Hz continuous-mode, but no LPF / no offset-cancel / no BDU
-  i2cWrite(LIS2MDL_ADDR, CFG_REG_A, 0x80 | 0x0C);  
-    // COMP_TEMP_EN=1, DO=100Hz (bits7+2:0b10001100), MD=00
-  i2cWrite(LIS2MDL_ADDR, CFG_REG_B, 0x00);  
-    // no offset-cancel, no LPF
-  i2cWrite(LIS2MDL_ADDR, CFG_REG_C, 0x00);  
-    // BDU=0, self-test=0
+  i2cWrite(LIS2MDL_ADDR, CFG_REG_A, 0x80 | 0x0C);
+  i2cWrite(LIS2MDL_ADDR, CFG_REG_B, 0x00);
+  i2cWrite(LIS2MDL_ADDR, CFG_REG_C, 0x00);
 }
 
-void initIMUFiltered() {
-  // 104 Hz, ±2 g/±245 dps + LPF1+LPF2 enabled
-  i2cWrite(LSM6DSL_ADDR, CTRL1_XL, 0x40 | 0x02);  // set LPF1_BW_SEL=1
-  i2cWrite(LSM6DSL_ADDR, CTRL8_XL, 0x10);         // LPF2_XL_EN=1
-  i2cWrite(LSM6DSL_ADDR, CTRL5_C,  0x00);         // no self-test
+// Apply hard-iron and soft-iron corrections
+void calibrateMag(float in[3], float out[3]) {
+  float tmp[3] = {
+    in[0] - hard_iron[0],
+    in[1] - hard_iron[1],
+    in[2] - hard_iron[2]
+  };
+  // matrix multiply: out = soft_iron * tmp
+  for (int i = 0; i < 3; i++) {
+    out[i] = soft_iron[i][0] * tmp[0]
+           + soft_iron[i][1] * tmp[1]
+           + soft_iron[i][2] * tmp[2];
+  }
 }
 
-void initMagFiltered() {
-  // 100 Hz, enable temp-comp, LPF, offset-cancel, BDU
-  i2cWrite(LIS2MDL_ADDR, CFG_REG_A, 0x80 | 0x0C);  // temp-comp, DO=100Hz
-  i2cWrite(LIS2MDL_ADDR, CFG_REG_B, 0x06);         // OFF_CANC=1, LPF=1
-  i2cWrite(LIS2MDL_ADDR, CFG_REG_C, 0x12);         // BDU=1, self-test=1
-}
-
-// -- LOG ONE SAMPLE (CSV) --
-
+// Log one sample as CSV: t, ax,ay,az, gx,gy,gz, mx, my, mz (calibrated)
 void logSample() {
   uint32_t t = millis();
-  int16_t ax = i2cRead16(LSM6DSL_ADDR, OUTX_L_XL);
-  int16_t ay = i2cRead16(LSM6DSL_ADDR, OUTX_L_XL+2);
-  int16_t az = i2cRead16(LSM6DSL_ADDR, OUTX_L_XL+4);
-  int16_t gx = i2cRead16(LSM6DSL_ADDR, OUTX_L_G);
-  int16_t gy = i2cRead16(LSM6DSL_ADDR, OUTX_L_G+2);
-  int16_t gz = i2cRead16(LSM6DSL_ADDR, OUTX_L_G+4);
-  int16_t mx = i2cRead16(LIS2MDL_ADDR, OUTX_L_M);
-  int16_t my = i2cRead16(LIS2MDL_ADDR, OUTX_L_M+2);
-  int16_t mz = i2cRead16(LIS2MDL_ADDR, OUTX_L_M+4);
+  int16_t ax_i = i2cRead16(LSM6DSL_ADDR, OUTX_L_XL);
+  int16_t ay_i = i2cRead16(LSM6DSL_ADDR, OUTX_L_XL+2);
+  int16_t az_i = i2cRead16(LSM6DSL_ADDR, OUTX_L_XL+4);
+  int16_t gx_i = i2cRead16(LSM6DSL_ADDR, OUTX_L_G);
+  int16_t gy_i = i2cRead16(LSM6DSL_ADDR, OUTX_L_G+2);
+  int16_t gz_i = i2cRead16(LSM6DSL_ADDR, OUTX_L_G+4);
+  int16_t mx_i = i2cRead16(LIS2MDL_ADDR, OUTX_L_M);
+  int16_t my_i = i2cRead16(LIS2MDL_ADDR, OUTX_L_M+2);
+  int16_t mz_i = i2cRead16(LIS2MDL_ADDR, OUTX_L_M+4);
 
-  // CSV: time, ax,ay,az, gx,gy,gz, mx,my,mz
-  Serial.printf("%lu,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",
-                t, ax, ay, az, gx, gy, gz, mx, my, mz);
+  // Convert to float and calibrate magnetometer
+  float m_in[3] = { (float)mx_i, (float)my_i, (float)mz_i };
+  float m_out[3];
+  calibrateMag(m_in, m_out);
+
+  // Print calibrated values
+  Serial.printf("%lu,%d,%d,%d,%d,%d,%d,%.3f,%.3f,%.3f\n",
+                t,
+                ax_i, ay_i, az_i,
+                gx_i, gy_i, gz_i,
+                m_out[0], m_out[1], m_out[2]
+  );
 }
 
 void setup() {
   Serial.begin(230400);
+  while (!Serial) { delay(10); }
   Wire.begin(8, 10);
 
-  // 1) RAW mode
+  // Initialize sensors in RAW mode
   initIMURaw();
   initMagRaw();
-  delay(100);               // let filters settle
+  delay(100);  // let settings settle
 
-  delay(10000);
-
+  // Print header & prompt
+  Serial.println("t,ax,ay,az,gx,gy,gz,mx, my, mz");
   Serial.println("MODE,RAW");
-  uint32_t t0 = millis();
-  while (millis() - t0 < 300000UL) { // 300 000 ms = 5 min
-    logSample();
-    delay(10);            // ~100 Hz overall loop
-  }
+  Serial.println("Waiting for 'S' to start logging...");
 
-  // 2) FILTERED mode
-  initIMUFiltered();
-  initMagFiltered();
-  delay(100);
-
-  Serial.println("MODE,FILTERED");
-  t0 = millis();
-  while (millis() - t0 < 300000UL) {
-    logSample();
+  // —— hand-shake: wait for 'S' from PC —— 
+  while (true) {
+    if (Serial.available()) {
+      if (Serial.read() == 'S') break;
+    }
     delay(10);
+  }
+  Serial.println("START");
+
+  // Log for LOG_DURATION_MS
+  uint32_t t0 = millis();
+  while (millis() - t0 < LOG_DURATION_MS) {
+    logSample();
+    delay(10);   // ~100 Hz total loop
   }
 
   Serial.println("DONE");
 }
 
 void loop() {
-  // nothing
+  // nothing more to do
 }

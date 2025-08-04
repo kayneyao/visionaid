@@ -1,48 +1,57 @@
-#!/usr/bin/env python3
-"""
-Simple serial logger for LIS2MDL & LSM6DSL sensor data.
-Starts dumping to CSV when it sees "MODE,RAW" and continues until "DONE".
-
-Edit SERIAL_PORT and BAUDRATE below, then run:
-    python log_sensors.py
-"""
-
 import serial
 import csv
+import time
 
-# ——— Configuration ———
-SERIAL_PORT = "/dev/ttyACM0"   # your serial port
-BAUDRATE    = 230400
-OUTPUT_CSV  = "sensors_log.csv"
-# ————————————————————
+# ——— CONFIGURATION ———
+PORT     = '/dev/ttyACM0'  # e.g. 'COM3' on Windows
+BAUD     = 230400
+OUTPUT   = 'imu_log.csv'
+DURATION = None            # seconds, or None to log until Ctrl-C
+# ————————————————
 
-def main():
-    ser = serial.Serial(SERIAL_PORT, BAUDRATE, timeout=None)
-    print(f"Listening on {SERIAL_PORT} @ {BAUDRATE} baud. Waiting for MODE,RAW…")
+# Open serial port
+ser = serial.Serial(PORT, BAUD, timeout=1)
+time.sleep(2)                # give MCU time to reset
+ser.reset_input_buffer()     # clear any startup messages
 
-    logging = False
-    with open(OUTPUT_CSV, "w", newline="") as csvfile:
-        writer = csv.writer(csvfile)
+# Kick off the ESP32 logging
+ser.write(b'S')
+time.sleep(0.1)
+
+# Open CSV for writing
+with open(OUTPUT, 'w', newline='') as f:
+    writer = csv.writer(f)
+    # write our own header
+    writer.writerow(['t','ax','ay','az','gx','gy','gz','mx','my','mz'])
+
+    start_time = time.time()
+    try:
         while True:
-            line = ser.readline().decode("utf-8", errors="ignore").strip()
+            raw = ser.readline()
+            if not raw:
+                continue
+
+            # Decode & strip
+            line = raw.decode('utf-8', errors='ignore').strip()
             if not line:
                 continue
 
-            if not logging:
-                if line.upper() == "MODE,RAW":
-                    logging = True
-                    print("MODE,RAW detected—starting log.")
-                continue
+            # Print every line received
+            print(line)
 
-            if line.upper() == "DONE":
-                print("DONE detected—stopping log.")
+            # Split into fields and write if correct length
+            parts = [field.strip() for field in line.split(',')]
+            if len(parts) == 10:
+                writer.writerow(parts)
+                f.flush()
+
+            # Check for duration limit
+            if DURATION is not None and (time.time() - start_time) > DURATION:
+                print(f"Finished logging after {DURATION} seconds.")
                 break
 
-            # write CSV row
-            writer.writerow(line.split(","))
-            csvfile.flush()
-
-    ser.close()
-    print(f"Data saved to {OUTPUT_CSV}")
-
-main()
+    except KeyboardInterrupt:
+        print("Logging interrupted by user.")
+    finally:
+        ser.close()
+        print(f"Serial port closed, data saved to {OUTPUT}")
