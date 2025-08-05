@@ -1,0 +1,2 @@
+Invoking command in '/home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization': /usr/bin/cmake --build /home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization -- -j28 -l28
+Invoked command in '/home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization' returned '2': /usr/bin/cmake --build /home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization -- -j28 -l28

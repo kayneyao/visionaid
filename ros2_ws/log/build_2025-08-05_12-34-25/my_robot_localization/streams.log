@@ -1,0 +1,45 @@
+[0.010s] Invoking command in '/home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization': /usr/bin/cmake --build /home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization -- -j28 -l28
+[0.040s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.158s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.211s] Error parsing '/home/kanye/Documents/visionaid/ros2_ws/src/my_robot_localization/package.xml':
+[0.247s] Traceback (most recent call last):
+[0.247s]   File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 610, in parse_package_string
+[0.249s]     root = dom.parseString(data)
+[0.249s]   File "/usr/lib/python3.10/xml/dom/minidom.py", line 2000, in parseString
+[0.249s]     return expatbuilder.parseString(string)
+[0.249s]   File "/usr/lib/python3.10/xml/dom/expatbuilder.py", line 925, in parseString
+[0.249s]     return builder.parseString(string)
+[0.249s]   File "/usr/lib/python3.10/xml/dom/expatbuilder.py", line 223, in parseString
+[0.249s]     parser.Parse(string, True)
+[0.249s] xml.parsers.expat.ExpatError: mismatched tag: line 22, column 2
+[0.249s] 
+[0.249s] During handling of the above exception, another exception occurred:
+[0.250s] 
+[0.250s] Traceback (most recent call last):
+[0.250s]   File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 150, in <module>
+[0.250s]     main()
+[0.250s]   File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 53, in main
+[0.250s]     raise e
+[0.250s]   File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 49, in main
+[0.250s]     package = parse_package_string(
+[0.250s]   File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 612, in parse_package_string
+[0.250s]     raise InvalidPackage('The manifest contains invalid XML:\n%s' % ex, filename)
+[0.250s] catkin_pkg.package.InvalidPackage: Error(s) in package '/home/kanye/Documents/visionaid/ros2_ws/src/my_robot_localization/package.xml':
+[0.250s] The manifest contains invalid XML:
+[0.250s] mismatched tag: line 22, column 2
+[0.260s] [31mCMake Error at /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:95 (message):
+[0.260s]   execute_process(/usr/bin/python3
+[0.260s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py
+[0.260s]   /home/kanye/Documents/visionaid/ros2_ws/src/my_robot_localization/package.xml
+[0.260s]   /home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization/ament_cmake_core/package.cmake)
+[0.260s]   returned error code 1
+[0.260s] Call Stack (most recent call first):
+[0.260s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:49 (_ament_package_xml)
+[0.260s]   /opt/ros/humble/share/ament_lint_auto/cmake/ament_lint_auto_find_test_dependencies.cmake:31 (ament_package_xml)
+[0.260s]   CMakeLists.txt:27 (ament_lint_auto_find_test_dependencies)
+[0.260s] 
+[0.260s] [0m
+[0.261s] -- Configuring incomplete, errors occurred!
+[0.261s] See also "/home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization/CMakeFiles/CMakeOutput.log".
+[0.261s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
+[0.263s] Invoked command in '/home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization' returned '2': /usr/bin/cmake --build /home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization -- -j28 -l28

@@ -1,6 +1,5 @@
 #include "LIS2MDL.h"
 #include "LSM6DSL.h"
-#include "MahonyAHRS.h"
 
 #include <Arduino.h>
 #include <Wire.h>
@@ -35,7 +34,6 @@ static constexpr float IMU_SAMPLE_FREQ = 50.0f;
 // Create sensor objects
 LSM6DSL imu;
 LIS2MDL mag;
-Mahony ahrs;
 
 
 
@@ -67,8 +65,6 @@ void setup() {
   Serial.begin(115200);
   set_microros_serial_transports(Serial);
   delay(2000);
-
-  ahrs.begin(100.0f, 4, 0.1);
 
   // 1) Initialize support & allocator
   ros2.allocator = rcl_get_default_allocator();
@@ -155,16 +151,6 @@ void loop() {
   mag_msg.magnetic_field.x = mx;
   mag_msg.magnetic_field.y = my;
   mag_msg.magnetic_field.z = mz;
-
-  ahrs.updateIMU(
-    gx, gy, gz,
-    ax, ay, az
-  );
-
-  imu_msg.orientation.x = ahrs.getQ1();
-  imu_msg.orientation.y = ahrs.getQ2();
-  imu_msg.orientation.z = ahrs.getQ3();
-  imu_msg.orientation.w = ahrs.getQ0();
   
   // rclc_executor_spin_some(&ros2.executor, RCL_MS_TO_NS(1));
   imu_msg.header.stamp.sec     = now_ns / 1000000000LL;
