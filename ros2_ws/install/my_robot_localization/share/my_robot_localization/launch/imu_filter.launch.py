@@ -9,6 +9,7 @@ def generate_launch_description():
             name='imu_filter',
             parameters=[{
                 'gain': 0.0000866,
+                'zeta': 0.05,
                 'magnetic_declination': -0.0873,
                 'use_magnetometer': True,
                 'frequency': 100.0,
