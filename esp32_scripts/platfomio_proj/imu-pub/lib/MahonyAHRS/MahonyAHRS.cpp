@@ -28,9 +28,6 @@
 // Definitions
 
 #define DEFAULT_SAMPLE_FREQ	512.0f	// sample frequency in Hz
-#define twoKpDef	(2.0f * 0.5f)	// 2 * proportional gain
-#define twoKiDef	(2.0f * 0.0f)	// 2 * integral gain
-
 
 //============================================================================================
 // Functions
@@ -40,8 +37,8 @@
 
 Mahony::Mahony()
 {
-	twoKp = twoKpDef;	// 2 * proportional gain (Kp)
-	twoKi = twoKiDef;	// 2 * integral gain (Ki)
+	twoKp = 0.0f;	// 2 * proportional gain (Kp)
+	twoKi = 0.0f;	// 2 * integral gain (Ki)
 	q0 = 1.0f;
 	q1 = 0.0f;
 	q2 = 0.0f;
@@ -53,10 +50,10 @@ Mahony::Mahony()
 	invSampleFreq = 1.0f / DEFAULT_SAMPLE_FREQ;
 }
 
-void Mahony::begin(float sampleFrequency, float Kp = twoKpDef/2, float Ki = twoKiDef/2){
+void Mahony::begin(float sampleFrequency, float twoKp, float twoKi){
 	invSampleFreq = 1.0f / sampleFrequency;
-	this->twoKp = Kp*2;
-	this->twoKi = Ki*2;
+	this->twoKp = twoKp;
+	this->twoKi = twoKi;
 }
 
 void Mahony::update(float gx, float gy, float gz, float ax, float ay, float az, float mx, float my, float mz)
@@ -79,6 +76,10 @@ void Mahony::update(float gx, float gy, float gz, float ax, float ay, float az, 
 	gx *= 0.0174533f;
 	gy *= 0.0174533f;
 	gz *= 0.0174533f;
+
+	mx *= 1e6;
+	my *= 1e6;
+	mz *= 1e6;
 
 	// Compute feedback only if accelerometer measurement valid
 	// (avoids NaN in accelerometer normalisation)
@@ -112,7 +113,7 @@ void Mahony::update(float gx, float gy, float gz, float ax, float ay, float az, 
 		hx = 2.0f * (mx * (0.5f - q2q2 - q3q3) + my * (q1q2 - q0q3) + mz * (q1q3 + q0q2));
 		hy = 2.0f * (mx * (q1q2 + q0q3) + my * (0.5f - q1q1 - q3q3) + mz * (q2q3 - q0q1));
 		bx = sqrtf(hx * hx + hy * hy);
-		bz = 2.0f * (mx * (q1q3 - q0q2) + my * (q2q3 + q0q1) + mz * (0.5f - q1q1 - q2q2));
+		bz = tan((37.0f + 38.0f/60.0f) * M_PI / 180.0f);
 
 		// Estimated direction of gravity and magnetic field
 		halfvx = q1q3 - q0q2;

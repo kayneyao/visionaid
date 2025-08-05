@@ -8,7 +8,7 @@
 #define REG_STATUS     0x67
 #define REG_OUTX_L     0x68
 
-static constexpr float MAG_SENS = 1.5e-7f;
+static constexpr float MAG_SENS = 1.5e-1f;
 
 const float hard_iron[3] = {
   2.82, -1.33, -2.60
@@ -41,11 +41,8 @@ void LIS2MDL::readData(float &mx, float &my, float &mz, bool calib) {
     int16_t rawX = int16_t(Wire.read() | (Wire.read() << 8));
     int16_t rawY = int16_t(Wire.read() | (Wire.read() << 8));
     int16_t rawZ = int16_t(Wire.read() | (Wire.read() << 8));
-    // mx = rawX * MAG_SENS;
-    // my = rawY * MAG_SENS;
-    // mz = rawZ * MAG_SENS;
     mx = rawX * MAG_SENS;
-    my = -rawY * MAG_SENS;
+    my = rawY * MAG_SENS;
     mz = rawZ * MAG_SENS;
 
     if(calib){
@@ -63,10 +60,12 @@ void LIS2MDL::readData(float &mx, float &my, float &mz, bool calib) {
                         (soft_iron[i][2] * hcal_mz);
         }
 
-        mx = mag_data[0];
-        my = mag_data[1];
-        mz = mag_data[2];
+        mx = mag_data[0] * 1e-6;
+        my = -mag_data[1] * 1e-6;
+        mz = mag_data[2] * 1e-6;
     }
+
+
 }
 
 void LIS2MDL::writeReg(uint8_t reg, uint8_t val) {

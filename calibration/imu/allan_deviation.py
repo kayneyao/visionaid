@@ -1,81 +1,95 @@
 #!/usr/bin/env python3
+import csv
 import numpy as np
 import allantools
-import csv
+import yaml
 
-# csv files
-RAW_CSV  = "sensors_raw.csv"
-FILT_CSV = "sensors_filtered.csv"
+# ——— CONFIGURATION ———
+CSV_FILE     = './calibration/imu/imu_log.csv'   # your logged data
+FS           = 100.0           # sampling rate [Hz]
+OUTPUT_YAML  = 'imu.yaml'      # Kalibr IMU config output
+# ————————————————————
 
-# sampling parameters
-TAU0 = 0.01        # sampling interval (s)
-RATE = 1.0 / TAU0  # sampling rate (Hz)
+# Sensor conversion constants
+ACC_FS    = 2.0         # ±2 g
+ACC_SENS  = ACC_FS / 32768.0   # g/count
+GYRO_FS   = 245.0       # ±245 dps
+GYRO_SENS = GYRO_FS / 32768.0  # dps/count
+G         = 9.80665     # m/s² per g
+D2R       = np.pi / 180.0
 
-# scaling constants
-G    = 9.80665     # m/s² per g
-FS_A = 2.0         # ±2 g
-FS_G = 245.0       # ±245 dps
-LSB_A = FS_A / 32768.0 * G       # m/s² per LSB
-LSB_G = FS_G / 32768.0 * (np.pi/180.0)  # rad/s per LSB
-LSB_M = 1.5e-3     # gauss per LSB
+# 1) Read CSV (skip header) and collect raw counts
+ax_counts = []
+ay_counts = []
+az_counts = []
+gx_counts = []
+gy_counts = []
+gz_counts = []
 
-def load_and_scale(path):
-    """Load CSV, return dict of arrays in SI units."""
-    data = np.loadtxt(path, delimiter=",")
-    acc = data[:,0:3] * LSB_A
-    gyr = data[:,3:6] * LSB_G
-    mag = data[:,6:9] * LSB_M
-    return {"acc": acc, "gyr": gyr, "mag": mag}
+with open(CSV_FILE, newline='') as f:
+    reader = csv.reader(f)
+    next(reader, None)      # skip header
+    for row in reader:
+        if len(row) < 7:
+            continue
+        ax_counts.append(int(row[1]))
+        ay_counts.append(int(row[2]))
+        az_counts.append(int(row[3]))
+        gx_counts.append(int(row[4]))
+        gy_counts.append(int(row[5]))
+        gz_counts.append(int(row[6]))
 
-def compute_arw_bi(name, vec, data_type):
-    """
-    Given a 1D vector `vec`, compute Allan dev,
-    then ARW = adev[0]*sqrt(tau[0]), BI = min(adev).
-    """
-    taus, adev, _, _ = allantools.oadev(vec, rate=RATE, data_type=data_type)
-    arw = adev[0] * np.sqrt(taus[0])
-    bi  = np.min(adev)
-    return arw, bi
+# 2) Convert to SI
+ax = np.array(ax_counts) * ACC_SENS * G
+ay = np.array(ay_counts) * ACC_SENS * G
+az = np.array(az_counts) * ACC_SENS * G
 
-def analyze_set(label, ds):
-    print(f"\n--- {label} ---")
-    print(f"{'Axis':<5}  {'ARW':>10}  {'BI':>10}")
-    for cat, dtype in [("acc","phase"), ("gyr","freq"), ("mag","phase")]:
-        for i, axis in enumerate(["X","Y","Z"]):
-            vec = ds[cat][:,i]
-            arw, bi = compute_arw_bi(f"{cat}{axis}", vec, dtype)
-            print(f"{cat[0]}{axis:<3}  {arw:10.3e}  {bi:10.3e}")
+gx = np.array(gx_counts) * GYRO_SENS * D2R
+gy = np.array(gy_counts) * GYRO_SENS * D2R
+gz = np.array(gz_counts) * GYRO_SENS * D2R
 
-def main():
-    raw_ds  = load_and_scale(RAW_CSV)
-    filt_ds = load_and_scale(FILT_CSV)
+# 3) Helper to get taus & adev
+def allan_params(data, fs):
+    taus, adev, _, _ = allantools.oadev(data, rate=fs, data_type='freq')
+    return taus, adev
 
-    analyze_set("RAW DATA", raw_ds)
-    analyze_set("FILTERED DATA", filt_ds)
+# 4) Gyro Allan → noise & bias
+taus_g, adev_g = allan_params(gx, FS)
+# noise density @ 1s
+idx1 = np.argmin(np.abs(taus_g - 1.0))
+n_rad_g = adev_g[idx1]
+n_deg_g = n_rad_g * (180.0/np.pi)
+# bias instability
+idx_min_g = np.nanargmin(adev_g)
+sigma_bias_g = adev_g[idx_min_g]
+b_rad_g = sigma_bias_g * np.sqrt(2*np.log(2)/np.pi)
+b_deg_g = b_rad_g * (180.0/np.pi)
 
-if __name__ == "__main__":
-    main()
+# 5) Accel Allan → noise & bias (compute per-axis, then average)
+def accel_stats(data, name):
+    taus, adev = allan_params(data, FS)
+    idx1 = np.argmin(np.abs(taus - 1.0))
+    n = adev[idx1]                     # [m/s²/√Hz]
+    idxm = np.nanargmin(adev)
+    sigma_bias = adev[idxm]
+    b = sigma_bias * np.sqrt(2*np.log(2)/np.pi)  # [m/s²]
+    print(f"{name}:")
+    print(f"  Noise density:    {n:.4f} m/s²/√Hz   ({n/G*1e3:.2f} mg/√Hz)")
+    print(f"  Bias instability: {b:.4f} m/s²      ({b/G*1e3:.2f} mg) at τ = {taus[idxm]:.3f}s")
+    return n, b
 
-# --- RAW DATA ---
-# Axis          ARW          BI
-# aX     1.080e-03   6.988e-04
-# aY     1.058e-01   1.664e-04
-# aZ     7.070e-02   1.101e-04
-# gX     1.717e-04   7.088e-05
-# gY     3.576e-05   2.150e-05
-# gZ     3.355e-05   7.862e-06
-# mX     6.314e-02   8.951e-05
-# mY     7.441e-02   9.372e-05
-# mZ     7.339e-02   8.981e-05
+print("Mahony filter parameters (gyro):")
+print(f"  Noise density nₒ:  {n_deg_g:.4f} °/s/√Hz   ({n_rad_g:.4f} rad/s/√Hz)")
+print(f"  Bias instability bₒ: {b_deg_g:.4f} °/s   ({b_rad_g:.4f} rad/s) at τ = {taus_g[idx_min_g]:.3f}s\n")
 
-# --- FILTERED DATA ---
-# Axis          ARW          BI
-# aX     9.132e-04   4.510e-04
-# aY     1.206e-01   4.341e-04
-# aZ     9.854e-02   3.045e-04
-# gX     6.764e-04   3.414e-04
-# gY     1.017e-04   3.188e-05
-# gZ     1.084e-04   8.218e-06
-# mX     8.763e-02   2.595e-04
-# mY     4.050e-02   6.605e-05
-# mZ     4.592e-02   7.646e-05
+print("Mahony filter parameters (accel):")
+n_ax, b_ax = accel_stats(ax, "  X-axis")
+n_ay, b_ay = accel_stats(ay, "  Y-axis")
+n_az, b_az = accel_stats(az, "  Z-axis")
+n_accel = np.mean([n_ax, n_ay, n_az])
+b_accel = np.mean([b_ax, b_ay, b_az])
+print(f"\n  → Overall accel noise density:    {n_accel:.4f} m/s²/√Hz   ({n_accel/G*1e3:.2f} mg/√Hz)")
+print(f"  → Overall accel bias instability: {b_accel:.4f} m/s²      ({b_accel/G*1e3:.2f} mg)")
+
+# 6) (unchanged) Kalibr YAML dump…
+# ... rest of your script ...

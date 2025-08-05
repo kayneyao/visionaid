@@ -16,8 +16,7 @@
 
 //--------------------------------------------------------------------------------------------
 // Variable declaration
-#define twoKpDef	(2.0f * 0.5f)	// 2 * proportional gain
-#define twoKiDef	(2.0f * 0.0f)	// 2 * integral gain
+
 
 class Mahony {
 private:
@@ -36,7 +35,7 @@ private:
 
 public:
 	Mahony();
-	void begin(float sampleFrequency, float Kp = twoKpDef/2, float Ki = twoKiDef/2);
+	void begin(float sampleFrequency, float twoKp, float twoKi);
 	void update(float gx, float gy, float gz, float ax, float ay, float az, float mx, float my, float mz);
 	void updateIMU(float gx, float gy, float gz, float ax, float ay, float az);
 	float getRoll() {

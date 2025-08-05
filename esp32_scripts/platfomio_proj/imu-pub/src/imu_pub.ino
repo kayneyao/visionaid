@@ -27,6 +27,9 @@
 #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){error_loop();}}
 #define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){}}
 
+#define twoKpDef	1.7320e-4f	// 2 * proportional gain
+#define twoKiDef	4.8500e-3f	// 2 * integral gain
+
 static constexpr float IMU_SAMPLE_FREQ = 50.0f;
 
 // Create sensor objects
@@ -65,7 +68,7 @@ void setup() {
   set_microros_serial_transports(Serial);
   delay(2000);
 
-  ahrs.begin(100.0f);
+  ahrs.begin(100.0f, 4, 0.1);
 
   // 1) Initialize support & allocator
   ros2.allocator = rcl_get_default_allocator();
@@ -153,10 +156,9 @@ void loop() {
   mag_msg.magnetic_field.y = my;
   mag_msg.magnetic_field.z = mz;
 
-  ahrs.update(
+  ahrs.updateIMU(
     gx, gy, gz,
-    ax, ay, az,
-    mx, my, mz
+    ax, ay, az
   );
 
   imu_msg.orientation.x = ahrs.getQ1();
