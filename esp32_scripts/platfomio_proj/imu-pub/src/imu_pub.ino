@@ -59,6 +59,38 @@ sensor_msgs__msg__MagneticField mag_msg;
 void callback(rcl_timer_t * timer, int64_t last_call_time) {
   RCLC_UNUSED(last_call_time);
   RCLC_UNUSED(timer);
+  mag_msg.header = imu_msg.header;
+
+  // Spin executor
+  float ax, ay, az;
+  float gx, gy, gz;
+  float mx, my, mz;
+
+  imu.readData(ax, ay, az, gx, gy, gz, true);
+  mag.readData(mx, my, mz, true);
+  // 1) Timestamp via synchronized clock
+  int64_t now_ns = rmw_uros_epoch_nanos();
+
+  imu_msg.header.stamp.sec     = now_ns / 1000000000LL;
+  imu_msg.header.stamp.nanosec = now_ns % 1000000000LL;
+
+  // 3) Fill IMU data (casts to double)
+  imu_msg.linear_acceleration.x = ax;
+  imu_msg.linear_acceleration.y = ay;
+  imu_msg.linear_acceleration.z = az;
+  imu_msg.angular_velocity.x    = gx;
+  imu_msg.angular_velocity.y    = gy;
+  imu_msg.angular_velocity.z    = gz;
+  // 4) Prepare magnetometer message
+  
+  mag_msg.magnetic_field.x = mx;
+  mag_msg.magnetic_field.y = my;
+  mag_msg.magnetic_field.z = mz;  
+
+  
+
+  RCSOFTCHECK(rcl_publish(&ros2.imu_pub, &imu_msg, NULL));
+  RCSOFTCHECK(rcl_publish(&ros2.mag_pub, &mag_msg, NULL));
 }
 
 void setup() {
@@ -127,37 +159,6 @@ void setup() {
 
 void loop() {
   rmw_uros_sync_session(10);
-  int64_t now_ns = rmw_uros_epoch_nanos();
-  // Spin executor
-  float ax, ay, az;
-  float gx, gy, gz;
-  float mx, my, mz;
-
-  imu.readData(ax, ay, az, gx, gy, gz, true);
-  mag.readData(mx, my, mz, true);
-  // 1) Timestamp via synchronized clock
-
   
-
-  // 3) Fill IMU data (casts to double)
-  imu_msg.linear_acceleration.x = ax;
-  imu_msg.linear_acceleration.y = ay;
-  imu_msg.linear_acceleration.z = az;
-  imu_msg.angular_velocity.x    = gx;
-  imu_msg.angular_velocity.y    = gy;
-  imu_msg.angular_velocity.z    = gz;
-  // 4) Prepare magnetometer message
-  
-  mag_msg.magnetic_field.x = mx;
-  mag_msg.magnetic_field.y = my;
-  mag_msg.magnetic_field.z = mz;
-  
-  // rclc_executor_spin_some(&ros2.executor, RCL_MS_TO_NS(1));
-  imu_msg.header.stamp.sec     = now_ns / 1000000000LL;
-  imu_msg.header.stamp.nanosec = now_ns % 1000000000LL;
-
-  mag_msg.header = imu_msg.header;
-
-  RCSOFTCHECK(rcl_publish(&ros2.imu_pub, &imu_msg, NULL));
-  RCSOFTCHECK(rcl_publish(&ros2.mag_pub, &mag_msg, NULL));
+  rclc_executor_spin_some(&ros2.executor, RCL_MS_TO_NS(10));
 }
