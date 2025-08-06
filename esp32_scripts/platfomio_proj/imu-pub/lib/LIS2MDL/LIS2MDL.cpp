@@ -20,6 +20,12 @@ const float soft_iron[3][3] = {
   {-0.012, 0.014, 1.006}
 };
 
+int16_t rawX, rawY, rawZ;
+
+float hcal_mx, hcal_my, hcal_mz;
+
+float mag_data[3]; 
+
 bool LIS2MDL::beginI2C(TwoWire &wire, uint8_t addr) {
     _wire = &wire;
     _i2cAddr = addr;
@@ -38,17 +44,15 @@ void LIS2MDL::readData(float &mx, float &my, float &mz, bool calib) {
     Wire.endTransmission(false);
     Wire.requestFrom(_i2cAddr, 6);
 
-    int16_t rawX = int16_t(Wire.read() | (Wire.read() << 8));
-    int16_t rawY = int16_t(Wire.read() | (Wire.read() << 8));
-    int16_t rawZ = int16_t(Wire.read() | (Wire.read() << 8));
+    rawX = int16_t(Wire.read() | (Wire.read() << 8));
+    rawY = int16_t(Wire.read() | (Wire.read() << 8));
+    rawZ = int16_t(Wire.read() | (Wire.read() << 8));
     mx = rawX * MAG_SENS;
     my = rawY * MAG_SENS;
     mz = rawZ * MAG_SENS;
 
     if(calib){
-        float hcal_mx, hcal_my, hcal_mz;
-
-        float mag_data[3]; 
+        
 
         hcal_mx = mx - hard_iron[0];
         hcal_my = my - hard_iron[1];
