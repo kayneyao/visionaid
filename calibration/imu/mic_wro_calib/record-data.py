@@ -21,7 +21,7 @@ import serial
 # global variables
 MAX_MEAS = 200  # max number of readings in the session, so that we don't create an infinite loop
 AVG_MEAS = 25  # for keach reading, take this many measurements and average them
-SER_PORT = '/dev/ttyACM0'  # serial port the device is connected to
+SER_PORT = 'COM6'  # serial port the device is connected to
 SER_BAUD = 115200  # serial port baud rate
 FILENAME = os.path.join(os.getcwd(), 'acceldata.txt')  # output file
 
@@ -88,12 +88,14 @@ def RecordDataPt(ser: SerialPort) -> tuple:
         # read data
         try:
             data = ser.Read().split(',')
+            print(data)
             ax_now = float(data[0])
             ay_now = float(data[1])
             az_now = float(data[2])
-        except:
-            ser.Close()
-            raise SystemExit("[ERROR]: Error reading serial connection.")
+        except Exception as e:
+            # ser.Close()
+            # raise SystemExit("[ERROR]: Error reading serial connection: " + e)
+            break
         ax += ax_now
         ay += ay_now
         az += az_now
@@ -138,11 +140,11 @@ def main():
             ser.Close()
             print('[INFO]: Done!')
             return
-        else:
-            print('[ERROR]: \'{}\' is an unknown input. Terminating!'.format(user))
-            List2DelimFile(data, FILENAME, delimiter='\t')
-            ser.Close()
-            return
+        # else:
+            # print('[ERROR]: \'{}\' is an unknown input. Terminating!'.format(user))
+            # List2DelimFile(data, FILENAME, delimiter='\t')
+            # ser.Close()
+            # return
 
     # save once max is reached
     print('[WARNING]: Reached max. number of datapoints, saving file...')
