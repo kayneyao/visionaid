@@ -13,13 +13,7 @@
 .git/objects/pack/pack-f9d9a98427b0d7b4970571f337f69c5671ab57bf.pack
 .git/objects/pack/pack-7d973964e6856d855a2aeaab99d08e478e120e94.pack
 isaac_ros_ws/build/isaac_ros_r2b_galileo/
-isaac_ros_ws/src/isaac_ros_visual_odometry/
-isaac_ros_ws/src/ros2_benchmark/
-isaac_ros_ws/src/isaac_ros_dnn_inference/
-isaac_ros_ws/src/isaac_ros_nitros/
-isaac_ros_ws/src/isaac_ros_benchmark/
-isaac_ros_ws/src/isaac_ros_common/
-isaac_ros_ws/src/isaac_ros_image_pipeline/
+isaac_ros_ws/src/*
 isaac_ros_ws/build/
 isaac_ros_ws/install/
 isaac_ros_ws/log/
