@@ -11,7 +11,8 @@ public:
 
     // Read accelerometer (m/s²) and gyroscope (rad/s)
     void readData(float &ax, float &ay, float &az,
-                  float &gx, float &gy, float &gz);
+                  float &gx, float &gy, float &gz,
+                  bool calib);
 
 private:
     TwoWire*  _wire = nullptr;

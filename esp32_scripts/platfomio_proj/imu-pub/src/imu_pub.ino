@@ -133,7 +133,7 @@ void loop() {
   float gx, gy, gz;
   float mx, my, mz;
 
-  imu.readData(ax, ay, az, gx, gy, gz);
+  imu.readData(ax, ay, az, gx, gy, gz, true);
   mag.readData(mx, my, mz, true);
   // 1) Timestamp via synchronized clock
 
