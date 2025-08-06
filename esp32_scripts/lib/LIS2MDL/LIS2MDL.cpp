@@ -1,11 +1,20 @@
 #include "LIS2MDL.h"
 
+#define OFFSET_X_REG_L 0x45
+#define OFFSET_X_REG_H 0x46
+#define OFFSET_Y_REG_L 0x47
+#define OFFSET_Y_REG_H 0x48
+#define OFFSET_Z_REG_L 0x49
+#define OFFSET_Z_REG_H 0x4A
 #define REG_WHO_AM_I   0x4F
 #define WHO_AM_I_ID    0x40
 #define REG_CFG_A      0x60
+#define REG_CFG_B      0x61
+#define REG_CFG_C      0x62
+#define REG_STATUS     0x67
 #define REG_OUTX_L     0x68
 
-static constexpr float MAG_SENS = 0.684e-6f;
+static constexpr float MAG_SENS = 1.5e-1;
 
 bool LIS2MDL::beginI2C(TwoWire &wire, uint8_t addr) {
     _wire = &wire;
@@ -13,31 +22,34 @@ bool LIS2MDL::beginI2C(TwoWire &wire, uint8_t addr) {
     _useSPI = false;
     _wire->begin();
     if (readReg(REG_WHO_AM_I) != WHO_AM_I_ID) return false;
-    writeReg(REG_CFG_A, 0x10);
-    return true;
-}
+    writeReg(OFFSET_X_REG_L, 0x00);
+    writeReg(OFFSET_X_REG_H, 0x00);
+    writeReg(OFFSET_Y_REG_L, 0x00);
+    writeReg(OFFSET_Y_REG_H, 0x00);
+    writeReg(OFFSET_Z_REG_L, 0x00);
+    writeReg(OFFSET_Z_REG_H, 0x00);
 
-bool LIS2MDL::beginSPI(SPIClass &spi, int csPin) {
-    _spi = &spi;
-    _csPin = csPin;
-    _useSPI = true;
-    pinMode(_csPin, OUTPUT);
-    digitalWrite(_csPin, HIGH);
-    _spi->begin();
-    if (readReg(REG_WHO_AM_I) != WHO_AM_I_ID) return false;
-    writeReg(REG_CFG_A, 0x10);
+    writeReg(REG_CFG_A, 0x8C);
+    writeReg(REG_CFG_B, 0x03);
+    writeReg(REG_CFG_C, 0x10);
     return true;
 }
 
 void LIS2MDL::readData(float &mx, float &my, float &mz) {
-    uint8_t buf[6];
-    readRegs(REG_OUTX_L | (_useSPI ? 0xC0 : 0x80), buf, 6);
-    int16_t rx = int16_t(buf[0] | (buf[1] << 8));
-    int16_t ry = int16_t(buf[2] | (buf[3] << 8));
-    int16_t rz = int16_t(buf[4] | (buf[5] << 8));
-    mx = rx * MAG_SENS;
-    my = ry * MAG_SENS;
-    mz = rz * MAG_SENS;
+    Wire.beginTransmission(_i2cAddr);
+    Wire.write(REG_OUTX_L);
+    Wire.endTransmission(false);
+    Wire.requestFrom(_i2cAddr, 6);
+
+    int16_t rawX = int16_t(Wire.read() | (Wire.read() << 8));
+    int16_t rawY = int16_t(Wire.read() | (Wire.read() << 8));
+    int16_t rawZ = int16_t(Wire.read() | (Wire.read() << 8));
+    mx = rawX * MAG_SENS;
+    my = rawY * MAG_SENS;
+    mz = rawZ * MAG_SENS;
+    // mx = rawX * MAG_SENS;
+    // my = -rawY * MAG_SENS;
+    // mz = rawZ * MAG_SENS;
 }
 
 void LIS2MDL::writeReg(uint8_t reg, uint8_t val) {

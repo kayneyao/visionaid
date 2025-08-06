@@ -6,6 +6,8 @@
 #define REG_CTRL1_XL   0x10
 #define REG_CTRL2_G    0x11
 #define REG_CTRL3_C    0x12
+#define REG_CTRL5_C    0x00
+#define REG_CTRL8_XL   0x17
 #define REG_OUTX_L_G   0x22
 #define REG_OUTX_L_XL  0x28
 
@@ -19,9 +21,12 @@ bool LSM6DSL::beginI2C(TwoWire &wire, uint8_t addr) {
     _wire->begin();
     if (readReg(REG_WHO_AM_I) != WHO_AM_I_ID) return false;
 
-    writeReg(REG_CTRL3_C, 0x44 | 0x04);
-    writeReg(REG_CTRL1_XL, 0x40 | 0x00);
+    
+    writeReg(REG_CTRL1_XL, 0x42);
     writeReg(REG_CTRL2_G,  0x40 | 0x00);
+    writeReg(REG_CTRL3_C, 0x44 | 0x04);
+    writeReg(REG_CTRL5_C, 0x00);
+    writeReg(REG_CTRL8_XL, 0x10);
     return true;
 }
 
@@ -48,8 +53,11 @@ void LSM6DSL::readData(float &ax, float &ay, float &az,
     int16_t rx = int16_t(buf[0] | (buf[1] << 8));
     int16_t ry = int16_t(buf[2] | (buf[3] << 8));
     int16_t rz = int16_t(buf[4] | (buf[5] << 8));
-    ax = rx * ACC_SENS;
-    ay = ry * ACC_SENS;
+    // ax = rx * ACC_SENS;
+    // ay = ry * ACC_SENS;
+    // az = rz * ACC_SENS;
+    ax = -ry * ACC_SENS;
+    ay = rx * ACC_SENS;
     az = rz * ACC_SENS;
 
     // gyro
@@ -57,8 +65,11 @@ void LSM6DSL::readData(float &ax, float &ay, float &az,
     int16_t gx_raw = int16_t(buf[0] | (buf[1] << 8));
     int16_t gy_raw = int16_t(buf[2] | (buf[3] << 8));
     int16_t gz_raw = int16_t(buf[4] | (buf[5] << 8));
-    gx = gx_raw * GYR_SENS;
-    gy = gy_raw * GYR_SENS;
+    // gx = gx_raw * GYR_SENS;
+    // gy = gy_raw * GYR_SENS;
+    // gz = gz_raw * GYR_SENS;
+    gx = -gy_raw * GYR_SENS;
+    gy = gx_raw * GYR_SENS;
     gz = gz_raw * GYR_SENS;
 }
 

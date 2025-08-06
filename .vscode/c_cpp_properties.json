@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/esp32_scripts/platfomio_proj/imu-pub/lib/MahonyAHRS",
+                "${workspaceFolder}/esp32_scripts/platfomio_proj/imu-pub/lib/LIS2MDL",
+                "${workspaceFolder}/esp32_scripts/platfomio_proj/imu-pub/lib/LSM6DSL"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-clang-x64"
+        }
+    ],
+    "version": 4
+}

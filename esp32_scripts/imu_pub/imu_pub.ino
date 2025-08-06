@@ -87,7 +87,7 @@ void setup() {
   sensor_msgs__msg__MagneticField__init(&mag_msg);
 
   // 5) Initialize I2C & sensors
-  Wire.begin();
+  Wire.begin(8, 10);
   if (!imu.beginI2C(Wire)) {
     RCUTILS_LOG_ERROR_NAMED("esp32_node", "LSM6DSL init failed");
     while (1) { delay(1000); }

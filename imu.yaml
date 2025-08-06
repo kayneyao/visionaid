@@ -1,0 +1,6 @@
+imu0:
+  accel_noise_density: 0.00043188506151922766
+  accel_random_walk: 0.13880867012098694
+  gyro_noise_density: 5.257831485063494e-05
+  gyro_random_walk: 0.0028274013799359926
+  rate: 100.0
