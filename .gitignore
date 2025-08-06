@@ -20,4 +20,10 @@ isaac_ros_ws/log/
 .pt
 /microros_ws/*/
 
+/calibration/camera/kalibr/*/
+/calibration/camera/kalibr/Dockerfile*
+/calibration/camera/kalibr/.gitignore
+/calibration/camera/kalibr/LICENSE
+/calibration/camera/kalibr/README.md
+
 /isaac_ros_ws/src/*
