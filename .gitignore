@@ -26,4 +26,6 @@ isaac_ros_ws/log/
 /calibration/camera/kalibr/LICENSE
 /calibration/camera/kalibr/README.md
 
+*.bag
+
 /isaac_ros_ws/src/*

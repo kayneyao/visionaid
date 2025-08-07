@@ -151,7 +151,7 @@ void setup() {
   rclc_executor_init(&ros2.executor, &ros2.support.context, 2, &ros2.allocator);
   rclc_executor_add_timer(&ros2.executor, &ros2.timer);
 
-  const char * frame = "imu_link";
+  const char * frame = "camera_link";
   imu_msg.header.frame_id.data     = (char *)frame;
   imu_msg.header.frame_id.size     = strlen(frame);
   imu_msg.header.frame_id.capacity = imu_msg.header.frame_id.size + 1;
