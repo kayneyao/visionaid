@@ -26,6 +26,12 @@ isaac_ros_ws/log/
 /calibration/camera/kalibr/LICENSE
 /calibration/camera/kalibr/README.md
 
+/calibration/camera/allan_variance_ros/*/
+/calibration/camera/allan_variance_ros/Dockerfile*
+/calibration/camera/allan_variance_ros/.gitignore
+/calibration/camera/allan_variance_ros/LICENSE
+/calibration/camera/allan_variance_ros/README.md
+
 *.bag
 
 /isaac_ros_ws/src/*
