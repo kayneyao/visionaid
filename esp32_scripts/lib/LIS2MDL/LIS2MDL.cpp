@@ -1,11 +1,5 @@
 #include "LIS2MDL.h"
 
-#define OFFSET_X_REG_L 0x45
-#define OFFSET_X_REG_H 0x46
-#define OFFSET_Y_REG_L 0x47
-#define OFFSET_Y_REG_H 0x48
-#define OFFSET_Z_REG_L 0x49
-#define OFFSET_Z_REG_H 0x4A
 #define REG_WHO_AM_I   0x4F
 #define WHO_AM_I_ID    0x40
 #define REG_CFG_A      0x60
@@ -14,7 +8,23 @@
 #define REG_STATUS     0x67
 #define REG_OUTX_L     0x68
 
-static constexpr float MAG_SENS = 1.5e-1;
+static constexpr float MAG_SENS = 1.5e-1f;
+
+const float hard_iron[3] = {
+  2.82, -1.33, -2.60
+};
+
+const float soft_iron[3][3] = {
+  {0.981, 0.017, -0.012},
+  {0.017, 1.015, 0.014},
+  {-0.012, 0.014, 1.006}
+};
+
+int16_t rawX, rawY, rawZ;
+
+float hcal_mx, hcal_my, hcal_mz;
+
+float mag_data[3]; 
 
 bool LIS2MDL::beginI2C(TwoWire &wire, uint8_t addr) {
     _wire = &wire;
@@ -22,34 +32,44 @@ bool LIS2MDL::beginI2C(TwoWire &wire, uint8_t addr) {
     _useSPI = false;
     _wire->begin();
     if (readReg(REG_WHO_AM_I) != WHO_AM_I_ID) return false;
-    writeReg(OFFSET_X_REG_L, 0x00);
-    writeReg(OFFSET_X_REG_H, 0x00);
-    writeReg(OFFSET_Y_REG_L, 0x00);
-    writeReg(OFFSET_Y_REG_H, 0x00);
-    writeReg(OFFSET_Z_REG_L, 0x00);
-    writeReg(OFFSET_Z_REG_H, 0x00);
-
     writeReg(REG_CFG_A, 0x8C);
     writeReg(REG_CFG_B, 0x03);
     writeReg(REG_CFG_C, 0x10);
     return true;
 }
 
-void LIS2MDL::readData(float &mx, float &my, float &mz) {
+void LIS2MDL::readData(float &mx, float &my, float &mz, bool calib) {
     Wire.beginTransmission(_i2cAddr);
     Wire.write(REG_OUTX_L);
     Wire.endTransmission(false);
     Wire.requestFrom(_i2cAddr, 6);
 
-    int16_t rawX = int16_t(Wire.read() | (Wire.read() << 8));
-    int16_t rawY = int16_t(Wire.read() | (Wire.read() << 8));
-    int16_t rawZ = int16_t(Wire.read() | (Wire.read() << 8));
+    rawX = int16_t(Wire.read() | (Wire.read() << 8));
+    rawY = int16_t(Wire.read() | (Wire.read() << 8));
+    rawZ = int16_t(Wire.read() | (Wire.read() << 8));
     mx = rawX * MAG_SENS;
     my = rawY * MAG_SENS;
     mz = rawZ * MAG_SENS;
-    // mx = rawX * MAG_SENS;
-    // my = -rawY * MAG_SENS;
-    // mz = rawZ * MAG_SENS;
+
+    if(calib){
+        
+
+        hcal_mx = mx - hard_iron[0];
+        hcal_my = my - hard_iron[1];
+        hcal_mz = mz - hard_iron[2];
+
+        for(int i = 0; i < 3; i++){
+          mag_data[i] = (soft_iron[i][0] * hcal_mx) +
+                        (soft_iron[i][1] * hcal_my) +
+                        (soft_iron[i][2] * hcal_mz);
+        }
+
+        mx = mag_data[0] * 1e-6;
+        my = -mag_data[1] * 1e-6;
+        mz = mag_data[2] * 1e-6;
+    }
+
+
 }
 
 void LIS2MDL::writeReg(uint8_t reg, uint8_t val) {

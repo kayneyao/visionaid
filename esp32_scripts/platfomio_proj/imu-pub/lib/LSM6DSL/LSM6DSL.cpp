@@ -39,9 +39,9 @@ bool LSM6DSL::beginI2C(TwoWire &wire, uint8_t addr) {
     if (readReg(REG_WHO_AM_I) != WHO_AM_I_ID) return false;
 
     
-    writeReg(REG_CTRL1_XL, 0x42);
-    writeReg(REG_CTRL2_G,  0x44);
-    writeReg(REG_CTRL3_C, 0x44 | 0x04);
+    writeReg(REG_CTRL1_XL, 0x52);
+    writeReg(REG_CTRL2_G,  0x54);
+    writeReg(REG_CTRL3_C, 0x04);
     writeReg(REG_CTRL5_C, 0x00);
     writeReg(REG_CTRL8_XL, 0x10);
 
@@ -91,7 +91,7 @@ void LSM6DSL::readData(float &ax, float &ay, float &az,
         }
 
         ax = acc_data[0];
-        ay = acc_data[1];
+        ay = -acc_data[1];
         az = acc_data[2];
     }
 

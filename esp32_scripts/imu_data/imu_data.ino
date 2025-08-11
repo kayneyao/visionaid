@@ -7,11 +7,15 @@
 LSM6DSL imu;
 LIS2MDL mag;
 
+float ax, ay, az;
+float gx, gy, gz;
+float mx, my, mz;
+
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(921600);
 
   delay(200);
-  Serial.println("=== Sensor Demo: LSM6DSL + LIS2MDL ===");
+  // Serial.println("=== Sensor Demo: LSM6DSL + LIS2MDL ===");
 
   // Initialize I2C (default SDA=21, SCL=22 on ESP32)
   Wire.begin(8, 10);
@@ -27,36 +31,20 @@ void setup() {
     // Serial.println("Failed to initialize LIS2MDL!");
     while (1) delay(1000);
   }
-
-  // Serial.println("Initialization successful.");
 }
 
 void loop() {
-  float ax, ay, az;
-  float gx, gy, gz;
-  float mx, my, mz;
+  // dt = esp_timer_get_time() - now_ns;
+  if (Serial.read() == (int)'j') {
 
-  // Read raw data
-  imu.readData(ax, ay, az,
-               gx, gy, gz);
-  // mag.readData(mx, my, mz);
+    // 1) Capture timestamp *right before/after* reading the sensor
 
-  // Serial.print("Raw:");
-  // Serial.print(ax); Serial.print(",");
-  // Serial.print(ay); Serial.print(",");
-  // Serial.print(az); Serial.print(",");
+    // 2) Read the sensors (fast path)
+    imu.readData(ax, ay, az, gx, gy, gz, true);
+    mag.readData(mx, my, mz, true);
 
-  // // // Print gyroscope data
-  // // Serial.print("Gyro:");
-  // Serial.print(ax); Serial.print(",");
-  // Serial.print(ay); Serial.print(",");
-  // Serial.print(az); Serial.print(",");
-
-  // Print magnetometer data
-  // Serial.print("Mag:");
-  Serial.print(ax, 6); Serial.print(",");
-  Serial.print(ay, 6); Serial.print(",");
-  Serial.println(az, 6);
-
-  delay(10);
+    // 3) Print CSV: t_us,idx,ax,ay,az,gx,gy,gz,mx,my,mz
+    Serial.printf("%.6f,%.6f,%.6f,%.6f,%.6f,%.6f,%.6f,%.6f,%.6f\n", 
+                  ax, ay, az, gx, gy, gz, mx, my, mz);
+  }
 }

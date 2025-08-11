@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
+from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
 from sensor_msgs.msg import Imu
 import matplotlib.pyplot as plt
 
@@ -9,7 +10,12 @@ class ImuDtMonitor(Node):
         super().__init__('imu_dt_monitor')
         # change topic name / queue size as needed
         self.sub = self.create_subscription(
-            Imu, '/imu', self.imu_callback, 100)
+            Imu, '/imu', self.imu_callback, QoSProfile(
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            history=HistoryPolicy.KEEP_LAST,
+            depth=10,
+            durability=DurabilityPolicy.VOLATILE,
+        ))
         self.last_time = None
         self.dts = []
 

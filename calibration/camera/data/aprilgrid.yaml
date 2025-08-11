@@ -4,4 +4,4 @@ tagRows: 6
 tagSize: 0.029
 tagSpacing: 0.3
 
-#rosrun kalibr kalibr_calibrate_cameras --bag /data/ros1_rs_d435_intrinsics.bag --target /data/aprilgrid.yaml --models pinhole-radtan --topics /camera/camera/color/image_raw --bag-freq 10.0 --show-extraction
+#rosrun kalibr kalibr_calibrate_cameras --target /data/aprilgrid.yaml --models pinhole-radtan --topics /camera/camera/color/image_raw --bag /data/d435_imu_calib_2.bag --bag-freq 10.0 --show-extraction
