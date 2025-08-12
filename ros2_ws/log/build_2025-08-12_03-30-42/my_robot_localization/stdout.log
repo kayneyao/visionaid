@@ -1,0 +1,24 @@
+-- Install configuration: ""
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/launch
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/launch/ekf_gps_imu.launch.py
+-- Installing: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/launch/stero_odom.launch.py
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/launch/rs_camera_launch.py
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/launch/imu_filter.launch.py
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/launch/rs_imu_pub.launch.py
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/launch/rtabmap_stereo.launch.py
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/lib/my_robot_localization/imu_pub.py
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/ament_index/resource_index/package_run_dependencies/my_robot_localization
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/ament_index/resource_index/parent_prefix_path/my_robot_localization
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/environment/ament_prefix_path.sh
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/environment/path.sh
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/environment/path.dsv
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/local_setup.bash
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/local_setup.sh
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/local_setup.zsh
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/local_setup.dsv
+-- Installing: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/package.dsv
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/ament_index/resource_index/packages/my_robot_localization
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/cmake/my_robot_localizationConfig.cmake
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/cmake/my_robot_localizationConfig-version.cmake
+-- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/package.xml

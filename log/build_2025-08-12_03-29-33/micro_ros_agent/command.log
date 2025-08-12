@@ -1,0 +1,1 @@
+Invoking command in '/home/kanye/Documents/visionaid/build/micro_ros_agent': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/kanye/Documents/visionaid/build/micro_ros_agent -- -j28 -l28

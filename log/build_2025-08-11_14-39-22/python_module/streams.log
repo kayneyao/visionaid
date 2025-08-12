@@ -1,0 +1,33 @@
+[0.076s] Invoking command in '/home/kanye/Documents/visionaid/build/python_module': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/Schweizer-Messer/python_module -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/python_module
+[1.162s] [31mCMake Error at CMakeLists.txt:4 (find_package):
+[1.162s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[1.162s]   asked CMake to find a package configuration file provided by "catkin", but
+[1.162s]   CMake did not find one.
+[1.162s] 
+[1.163s]   Could not find a package configuration file provided by "catkin" with any
+[1.163s]   of the following names:
+[1.163s] 
+[1.163s]     catkinConfig.cmake
+[1.163s]     catkin-config.cmake
+[1.163s] 
+[1.163s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[1.163s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[1.163s]   provides a separate development package or SDK, be sure it has been
+[1.163s]   installed.
+[1.163s] 
+[1.163s] [0m
+[1.163s] -- The C compiler identification is GNU 11.4.0
+[1.163s] -- The CXX compiler identification is GNU 11.4.0
+[1.163s] -- Detecting C compiler ABI info
+[1.163s] -- Detecting C compiler ABI info - done
+[1.163s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.163s] -- Detecting C compile features
+[1.164s] -- Detecting C compile features - done
+[1.164s] -- Detecting CXX compiler ABI info
+[1.164s] -- Detecting CXX compiler ABI info - done
+[1.164s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.164s] -- Detecting CXX compile features
+[1.164s] -- Detecting CXX compile features - done
+[1.164s] -- Configuring incomplete, errors occurred!
+[1.164s] See also "/home/kanye/Documents/visionaid/build/python_module/CMakeFiles/CMakeOutput.log".
+[1.177s] Invoked command in '/home/kanye/Documents/visionaid/build/python_module' returned '1': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/Schweizer-Messer/python_module -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/python_module

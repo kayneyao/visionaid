@@ -1,0 +1,33 @@
+[0.075s] Invoking command in '/home/kanye/Documents/visionaid/build/aslam_time': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/aslam_cv/aslam_time -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/aslam_time
+[1.157s] -- The C compiler identification is GNU 11.4.0
+[1.157s] -- The CXX compiler identification is GNU 11.4.0
+[1.158s] -- Detecting C compiler ABI info
+[1.158s] -- Detecting C compiler ABI info - done
+[1.158s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.158s] -- Detecting C compile features
+[1.158s] -- Detecting C compile features - done
+[1.158s] -- Detecting CXX compiler ABI info
+[1.158s] -- Detecting CXX compiler ABI info - done
+[1.158s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.158s] -- Detecting CXX compile features
+[1.158s] -- Detecting CXX compile features - done
+[1.158s] -- Configuring incomplete, errors occurred!
+[1.158s] See also "/home/kanye/Documents/visionaid/build/aslam_time/CMakeFiles/CMakeOutput.log".
+[1.160s] [31mCMake Error at CMakeLists.txt:4 (find_package):
+[1.160s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[1.160s]   asked CMake to find a package configuration file provided by "catkin", but
+[1.160s]   CMake did not find one.
+[1.160s] 
+[1.160s]   Could not find a package configuration file provided by "catkin" with any
+[1.161s]   of the following names:
+[1.161s] 
+[1.161s]     catkinConfig.cmake
+[1.161s]     catkin-config.cmake
+[1.161s] 
+[1.161s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[1.161s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[1.161s]   provides a separate development package or SDK, be sure it has been
+[1.161s]   installed.
+[1.161s] 
+[1.161s] [0m
+[1.169s] Invoked command in '/home/kanye/Documents/visionaid/build/aslam_time' returned '1': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/aslam_cv/aslam_time -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/aslam_time

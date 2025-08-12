@@ -1,0 +1,27 @@
+[0.009s] Invoking command in '/home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization -- -j28 -l28
+[0.046s] Invoked command in '/home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization -- -j28 -l28
+[0.053s] Invoking command in '/home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization
+[0.057s] -- Install configuration: ""
+[0.057s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/launch
+[0.057s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/launch/ekf_gps_imu.launch.py
+[0.057s] -- Installing: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/launch/stero_odom.launch.py
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/launch/rs_camera_launch.py
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/launch/imu_filter.launch.py
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/launch/rs_imu_pub.launch.py
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/lib/my_robot_localization/imu_pub.py
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/ament_index/resource_index/package_run_dependencies/my_robot_localization
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/ament_index/resource_index/parent_prefix_path/my_robot_localization
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/environment/ament_prefix_path.sh
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/environment/ament_prefix_path.dsv
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/environment/path.sh
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/environment/path.dsv
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/local_setup.bash
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/local_setup.sh
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/local_setup.zsh
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/local_setup.dsv
+[0.058s] -- Installing: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/package.dsv
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/ament_index/resource_index/packages/my_robot_localization
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/cmake/my_robot_localizationConfig.cmake
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/cmake/my_robot_localizationConfig-version.cmake
+[0.058s] -- Up-to-date: /home/kanye/Documents/visionaid/ros2_ws/install/my_robot_localization/share/my_robot_localization/package.xml
+[0.059s] Invoked command in '/home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/kanye/Documents/visionaid/ros2_ws/build/my_robot_localization

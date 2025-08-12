@@ -1,0 +1,20 @@
+[0.065s] Invoking command in '/home/kanye/Documents/visionaid/build/allan_variance_ros': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/allan_variance_ros -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/allan_variance_ros
+[1.375s] -- Configuring incomplete, errors occurred!
+[1.375s] See also "/home/kanye/Documents/visionaid/build/allan_variance_ros/CMakeFiles/CMakeOutput.log".
+[1.375s] [31mCMake Error at CMakeLists.txt:13 (find_package):
+[1.375s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[1.375s]   asked CMake to find a package configuration file provided by "catkin", but
+[1.375s]   CMake did not find one.
+[1.375s] 
+[1.375s]   Could not find a package configuration file provided by "catkin" with any
+[1.375s]   of the following names:
+[1.375s] 
+[1.375s]     catkinConfig.cmake
+[1.375s]     catkin-config.cmake
+[1.375s] 
+[1.375s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[1.375s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[1.375s]   provides a separate development package or SDK, be sure it has been
+[1.375s]   installed.
+[1.375s] 
+[1.375s] [0m

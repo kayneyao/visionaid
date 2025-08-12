@@ -1,0 +1,1 @@
+Invoking command in '/home/kanye/Documents/visionaid/build/allan_variance_ros': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/allan_variance_ros -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/allan_variance_ros

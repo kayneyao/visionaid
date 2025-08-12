@@ -1,0 +1,26 @@
+[0.070s] Invoking command in '/home/kanye/Documents/visionaid/build/ur5_robotiq_85_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/kanye/Documents/visionaid/isaac_ros_ws/src/isaac_ros_benchmark/benchmarks/isaac_ros_moveit_benchmark/robot_descriptions/ur5_robotiq_85_description -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/ur5_robotiq_85_description
+[1.154s] -- The C compiler identification is GNU 11.4.0
+[1.155s] -- The CXX compiler identification is GNU 11.4.0
+[1.155s] -- Detecting C compiler ABI info
+[1.155s] -- Detecting C compiler ABI info - done
+[1.155s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.155s] -- Detecting C compile features
+[1.155s] -- Detecting C compile features - done
+[1.155s] -- Detecting CXX compiler ABI info
+[1.155s] -- Detecting CXX compiler ABI info - done
+[1.155s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.155s] -- Detecting CXX compile features
+[1.155s] -- Detecting CXX compile features - done
+[1.155s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.155s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.155s] -- Found urdf: 2.6.1 (/opt/ros/humble/share/urdf/cmake)
+[1.155s] -- Found xacro: 2.0.13 (/opt/ros/humble/share/xacro/cmake)
+[1.155s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.155s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.155s] -- Added test 'lint_cmake' to check CMake code style
+[1.155s] -- Added test 'xmllint' to check XML markup files
+[1.155s] -- Configuring done
+[1.155s] -- Generating done
+[1.155s] -- Build files have been written to: /home/kanye/Documents/visionaid/build/ur5_robotiq_85_description
+[1.167s] Invoked command in '/home/kanye/Documents/visionaid/build/ur5_robotiq_85_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/kanye/Documents/visionaid/isaac_ros_ws/src/isaac_ros_benchmark/benchmarks/isaac_ros_moveit_benchmark/robot_descriptions/ur5_robotiq_85_description -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/ur5_robotiq_85_description
+[1.168s] Invoking command in '/home/kanye/Documents/visionaid/build/ur5_robotiq_85_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/kanye/Documents/visionaid/build/ur5_robotiq_85_description -- -j28 -l28

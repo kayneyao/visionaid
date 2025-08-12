@@ -1,0 +1,1 @@
+Invoking command in '/home/kanye/Documents/visionaid/build/python_module': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/Schweizer-Messer/python_module -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/python_module

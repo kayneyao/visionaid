@@ -1,0 +1,1 @@
+Invoking command in '/home/kanye/Documents/visionaid/build/aslam_time': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/aslam_cv/aslam_time -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/aslam_time

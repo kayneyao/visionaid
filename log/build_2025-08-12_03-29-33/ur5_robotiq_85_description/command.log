@@ -1,0 +1,1 @@
+Invoking command in '/home/kanye/Documents/visionaid/build/ur5_robotiq_85_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/kanye/Documents/visionaid/build/ur5_robotiq_85_description -- -j28 -l28

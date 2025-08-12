@@ -1,0 +1,16 @@
+[0.080s] Invoking command in '/home/kanye/Documents/visionaid/build/isaac_ros_common': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/kanye/Documents/visionaid/build/isaac_ros_common -- -j28 -l28
+[1.384s] [ 25%] [32mBuilding CXX object CMakeFiles/isaac_ros_common.dir/src/vpi_utilities.cpp.o[0m
+[1.384s] [ 50%] [32mBuilding CXX object CMakeFiles/isaac_ros_common.dir/src/qos.cpp.o[0m
+[1.384s] [ 75%] Built target generate_version_info_target_isaac_ros_common
+[1.384s] [ 75%] Built target ament_cmake_python_copy_isaac_ros_common
+[1.384s] running egg_info
+[1.384s] writing isaac_ros_common.egg-info/PKG-INFO
+[1.384s] writing dependency_links to isaac_ros_common.egg-info/dependency_links.txt
+[1.384s] writing top-level names to isaac_ros_common.egg-info/top_level.txt
+[1.384s] reading manifest file 'isaac_ros_common.egg-info/SOURCES.txt'
+[1.384s] writing manifest file 'isaac_ros_common.egg-info/SOURCES.txt'
+[1.384s] [ 75%] Built target ament_cmake_python_build_isaac_ros_common_egg
+[1.384s] gmake[2]: *** [CMakeFiles/isaac_ros_common.dir/build.make:76: CMakeFiles/isaac_ros_common.dir/src/vpi_utilities.cpp.o] Interrupt
+[1.384s] gmake[2]: *** [CMakeFiles/isaac_ros_common.dir/build.make:90: CMakeFiles/isaac_ros_common.dir/src/qos.cpp.o] Interrupt
+[1.384s] gmake[1]: *** [CMakeFiles/Makefile2:142: CMakeFiles/isaac_ros_common.dir/all] Interrupt
+[1.384s] gmake: *** [Makefile:146: all] Interrupt

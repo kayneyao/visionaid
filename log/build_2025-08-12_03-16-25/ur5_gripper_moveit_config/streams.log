@@ -1,0 +1,45 @@
+[0.063s] Invoking command in '/home/kanye/Documents/visionaid/build/ur5_gripper_moveit_config': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/kanye/Documents/visionaid/build/ur5_gripper_moveit_config -- -j28 -l28
+[1.570s] Invoked command in '/home/kanye/Documents/visionaid/build/ur5_gripper_moveit_config' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/kanye/Documents/visionaid/build/ur5_gripper_moveit_config -- -j28 -l28
+[1.595s] Invoking command in '/home/kanye/Documents/visionaid/build/ur5_gripper_moveit_config': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/kanye/Documents/visionaid/build/ur5_gripper_moveit_config
+[1.629s] -- Install configuration: ""
+[1.630s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ament_index/resource_index/package_run_dependencies/ur5_gripper_moveit_config
+[1.630s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ament_index/resource_index/parent_prefix_path/ur5_gripper_moveit_config
+[1.630s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/environment/ament_prefix_path.sh
+[1.630s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/environment/ament_prefix_path.dsv
+[1.630s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/environment/path.sh
+[1.631s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/environment/path.dsv
+[1.631s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/local_setup.bash
+[1.631s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/local_setup.sh
+[1.631s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/local_setup.zsh
+[1.631s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/local_setup.dsv
+[1.631s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/package.dsv
+[1.631s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ament_index/resource_index/packages/ur5_gripper_moveit_config
+[1.631s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/cmake/ur5_gripper_moveit_configConfig.cmake
+[1.631s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/cmake/ur5_gripper_moveit_configConfig-version.cmake
+[1.631s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/package.xml
+[1.631s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/launch
+[1.631s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/launch/rsp.launch.py
+[1.631s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/launch/move_group.launch.py
+[1.631s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/launch/setup_assistant.launch.py
+[1.635s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/launch/static_virtual_joint_tfs.launch.py
+[1.635s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/launch/demo.launch.py
+[1.635s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/launch/spawn_controllers.launch.py
+[1.635s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/launch/warehouse_db.launch.py
+[1.635s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/launch/moveit_rviz.launch.py
+[1.635s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/config
+[1.635s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/config/moveit.rviz
+[1.635s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/config/isaac_ros_cumotion_planning.yaml
+[1.635s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/config/moveit_controllers.yaml
+[1.636s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/config/ros2_controllers.yaml
+[1.636s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/config/ompl_planning.yaml
+[1.636s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/config/chomp_planning.yaml
+[1.636s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/config/ur5_robotiq_85.srdf
+[1.636s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/config/pilz_cartesian_limits.yaml
+[1.636s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/config/joint_limits.yaml
+[1.636s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/config/ur5_robotiq_85.urdf.xacro
+[1.636s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/config/kinematics.yaml
+[1.636s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/config/ur5_robotiq_85.ros2_control.xacro
+[1.636s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/config/initial_positions.yaml
+[1.636s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/config/ur5_robotiq_85.xrdf
+[1.636s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_gripper_moveit_config/share/ur5_gripper_moveit_config/.setup_assistant
+[1.692s] Invoked command in '/home/kanye/Documents/visionaid/build/ur5_gripper_moveit_config' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/kanye/Documents/visionaid/build/ur5_gripper_moveit_config

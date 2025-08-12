@@ -1,0 +1,53 @@
+[0.064s] Invoking command in '/home/kanye/Documents/visionaid/build/ur5_robotiq_85_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/kanye/Documents/visionaid/build/ur5_robotiq_85_description -- -j28 -l28
+[1.597s] Invoked command in '/home/kanye/Documents/visionaid/build/ur5_robotiq_85_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/kanye/Documents/visionaid/build/ur5_robotiq_85_description -- -j28 -l28
+[1.606s] Invoking command in '/home/kanye/Documents/visionaid/build/ur5_robotiq_85_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/kanye/Documents/visionaid/build/ur5_robotiq_85_description
+[1.634s] -- Install configuration: ""
+[1.634s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/urdf
+[1.634s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/urdf/ur5_robotiq_85_spherized.urdf
+[1.634s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/urdf/ur5_robotiq_85.urdf
+[1.634s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes
+[1.635s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/robotiq_fts300.stl
+[1.635s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/robotiq
+[1.635s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/robotiq/inner_finger_coarse.stl
+[1.635s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/robotiq/outer_knuckle_coarse.stl
+[1.635s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/robotiq/inner_finger_fine.stl
+[1.635s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/robotiq/outer_finger_fine.stl
+[1.638s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/robotiq/inner_knuckle_fine.stl
+[1.638s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/robotiq/robotiq_85_base_link_fine.stl
+[1.638s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/robotiq/inner_knuckle_coarse.stl
+[1.638s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/robotiq/outer_knuckle_fine.stl
+[1.638s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/robotiq/outer_finger_coarse.stl
+[1.638s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/robotiq/robotiq_85_base_link_coarse.stl
+[1.638s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5
+[1.638s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5/visual
+[1.638s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5/visual/base.dae
+[1.638s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5/visual/forearm.dae
+[1.638s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5/visual/upperarm.dae
+[1.638s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5/visual/shoulder.dae
+[1.638s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5/visual/wrist1.dae
+[1.638s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5/visual/wrist3.dae
+[1.638s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5/visual/wrist2.dae
+[1.639s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5/collision
+[1.639s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5/collision/forearm.stl
+[1.639s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5/collision/wrist3.stl
+[1.639s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5/collision/base.stl
+[1.639s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5/collision/wrist1.stl
+[1.639s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5/collision/wrist2.stl
+[1.640s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5/collision/shoulder.stl
+[1.640s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/meshes/ur5/collision/upperarm.stl
+[1.640s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ament_index/resource_index/package_run_dependencies/ur5_robotiq_85_description
+[1.640s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ament_index/resource_index/parent_prefix_path/ur5_robotiq_85_description
+[1.640s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/environment/ament_prefix_path.sh
+[1.640s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/environment/ament_prefix_path.dsv
+[1.646s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/environment/path.sh
+[1.646s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/environment/path.dsv
+[1.646s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/local_setup.bash
+[1.646s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/local_setup.sh
+[1.646s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/local_setup.zsh
+[1.646s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/local_setup.dsv
+[1.647s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/package.dsv
+[1.647s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ament_index/resource_index/packages/ur5_robotiq_85_description
+[1.647s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/cmake/ur5_robotiq_85_descriptionConfig.cmake
+[1.647s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/cmake/ur5_robotiq_85_descriptionConfig-version.cmake
+[1.647s] -- Installing: /home/kanye/Documents/visionaid/install/ur5_robotiq_85_description/share/ur5_robotiq_85_description/package.xml
+[1.767s] Invoked command in '/home/kanye/Documents/visionaid/build/ur5_robotiq_85_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/kanye/Documents/visionaid/build/ur5_robotiq_85_description

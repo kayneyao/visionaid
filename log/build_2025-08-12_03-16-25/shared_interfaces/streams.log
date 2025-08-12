@@ -1,0 +1,20 @@
+[0.665s] Invoking command in '/home/kanye/Documents/visionaid/build/shared_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/kanye/Documents/visionaid/build/shared_interfaces -- -j28 -l28
+[1.586s] Invoked command in '/home/kanye/Documents/visionaid/build/shared_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/kanye/Documents/visionaid/build/shared_interfaces -- -j28 -l28
+[1.590s] Invoking command in '/home/kanye/Documents/visionaid/build/shared_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/kanye/Documents/visionaid/build/shared_interfaces
+[1.617s] -- Install configuration: ""
+[1.617s] -- Installing: /home/kanye/Documents/visionaid/install/shared_interfaces/share/ament_index/resource_index/package_run_dependencies/shared_interfaces
+[1.617s] -- Installing: /home/kanye/Documents/visionaid/install/shared_interfaces/share/ament_index/resource_index/parent_prefix_path/shared_interfaces
+[1.617s] -- Installing: /home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/environment/ament_prefix_path.sh
+[1.617s] -- Installing: /home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/environment/ament_prefix_path.dsv
+[1.617s] -- Installing: /home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/environment/path.sh
+[1.617s] -- Installing: /home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/environment/path.dsv
+[1.617s] -- Installing: /home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/local_setup.bash
+[1.617s] -- Installing: /home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/local_setup.sh
+[1.617s] -- Installing: /home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/local_setup.zsh
+[1.617s] -- Installing: /home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/local_setup.dsv
+[1.618s] -- Installing: /home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/package.dsv
+[1.618s] -- Installing: /home/kanye/Documents/visionaid/install/shared_interfaces/share/ament_index/resource_index/packages/shared_interfaces
+[1.618s] -- Installing: /home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/cmake/shared_interfacesConfig.cmake
+[1.618s] -- Installing: /home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/cmake/shared_interfacesConfig-version.cmake
+[1.618s] -- Installing: /home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/package.xml
+[1.723s] Invoked command in '/home/kanye/Documents/visionaid/build/shared_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/kanye/Documents/visionaid/build/shared_interfaces

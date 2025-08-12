@@ -1,0 +1,15 @@
+/home/kanye/Documents/visionaid/install/shared_interfaces/share/ament_index/resource_index/package_run_dependencies/shared_interfaces
+/home/kanye/Documents/visionaid/install/shared_interfaces/share/ament_index/resource_index/parent_prefix_path/shared_interfaces
+/home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/environment/ament_prefix_path.sh
+/home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/environment/ament_prefix_path.dsv
+/home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/environment/path.sh
+/home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/environment/path.dsv
+/home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/local_setup.bash
+/home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/local_setup.sh
+/home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/local_setup.zsh
+/home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/local_setup.dsv
+/home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/package.dsv
+/home/kanye/Documents/visionaid/install/shared_interfaces/share/ament_index/resource_index/packages/shared_interfaces
+/home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/cmake/shared_interfacesConfig.cmake
+/home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/cmake/shared_interfacesConfig-version.cmake
+/home/kanye/Documents/visionaid/install/shared_interfaces/share/shared_interfaces/package.xml

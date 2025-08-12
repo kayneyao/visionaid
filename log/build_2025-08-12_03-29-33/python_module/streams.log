@@ -1,0 +1,20 @@
+[0.072s] Invoking command in '/home/kanye/Documents/visionaid/build/python_module': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/Schweizer-Messer/python_module -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/python_module
+[1.383s] -- Configuring incomplete, errors occurred!
+[1.383s] See also "/home/kanye/Documents/visionaid/build/python_module/CMakeFiles/CMakeOutput.log".
+[1.385s] [31mCMake Error at CMakeLists.txt:4 (find_package):
+[1.385s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[1.385s]   asked CMake to find a package configuration file provided by "catkin", but
+[1.385s]   CMake did not find one.
+[1.385s] 
+[1.385s]   Could not find a package configuration file provided by "catkin" with any
+[1.385s]   of the following names:
+[1.386s] 
+[1.386s]     catkinConfig.cmake
+[1.386s]     catkin-config.cmake
+[1.386s] 
+[1.386s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[1.386s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[1.386s]   provides a separate development package or SDK, be sure it has been
+[1.386s]   installed.
+[1.386s] 
+[1.386s] [0m

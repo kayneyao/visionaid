@@ -1,0 +1,4 @@
+/home/kanye/Documents/visionaid/build/micro_ros_agent/CMakeFiles/xrceagent.dir
+/home/kanye/Documents/visionaid/build/micro_ros_agent/CMakeFiles/micro_ros_agent.dir
+/home/kanye/Documents/visionaid/build/micro_ros_agent/CMakeFiles/edit_cache.dir
+/home/kanye/Documents/visionaid/build/micro_ros_agent/CMakeFiles/rebuild_cache.dir

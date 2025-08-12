@@ -1,0 +1,2 @@
+Invoking command in '/home/kanye/Documents/visionaid/build/catkin_simple': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/catkin_simple -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/catkin_simple
+Invoked command in '/home/kanye/Documents/visionaid/build/catkin_simple' returned '1': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/catkin_simple -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/catkin_simple

@@ -1,0 +1,1 @@
+Invoking command in '/home/kanye/Documents/visionaid/build/isaac_ros_common': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/kanye/Documents/visionaid/isaac_ros_ws/src/isaac_ros_common/isaac_ros_common -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/isaac_ros_common

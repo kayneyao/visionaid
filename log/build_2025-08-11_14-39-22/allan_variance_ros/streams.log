@@ -1,0 +1,33 @@
+[0.068s] Invoking command in '/home/kanye/Documents/visionaid/build/allan_variance_ros': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/allan_variance_ros -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/allan_variance_ros
+[1.151s] -- The C compiler identification is GNU 11.4.0
+[1.151s] -- The CXX compiler identification is GNU 11.4.0
+[1.151s] -- Detecting C compiler ABI info
+[1.151s] -- Detecting C compiler ABI info - done
+[1.151s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.151s] -- Detecting C compile features
+[1.151s] -- Detecting C compile features - done
+[1.151s] -- Detecting CXX compiler ABI info
+[1.151s] -- Detecting CXX compiler ABI info - done
+[1.151s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.151s] -- Detecting CXX compile features
+[1.151s] -- Detecting CXX compile features - done
+[1.151s] -- Configuring incomplete, errors occurred!
+[1.151s] See also "/home/kanye/Documents/visionaid/build/allan_variance_ros/CMakeFiles/CMakeOutput.log".
+[1.151s] [31mCMake Error at CMakeLists.txt:13 (find_package):
+[1.151s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[1.151s]   asked CMake to find a package configuration file provided by "catkin", but
+[1.151s]   CMake did not find one.
+[1.151s] 
+[1.151s]   Could not find a package configuration file provided by "catkin" with any
+[1.152s]   of the following names:
+[1.152s] 
+[1.152s]     catkinConfig.cmake
+[1.152s]     catkin-config.cmake
+[1.152s] 
+[1.152s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[1.152s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[1.152s]   provides a separate development package or SDK, be sure it has been
+[1.152s]   installed.
+[1.152s] 
+[1.152s] [0m
+[1.160s] Invoked command in '/home/kanye/Documents/visionaid/build/allan_variance_ros' returned '1': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/allan_variance_ros -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/allan_variance_ros

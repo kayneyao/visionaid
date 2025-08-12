@@ -1,0 +1,1 @@
+Invoking command in '/home/kanye/Documents/visionaid/build/ethz_apriltag2': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/aslam_offline_calibration/ethz_apriltag2 -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/ethz_apriltag2

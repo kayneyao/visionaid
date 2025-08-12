@@ -1,0 +1,21 @@
+[0.068s] Invoking command in '/home/kanye/Documents/visionaid/build/sm_logging': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/Schweizer-Messer/sm_logging -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/sm_logging
+[1.478s] -- Configuring incomplete, errors occurred!
+[1.478s] See also "/home/kanye/Documents/visionaid/build/sm_logging/CMakeFiles/CMakeOutput.log".
+[1.481s] [31mCMake Error at CMakeLists.txt:6 (find_package):
+[1.482s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[1.482s]   asked CMake to find a package configuration file provided by "catkin", but
+[1.482s]   CMake did not find one.
+[1.482s] 
+[1.482s]   Could not find a package configuration file provided by "catkin" with any
+[1.482s]   of the following names:
+[1.482s] 
+[1.482s]     catkinConfig.cmake
+[1.482s]     catkin-config.cmake
+[1.482s] 
+[1.482s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[1.482s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[1.482s]   provides a separate development package or SDK, be sure it has been
+[1.482s]   installed.
+[1.482s] 
+[1.483s] [0m
+[1.557s] Invoked command in '/home/kanye/Documents/visionaid/build/sm_logging' returned '1': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/Schweizer-Messer/sm_logging -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/sm_logging
