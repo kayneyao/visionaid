@@ -67,7 +67,7 @@ class YOLOv8CameraNode(Node):
         }
         
         # Parameters
-        self.declare_parameter('model_path', '/home/sophie/visionaid-1/yolo_training/11classnew/runs/balanced_augmented_training/balanced_augmented_11class/weights/balanced.onnx')
+        self.declare_parameter('model_path', '/home/sophie/visionaid-1/models/yolov8/balanced.onnx')
         self.declare_parameter('confidence_threshold', 0.5)
         self.declare_parameter('nms_threshold', 0.4)
         self.declare_parameter('max_detections', 50)

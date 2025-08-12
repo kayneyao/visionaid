@@ -12,7 +12,7 @@ def generate_launch_description():
     # Launch arguments
     model_path_arg = DeclareLaunchArgument(
         'model_path',
-        default_value='/home/sophie/visionaid-1/yolo_training/11classnew/runs/balanced_augmented_training/balanced_augmented_11class/weights/balanced.onnx',
+        default_value='/home/sophie/visionaid-1/models/yolov8/balanced.onnx',
         description='Path to YOLOv8 11-class balanced augmented model'
     )
     

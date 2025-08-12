@@ -24,7 +24,7 @@ isaac_ros_ws/build/
 isaac_ros_ws/install/
 isaac_ros_ws/log/
 
-yolo_training/
+/yolo_training/
 
 
 # Python

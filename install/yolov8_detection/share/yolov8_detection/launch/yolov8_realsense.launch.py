@@ -17,7 +17,7 @@ def generate_launch_description():
     # Model path argument
     model_path_arg = DeclareLaunchArgument(
         'model_path',
-        default_value='/home/sophie/visionaid-1/yolo_training/11classnew/runs/balanced_augmented_training/balanced_augmented_11class/weights/balanced.onnx',
+        default_value='/home/sophie/visionaid-1/models/yolov8/balanced.onnx',
         description='Path to Balanced Augmented 11-class ONNX model')
     
     # RealSense camera launch with optimized settings

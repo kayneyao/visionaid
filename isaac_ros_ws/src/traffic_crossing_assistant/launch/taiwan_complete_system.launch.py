@@ -26,7 +26,7 @@ def generate_launch_description():
     # Launch arguments
     model_path_arg = DeclareLaunchArgument(
         'model_path',
-        default_value='/home/sophie/visionaid-1/yolo_training/11classnew/runs/balanced_augmented_training/balanced_augmented_11class/weights/balanced.onnx',
+        default_value='/home/sophie/visionaid-1/models/yolov8/balanced.onnx',
         description='Path to Balanced Augmented 11-class ONNX model'
     )
     
@@ -65,7 +65,8 @@ def generate_launch_description():
             ('/immediate_crossing_danger', '/traffic_safety/immediate_crossing_danger'),
             ('/vehicle_threat_status', '/traffic_safety/vehicle_threat_status'),
             ('/time_to_collision', '/traffic_safety/time_to_collision'),
-            ('/vehicle_relative_velocity', '/traffic_safety/vehicle_relative_velocity')
+            ('/vehicle_relative_velocity', '/traffic_safety/vehicle_relative_velocity'),
+            ('/traffic_safety/tracking_timing', '/traffic_safety/tracking_timing')
         ],
         output='screen'
     )

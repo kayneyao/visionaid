@@ -33,7 +33,7 @@ def generate_launch_description():
             name='yolov8_camera_node',
             output='screen',
             parameters=[{
-                'model_path': '/home/sophie/visionaid-1/yolo_training/11classnew/runs/balanced_augmented_training/balanced_augmented_11class/weights/balanced.onnx',
+                'model_path': '/home/sophie/visionaid-1/models/yolov8/balanced.onnx',
                 'confidence_threshold': 0.5,
                 'inference_rate': 30.0,
                 'publish_detection_images': True

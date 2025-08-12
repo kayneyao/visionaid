@@ -12,7 +12,7 @@ from pathlib import Path
 def test_new_model():
     """Test the new balanced augmented ONNX model"""
     
-    model_path = "/home/sophie/visionaid-1/yolo_training/11classnew/runs/balanced_augmented_training/balanced_augmented_11class/weights/balanced.onnx"
+    model_path = "/home/sophie/visionaid-1/models/yolov8/balanced.onnx"
     
     print("=" * 60)
     print("🧪 TESTING NEW BALANCED AUGMENTED MODEL")

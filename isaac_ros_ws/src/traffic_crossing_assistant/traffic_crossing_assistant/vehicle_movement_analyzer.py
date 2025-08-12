@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Vehicle Movement Analyzer - Priority 1 Safety Component
-Enhanced with full 3D depth-aware detection and ego-motion compensation
+Enhanced with SORT tracking, Kalman filters, and HMM traffic light tracking
 Updated for 11-class model: Only motorized vehicles are safety threats
 """
 
@@ -20,6 +20,11 @@ import time
 import math
 from tf2_ros import Buffer, TransformListener
 import tf2_geometry_msgs
+import json
+
+# Import new tracking modules
+from .sort_tracker import SORTTracker
+from .hmm_traffic_light_tracker import HMMTrafficLightTracker
 
 class VehicleMovementAnalyzer(Node):
     def __init__(self):
@@ -53,9 +58,22 @@ class VehicleMovementAnalyzer(Node):
             'cx': 320.0, 'cy': 240.0   # Principal point
         }
         
+        # NEW: SORT tracker for robust multi-object tracking
+        self.sort_tracker = SORTTracker(
+            max_age=10,        # Maximum frames without update
+            min_hits=3,        # Minimum hits to confirm track
+            iou_threshold=0.3  # IoU threshold for association
+        )
+        
+        # NEW: HMM traffic light tracker for temporal stability
+        self.traffic_light_tracker = HMMTrafficLightTracker(
+            window_size=5,           # 5-frame sliding window
+            confidence_threshold=0.6  # Minimum confidence for state changes
+        )
+        
         # State tracking
         self.current_depth_image = None
-        self.vehicle_tracks = defaultdict(list)  # Track 3D positions over time
+        self.vehicle_tracks = defaultdict(list)  # Legacy tracking (kept for compatibility)
         self.bridge = CvBridge()
         
         # Ego-motion tracking
@@ -94,12 +112,27 @@ class VehicleMovementAnalyzer(Node):
         self.vehicle_velocity_pub = self.create_publisher(
             Float32, '/vehicle_relative_velocity', 10)
         
+        # NEW: Enhanced tracking publishers
+        self.tracking_stats_pub = self.create_publisher(
+            String, '/vehicle_tracking_stats', 10)
+
+        # Timing metrics publisher (JSON string)
+        self.tracking_timing_pub = self.create_publisher(
+            String, '/traffic_safety/tracking_timing', 10)
+        
+        self.traffic_light_state_pub = self.create_publisher(
+            String, '/traffic_light_state', 10)
+        
+        self.traffic_light_confidence_pub = self.create_publisher(
+            Float32, '/traffic_light_confidence', 10)
+        
         # Debug publisher
         self.debug_pub = self.create_publisher(
             String, '/vehicle_analyzer_debug', 10)
         
         self.get_logger().info('🚗 Enhanced Vehicle Movement Analyzer initialized (Priority 1)')
-        self.get_logger().info('✅ Full 3D depth-aware detection with ego-motion compensation')
+        self.get_logger().info('✅ SORT tracking + Kalman filters + HMM traffic light tracking')
+        self.get_logger().info('🎯 Robust multi-object tracking with data association')
     
     def depth_callback(self, msg):
         """Store depth image for 3D position calculation"""
@@ -220,6 +253,60 @@ class VehicleMovementAnalyzer(Node):
         
         # Update vehicle tracking with ego-motion compensation
         self.update_vehicle_tracking(vehicle_detections, current_time)
+        
+        # NEW: Update SORT tracking for robust multi-object tracking (timed)
+        _t0 = time.time()
+        sort_tracks = self.update_sort_tracking(vehicle_detections)
+        sort_update_ms = (time.time() - _t0) * 1000.0
+        
+        # Timing: vehicle association (Hungarian) is inside SORT; we approximate with sort_update_ms
+        # NEW: Update HMM traffic light tracking for temporal stability
+        all_detections = []
+        for detection in msg.detections:
+            if detection.results:
+                class_id = int(detection.results[0].hypothesis.class_id)
+                confidence = detection.results[0].hypothesis.score
+                all_detections.append({
+                    'class_id': class_id,
+                    'confidence': confidence
+                })
+        
+        traffic_light_state, traffic_light_confidence = self.update_traffic_light_tracking(all_detections)
+        
+        # NEW: Analyze threats using SORT tracker results (timed)
+        _t1 = time.time()
+        immediate_danger, min_ttc, threatening_vehicle = self.analyze_sort_threats(sort_tracks)
+        sort_threat_ms = (time.time() - _t1) * 1000.0
+
+        # Publish timing metrics JSON
+        try:
+            timing_json = {
+                'sort_update_ms': float(sort_update_ms),
+                'sort_threat_ms': float(sort_threat_ms)
+            }
+            timing_msg = String()
+            timing_msg.data = json.dumps(timing_json)
+            self.tracking_timing_pub.publish(timing_msg)
+        except Exception:
+            pass
+        
+        # Publish immediate danger status
+        danger_msg = Bool()
+        danger_msg.data = immediate_danger
+        self.immediate_danger_pub.publish(danger_msg)
+        
+        # Publish TTC information
+        ttc_msg = Float32()
+        ttc_msg.data = min_ttc if min_ttc != float('inf') else 999.0
+        self.ttc_pub.publish(ttc_msg)
+        
+        # Publish vehicle threat status
+        threat_msg = String()
+        if immediate_danger:
+            threat_msg.data = f"🚨 IMMEDIATE DANGER: {threatening_vehicle} (TTC: {min_ttc:.2f}s)"
+        else:
+            threat_msg.data = f"✅ Safe: Closest vehicle TTC: {min_ttc:.2f}s"
+        self.vehicle_threat_pub.publish(threat_msg)
         
         # Analyze for threats using TTC and relative motion
         immediate_danger, ttc_info = self.analyze_enhanced_threats(vehicle_detections)
@@ -516,6 +603,125 @@ class VehicleMovementAnalyzer(Node):
         }
         
         return immediate_danger, ttc_info
+    
+    def update_sort_tracking(self, vehicle_detections):
+        """Update SORT tracker with new vehicle detections"""
+        # Convert detections to format expected by SORT tracker
+        sort_detections = []
+        
+        for detection in vehicle_detections:
+            sort_detection = {
+                'class_id': detection['class_id'],
+                'class_name': detection['class_name'],
+                'confidence': detection['confidence'],
+                'bbox': detection.get('bbox'),
+                'position_3d': detection.get('position_3d')
+            }
+            sort_detections.append(sort_detection)
+        
+        # Update SORT tracker
+        tracks = self.sort_tracker.update(sort_detections)
+        
+        # Publish tracking statistics
+        stats_msg = String()
+        stats_msg.data = f'SORT Tracking: {len(tracks)} active tracks, {len(vehicle_detections)} detections'
+        self.tracking_stats_pub.publish(stats_msg)
+        
+        return tracks
+    
+    def update_traffic_light_tracking(self, all_detections):
+        """Update HMM traffic light tracker"""
+        # Extract all detections for traffic light analysis
+        detection_results = []
+        
+        for detection in all_detections:
+            detection_results.append({
+                'class_id': detection['class_id'],
+                'confidence': detection['confidence']
+            })
+        
+        # Update HMM tracker
+        current_state = self.traffic_light_tracker.update(detection_results)
+        confidence = self.traffic_light_tracker.get_state_confidence()
+        persistence = self.traffic_light_tracker.get_state_persistence()
+        
+        # Publish traffic light state and confidence
+        state_msg = String()
+        state_msg.data = current_state
+        self.traffic_light_state_pub.publish(state_msg)
+        
+        confidence_msg = Float32()
+        confidence_msg.data = confidence
+        self.traffic_light_confidence_pub.publish(confidence_msg)
+        
+        # Debug logging
+        debug_msg = String()
+        debug_msg.data = f'🚦 Traffic Light: {current_state} (conf: {confidence:.3f}, persistence: {persistence})'
+        self.debug_pub.publish(debug_msg)
+        
+        return current_state, confidence
+    
+    def calculate_enhanced_ttc(self, track):
+        """Calculate enhanced TTC using Kalman filter state"""
+        if not track.is_confirmed():
+            return float('inf')
+        
+        # Get current position and velocity from Kalman filter
+        position = track.get_position()
+        velocity = track.get_velocity()
+        
+        # Calculate distance to camera (assuming camera at origin)
+        distance = np.linalg.norm(position[:2])  # Only x, y components
+        
+        # Calculate velocity magnitude
+        velocity_magnitude = np.linalg.norm(velocity[:2])  # Only x, y components
+        
+        if velocity_magnitude < 0.1:  # Very slow or stationary
+            return float('inf')
+        
+        # Calculate TTC
+        ttc = distance / velocity_magnitude
+        
+        # Apply ego-motion compensation if available
+        if self.current_camera_pose and self.previous_camera_pose:
+            # Calculate camera velocity
+            dt = time.time() - self.camera_pose_timestamp if self.camera_pose_timestamp else 1/30.0
+            cam_dx = self.current_camera_pose['position'].x - self.previous_camera_pose['position'].x
+            cam_dy = self.current_camera_pose['position'].y - self.previous_camera_pose['position'].y
+            cam_velocity = math.sqrt(cam_dx**2 + cam_dy**2) / dt
+            
+            # Adjust TTC for camera motion
+            relative_velocity = max(0.1, velocity_magnitude - cam_velocity)
+            ttc = distance / relative_velocity
+        
+        return ttc
+    
+    def analyze_sort_threats(self, tracks):
+        """Analyze threats using SORT tracker results"""
+        immediate_danger = False
+        min_ttc = float('inf')
+        threatening_vehicle = None
+        
+        ttc_threshold = self.get_parameter('ttc_safety_threshold').value
+        
+        for track in tracks:
+            if track.is_confirmed():
+                # Calculate enhanced TTC using Kalman filter state
+                ttc = self.calculate_enhanced_ttc(track)
+                
+                if ttc < min_ttc:
+                    min_ttc = ttc
+                    threatening_vehicle = track.class_name
+                    
+                    if ttc < ttc_threshold:
+                        immediate_danger = True
+                        
+                        # Debug logging
+                        debug_msg = String()
+                        debug_msg.data = f'🚨 SORT Threat: {track.class_name} TTC={ttc:.2f}s (ID: {track.track_id})'
+                        self.debug_pub.publish(debug_msg)
+        
+        return immediate_danger, min_ttc, threatening_vehicle
 
 def main():
     rclpy.init()

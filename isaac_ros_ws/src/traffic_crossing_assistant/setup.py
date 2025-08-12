@@ -14,6 +14,7 @@ setup(
         ('share/' + package_name, ['package.xml']),
         ('share/' + package_name + '/config', glob('config/*.yaml')),
         ('share/' + package_name + '/launch', glob('launch/*.launch.py')),
+        ('share/' + package_name + '/launch', ['launch/experiment_record_and_system.launch.py']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -43,6 +44,10 @@ setup(
             'test_vlm_integration = scripts.test_vlm_integration:main',
             'test_enhanced_3d_system = scripts.test_enhanced_3d_system:main',
             'validate_system = scripts.validate_system:main',
+
+            # Experiment utilities
+            'experiment_recorder = scripts.experiment_recorder:main',
+            'analyze_experiments = scripts.analyze_experiments:main',
         ],
     },
 )

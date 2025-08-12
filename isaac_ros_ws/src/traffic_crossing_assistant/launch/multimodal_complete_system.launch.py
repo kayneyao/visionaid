@@ -21,7 +21,7 @@ def generate_launch_description():
             executable='yolov8_camera_node',
             name='taiwan_traffic_detector',
             parameters=[{
-                'model_path': '/home/sophie/visionaid-1/yolo_training/11classnew/runs/balanced_augmented_training/balanced_augmented_11class/weights/balanced.onnx',
+                'model_path': '/home/sophie/visionaid-1/models/yolov8/balanced.onnx',
                 'confidence_threshold': 0.5,
             }],
             output='screen'
