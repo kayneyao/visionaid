@@ -11,13 +11,31 @@ MAX_SEGMENTS=${MAX_SEGMENTS:-6}
 RECORD_VIZ=${RECORD_VIZ:-false}
 TEGRastats=${TEGRastats:-true}
 
-# Build (optional if already built)
-# source ROS2 env
-if [ -f "/opt/ros/humble/setup.bash" ]; then
-  source /opt/ros/humble/setup.bash
+# Source ROS 2 under set +u to avoid AMENT unbound variable issues
+set +u
+[ -f "/opt/ros/humble/setup.bash" ] && source /opt/ros/humble/setup.bash
+set -u
+
+# Build workspace if needed (or rebuild to register new launch/scripts)
+if [ ! -f "$ROS_WS/install/setup.bash" ]; then
+  echo "[INFO] Building workspace..."
+  cd "$ROS_WS"
+  colcon build --symlink-install
+else
+  echo "[INFO] Rebuilding to ensure package index is up-to-date..."
+  cd "$ROS_WS"
+  colcon build --symlink-install --packages-select traffic_crossing_assistant || true
 fi
-if [ -f "$ROS_WS/install/setup.bash" ]; then
-  source "$ROS_WS/install/setup.bash"
+
+# Source overlay under set +u
+set +u
+source "$ROS_WS/install/setup.bash"
+set -u
+
+# Verify package is discoverable
+if ! ros2 pkg prefix traffic_crossing_assistant >/dev/null 2>&1; then
+  echo "[ERROR] Package 'traffic_crossing_assistant' not found after build."
+  exit 1
 fi
 
 mkdir -p "$OUT_DIR"

@@ -1,6 +1,7 @@
 /test
 
 /ros_objdetect/data
+/experiment_data/
 
 
 .png

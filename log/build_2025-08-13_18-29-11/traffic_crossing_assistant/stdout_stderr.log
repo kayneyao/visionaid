@@ -1,0 +1,35 @@
+running develop
+running egg_info
+writing traffic_crossing_assistant.egg-info/PKG-INFO
+writing dependency_links to traffic_crossing_assistant.egg-info/dependency_links.txt
+writing entry points to traffic_crossing_assistant.egg-info/entry_points.txt
+writing requirements to traffic_crossing_assistant.egg-info/requires.txt
+writing top-level names to traffic_crossing_assistant.egg-info/top_level.txt
+reading manifest file 'traffic_crossing_assistant.egg-info/SOURCES.txt'
+writing manifest file 'traffic_crossing_assistant.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/python3.10/site-packages/traffic-crossing-assistant.egg-link (link to .)
+Installing analyze_experiments script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+Installing audio_feedback_system script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+Installing crosswalk_analyzer script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+Installing decision_engine script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+Installing ego_motion_compensator script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+Installing enhanced_audio_system script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+Installing experiment_recorder script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+Installing multimodal_safety_coordinator script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+Installing simple_3d_analyzer script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+Installing test_complete_system script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+Installing test_enhanced_3d_system script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+Installing test_vlm_integration script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+Installing traffic_light_analyzer script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+Installing validate_system script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+Installing vehicle_movement_analyzer script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+
+Installed /home/sophie/visionaid-1/build/traffic_crossing_assistant
+running symlink_data
+symbolically linking /home/sophie/visionaid-1/build/traffic_crossing_assistant/resource/traffic_crossing_assistant -> /home/sophie/visionaid-1/install/traffic_crossing_assistant/share/ament_index/resource_index/packages
+symbolically linking /home/sophie/visionaid-1/build/traffic_crossing_assistant/package.xml -> /home/sophie/visionaid-1/install/traffic_crossing_assistant/share/traffic_crossing_assistant
+symbolically linking /home/sophie/visionaid-1/build/traffic_crossing_assistant/config/taiwan_safety_config.yaml -> /home/sophie/visionaid-1/install/traffic_crossing_assistant/share/traffic_crossing_assistant/config
+symbolically linking /home/sophie/visionaid-1/build/traffic_crossing_assistant/config/audio_config.yaml -> /home/sophie/visionaid-1/install/traffic_crossing_assistant/share/traffic_crossing_assistant/config
+symbolically linking /home/sophie/visionaid-1/build/traffic_crossing_assistant/launch/multimodal_complete_system.launch.py -> /home/sophie/visionaid-1/install/traffic_crossing_assistant/share/traffic_crossing_assistant/launch
+error: [Errno 2] No such file or directory: '/home/sophie/visionaid-1/install/traffic_crossing_assistant/share/traffic_crossing_assistant/launch/experiment_record_and_system.launch.py'

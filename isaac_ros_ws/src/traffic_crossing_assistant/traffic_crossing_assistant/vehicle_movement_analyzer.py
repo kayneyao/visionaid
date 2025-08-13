@@ -39,17 +39,17 @@ class VehicleMovementAnalyzer(Node):
         }
         
         # Safety parameters
-        self.declare_parameter('horizontal_threat_distance', 15.0)  # meters
-        self.declare_parameter('motion_velocity_threshold', 2.0)    # m/s
-        self.declare_parameter('ttc_safety_threshold', 4.0)        # seconds - time to collision
+        self.declare_parameter('horizontal_threat_distance', 25.0)  # meters (relaxed)
+        self.declare_parameter('motion_velocity_threshold', 0.8)    # m/s (relaxed)
+        self.declare_parameter('ttc_safety_threshold', 8.0)        # seconds - time to collision (more conservative)
         self.declare_parameter('tracking_window', 2.0)             # seconds for velocity calculation
         
         # Vehicle-specific confidence thresholds (matching YOLOv8 camera node exactly)
         self.vehicle_confidence_thresholds = {
-            1: 0.55,   # bus - lowered for temporal filtering
-            2: 0.55,   # car - lowered for temporal filtering
-            5: 0.65,   # motorcycle - lowered for temporal filtering
-            9: 0.7     # truck - lowered for temporal filtering
+            1: 0.45,   # bus - more permissive
+            2: 0.45,   # car - more permissive
+            5: 0.55,   # motorcycle - more permissive
+            9: 0.60    # truck - more permissive
         }
         
         # RealSense D435 camera intrinsics (from your config)
@@ -60,9 +60,9 @@ class VehicleMovementAnalyzer(Node):
         
         # NEW: SORT tracker for robust multi-object tracking
         self.sort_tracker = SORTTracker(
-            max_age=10,        # Maximum frames without update
-            min_hits=3,        # Minimum hits to confirm track
-            iou_threshold=0.3  # IoU threshold for association
+            max_age=5,         # Fewer frames without update (faster drop)
+            min_hits=2,        # Confirm tracks sooner
+            iou_threshold=0.2  # Easier association
         )
         
         # NEW: HMM traffic light tracker for temporal stability
@@ -239,7 +239,7 @@ class VehicleMovementAnalyzer(Node):
                         self.debug_pub.publish(debug_msg)
                         
                         threat_level = self.analyze_2d_threat(detection.bbox, class_id, confidence)
-                        if threat_level > 0.3:  # Only consider significant threats
+                        if threat_level > 0.2:  # Only consider significant threats (relaxed)
                             vehicle_data = {
                                 'class_id': class_id,
                                 'class_name': self.vehicle_classes[class_id],

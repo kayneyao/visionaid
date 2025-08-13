@@ -45,23 +45,23 @@ class YOLOv8CameraNode(Node):
         
         # NEW: Class-specific confidence thresholds (lowered for temporal filtering)
         self.class_confidence_thresholds = {
-            0: 0.55,   # bicycle - lowered for temporal filtering
-            1: 0.55,   # bus - lowered for temporal filtering
-            2: 0.55,   # car - lowered for temporal filtering
-            3: 0.5,   # crosswalk - lowered for temporal filtering
-            4: 0.2,   # greenlight - very low for small objects
-            5: 0.65,   # motorcycle - lowered for temporal filtering
-            6: 0.5,   # pedestrian - lowered for temporal filtering
-            7: 0.2,   # redlight - very low for small objects
-            8: 0.5,   # sidewalk - lowered for temporal filtering
-            9: 0.7,   # truck - lowered for temporal filtering
-            10: 0.2   # yellowlight - very low for small objects
+            0: 0.55,
+            1: 0.45,   # bus
+            2: 0.45,   # car
+            3: 0.5,
+            4: 0.2,
+            5: 0.55,   # motorcycle
+            6: 0.5,
+            7: 0.2,
+            8: 0.5,
+            9: 0.60,  # truck
+            10: 0.2
         }
         
         # NEW: Temporal consistency filter to eliminate glitch false positives
         self.temporal_filter = {
             'detection_history': {},  # Track detections per class
-            'min_consecutive_frames': 2,  # Must be detected for 2 consecutive frames
+            'min_consecutive_frames': 1,  # Confirm in a single frame (relaxed)
             'max_frames_without_detection': 2,  # Allow 2 frames gap
             'frame_count': 0
         }

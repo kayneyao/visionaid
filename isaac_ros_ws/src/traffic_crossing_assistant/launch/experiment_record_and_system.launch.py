@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Launch: Full Taiwan System + Experiment Recorder
+Launch: Taiwan Crossing Assistant (no VLM) + Experiment Recorder
 
 Usage:
   ros2 launch traffic_crossing_assistant experiment_record_and_system.launch.py \
@@ -47,23 +47,14 @@ def generate_launch_description():
         'enable_tegrastats', default_value='true', description='Run tegrastats while recording'
     )
 
-    # Include full system
-    system_launch = IncludeLaunchDescription(
+    # Include VLM-free assistant + rely on yolov8_realsense from separate launch (user should start it or add include if needed)
+    assistant_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
-            os.path.join(pkg_crossing, 'launch', 'taiwan_complete_system.launch.py')
+            os.path.join(pkg_crossing, 'launch', 'crossing_assistant_only.launch.py')
         ]),
-        launch_arguments={
-            'model_path': LaunchConfiguration('model_path'),
-            'enable_audio': 'true',
-            'enable_ttc': 'true',
-        }.items()
     )
 
     # Execute the recorder Python script as a process
-    recorder_script = os.path.join(
-        pkg_crossing, 'resource'  # fallback if not installed; adjust to workspace path below
-    )
-    # Use workspace absolute path to the script
     recorder_py = '/home/sophie/visionaid-1/isaac_ros_ws/src/traffic_crossing_assistant/scripts/experiment_recorder.py'
 
     recorder_proc = ExecuteProcess(
@@ -97,6 +88,6 @@ def generate_launch_description():
         max_segments_arg,
         record_viz_arg,
         enable_tegrastats_arg,
-        system_launch,
+        assistant_launch,
         recorder_proc,
     ]) 

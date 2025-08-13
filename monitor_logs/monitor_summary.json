@@ -1,0 +1,48 @@
+{
+  "latency_ms": {
+    "yolov8_inference": {
+      "count": 300,
+      "mean_ms": 50.57406266530355,
+      "min_ms": 40.175437927246094,
+      "max_ms": 57.04641342163086,
+      "std_ms": 4.508660771695628
+    },
+    "end_to_end_decision": {
+      "count": 100,
+      "mean_ms": 54.54815864562988,
+      "min_ms": 51.630258560180664,
+      "max_ms": 59.32283401489258,
+      "std_ms": 2.172135944224499
+    },
+    "detection_to_vehicle_threat": {},
+    "detection_to_ttc": {},
+    "sort_update": {},
+    "sort_threat": {}
+  },
+  "decision_counts": {
+    "MANUAL|0.10": 49,
+    "SAFE_TO_CROSS|0.50": 51
+  },
+  "traffic_light": {
+    "state": "unknown",
+    "confidence": 0.0
+  },
+  "vehicle": {
+    "immediate_danger": false,
+    "ttc_s": 0.0,
+    "threat_status": "No threat"
+  },
+  "crosswalk": {
+    "detected": false,
+    "confidence": 0.0
+  },
+  "motion_compensation": {
+    "quality": 0.0,
+    "excessive_motion": false
+  },
+  "performance": {
+    "avg_detection_fps": 31.764051993870247,
+    "frames_processed": 300
+  },
+  "timestamp": "2025-08-13T18:36:54.689126"
+}

@@ -2,6 +2,15 @@
 """
 Complete Traffic Crossing Assistant System Monitor
 Monitors all components and shows decision reasoning
+
+Enhanced:
+- Subscribes to camera images and computes latencies
+- Tracks YOLOv8 inference latency (image stamp -> detection arrival)
+- Tracks detection->vehicle threat and detection->TTC latencies
+- Tracks end-to-end decision latency (camera stamp -> decision time)
+- Subscribes to SORT timing topic and aggregates update/threat times
+- Maintains decision counts and prints concise summaries
+- Periodically writes a JSON summary to monitor_logs/monitor_summary.json
 """
 
 import rclpy
@@ -15,6 +24,8 @@ import numpy as np
 import time
 from collections import defaultdict, deque
 from datetime import datetime
+import json
+import os
 
 class CompleteSystemMonitor(Node):
     def __init__(self):
@@ -38,6 +49,7 @@ class CompleteSystemMonitor(Node):
         self.latest_decision = "No decision yet"
         self.latest_reasoning = "No reasoning available"
         self.decision_history = deque(maxlen=10)
+        self.decision_counts = defaultdict(int)
         
         # Traffic light status
         self.traffic_light_state = "Unknown"
@@ -74,17 +86,37 @@ class CompleteSystemMonitor(Node):
         # Vehicle analyzer debug messages
         self.vehicle_debug_messages = []
         
+        # Latency tracking
+        self.image_stamp_window = deque(maxlen=5000)  # (stamp_sec, wall_time_sec)
+        self.last_detection_wall_time = None
+        self.detection_latency_ms = deque(maxlen=20000)
+        self.end_to_end_decision_ms = deque(maxlen=20000)
+        self.det_to_threat_ms = deque(maxlen=20000)
+        self.det_to_ttc_ms = deque(maxlen=20000)
+        self.sort_update_ms = deque(maxlen=20000)
+        self.sort_threat_ms = deque(maxlen=20000)
+        
+        # Output directory for summaries
+        self.monitor_logs_dir = os.path.join(os.getcwd(), 'monitor_logs')
+        os.makedirs(self.monitor_logs_dir, exist_ok=True)
+        self.summary_path = os.path.join(self.monitor_logs_dir, 'monitor_summary.json')
+        
         # Subscribe to all system topics
         self.setup_subscriptions()
         
-        # Display timer
+        # Display and summary timers
         self.create_timer(2.0, self.display_system_status)
+        self.create_timer(10.0, self.write_summary_json)
         
         self.get_logger().info('🔍 Complete Traffic Crossing Assistant System Monitor Started')
         self.get_logger().info('📊 Monitoring all system components and decision reasoning')
     
     def setup_subscriptions(self):
         """Setup subscriptions to all system topics"""
+        
+        # Camera images for timing reference
+        self.image_sub = self.create_subscription(
+            Image, '/camera/camera/color/image_raw', self.image_callback, 10)
         
         # Detection system
         self.detection_sub = self.create_subscription(
@@ -142,9 +174,20 @@ class CompleteSystemMonitor(Node):
         # Vehicle analyzer debug messages
         self.vehicle_debug_sub = self.create_subscription(
             String, '/vehicle_analyzer_debug', self.vehicle_debug_callback, 10)
+        
+        # Tracking timing (JSON) from analyzer
+        self.tracking_timing_sub = self.create_subscription(
+            String, '/traffic_safety/tracking_timing', self.tracking_timing_callback, 10)
+    
+    def _to_sec(self, stamp) -> float:
+        return float(stamp.sec) + float(stamp.nanosec) / 1e9
+    
+    def image_callback(self, msg: Image):
+        now = time.time()
+        self.image_stamp_window.append((self._to_sec(msg.header.stamp), now))
     
     def detection_callback(self, msg):
-        """Track detection system activity"""
+        """Track detection system activity and latency"""
         self.system_status['yolov8_detection'] = True
         self.frame_count += 1
         
@@ -154,6 +197,12 @@ class CompleteSystemMonitor(Node):
             fps = 1.0 / (current_time - self.last_time)
             self.fps_stats.append(fps)
         self.last_time = current_time
+        
+        # Detection latency (image stamp -> detection arrival)
+        if msg.header.stamp:
+            det_latency = max(0.0, (current_time - self._to_sec(msg.header.stamp)) * 1000.0)
+            self.detection_latency_ms.append(det_latency)
+        self.last_detection_wall_time = current_time
         
         # Track current frame detections by class
         detections_this_frame = 0
@@ -172,20 +221,23 @@ class CompleteSystemMonitor(Node):
                 self.latest_confidences[class_id] = confidence
                 detections_this_frame += 1
         
-        # Debug: Log detection count (removed to reduce spam)
-        # if detections_this_frame > 0:
-        #     self.get_logger().info(f'📊 Monitor: {detections_this_frame} detections in frame')
-        
         # Update last detection time
         self.last_detection_time = current_time
     
     def decision_callback(self, msg):
-        """Track crossing decisions"""
+        """Track crossing decisions and end-to-end latency"""
         self.system_status['decision_engine'] = True
         self.latest_decision = msg.data
+        self.decision_counts[msg.data] += 1
+        now = time.time()
+        # Approximate end-to-end: now - last image stamp
+        if self.image_stamp_window:
+            last_stamp, _ = self.image_stamp_window[-1]
+            e2e_ms = max(0.0, (now - last_stamp) * 1000.0)
+            self.end_to_end_decision_ms.append(e2e_ms)
         self.decision_history.append({
             'decision': msg.data,
-            'timestamp': time.time()
+            'timestamp': now
         })
     
     def reasoning_callback(self, msg):
@@ -207,14 +259,18 @@ class CompleteSystemMonitor(Node):
         self.immediate_danger = msg.data
     
     def ttc_callback(self, msg):
-        """Track time to collision"""
+        """Track time to collision and detection->TTC latency"""
         self.system_status['vehicle_analyzer'] = True
         self.time_to_collision = msg.data
+        if self.last_detection_wall_time is not None:
+            self.det_to_ttc_ms.append(max(0.0, (time.time() - self.last_detection_wall_time) * 1000.0))
     
     def vehicle_threat_callback(self, msg):
-        """Track vehicle threat status"""
+        """Track vehicle threat status and detection->threat latency"""
         self.system_status['vehicle_analyzer'] = True
         self.vehicle_threat_status = msg.data
+        if self.last_detection_wall_time is not None:
+            self.det_to_threat_ms.append(max(0.0, (time.time() - self.last_detection_wall_time) * 1000.0))
     
     def crosswalk_detected_callback(self, msg):
         """Track crosswalk detection"""
@@ -253,7 +309,31 @@ class CompleteSystemMonitor(Node):
         if len(self.vehicle_debug_messages) > 5:
             self.vehicle_debug_messages.pop(0)
     
-
+    def tracking_timing_callback(self, msg: String):
+        """Receive SORT timing JSON from analyzer"""
+        try:
+            data = json.loads(msg.data)
+            su = float(data.get('sort_update_ms', 0.0))
+            st = float(data.get('sort_threat_ms', 0.0))
+            if su > 0:
+                self.sort_update_ms.append(su)
+            if st > 0:
+                self.sort_threat_ms.append(st)
+        except Exception:
+            pass
+    
+    def _summarize(self, samples: deque):
+        if not samples:
+            return {}
+        arr = np.array(samples, dtype=np.float64)
+        return {
+            'count': int(arr.size),
+            'mean_ms': float(arr.mean()),
+            'min_ms': float(arr.min()),
+            'max_ms': float(arr.max()),
+            'std_ms': float(arr.std(ddof=1)) if arr.size > 1 else 0.0,
+        }
+    
     
     def display_system_status(self):
         """Display comprehensive system status"""
@@ -289,9 +369,28 @@ class CompleteSystemMonitor(Node):
             if time_since_last_detection < 10.0:
                 print(f"   (Last detection: {time_since_last_detection:.1f}s ago)")
         
+        # Latency summaries
+        det = self._summarize(self.detection_latency_ms)
+        e2e = self._summarize(self.end_to_end_decision_ms)
+        d2t = self._summarize(self.det_to_threat_ms)
+        d2c = self._summarize(self.det_to_ttc_ms)
+        su = self._summarize(self.sort_update_ms)
+        st = self._summarize(self.sort_threat_ms)
+        
+        print(f"\n⏱️ LATENCIES:")
+        print(f"   YOLOv8 inference: {det if det else 'n/a'}")
+        print(f"   End-to-end decision: {e2e if e2e else 'n/a'}")
+        print(f"   Detection->Vehicle Threat: {d2t if d2t else 'n/a'}")
+        print(f"   Detection->TTC: {d2c if d2c else 'n/a'}")
+        print(f"   SORT update: {su if su else 'n/a'}, SORT threat: {st if st else 'n/a'}")
+        
         # Current decision and reasoning
         print(f"\n🎯 CURRENT DECISION: {self.latest_decision}")
         print(f"🧠 DECISION REASONING: {self.latest_reasoning}")
+        
+        # Decision counts
+        if self.decision_counts:
+            print(f"   Decision counts: {dict(self.decision_counts)}")
         
         # Traffic light analysis
         print(f"\n🚦 TRAFFIC LIGHT ANALYSIS:")
@@ -329,6 +428,47 @@ class CompleteSystemMonitor(Node):
         
         print("="*80)
         print("Press Ctrl+C to stop monitoring")
+    
+    def write_summary_json(self):
+        summary = {
+            'latency_ms': {
+                'yolov8_inference': self._summarize(self.detection_latency_ms),
+                'end_to_end_decision': self._summarize(self.end_to_end_decision_ms),
+                'detection_to_vehicle_threat': self._summarize(self.det_to_threat_ms),
+                'detection_to_ttc': self._summarize(self.det_to_ttc_ms),
+                'sort_update': self._summarize(self.sort_update_ms),
+                'sort_threat': self._summarize(self.sort_threat_ms),
+            },
+            'decision_counts': dict(self.decision_counts),
+            'traffic_light': {
+                'state': self.traffic_light_state,
+                'confidence': float(self.traffic_light_confidence),
+            },
+            'vehicle': {
+                'immediate_danger': bool(self.immediate_danger),
+                'ttc_s': float(self.time_to_collision),
+                'threat_status': self.vehicle_threat_status,
+            },
+            'crosswalk': {
+                'detected': bool(self.crosswalk_detected),
+                'confidence': float(self.crosswalk_confidence),
+            },
+            'motion_compensation': {
+                'quality': float(self.motion_compensation_quality),
+                'excessive_motion': bool(self.excessive_motion_detected)
+            },
+            'performance': {
+                'avg_detection_fps': float(np.mean(self.fps_stats)) if self.fps_stats else 0.0,
+                'frames_processed': int(self.frame_count),
+            },
+            'timestamp': datetime.now().isoformat(),
+        }
+        try:
+            with open(self.summary_path, 'w') as f:
+                json.dump(summary, f, indent=2)
+        except Exception:
+            pass
+
 
 def main():
     rclpy.init()
@@ -341,6 +481,6 @@ def main():
     finally:
         monitor.destroy_node()
         rclpy.shutdown()
-
+ 
 if __name__ == '__main__':
     main() 

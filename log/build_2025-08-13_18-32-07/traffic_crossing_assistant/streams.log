@@ -1,0 +1,34 @@
+[0.617s] Invoking command in '/home/sophie/visionaid-1/build/traffic_crossing_assistant': AMENT_PREFIX_PATH=/home/sophie/visionaid-1/install/yolov8_detection:/home/sophie/visionaid-1/install/traffic_crossing_assistant:/opt/ros/humble PYTHONPATH=/home/sophie/visionaid-1/build/traffic_crossing_assistant/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/python3.10/site-packages:/home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages:/home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/python3.10/site-packages:/home/sophie/visionaid/isaac_ros_ws/install/lib/python3.10/site-packages:/home/sophie/visionaid/isaac_ros_ws/install/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sophie/visionaid-1/build/traffic_crossing_assistant/build --no-deps symlink_data
+[0.837s] running develop
+[0.975s] running egg_info
+[0.983s] writing traffic_crossing_assistant.egg-info/PKG-INFO
+[0.983s] writing dependency_links to traffic_crossing_assistant.egg-info/dependency_links.txt
+[0.983s] writing entry points to traffic_crossing_assistant.egg-info/entry_points.txt
+[0.983s] writing requirements to traffic_crossing_assistant.egg-info/requires.txt
+[0.984s] writing top-level names to traffic_crossing_assistant.egg-info/top_level.txt
+[1.000s] reading manifest file 'traffic_crossing_assistant.egg-info/SOURCES.txt'
+[1.000s] writing manifest file 'traffic_crossing_assistant.egg-info/SOURCES.txt'
+[1.030s] running build_ext
+[1.030s] Creating /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/python3.10/site-packages/traffic-crossing-assistant.egg-link (link to .)
+[1.030s] Installing analyze_experiments script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+[1.031s] Installing audio_feedback_system script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+[1.031s] Installing crosswalk_analyzer script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+[1.031s] Installing decision_engine script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+[1.031s] Installing ego_motion_compensator script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+[1.031s] Installing enhanced_audio_system script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+[1.031s] Installing experiment_recorder script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+[1.031s] Installing multimodal_safety_coordinator script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+[1.032s] Installing simple_3d_analyzer script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+[1.032s] Installing test_complete_system script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+[1.032s] Installing test_enhanced_3d_system script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+[1.032s] Installing test_vlm_integration script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+[1.032s] Installing traffic_light_analyzer script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+[1.032s] Installing validate_system script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+[1.032s] Installing vehicle_movement_analyzer script to /home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/traffic_crossing_assistant
+[1.032s] error: [Errno 17] File exists: '/home/sophie/visionaid-1/build/traffic_crossing_assistant/launch/taiwan_complete_system.launch.py' -> '/home/sophie/visionaid-1/install/traffic_crossing_assistant/share/traffic_crossing_assistant/launch/taiwan_complete_system.launch.py'
+[1.032s] 
+[1.032s] Installed /home/sophie/visionaid-1/build/traffic_crossing_assistant
+[1.032s] running symlink_data
+[1.032s] symbolically linking /home/sophie/visionaid-1/build/traffic_crossing_assistant/launch/experiment_record_and_system.launch.py -> /home/sophie/visionaid-1/install/traffic_crossing_assistant/share/traffic_crossing_assistant/launch
+[1.032s] symbolically linking /home/sophie/visionaid-1/build/traffic_crossing_assistant/launch/taiwan_complete_system.launch.py -> /home/sophie/visionaid-1/install/traffic_crossing_assistant/share/traffic_crossing_assistant/launch
+[1.059s] Invoked command in '/home/sophie/visionaid-1/build/traffic_crossing_assistant' returned '1': AMENT_PREFIX_PATH=/home/sophie/visionaid-1/install/yolov8_detection:/home/sophie/visionaid-1/install/traffic_crossing_assistant:/opt/ros/humble PYTHONPATH=/home/sophie/visionaid-1/build/traffic_crossing_assistant/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/python3.10/site-packages:/home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages:/home/sophie/visionaid-1/install/traffic_crossing_assistant/lib/python3.10/site-packages:/home/sophie/visionaid/isaac_ros_ws/install/lib/python3.10/site-packages:/home/sophie/visionaid/isaac_ros_ws/install/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sophie/visionaid-1/build/traffic_crossing_assistant/build --no-deps symlink_data

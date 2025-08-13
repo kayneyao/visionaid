@@ -1,0 +1,31 @@
+[0.574s] Invoking command in '/home/sophie/visionaid-1/build/yolov8_detection': PYTHONPATH=/home/sophie/visionaid-1/build/yolov8_detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sophie/visionaid-1/build/yolov8_detection/build --no-deps symlink_data
+[0.798s] running develop
+[0.936s] running egg_info
+[0.936s] creating yolov8_detection.egg-info
+[0.944s] writing yolov8_detection.egg-info/PKG-INFO
+[0.944s] writing dependency_links to yolov8_detection.egg-info/dependency_links.txt
+[0.945s] writing entry points to yolov8_detection.egg-info/entry_points.txt
+[0.945s] writing requirements to yolov8_detection.egg-info/requires.txt
+[0.945s] writing top-level names to yolov8_detection.egg-info/top_level.txt
+[0.945s] writing manifest file 'yolov8_detection.egg-info/SOURCES.txt'
+[0.962s] reading manifest file 'yolov8_detection.egg-info/SOURCES.txt'
+[0.962s] writing manifest file 'yolov8_detection.egg-info/SOURCES.txt'
+[0.990s] running build_ext
+[0.990s] Creating /home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages/yolov8-detection.egg-link (link to .)
+[0.991s] Installing detection_processor script to /home/sophie/visionaid-1/install/yolov8_detection/lib/yolov8_detection
+[0.991s] Installing yolov8_camera_node script to /home/sophie/visionaid-1/install/yolov8_detection/lib/yolov8_detection
+[0.991s] 
+[0.991s] Installed /home/sophie/visionaid-1/build/yolov8_detection
+[0.992s] running symlink_data
+[0.992s] creating /home/sophie/visionaid-1/install/yolov8_detection/share/ament_index
+[0.992s] creating /home/sophie/visionaid-1/install/yolov8_detection/share/ament_index/resource_index
+[0.992s] creating /home/sophie/visionaid-1/install/yolov8_detection/share/ament_index/resource_index/packages
+[0.992s] symbolically linking /home/sophie/visionaid-1/build/yolov8_detection/resource/yolov8_detection -> /home/sophie/visionaid-1/install/yolov8_detection/share/ament_index/resource_index/packages
+[0.992s] symbolically linking /home/sophie/visionaid-1/build/yolov8_detection/package.xml -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection
+[0.992s] creating /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/launch
+[0.993s] symbolically linking /home/sophie/visionaid-1/build/yolov8_detection/launch/yolov8_realsense.launch.py -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/launch
+[0.993s] creating /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/config
+[0.993s] symbolically linking /home/sophie/visionaid-1/build/yolov8_detection/config/camera_params.yaml -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/config
+[0.993s] symbolically linking /home/sophie/visionaid-1/build/yolov8_detection/config/detection_params.yaml -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/config
+[0.993s] symbolically linking /home/sophie/visionaid-1/build/yolov8_detection/config/yolov8_config.yaml -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/config
+[1.022s] Invoked command in '/home/sophie/visionaid-1/build/yolov8_detection' returned '0': PYTHONPATH=/home/sophie/visionaid-1/build/yolov8_detection/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/sophie/visionaid-1/build/yolov8_detection/build --no-deps symlink_data

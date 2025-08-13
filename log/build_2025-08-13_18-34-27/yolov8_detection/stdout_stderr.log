@@ -1,0 +1,29 @@
+running develop
+running egg_info
+creating yolov8_detection.egg-info
+writing yolov8_detection.egg-info/PKG-INFO
+writing dependency_links to yolov8_detection.egg-info/dependency_links.txt
+writing entry points to yolov8_detection.egg-info/entry_points.txt
+writing requirements to yolov8_detection.egg-info/requires.txt
+writing top-level names to yolov8_detection.egg-info/top_level.txt
+writing manifest file 'yolov8_detection.egg-info/SOURCES.txt'
+reading manifest file 'yolov8_detection.egg-info/SOURCES.txt'
+writing manifest file 'yolov8_detection.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/sophie/visionaid-1/install/yolov8_detection/lib/python3.10/site-packages/yolov8-detection.egg-link (link to .)
+Installing detection_processor script to /home/sophie/visionaid-1/install/yolov8_detection/lib/yolov8_detection
+Installing yolov8_camera_node script to /home/sophie/visionaid-1/install/yolov8_detection/lib/yolov8_detection
+
+Installed /home/sophie/visionaid-1/build/yolov8_detection
+running symlink_data
+creating /home/sophie/visionaid-1/install/yolov8_detection/share/ament_index
+creating /home/sophie/visionaid-1/install/yolov8_detection/share/ament_index/resource_index
+creating /home/sophie/visionaid-1/install/yolov8_detection/share/ament_index/resource_index/packages
+symbolically linking /home/sophie/visionaid-1/build/yolov8_detection/resource/yolov8_detection -> /home/sophie/visionaid-1/install/yolov8_detection/share/ament_index/resource_index/packages
+symbolically linking /home/sophie/visionaid-1/build/yolov8_detection/package.xml -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection
+creating /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/launch
+symbolically linking /home/sophie/visionaid-1/build/yolov8_detection/launch/yolov8_realsense.launch.py -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/launch
+creating /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/config
+symbolically linking /home/sophie/visionaid-1/build/yolov8_detection/config/camera_params.yaml -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/config
+symbolically linking /home/sophie/visionaid-1/build/yolov8_detection/config/detection_params.yaml -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/config
+symbolically linking /home/sophie/visionaid-1/build/yolov8_detection/config/yolov8_config.yaml -> /home/sophie/visionaid-1/install/yolov8_detection/share/yolov8_detection/config

@@ -41,6 +41,12 @@ def generate_launch_description():
         default_value='true',
         description='Enable time-to-collision analysis'
     )
+
+    enable_vlm_arg = DeclareLaunchArgument(
+        'enable_vlm',
+        default_value='false',
+        description='Enable VLM multimodal coordinator'
+    )
     
     # YOLOv8 Detection with RealSense integration
     yolov8_launch = IncludeLaunchDescription(
@@ -60,7 +66,7 @@ def generate_launch_description():
         parameters=[taiwan_config],
         remappings=[
             ('/camera/detections', '/camera/detections'),
-            ('/camera/aligned_depth_to_color/image_raw', '/camera/camera/aligned_depth_to_color/image_raw'),
+            ('/camera/camera/aligned_depth_to_color/image_raw', '/camera/aligned_depth_to_color/image_raw'),
             ('/rtabmap/odom', '/rtabmap/odom'),
             ('/immediate_crossing_danger', '/traffic_safety/immediate_crossing_danger'),
             ('/vehicle_threat_status', '/traffic_safety/vehicle_threat_status'),
@@ -172,6 +178,7 @@ def generate_launch_description():
         model_path_arg,
         enable_audio_arg,
         enable_ttc_arg,
+        enable_vlm_arg,
         
         # Detection system (11-class model)
         yolov8_launch,
@@ -187,7 +194,8 @@ def generate_launch_description():
         # Decision coordination
         decision_engine,               # 2-priority decision system
         
-        # User interface
-        multimodal_coordinator,        # VLM integration
+        # User interface (VLM optional)
         audio_system,                  # Enhanced audio feedback
-    ])
+    ] + (
+        [multimodal_coordinator] if LaunchConfiguration('enable_vlm') == 'true' else []
+    ))

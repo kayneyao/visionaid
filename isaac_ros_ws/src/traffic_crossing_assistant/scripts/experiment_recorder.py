@@ -514,8 +514,9 @@ def main(argv=None):
     parser.add_argument('--output', type=str, default='/home/sophie/visionaid-1/experiment_data', help='Output directory for session data')
     parser.add_argument('--segment-seconds', type=int, default=10, help='Clip segment duration in seconds')
     parser.add_argument('--max-segments', type=int, default=0, help='Max number of segments (0 for unlimited)')
-    parser.add_argument('--record-viz', action='store_true', help='Record detection visualization snapshots')
-    parser.add_argument('--enable-tegrastats', action='store_true', help='Run tegrastats during recording (Jetson)')
+    # Accept string booleans to work with ROS launch substitutions
+    parser.add_argument('--record-viz', type=str, default='false', help='true/false: Record detection visualization snapshots')
+    parser.add_argument('--enable-tegrastats', type=str, default='false', help='true/false: Run tegrastats during recording (Jetson)')
 
     # Topics
     parser.add_argument('--camera-topic', type=str, default='/camera/camera/color/image_raw')
@@ -533,13 +534,16 @@ def main(argv=None):
 
     args = parser.parse_args(argv)
 
+    def str2bool(val: str) -> bool:
+        return str(val).strip().lower() in ('1', 'true', 'yes', 'y', 'on')
+
     rclpy.init()
     node = ExperimentRecorder(
         output_dir=args.output,
         segment_seconds=args.segment_seconds,
         max_segments=args.max_segments,
-        record_viz=args.record_viz,
-        enable_tegrastats=args.enable_tegrastats,
+        record_viz=str2bool(args.record_viz),
+        enable_tegrastats=str2bool(args.enable_tegrastats),
         camera_topic=args.camera_topic,
         detection_topic=args.detection_topic,
         detection_viz_topic=args.detection_viz_topic,

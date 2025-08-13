@@ -261,12 +261,16 @@ class SORTTracker:
     
     def _calculate_iou(self, bbox1, bbox2):
         """Calculate Intersection over Union between two bounding boxes"""
-        # Extract bounding box coordinates
-        x1_1, y1_1 = bbox1.center.position.x - bbox1.size.x/2, bbox1.center.position.y - bbox1.size.y/2
-        x2_1, y2_1 = bbox1.center.position.x + bbox1.size.x/2, bbox1.center.position.y + bbox1.size.y/2
+        # Extract bounding box coordinates (BoundingBox2D has size_x and size_y)
+        x1_1 = bbox1.center.position.x - bbox1.size_x / 2.0
+        y1_1 = bbox1.center.position.y - bbox1.size_y / 2.0
+        x2_1 = bbox1.center.position.x + bbox1.size_x / 2.0
+        y2_1 = bbox1.center.position.y + bbox1.size_y / 2.0
         
-        x1_2, y1_2 = bbox2.center.position.x - bbox2.size.x/2, bbox2.center.position.y - bbox2.size.y/2
-        x2_2, y2_2 = bbox2.center.position.x + bbox2.size.x/2, bbox2.center.position.y + bbox2.size.y/2
+        x1_2 = bbox2.center.position.x - bbox2.size_x / 2.0
+        y1_2 = bbox2.center.position.y - bbox2.size_y / 2.0
+        x2_2 = bbox2.center.position.x + bbox2.size_x / 2.0
+        y2_2 = bbox2.center.position.y + bbox2.size_y / 2.0
         
         # Calculate intersection
         x1_i = max(x1_1, x1_2)
