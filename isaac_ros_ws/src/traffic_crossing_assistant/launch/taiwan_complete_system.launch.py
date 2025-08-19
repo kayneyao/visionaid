@@ -41,7 +41,7 @@ def generate_launch_description():
         default_value='true',
         description='Enable time-to-collision analysis'
     )
-
+    
     enable_vlm_arg = DeclareLaunchArgument(
         'enable_vlm',
         default_value='false',

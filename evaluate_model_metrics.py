@@ -48,7 +48,7 @@ class ModelEvaluator:
     
     def load_model(self):
         """Load the ONNX model"""
-        print("🔍 Loading model...")
+        print("Loading model...")
         try:
             # Try GPU first, fallback to CPU
             providers = ['CUDAExecutionProvider', 'CPUExecutionProvider']
@@ -59,8 +59,8 @@ class ModelEvaluator:
             self.input_shape = self.session.get_inputs()[0].shape
             
             print(f"✅ Model loaded successfully")
-            print(f"📊 Input shape: {self.input_shape}")
-            print(f"🚀 Providers: {self.session.get_providers()}")
+            print(f"Input shape: {self.input_shape}")
+            print(f"Providers: {self.session.get_providers()}")
             
         except Exception as e:
             print(f"❌ Error loading model: {e}")
@@ -168,7 +168,7 @@ class ModelEvaluator:
     
     def calculate_metrics(self, predictions, ground_truth, iou_threshold=0.5):
         """Calculate precision, recall, mAP for each class"""
-        print("📊 Calculating metrics...")
+        print("Calculating metrics...")
         
         # Initialize metrics for each class
         class_metrics = {}
@@ -324,7 +324,7 @@ class ModelEvaluator:
     
     def generate_synthetic_test_data(self, num_images=100):
         """Generate synthetic test data for evaluation"""
-        print(f"🎲 Generating {num_images} synthetic test images...")
+        print(f"Generating {num_images} synthetic test images...")
         
         predictions = []
         ground_truth = []
@@ -373,7 +373,7 @@ class ModelEvaluator:
     
     def run_evaluation(self, use_synthetic=True):
         """Run the complete evaluation"""
-        print("🧪 Starting Model Evaluation")
+        print("Starting Model Evaluation")
         print("=" * 60)
         
         if use_synthetic:
@@ -429,12 +429,12 @@ class ModelEvaluator:
     
     def print_results(self):
         """Print evaluation results"""
-        print("\n📊 EVALUATION RESULTS")
+        print("\nEVALUATION RESULTS")
         print("=" * 60)
         
         # Overall metrics
         overall = self.metrics['overall']
-        print(f"🎯 OVERALL METRICS:")
+        print(f"OVERALL METRICS:")
         print(f"  mAP50: {overall['mAP50']:.4f}")
         print(f"  Precision: {overall['precision']:.4f}")
         print(f"  Recall: {overall['recall']:.4f}")
@@ -445,7 +445,7 @@ class ModelEvaluator:
         print(f"  False Positives: {overall['total_fp']}")
         print(f"  False Negatives: {overall['total_fn']}")
         
-        print(f"\n📈 PER-CLASS METRICS:")
+        print(f"\nPER-CLASS METRICS:")
         print("-" * 60)
         print(f"{'Class':<12} {'Name':<12} {'AP':<8} {'Precision':<10} {'Recall':<8} {'F1':<8} {'TP':<4} {'FP':<4} {'FN':<4}")
         print("-" * 60)
@@ -484,7 +484,7 @@ class ModelEvaluator:
         with open(output_path, 'w') as f:
             json.dump(results, f, indent=2)
         
-        print(f"💾 Results saved to: {output_path}")
+        print(f"Results saved to: {output_path}")
 
 def main():
     parser = argparse.ArgumentParser(description='Evaluate YOLOv8 model performance')
@@ -503,13 +503,13 @@ def main():
     
     # Run evaluation
     if args.synthetic or args.test_data is None:
-        print("🎲 Using synthetic test data for evaluation")
+        print("Using synthetic test data for evaluation")
         metrics = evaluator.run_evaluation(use_synthetic=True)
     else:
-        print("📁 Using real test data for evaluation")
+        print("Using real test data for evaluation")
         metrics = evaluator.run_evaluation(use_synthetic=False)
     
-    print("\n✅ Evaluation completed!")
+    print("\nEvaluation completed!")
 
 if __name__ == "__main__":
     main() 

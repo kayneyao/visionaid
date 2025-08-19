@@ -80,18 +80,18 @@ class DetectionMonitor(Node):
         )
         
         # Always subscribe to visualization to monitor filtered detections
-            self.viz_sub = self.create_subscription(
-                Image,
-                '/camera/detections/visualization',
-                self.viz_callback,
-                10
-            )
+        self.viz_sub = self.create_subscription(
+            Image,
+            '/camera/detections/visualization',
+            self.viz_callback,
+            10
+        )
         
         if self.show_viz:
             cv2.namedWindow('YOLOv8 Detections', cv2.WINDOW_NORMAL)
         
-        self.get_logger().info('🔍 Detection Monitor Started (with Temporal Filter)')
-        self.get_logger().info('📊 Available monitoring modes:')
+        self.get_logger().info('Detection Monitor Started (with Temporal Filter)')
+        self.get_logger().info('Available monitoring modes:')
         self.get_logger().info('   - Detection messages and statistics')
         self.get_logger().info('   - Real-time FPS tracking')
         self.get_logger().info('   - Class-wise detection counts')
@@ -140,11 +140,11 @@ class DetectionMonitor(Node):
                     class_name = self.class_names.get(int(class_id), f'Unknown({class_id})')
                     threshold = self.class_confidence_thresholds.get(int(class_id), 0.5)
                     threshold_status = "PASS" if confidence >= threshold else "FAIL"
-                    self.get_logger().info(f'🎯 Detection: {class_name} (Class {class_id}), Confidence: {confidence:.3f} (Threshold: {threshold:.2f} - {threshold_status})')
+                    self.get_logger().info(f'Detection: {class_name} (Class {class_id}), Confidence: {confidence:.3f} (Threshold: {threshold:.2f} - {threshold_status})')
                 
                 # Special logging for traffic lights
                 if int(class_id) in [4, 7, 10]:  # greenlight, redlight, yellowlight
-                    self.get_logger().info(f'🚦 Traffic Light Published: {class_name} (Class {class_id}) - Confidence: {confidence:.3f}')
+                    self.get_logger().info(f'Traffic light published: {class_name} (Class {class_id}) - Confidence: {confidence:.3f}')
         
         # Display statistics
         self.display_stats()
@@ -185,13 +185,13 @@ class DetectionMonitor(Node):
         if filtered_this_frame and (current_time - self.last_filtering_log_time) > self.filtering_log_interval:
             if not self.stats_only:
                 filtered_details = ', '.join([f"{name} (conf: {conf:.3f})" for name, conf in filtered_this_frame])
-                self.get_logger().info(f'🚫 Filtered Classes: {filtered_details}')
+                self.get_logger().info(f'Filtered Classes: {filtered_details}')
             self.last_filtering_log_time = current_time
     
     def viz_callback(self, msg):
         """Display visualization image and track filtered detections"""
-            try:
-                cv_image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
+        try:
+            cv_image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
             
             # Count colored bounding boxes in the image to estimate raw detections
             # Look for colored rectangles (detection boxes)
@@ -223,8 +223,8 @@ class DetectionMonitor(Node):
                         _, binary = cv2.threshold(gray_text, 127, 255, cv2.THRESH_BINARY)
                         
                         # If we find text-like patterns, try to identify the class
-                        # This is a simplified approach - in practice you'd use OCR
-                        # For now, we'll use color-based classification as fallback
+                        # Simplified approach; OCR would be used in production
+                        # For now, use color-based classification as fallback
                         if y > 20:  # Make sure we're not sampling outside image
                             sample_y = max(0, y - 15)
                             sample_x = max(0, x)
@@ -257,8 +257,7 @@ class DetectionMonitor(Node):
             if self.show_viz:
                 cv2.imshow('YOLOv8 Detections', cv_image)
                 cv2.waitKey(1)
-                
-            except Exception as e:
+        except Exception as e:
             self.get_logger().error(f'Error processing visualization: {e}')
     
     def display_stats(self):
@@ -270,12 +269,12 @@ class DetectionMonitor(Node):
         avg_fps = np.mean(self.fps_stats) if self.fps_stats else 0
         
         print("\n" + "="*60)
-        print("📊 YOLOv8 DETECTION STATISTICS (with Temporal Filter)")
+        print("YOLOv8 DETECTION STATISTICS (with Temporal Filter)")
         print("="*60)
-        print(f"🔄 Average FPS: {avg_fps:.1f}")
-        print("⏱️ Temporal Filter: 2 consecutive frames required")
-        print("🎯 Confidence Thresholds: Lowered for temporal filtering")
-        print("\n🎯 Currently Detected Classes (Temporally Consistent):")
+        print(f"Average FPS: {avg_fps:.1f}")
+        print("Temporal Filter: 2 consecutive frames required")
+        print("Confidence Thresholds: Lowered for temporal filtering")
+        print("\nCurrently Detected Classes (Temporally Consistent):")
         
         # Sort by detection count
         sorted_stats = sorted(self.detection_stats.items(), key=lambda x: x[1], reverse=True)
@@ -291,12 +290,12 @@ class DetectionMonitor(Node):
                 confidence_str = f" (conf: {latest_confidence:.3f}, thresh: {threshold:.2f} - {threshold_status})"
             print(f"   {class_name} (Class {class_id}): {count} detections{confidence_str}")
         
-        print(f"\n🚫 Filtered Detections: {self.filtered_detection_count} frames with filtered detections")
-        print(f"📊 Published Detections: {self.last_published_count} (temporally consistent)")
+        print(f"\nFiltered Detections: {self.filtered_detection_count} frames with filtered detections")
+        print(f"Published Detections: {self.last_published_count} (temporally consistent)")
         
         # Show filtering statistics with actual class names
         if self.filtered_classes:
-            print(f"🔍 Total Filtered Objects: {self.filtered_classes.get('total_filtered', 0)}")
+            print(f"Total Filtered Objects: {self.filtered_classes.get('total_filtered', 0)}")
             # Show class-specific filtering (excluding color-based classifications)
             filtered_details = []
             for class_name, count in self.filtered_classes.items():
@@ -306,13 +305,13 @@ class DetectionMonitor(Node):
                     confidence = self.raw_detection_stats.get(f'{class_name}_confidence', 0)
                     filtered_details.append(f"{class_name}: {count} (conf: {confidence:.3f})")
             if filtered_details:
-                print(f"📊 Filtered Classes: {', '.join(filtered_details)}")
+                print(f"Filtered Classes: {', '.join(filtered_details)}")
             else:
-                print("📊 Filtered Classes: None (all detections passed filters)")
+                print("Filtered Classes: None (all detections passed filters)")
         if self.raw_detection_stats:
-            print(f"👁️ Total Raw Detections: {self.raw_detection_stats.get('total_boxes', 0)}")
+            print(f"Total Raw Detections: {self.raw_detection_stats.get('total_boxes', 0)}")
         
-        print("\n💡 Filtering System:")
+        print("\nFiltering System:")
         print("   • Confidence Threshold: First filter (lowered to 0.5-0.6)")
         print("   • Temporal Consistency: Second filter (2 consecutive frames)")
         print("   • Only temporally consistent detections are published")
@@ -326,13 +325,13 @@ class DetectionMonitor(Node):
                 traffic_light_stats[class_name] = (count, confidence)
         
         if traffic_light_stats:
-            print("\n🚦 TRAFFIC LIGHT DETECTIONS:")
+            print("\nTRAFFIC LIGHT DETECTIONS:")
             for class_name, (count, confidence) in traffic_light_stats.items():
                 print(f"   {class_name}: {count} detections (latest conf: {confidence:.3f})")
         # Show "no detections" message only after a longer period
         current_time = time.time()
         if not traffic_light_stats and (current_time - self.last_detection_time) > self.no_detection_threshold:
-            print("\n🚦 TRAFFIC LIGHT DETECTIONS: No traffic lights detected for 10+ seconds")
+            print("\nTRAFFIC LIGHT DETECTIONS: No traffic lights detected for 10+ seconds")
         
         print("="*60)
         print("Press Ctrl+C to stop monitoring")
@@ -355,7 +354,7 @@ def main():
     try:
         rclpy.spin(monitor)
     except KeyboardInterrupt:
-        print("\n🛑 Monitoring stopped by user")
+        print("\nMonitoring stopped by user")
     finally:
         if args.viz:
             cv2.destroyAllWindows()

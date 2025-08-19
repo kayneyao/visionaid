@@ -38,7 +38,7 @@ class CrosswalkAnalyzer(Node):
         self.crosswalk_status_pub = self.create_publisher(
             String, '/crosswalk_status', 10)
         
-        self.get_logger().info('🚶 Crosswalk Analyzer initialized (Context Information)')
+        self.get_logger().info('Crosswalk Analyzer initialized (Context Information)')
         self.get_logger().info('Monitoring crosswalk (Class 3) for situational awareness')
     
     def detection_callback(self, msg: Detection2DArray):
@@ -81,7 +81,7 @@ class CrosswalkAnalyzer(Node):
             status_msg.data = f"Crosswalk detected (conf: {best_crosswalk['confidence']:.3f})"
             self.crosswalk_status_pub.publish(status_msg)
             
-            self.get_logger().info(f'🚶 Crosswalk detected (conf: {best_crosswalk["confidence"]:.3f})')
+            self.get_logger().info(f'Crosswalk detected (conf: {best_crosswalk["confidence"]:.3f})')
         
         else:
             # No crosswalk detected

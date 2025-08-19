@@ -60,7 +60,7 @@ class SceneButton(Node):
         msg = String()
         msg.data = text
         self.pub.publish(msg)
-        self.get_logger().info(f"Triggered scene query → “{text}”")
+        self.get_logger().info(f"Triggered scene query -> \"{text}\"")
 
 
 def main():

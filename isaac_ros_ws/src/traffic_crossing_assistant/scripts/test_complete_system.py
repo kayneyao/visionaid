@@ -32,7 +32,7 @@ class SystemTester(Node):
         self.test_detection_pub = self.create_publisher(
             Detection2DArray, '/camera/detections', 10)
         
-        self.get_logger().info('🧪 System Integration Tester initialized')
+        self.get_logger().info('System Integration Tester initialized')
     
     def setup_monitoring_subscriptions(self):
         """Setup subscriptions to monitor all system components"""
@@ -59,7 +59,7 @@ class SystemTester(Node):
     
     def run_system_test(self):
         """Run comprehensive system test"""
-        self.get_logger().info('🧪 Starting Taiwan traffic safety system test...')
+        self.get_logger().info('Starting Taiwan traffic safety system test...')
         
         # Test 1: Vehicle detection simulation
         self.test_vehicle_detection()
@@ -105,7 +105,7 @@ class SystemTester(Node):
         detection_msg.header.stamp = self.get_clock().now().to_msg()
         detection_msg.header.frame_id = "camera_color_optical_frame"
         
-        # Simulate crossing_crosswalk detection (Class 3 - Your 85.5% mAP50 innovation)
+        # Simulate crossing_crosswalk detection (Class 3 - 85.5% mAP50 model)
         crossing_detection = Detection2D()
         crossing_detection.bbox.center.position.x = 320.0
         crossing_detection.bbox.center.position.y = 400.0
@@ -114,7 +114,7 @@ class SystemTester(Node):
         
         hypothesis = ObjectHypothesisWithPose()
         hypothesis.hypothesis.class_id = "3"  # crossing_crosswalk
-        hypothesis.hypothesis.score = 0.87    # Above your 85.5% threshold
+        hypothesis.hypothesis.score = 0.87    # Above the 85.5% threshold
         crossing_detection.results.append(hypothesis)
         
         detection_msg.detections.append(crossing_detection)
@@ -147,34 +147,34 @@ class SystemTester(Node):
     
     def check_vehicle_analysis(self, msg):
         self.test_results['vehicle_analysis'] = True
-        self.get_logger().info(f'✅ Vehicle analysis: {msg.data}')
+        self.get_logger().info(f'Vehicle analysis: {msg.data}')
     
     def check_taiwan_crossing(self, msg):
         self.test_results['taiwan_crossing'] = True
-        self.get_logger().info(f'✅ Taiwan crossing: {msg.data}')
+        self.get_logger().info(f'Taiwan crossing: {msg.data}')
     
     def check_traffic_lights(self, msg):
         self.test_results['traffic_lights'] = True
-        self.get_logger().info(f'✅ Traffic lights: {msg.data}')
+        self.get_logger().info(f'Traffic lights: {msg.data}')
     
     def check_decision_engine(self, msg):
         self.test_results['decision_engine'] = True
-        self.get_logger().info(f'✅ Decision engine: {msg.data}')
+        self.get_logger().info(f'Decision engine: {msg.data}')
     
     def check_motion_compensation(self, msg):
         self.test_results['motion_compensation'] = True
-        self.get_logger().info(f'✅ Motion compensation: {msg.data:.2f}')
+        self.get_logger().info(f'Motion compensation: {msg.data:.2f}')
     
     def generate_test_report(self):
         """Generate comprehensive test report"""
-        self.get_logger().info('📊 TAIWAN TRAFFIC SAFETY SYSTEM TEST REPORT')
+        self.get_logger().info('TAIWAN TRAFFIC SAFETY SYSTEM TEST REPORT')
         self.get_logger().info('=' * 50)
         
         total_tests = len(self.test_results)
         passed_tests = sum(self.test_results.values())
         
         for test_name, passed in self.test_results.items():
-            status = '✅ PASS' if passed else '❌ FAIL'
+            status = 'PASS' if passed else 'FAIL'
             self.get_logger().info(f'{test_name.upper()}: {status}')
         
         self.get_logger().info('=' * 50)
@@ -183,7 +183,7 @@ class SystemTester(Node):
         if passed_tests == total_tests:
             self.get_logger().info('🎉 ALL SYSTEMS OPERATIONAL - Ready for deployment!')
         else:
-            self.get_logger().warn('⚠️ Some systems failed - Check component status')
+            self.get_logger().warn('Some systems failed - Check component status')
 
 def main():
     rclpy.init()

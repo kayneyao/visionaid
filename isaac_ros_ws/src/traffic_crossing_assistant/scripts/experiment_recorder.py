@@ -171,8 +171,8 @@ class ExperimentRecorder(Node):
         if self.enable_tegrastats:
             self._start_tegrastats()
 
-        self.get_logger().info(f'📁 Session directory: {self.session_dir}')
-        self.get_logger().info(f'🎥 Writing {self.segment_seconds}s clips to {self.clips_dir}')
+        self.get_logger().info(f'Session directory: {self.session_dir}')
+        self.get_logger().info(f'Writing {self.segment_seconds}s clips to {self.clips_dir}')
 
     # ---------- Utility ----------
     def _to_sec(self, stamp) -> float:
@@ -247,7 +247,7 @@ class ExperimentRecorder(Node):
             self._tegrastats_proc = subprocess.Popen(
                 tegra_cmd, stdout=open(tegra_log, 'w'), stderr=subprocess.STDOUT
             )
-            self.get_logger().info('🧪 tegrastats started (1s interval)')
+            self.get_logger().info('tegrastats started (1s interval)')
         except FileNotFoundError:
             self.get_logger().warn('tegrastats not found; skipping power/thermal logging')
         except Exception as e:

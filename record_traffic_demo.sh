@@ -17,18 +17,17 @@ mkdir -p "$OUTPUT_DIR"
 
 # Check if recording tools are available
 check_recording_tools() {
-    echo "🔍 Checking recording tools..."
+    echo "Checking recording tools..."
     
-    if command -v ffmpeg &> /dev/null; then
+    if command -v ffmpeg >/dev/null 2>&1; then
         RECORDER="ffmpeg"
-        echo "✅ FFmpeg found - will use for high-quality recording"
-    elif command -v recordmydesktop &> /dev/null; then
+        echo "FFmpeg found - will use for high-quality recording"
+    elif command -v recordmydesktop >/dev/null 2>&1; then
         RECORDER="recordmydesktop"
-        echo "✅ recordmydesktop found - will use for simple recording"
+        echo "recordmydesktop found - will use for simple recording"
     else
-        echo "❌ No recording tools found. Installing recordmydesktop..."
-        sudo apt update && sudo apt install -y recordmydesktop
-        RECORDER="recordmydesktop"
+        echo "No recording tools found. Installing recordmydesktop..."
+        sudo apt-get update && sudo apt-get install -y recordmydesktop
     fi
 }
 
@@ -51,7 +50,7 @@ start_recording() {
             ;;
     esac
     
-    echo "📹 Recording started with PID: $RECORDING_PID"
+    echo "Recording started with PID: $RECORDING_PID"
     sleep 3  # Give recording time to start
 }
 
@@ -67,7 +66,7 @@ launch_traffic_system() {
     TRAFFIC_PID=$!
     
     echo "🔄 Traffic system launched with PID: $TRAFFIC_PID"
-    echo "⏱️  System will run for $RECORDING_DURATION seconds..."
+    echo "System will run for $RECORDING_DURATION seconds..."
 }
 
 # Launch RViz for visualization
@@ -86,17 +85,17 @@ launch_rviz() {
 
 # Monitor and cleanup
 monitor_and_cleanup() {
-    echo "⏰ Recording for $RECORDING_DURATION seconds..."
+    echo "Recording for $RECORDING_DURATION seconds..."
     
     # Wait for recording duration
     sleep $RECORDING_DURATION
     
-    echo "🛑 Stopping recording and traffic system..."
+    echo "Stopping recording and traffic system..."
     
     # Stop recording
     if [ ! -z "$RECORDING_PID" ]; then
         kill $RECORDING_PID 2>/dev/null || true
-        echo "📹 Recording stopped"
+        echo "Recording stopped"
     fi
     
     # Stop traffic system
@@ -114,8 +113,8 @@ monitor_and_cleanup() {
     # Kill any remaining ROS2 processes
     pkill -f "ros2" 2>/dev/null || true
     
-    echo "✅ Demo recording completed!"
-    echo "📁 Recording saved in: $OUTPUT_DIR/"
+    echo "Demo recording completed!"
+    echo "Recording saved in: $OUTPUT_DIR/"
     ls -la "$OUTPUT_DIR/"*.mp4 "$OUTPUT_DIR/"*.ogv 2>/dev/null || echo "No recordings found"
 }
 
@@ -130,7 +129,7 @@ main() {
 
 # Handle script interruption
 cleanup_on_exit() {
-    echo "🛑 Script interrupted - cleaning up..."
+    echo "Script interrupted - cleaning up..."
     if [ ! -z "$RECORDING_PID" ]; then kill $RECORDING_PID 2>/dev/null || true; fi
     if [ ! -z "$TRAFFIC_PID" ]; then kill $TRAFFIC_PID 2>/dev/null || true; fi
     if [ ! -z "$RVIZ_PID" ]; then kill $RVIZ_PID 2>/dev/null || true; fi
@@ -139,7 +138,7 @@ cleanup_on_exit() {
 }
 
 # Set up signal handlers
-trap cleanup_on_exit SIGINT SIGTERM
+trap 'echo "Script interrupted - cleaning up..."; cleanup_on_exit' INT TERM
 
 # Run main function
 main "$@" 

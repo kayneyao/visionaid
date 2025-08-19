@@ -91,7 +91,7 @@ class DecisionEngine(Node):
         # Timer for decision making (10 Hz)
         self.create_timer(0.1, self.make_crossing_decision)
         
-        self.get_logger().info('🧠 Decision Engine initialized - 2-Priority System')
+        self.get_logger().info('Decision Engine initialized - 2-Priority System')
         self.get_logger().info('Priority 1: Vehicles (ABSOLUTE) | Priority 2: Traffic Lights')
     
     # Priority 1 callbacks
@@ -102,12 +102,12 @@ class DecisionEngine(Node):
         if msg.data:  # Vehicle threat detected
             self.vehicle_threat_detected = True
             self.last_vehicle_threat_time = current_time
-            self.get_logger().info(f'🚨 VEHICLE THREAT RECEIVED: {msg.data}')
+            self.get_logger().info(f'VEHICLE THREAT RECEIVED: {msg.data}')
         else:  # No vehicle threat
             # Only clear threat if enough time has passed
             if current_time - self.last_vehicle_threat_time > self.vehicle_threat_memory_duration:
                 self.vehicle_threat_detected = False
-                self.get_logger().info(f'✅ Vehicle threat cleared after {self.vehicle_threat_memory_duration}s')
+                self.get_logger().info(f'Vehicle threat cleared after {self.vehicle_threat_memory_duration}s')
     
     # Priority 2 callbacks  
     def traffic_light_callback(self, msg: String):
@@ -121,11 +121,11 @@ class DecisionEngine(Node):
                 self.traffic_light_confidence >= self.phase_change_confidence_threshold):
                 # Signal phase change detected with high confidence!
                 self.last_signal_phase_change_time = current_time
-                self.get_logger().info(f'🔄 Signal phase change: {self.previous_traffic_light_state} → {msg.data} (conf: {self.traffic_light_confidence:.3f})')
+                self.get_logger().info(f'Signal phase change: {self.previous_traffic_light_state} -> {msg.data} (conf: {self.traffic_light_confidence:.3f})')
             elif (self.previous_traffic_light_state != "unknown" and 
                   self.previous_traffic_light_state != msg.data):
                 # Signal phase change detected but low confidence - log warning
-                self.get_logger().warn(f'⚠️ Low confidence phase change ignored: {self.previous_traffic_light_state} → {msg.data} (conf: {self.traffic_light_confidence:.3f} < {self.phase_change_confidence_threshold})')
+                self.get_logger().warn(f'Low confidence phase change ignored: {self.previous_traffic_light_state} -> {msg.data} (conf: {self.traffic_light_confidence:.3f} < {self.phase_change_confidence_threshold})')
             
             self.traffic_light_state = msg.data
             self.last_traffic_light_time = current_time
@@ -143,7 +143,7 @@ class DecisionEngine(Node):
             elif time_since_last_light > self.traffic_light_memory_duration:
                 # Clear only if it's been long enough since last detection
                 self.traffic_light_state = "unknown"
-                self.get_logger().info(f'⚠️ Traffic light cleared after {self.traffic_light_memory_duration}s')
+                self.get_logger().info(f'Traffic light cleared after {self.traffic_light_memory_duration}s')
         
         # Update current state
         if msg.data != "unknown":
@@ -160,7 +160,7 @@ class DecisionEngine(Node):
             # Only clear if enough time has passed
             if current_time - self.last_traffic_light_time > self.traffic_light_memory_duration:
                 self.traffic_light_confidence = 0.0
-                self.get_logger().info(f'⚠️ Traffic light confidence cleared after {self.traffic_light_memory_duration}s')
+                self.get_logger().info(f'Traffic light confidence cleared after {self.traffic_light_memory_duration}s')
             # Otherwise keep the last known confidence
     
     def make_crossing_decision(self):
@@ -178,75 +178,79 @@ class DecisionEngine(Node):
             new_decision = CrossingDecision.WAIT_FOR_VEHICLES
             new_reasoning = "PRIORITY 1: Immediate vehicle threat detected - Wait for vehicles to clear"
             new_confidence = 0.95
-            
-        # PRIORITY 2: Traffic Light Analysis (with memory)
-        current_time = time.time()
-        time_since_last_light = current_time - self.last_traffic_light_time
-        time_since_phase_change = current_time - self.last_signal_phase_change_time
-        
-        # Use remembered traffic light if recent enough (with phase change consideration)
-        if (self.last_traffic_light_state != "unknown" and 
-            (time_since_last_light <= self.traffic_light_memory_duration or 
-             time_since_phase_change <= self.signal_phase_change_memory)):
-            
-            if self.last_traffic_light_state == "red":
-                new_decision = CrossingDecision.WAIT_FOR_TRAFFIC_LIGHT
-                if time_since_phase_change <= self.signal_phase_change_memory:
-                    new_reasoning = f"PRIORITY 2: RED LIGHT detected (conf: {self.last_traffic_light_confidence:.3f}) - Wait for green light (phase change remembered for {time_since_phase_change:.1f}s)"
-                else:
-                    new_reasoning = f"PRIORITY 2: RED LIGHT detected (conf: {self.last_traffic_light_confidence:.3f}) - Wait for green light (remembered for {time_since_last_light:.1f}s)"
-                new_confidence = self.last_traffic_light_confidence * self.traffic_light_weight
-                
-            elif self.last_traffic_light_state == "green":
-                new_decision = CrossingDecision.SAFE_TO_CROSS
-                if time_since_phase_change <= self.signal_phase_change_memory:
-                    new_reasoning = f"PRIORITY 2: GREEN LIGHT detected (conf: {self.last_traffic_light_confidence:.3f}) - Safe to cross (phase change remembered for {time_since_phase_change:.1f}s)"
-                else:
-                    new_reasoning = f"PRIORITY 2: GREEN LIGHT detected (conf: {self.last_traffic_light_confidence:.3f}) - Safe to cross (remembered for {time_since_last_light:.1f}s)"
-                new_confidence = self.last_traffic_light_confidence * self.traffic_light_weight
-                
-            elif self.last_traffic_light_state == "yellow":
-                new_decision = CrossingDecision.WAIT_FOR_TRAFFIC_LIGHT
-                if time_since_phase_change <= self.signal_phase_change_memory:
-                    new_reasoning = f"PRIORITY 2: YELLOW LIGHT detected (conf: {self.last_traffic_light_confidence:.3f}) - Proceed with caution (phase change remembered for {time_since_phase_change:.1f}s)"
-                else:
-                    new_reasoning = f"PRIORITY 2: YELLOW LIGHT detected (conf: {self.last_traffic_light_confidence:.3f}) - Proceed with caution (remembered for {time_since_last_light:.1f}s)"
-                new_confidence = self.last_traffic_light_confidence * self.traffic_light_weight
-                
-        # Use current traffic light state if available
-        elif self.traffic_light_state == "red":
-            new_decision = CrossingDecision.WAIT_FOR_TRAFFIC_LIGHT
-            new_reasoning = f"PRIORITY 2: RED LIGHT detected (conf: {self.traffic_light_confidence:.3f}) - Wait for green light"
-            new_confidence = self.traffic_light_confidence * self.traffic_light_weight
-            
-        elif self.traffic_light_state == "green":
-            new_decision = CrossingDecision.SAFE_TO_CROSS
-            new_reasoning = f"PRIORITY 2: GREEN LIGHT detected (conf: {self.traffic_light_confidence:.3f}) - Safe to cross"
-            new_confidence = self.traffic_light_confidence * self.traffic_light_weight
-            
-        elif self.traffic_light_state == "yellow":
-            new_decision = CrossingDecision.WAIT_FOR_TRAFFIC_LIGHT
-            new_reasoning = f"PRIORITY 2: YELLOW LIGHT detected (conf: {self.traffic_light_confidence:.3f}) - Proceed with caution"
-            new_confidence = self.traffic_light_confidence * self.traffic_light_weight
-            
-        # Default: No clear signal
         else:
-            new_decision = CrossingDecision.MANUAL
-            new_reasoning = "No clear traffic signal detected - Manual verification required"
-            new_confidence = 0.1
+            # PRIORITY 2: Traffic Light Analysis (with memory)
+            current_time = time.time()
+            time_since_last_light = current_time - self.last_traffic_light_time
+            time_since_phase_change = current_time - self.last_signal_phase_change_time
+            
+            # Use remembered traffic light if recent enough (with phase change consideration)
+            if (self.last_traffic_light_state != "unknown" and 
+                (time_since_last_light <= self.traffic_light_memory_duration or 
+                 time_since_phase_change <= self.signal_phase_change_memory)):
+                
+                if self.last_traffic_light_state == "red":
+                    new_decision = CrossingDecision.WAIT_FOR_TRAFFIC_LIGHT
+                    if time_since_phase_change <= self.signal_phase_change_memory:
+                        new_reasoning = f"PRIORITY 2: RED LIGHT detected (conf: {self.last_traffic_light_confidence:.3f}) - Wait for green light (phase change remembered for {time_since_phase_change:.1f}s)"
+                    else:
+                        new_reasoning = f"PRIORITY 2: RED LIGHT detected (conf: {self.last_traffic_light_confidence:.3f}) - Wait for green light (remembered for {time_since_last_light:.1f}s)"
+                    new_confidence = self.last_traffic_light_confidence * self.traffic_light_weight
+                    
+                elif self.last_traffic_light_state == "green":
+                    new_decision = CrossingDecision.SAFE_TO_CROSS
+                    if time_since_phase_change <= self.signal_phase_change_memory:
+                        new_reasoning = f"PRIORITY 2: GREEN LIGHT detected (conf: {self.last_traffic_light_confidence:.3f}) - Safe to cross (phase change remembered for {time_since_phase_change:.1f}s)"
+                    else:
+                        new_reasoning = f"PRIORITY 2: GREEN LIGHT detected (conf: {self.last_traffic_light_confidence:.3f}) - Safe to cross (remembered for {time_since_last_light:.1f}s)"
+                    new_confidence = self.last_traffic_light_confidence * self.traffic_light_weight
+                    
+                elif self.last_traffic_light_state == "yellow":
+                    new_decision = CrossingDecision.WAIT_FOR_TRAFFIC_LIGHT
+                    if time_since_phase_change <= self.signal_phase_change_memory:
+                        new_reasoning = f"PRIORITY 2: YELLOW LIGHT detected (conf: {self.last_traffic_light_confidence:.3f}) - Proceed with caution (phase change remembered for {time_since_phase_change:.1f}s)"
+                    else:
+                        new_reasoning = f"PRIORITY 2: YELLOW LIGHT detected (conf: {self.last_traffic_light_confidence:.3f}) - Proceed with caution (remembered for {time_since_last_light:.1f}s)"
+                    new_confidence = self.last_traffic_light_confidence * self.traffic_light_weight
+                    
+            # Use current traffic light state if available
+            elif self.traffic_light_state == "red":
+                new_decision = CrossingDecision.WAIT_FOR_TRAFFIC_LIGHT
+                new_reasoning = f"PRIORITY 2: RED LIGHT detected (conf: {self.traffic_light_confidence:.3f}) - Wait for green light"
+                new_confidence = self.traffic_light_confidence * self.traffic_light_weight
+                
+            elif self.traffic_light_state == "green":
+                new_decision = CrossingDecision.SAFE_TO_CROSS
+                new_reasoning = f"PRIORITY 2: GREEN LIGHT detected (conf: {self.traffic_light_confidence:.3f}) - Safe to cross"
+                new_confidence = self.traffic_light_confidence * self.traffic_light_weight
+                
+            elif self.traffic_light_state == "yellow":
+                new_decision = CrossingDecision.WAIT_FOR_TRAFFIC_LIGHT
+                new_reasoning = f"PRIORITY 2: YELLOW LIGHT detected (conf: {self.traffic_light_confidence:.3f}) - Proceed with caution"
+                new_confidence = self.traffic_light_confidence * self.traffic_light_weight
+                
+            # Default: No clear signal
+            else:
+                new_decision = CrossingDecision.MANUAL
+                new_reasoning = "No clear traffic signal detected - Manual verification required"
+                new_confidence = 0.1
         
         # Apply temporal stability: only change decision if enough time has passed
-        if (new_decision != self.current_decision and 
-            current_time - self.last_decision_change_time > self.decision_stability_duration):
-            
-            # Update current decision
-            self.current_decision = new_decision
-            self.current_reasoning = new_reasoning
-            self.current_confidence = new_confidence
-            self.last_decision_change_time = current_time
-            
-            # Log decision change
-            self.get_logger().info(f'🔄 Decision changed: {self.current_decision.value} - {self.current_reasoning}')
+        if new_decision != self.current_decision:
+            # Immediate override: if vehicle threat is active, update decision NOW (no stability delay)
+            if new_decision == CrossingDecision.WAIT_FOR_VEHICLES:
+                self.current_decision = new_decision
+                self.current_reasoning = new_reasoning
+                self.current_confidence = new_confidence
+                self.last_decision_change_time = current_time
+                self.get_logger().info(f'Decision changed (IMMEDIATE OVERRIDE): {self.current_decision.value} - {self.current_reasoning}')
+            elif current_time - self.last_decision_change_time > self.decision_stability_duration:
+                # Normal stability gate for non-vehicle-threat decisions
+                self.current_decision = new_decision
+                self.current_reasoning = new_reasoning
+                self.current_confidence = new_confidence
+                self.last_decision_change_time = current_time
+                self.get_logger().info(f'Decision changed: {self.current_decision.value} - {self.current_reasoning}')
         
         # Publish current decision (which may be the stable previous decision)
         self.publish_decision(self.current_decision, self.current_reasoning, self.current_confidence)
@@ -266,11 +270,11 @@ class DecisionEngine(Node):
         
         # Log decision
         if decision == CrossingDecision.MANUAL:
-            self.get_logger().warn(f'🚨 {decision.value}: {reasoning}')
+            self.get_logger().warn(f'{decision.value}: {reasoning}')
         elif decision == CrossingDecision.SAFE_TO_CROSS:
-            self.get_logger().info(f'✅ {decision.value}: {reasoning}')
+            self.get_logger().info(f'{decision.value}: {reasoning}')
         else:
-            self.get_logger().info(f'⚠️ {decision.value}: {reasoning}')
+            self.get_logger().info(f'{decision.value}: {reasoning}')
 
 def main():
     rclpy.init()

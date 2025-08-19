@@ -19,7 +19,7 @@ class VLMIntegrationTester(Node):
             String, '/safety_reasoning_explanation',
             self.vlm_response_callback, 10)
         
-        self.get_logger().info('🧪 VLM Integration Tester ready')
+        self.get_logger().info('VLM Integration Tester ready')
     
     def test_dont_cross_explanation(self):
         """Test VLM explanation for DONT_CROSS decision"""
@@ -30,7 +30,7 @@ class VLMIntegrationTester(Node):
         self.decision_pub.publish(decision_msg)
     
     def vlm_response_callback(self, msg):
-        self.get_logger().info(f'🔍 VLM Response: {msg.data}')
+        self.get_logger().info(f'VLM Response: {msg.data}')
     
     def run_tests(self):
         """Run VLM integration tests"""

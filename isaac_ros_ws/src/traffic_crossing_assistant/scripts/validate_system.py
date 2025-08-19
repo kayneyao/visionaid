@@ -22,7 +22,7 @@ class SystemValidator(Node):
             'multimodal_safety_coordinator'
         ]
         
-        self.get_logger().info('🔍 Validating 11-class traffic safety system...')
+        self.get_logger().info('Validating 11-class traffic safety system...')
         
         for executable in required_executables:
             try:
@@ -31,11 +31,11 @@ class SystemValidator(Node):
                     capture_output=True, text=True, timeout=5
                 )
                 if executable in result.stdout:
-                    self.get_logger().info(f'✅ {executable} - Available')
+                    self.get_logger().info(f'{executable} - Available')
                 else:
-                    self.get_logger().error(f'❌ {executable} - Missing')
+                    self.get_logger().error(f'{executable} - Missing')
             except Exception as e:
-                self.get_logger().error(f'❌ Validation failed: {e}')
+                self.get_logger().error(f'Validation failed: {e}')
 
 def main():
     rclpy.init()

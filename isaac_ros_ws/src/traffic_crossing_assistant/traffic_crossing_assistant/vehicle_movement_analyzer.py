@@ -21,6 +21,7 @@ import math
 from tf2_ros import Buffer, TransformListener
 import tf2_geometry_msgs
 import json
+from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy
 
 # Import new tracking modules
 from .sort_tracker import SORTTracker
@@ -52,7 +53,7 @@ class VehicleMovementAnalyzer(Node):
             9: 0.60    # truck - more permissive
         }
         
-        # RealSense D435 camera intrinsics (from your config)
+        # RealSense D435 camera intrinsics (from configuration)
         self.camera_intrinsics = {
             'fx': 617.0, 'fy': 617.0,  # Focal lengths
             'cx': 320.0, 'cy': 240.0   # Principal point
@@ -75,6 +76,7 @@ class VehicleMovementAnalyzer(Node):
         self.current_depth_image = None
         self.vehicle_tracks = defaultdict(list)  # Legacy tracking (kept for compatibility)
         self.bridge = CvBridge()
+        self.last_depth_time = 0.0
         
         # Ego-motion tracking
         self.current_camera_pose = None
@@ -90,9 +92,21 @@ class VehicleMovementAnalyzer(Node):
             Detection2DArray, '/camera/detections',
             self.detection_callback, 10)
         
+        # Use sensor-data QoS for depth (RealSense publishes best-effort)
+        sensor_qos = QoSProfile(
+            depth=5,
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            durability=DurabilityPolicy.VOLATILE
+        )
+        
         self.depth_sub = self.create_subscription(
             Image, '/camera/camera/aligned_depth_to_color/image_raw',
-            self.depth_callback, 10)
+            self.depth_callback, sensor_qos)
+        
+        # Also subscribe to the alternate aligned depth topic to avoid remap mismatches
+        self.depth_sub_alt = self.create_subscription(
+            Image, '/camera/aligned_depth_to_color/image_raw',
+            self.depth_callback, sensor_qos)
         
         # Ego-motion from RTAB-Map
         self.odom_sub = self.create_subscription(
@@ -130,16 +144,39 @@ class VehicleMovementAnalyzer(Node):
         self.debug_pub = self.create_publisher(
             String, '/vehicle_analyzer_debug', 10)
         
-        self.get_logger().info('🚗 Enhanced Vehicle Movement Analyzer initialized (Priority 1)')
-        self.get_logger().info('✅ SORT tracking + Kalman filters + HMM traffic light tracking')
-        self.get_logger().info('🎯 Robust multi-object tracking with data association')
+        self.get_logger().info('Enhanced Vehicle Movement Analyzer initialized (Priority 1)')
+        self.get_logger().info('SORT tracking + Kalman filters + HMM traffic light tracking')
+        self.get_logger().info('Robust multi-object tracking with data association')
     
     def depth_callback(self, msg):
-        """Store depth image for 3D position calculation"""
+        """Store depth image for 3D position calculation (robust to encoding)"""
         try:
-            self.current_depth_image = self.bridge.imgmsg_to_cv2(msg, "16UC1")
+            # Use passthrough to preserve original encoding
+            depth_img = self.bridge.imgmsg_to_cv2(msg, desired_encoding='passthrough')
+            
+            # Convert to uint16 millimeters if float
+            if depth_img.dtype == np.float32:
+                depth_img = np.nan_to_num(depth_img, nan=0.0, posinf=0.0, neginf=0.0)
+                # Assume meters -> convert to mm
+                depth_img = (depth_img * 1000.0).astype(np.uint16)
+            elif depth_img.dtype != np.uint16:
+                # Fallback: try explicit 16UC1 conversion
+                depth_img = self.bridge.imgmsg_to_cv2(msg, desired_encoding='16UC1')
+            
+            self.current_depth_image = depth_img
+            import time as _t
+            self.last_depth_time = _t.time()
+            dbg = String(); dbg.data = "Depth frame received"; self.debug_pub.publish(dbg)
         except Exception as e:
-            self.get_logger().warn(f'Depth conversion failed: {e}')
+            try:
+                # Last resort: attempt 16UC1 directly
+                self.current_depth_image = self.bridge.imgmsg_to_cv2(msg, '16UC1')
+                import time as _t
+                self.last_depth_time = _t.time()
+                dbg = String(); dbg.data = "Depth frame received (16UC1 fallback)"; self.debug_pub.publish(dbg)
+            except Exception:
+                self.current_depth_image = None
+                self.get_logger().warn(f'Depth conversion failed: {e}')
     
     def odometry_callback(self, msg: Odometry):
         """Track camera ego-motion for compensation"""
@@ -157,7 +194,7 @@ class VehicleMovementAnalyzer(Node):
         
         if self.current_depth_image is None:
             debug_msg = String()
-            debug_msg.data = "⚠️ No depth image available - using 2D fallback analysis"
+            debug_msg.data = "No depth image available - using 2D fallback analysis"
             self.debug_pub.publish(debug_msg)
             use_2d_fallback = True
         else:
@@ -166,9 +203,9 @@ class VehicleMovementAnalyzer(Node):
             total_pixels = self.current_depth_image.shape[0] * self.current_depth_image.shape[1]
             valid_ratio = valid_depth_pixels / total_pixels
             
-            if valid_ratio < 0.1:  # Less than 10% valid depth pixels
+            if valid_ratio < 0.01:  # Less than 1% valid depth pixels (more permissive)
                 debug_msg = String()
-                debug_msg.data = f"⚠️ Insufficient valid depth data ({valid_ratio:.1%}) - using 2D fallback analysis"
+                debug_msg.data = f"Insufficient valid depth data ({valid_ratio:.1%}) - using 2D fallback analysis"
                 self.debug_pub.publish(debug_msg)
                 use_2d_fallback = True
         
@@ -178,6 +215,14 @@ class VehicleMovementAnalyzer(Node):
         vehicle_detections = []
         total_detections = len(msg.detections)
         vehicle_detections_found = 0
+        
+        # Treat depth as available only if a recent frame arrived (<= 0.2s)
+        has_recent_depth = (self.current_depth_image is not None and (current_time - (self.last_depth_time or 0)) <= 0.2)
+        if not has_recent_depth:
+            use_2d_fallback = True
+            debug_msg = String()
+            debug_msg.data = "No recent depth frame - using 2D fallback analysis"
+            self.debug_pub.publish(debug_msg)
         
         for detection in msg.detections:
             if not detection.results:
@@ -189,7 +234,7 @@ class VehicleMovementAnalyzer(Node):
             # Debug: Log vehicle detections only
             if class_id in self.vehicle_classes:
                 debug_msg = String()
-                debug_msg.data = f'🚗 Vehicle detected: {self.vehicle_classes[class_id]} (Class {class_id}), Confidence: {confidence:.3f}'
+                debug_msg.data = f'Vehicle detected: {self.vehicle_classes[class_id]} (Class {class_id}), Confidence: {confidence:.3f}'
                 self.debug_pub.publish(debug_msg)
                 vehicle_detections_found += 1
             
@@ -197,14 +242,14 @@ class VehicleMovementAnalyzer(Node):
             threshold = self.vehicle_confidence_thresholds.get(class_id, 0.6)
             if (class_id in self.vehicle_classes and confidence >= threshold):
                 debug_msg = String()
-                debug_msg.data = f'✅ Vehicle passed threshold: {self.vehicle_classes[class_id]} (conf: {confidence:.3f} >= {threshold:.3f})'
+                debug_msg.data = f'Vehicle passed threshold: {self.vehicle_classes[class_id]} (conf: {confidence:.3f} >= {threshold:.3f})'
                 self.debug_pub.publish(debug_msg)
                 
                 if use_2d_fallback:
                     # Use 2D analysis when depth is unavailable
                     threat_level = self.analyze_2d_threat(detection.bbox, class_id, confidence)
                     debug_msg = String()
-                    debug_msg.data = f'🎯 2D Threat Analysis: {self.vehicle_classes[class_id]} threat={threat_level:.3f} (threshold: 0.3)'
+                    debug_msg.data = f'2D Threat Analysis: {self.vehicle_classes[class_id]} threat={threat_level:.3f} (threshold: 0.3)'
                     self.debug_pub.publish(debug_msg)
                     
                     # Always add vehicle to detections for monitoring, regardless of threat level
@@ -235,7 +280,7 @@ class VehicleMovementAnalyzer(Node):
                     else:
                         # 3D projection failed, fall back to 2D analysis
                         debug_msg = String()
-                        debug_msg.data = f"🔄 3D projection failed for {self.vehicle_classes[class_id]} - falling back to 2D analysis"
+                        debug_msg.data = f"3D projection failed for {self.vehicle_classes[class_id]} - falling back to 2D analysis"
                         self.debug_pub.publish(debug_msg)
                         
                         threat_level = self.analyze_2d_threat(detection.bbox, class_id, confidence)
@@ -303,9 +348,9 @@ class VehicleMovementAnalyzer(Node):
         # Publish vehicle threat status
         threat_msg = String()
         if immediate_danger:
-            threat_msg.data = f"🚨 IMMEDIATE DANGER: {threatening_vehicle} (TTC: {min_ttc:.2f}s)"
+            threat_msg.data = f"IMMEDIATE DANGER: {threatening_vehicle} (TTC: {min_ttc:.2f}s)"
         else:
-            threat_msg.data = f"✅ Safe: Closest vehicle TTC: {min_ttc:.2f}s"
+            threat_msg.data = f"Safe: Closest vehicle TTC: {min_ttc:.2f}s"
         self.vehicle_threat_pub.publish(threat_msg)
         
         # Analyze for threats using TTC and relative motion
@@ -324,9 +369,9 @@ class VehicleMovementAnalyzer(Node):
         
         # Also log to ROS logger for immediate visibility
         if immediate_danger:
-            self.get_logger().warn(f'🚨 PUBLISHING VEHICLE THREAT: immediate_danger=True at {current_time:.3f}')
+            self.get_logger().warn(f'PUBLISHING VEHICLE THREAT: immediate_danger=True at {current_time:.3f}')
         else:
-            self.get_logger().info(f'✅ PUBLISHING SAFE: immediate_danger=False at {current_time:.3f}')
+            self.get_logger().info(f'PUBLISHING SAFE: immediate_danger=False at {current_time:.3f}')
         
         # Publish TTC information
         if ttc_info:
@@ -350,11 +395,11 @@ class VehicleMovementAnalyzer(Node):
         if vehicle_detections_found > 0:
             analysis_type = "2D fallback" if use_2d_fallback else "3D projection"
             debug_msg = String()
-            debug_msg.data = f'📊 Vehicle Analysis: {vehicle_detections_found} vehicles found, {len(vehicle_detections)} processed with {analysis_type}'
+            debug_msg.data = f'Vehicle Analysis: {vehicle_detections_found} vehicles found, {len(vehicle_detections)} processed with {analysis_type}'
             self.debug_pub.publish(debug_msg)
         
         if immediate_danger:
-            self.get_logger().warn(f'🚨 IMMEDIATE DANGER: TTC={ttc_info["min_ttc"]:.1f}s, Vehicle={ttc_info["threatening_vehicle"]}')
+            self.get_logger().warn(f'IMMEDIATE DANGER: TTC={ttc_info["min_ttc"]:.1f}s, Vehicle={ttc_info["threatening_vehicle"]}')
     
     def project_to_3d(self, bbox):
         """Project 2D bounding box center to 3D using depth and camera intrinsics"""
@@ -365,7 +410,7 @@ class VehicleMovementAnalyzer(Node):
             
             # Debug: Log projection attempt
             debug_msg = String()
-            debug_msg.data = f'🔍 3D Projection: center=({center_x},{center_y}), depth_shape={self.current_depth_image.shape if self.current_depth_image is not None else "None"}'
+            debug_msg.data = f'3D Projection: center=({center_x},{center_y}), depth_shape={self.current_depth_image.shape if self.current_depth_image is not None else "None"}'
             self.debug_pub.publish(debug_msg)
             
             # Check if position is valid
@@ -376,7 +421,7 @@ class VehicleMovementAnalyzer(Node):
                 depth_mm = self.current_depth_image[center_y, center_x]
                 if depth_mm == 0:  # Invalid depth
                     debug_msg = String()
-                    debug_msg.data = f'❌ Invalid depth: {depth_mm}mm at ({center_x},{center_y})'
+                    debug_msg.data = f'Invalid depth: {depth_mm}mm at ({center_x},{center_y})'
                     self.debug_pub.publish(debug_msg)
                     return None
                 
@@ -397,7 +442,7 @@ class VehicleMovementAnalyzer(Node):
             
         except Exception as e:
             debug_msg = String()
-            debug_msg.data = f'❌ 3D projection failed: {e}'
+            debug_msg.data = f'3D projection failed: {e}'
             self.debug_pub.publish(debug_msg)
         
         return None
@@ -454,7 +499,7 @@ class VehicleMovementAnalyzer(Node):
         
         # Debug output
         debug_msg = String()
-        debug_msg.data = f'🎯 2D Threat: {self.vehicle_classes[class_id]} at ({center_x:.0f},{center_y:.0f}), threat={total_threat:.3f}'
+        debug_msg.data = f'2D Threat: {self.vehicle_classes[class_id]} at ({center_x:.0f},{center_y:.0f}), threat={total_threat:.3f}'
         self.debug_pub.publish(debug_msg)
         
         return np.clip(total_threat, 0.0, 1.0)
@@ -547,7 +592,7 @@ class VehicleMovementAnalyzer(Node):
         
         # Debug: Log input
         debug_msg = String()
-        debug_msg.data = f'🔍 analyze_enhanced_threats: {len(vehicle_detections)} vehicles to analyze'
+        debug_msg.data = f'analyze_enhanced_threats: {len(vehicle_detections)} vehicles to analyze'
         self.debug_pub.publish(debug_msg)
         
         for vehicle in vehicle_detections:
@@ -577,7 +622,7 @@ class VehicleMovementAnalyzer(Node):
                 
                 # Debug: Log threat analysis
                 debug_msg = String()
-                debug_msg.data = f'🔍 2D threat check: {vehicle["class_name"]} threat={threat_level:.3f} > 0.3 = {threat_level > 0.3}'
+                debug_msg.data = f'2D threat check: {vehicle["class_name"]} threat={threat_level:.3f} > 0.3 = {threat_level > 0.3}'
                 self.debug_pub.publish(debug_msg)
                 
                 # High threat level indicates immediate danger
@@ -588,12 +633,12 @@ class VehicleMovementAnalyzer(Node):
                     threatening_vehicle = vehicle['class_name']
                     
                     debug_msg = String()
-                    debug_msg.data = f'🚨 2D IMMEDIATE DANGER: {vehicle["class_name"]} (threat: {threat_level:.3f})'
+                    debug_msg.data = f'2D IMMEDIATE DANGER: {vehicle["class_name"]} (threat: {threat_level:.3f})'
                     self.debug_pub.publish(debug_msg)
         
         # Debug: Log final result
         debug_msg = String()
-        debug_msg.data = f'🔍 analyze_enhanced_threats RESULT: immediate_danger={immediate_danger}, ttc={min_ttc if min_ttc != float("inf") else 999.0}'
+        debug_msg.data = f'analyze_enhanced_threats RESULT: immediate_danger={immediate_danger}, ttc={min_ttc if min_ttc != float("inf") else 999.0}'
         self.debug_pub.publish(debug_msg)
         
         ttc_info = {
@@ -656,7 +701,7 @@ class VehicleMovementAnalyzer(Node):
         
         # Debug logging
         debug_msg = String()
-        debug_msg.data = f'🚦 Traffic Light: {current_state} (conf: {confidence:.3f}, persistence: {persistence})'
+        debug_msg.data = f'Traffic Light: {current_state} (conf: {confidence:.3f}, persistence: {persistence})'
         self.debug_pub.publish(debug_msg)
         
         return current_state, confidence
@@ -718,7 +763,7 @@ class VehicleMovementAnalyzer(Node):
                         
                         # Debug logging
                         debug_msg = String()
-                        debug_msg.data = f'🚨 SORT Threat: {track.class_name} TTC={ttc:.2f}s (ID: {track.track_id})'
+                        debug_msg.data = f'SORT Threat: {track.class_name} TTC={ttc:.2f}s (ID: {track.track_id})'
                         self.debug_pub.publish(debug_msg)
         
         return immediate_danger, min_ttc, threatening_vehicle

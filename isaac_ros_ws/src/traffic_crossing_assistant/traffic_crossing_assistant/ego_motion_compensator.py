@@ -25,7 +25,7 @@ class EgoMotionCompensator(Node):
         self.declare_parameter('motion_threshold', 0.1)      # m/s - significant motion
         self.declare_parameter('confidence_penalty', 0.2)    # Penalty during motion
         self.declare_parameter('tracking_window', 2.0)       # seconds
-        self.declare_parameter('vehicle_classes', [0, 1, 2, 9, 12])  # Your Taiwan vehicle classes
+        self.declare_parameter('vehicle_classes', [0, 1, 2, 9, 12])  # Taiwan vehicle classes
         self.declare_parameter('compensation_smoothing', 0.8) # Smoothing factor for compensation
         self.declare_parameter('max_compensation_factor', 0.5) # Maximum compensation applied
         
@@ -83,7 +83,7 @@ class EgoMotionCompensator(Node):
             String, '/motion_compensation_stats', 10)
         
         self.get_logger().info('📱 Enhanced Ego Motion Compensator initialized')
-        self.get_logger().info('✅ Advanced motion compensation with RTAB-Map integration')
+        self.get_logger().info('Advanced motion compensation with RTAB-Map integration')
     
     def odometry_callback(self, msg: Odometry):
         """Process RTAB-Map visual odometry for enhanced ego motion tracking"""
@@ -194,7 +194,7 @@ class EgoMotionCompensator(Node):
         
         class_id = int(detection.results[0].hypothesis.class_id)
         
-        # Only compensate vehicle classes (Priority 1 for your system)
+        # Only compensate vehicle classes (Priority 1 component)
         vehicle_classes = self.get_parameter('vehicle_classes').value
         if class_id not in vehicle_classes:
             return detection

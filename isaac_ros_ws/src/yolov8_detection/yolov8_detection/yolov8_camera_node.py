@@ -88,18 +88,18 @@ class YOLOv8CameraNode(Node):
         
         # GPU validation
         if not torch.cuda.is_available():
-            self.get_logger().error('❌ CUDA not available - GPU required for this node!')
+            self.get_logger().error('CUDA not available - GPU required for this node!')
             raise RuntimeError("GPU required but CUDA not available")
         
-        self.get_logger().info(f'✅ CUDA available - GPU: {torch.cuda.get_device_name(0)}')
+        self.get_logger().info(f'CUDA available - GPU: {torch.cuda.get_device_name(0)}')
         
         # Log class-specific thresholds and temporal filter settings
-        self.get_logger().info('🎯 Class-specific confidence thresholds:')
+        self.get_logger().info('Class-specific confidence thresholds:')
         for class_id, threshold in self.class_confidence_thresholds.items():
             class_name = self.class_names.get(class_id, f'class_{class_id}')
             self.get_logger().info(f'   {class_name} (Class {class_id}): {threshold}')
         
-        self.get_logger().info('⏱️ Temporal filter settings:')
+        self.get_logger().info('Temporal filter settings:')
         self.get_logger().info(f'   Min consecutive frames: {self.temporal_filter["min_consecutive_frames"]}')
         self.get_logger().info(f'   Max frames without detection: {self.temporal_filter["max_frames_without_detection"]}')
         
@@ -126,10 +126,10 @@ class YOLOv8CameraNode(Node):
         
         # Initialize model with GPU requirements
         if self.initialize_model_gpu():
-            self.get_logger().info('✅ Taiwan Traffic Detection Node Ready (GPU MODE)')
+            self.get_logger().info('Taiwan Traffic Detection Node Ready (GPU MODE)')
             self.get_logger().info(f'🇹🇼 11-class Taiwan model loaded: {self.model_path}')
         else:
-            self.get_logger().error('❌ Failed to initialize Taiwan model with GPU')
+            self.get_logger().error('Failed to initialize Taiwan model with GPU')
             raise RuntimeError("Failed to initialize GPU model")
         
         # Performance logging timer
@@ -154,7 +154,7 @@ class YOLOv8CameraNode(Node):
                 self.get_logger().info(f'Available ONNX providers: {available_providers}')
                 
                 if 'CUDAExecutionProvider' not in available_providers:
-                    self.get_logger().error('❌ CUDAExecutionProvider not available in ONNX Runtime')
+                    self.get_logger().error('CUDAExecutionProvider not available in ONNX Runtime')
                     return False
                 
                 # Force GPU-only providers (no CPU fallback)
@@ -171,7 +171,7 @@ class YOLOv8CameraNode(Node):
             # For PyTorch models, force GPU
             if self.model_path.endswith('.pt'):
                 self.model.to('cuda')
-                self.get_logger().info('✅ PyTorch model moved to GPU')
+                self.get_logger().info('PyTorch model moved to GPU')
             
             # Verify class count
             if hasattr(self.model, 'names') and len(self.model.names) != 11:
@@ -186,7 +186,7 @@ class YOLOv8CameraNode(Node):
             # Verify GPU memory availability
             if torch.cuda.is_available():
                 gpu_memory = torch.cuda.get_device_properties(0).total_memory / 1e9
-                self.get_logger().info(f'✅ GPU Memory Available: {gpu_memory:.1f} GB')
+                self.get_logger().info(f'GPU Memory Available: {gpu_memory:.1f} GB')
             
             return True
             
@@ -473,13 +473,13 @@ class YOLOv8CameraNode(Node):
         
         # Check for target 2.3ms performance
         if avg_time <= 2.5:
-            self.get_logger().info('✅ Achieving target performance (<2.5ms)')
+            self.get_logger().info('Achieving target performance (<2.5ms)')
         elif avg_time < 10.0:
-            self.get_logger().info('✅ Excellent GPU performance (<10ms)')
+            self.get_logger().info('Excellent GPU performance (<10ms)')
         elif avg_time < 33.0:
-            self.get_logger().info('✅ Meeting real-time requirements')
+            self.get_logger().info('Meeting real-time requirements')
         else:
-            self.get_logger().warning('⚠️ Below real-time performance - check GPU utilization')
+            self.get_logger().warning('Below real-time performance - check GPU utilization')
     
     def log_gpu_status(self):
         """Log GPU memory and utilization status"""
@@ -503,9 +503,9 @@ def main(args=None):
         node = YOLOv8CameraNode()
         rclpy.spin(node)
     except RuntimeError as e:
-        print(f"❌ GPU-only node failed to start: {e}")
+        print(f"GPU-only node failed to start: {e}")
     except KeyboardInterrupt:
-        print("🛑 GPU detection node stopped by user")
+        print("GPU detection node stopped by user")
     finally:
         if rclpy.ok():
             rclpy.shutdown()

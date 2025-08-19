@@ -35,7 +35,7 @@ class EnhancedAudioFeedbackSystem(Node):
             'MULTIPLE_VEHICLES': "STOP! Multiple vehicles detected in crossing area. Please wait.",
             'VEHICLE_APPROACHING': "Caution! Vehicle approaching your crossing area.",
             
-            # Priority 2: Taiwan Crossing Path (Your 85.5% mAP50 Innovation)
+            # Priority 2: Taiwan crossing path (85.5% mAP50 model)
             'TAIWAN_CROSSING_CONFIRMED': "Taiwan crossing path detected. Analyzing safety conditions.",
             'CROSSING_PATH_CLEAR': "Your crossing path is confirmed clear.",
             'SPATIAL_CLASSIFICATION_SUCCESS': "Taiwan crossing analysis complete. Path identified.",

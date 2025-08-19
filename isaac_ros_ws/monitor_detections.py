@@ -31,28 +31,28 @@ class DetectionMonitor(Node):
             self.detection_callback,
             10)
         
-        print("🎯 Detection Monitor Started!")
-        print("📊 Monitoring /camera/detections for all 11 classes...")
-        print("⏱️  Will show detections with timestamps and confidence")
-        print("🛑 Press Ctrl+C to stop\n")
+        print("Detection Monitor Started!")
+        print("Monitoring /camera/detections for all 11 classes...")
+        print("Will show detections with timestamps and confidence")
+        print("Press Ctrl+C to stop\n")
         
     def get_priority_group(self, class_id):
         """Get the priority group for a class"""
         if class_id in self.safety_priorities['vehicles']:
-            return "🚗 PRIORITY 1 (VEHICLES)"
+            return "PRIORITY 1 (VEHICLES)"
         elif class_id in self.safety_priorities['traffic_lights']:
-            return "🚦 PRIORITY 2 (TRAFFIC LIGHTS)"
+            return "PRIORITY 2 (TRAFFIC LIGHTS)"
         elif class_id in self.safety_priorities['pedestrian_context']:
-            return "🚶 CONTEXT (PEDESTRIANS)"
+            return "CONTEXT (PEDESTRIANS)"
         elif class_id in self.safety_priorities['infrastructure']:
-            return "🏗️  CONTEXT (INFRASTRUCTURE)"
+            return "CONTEXT (INFRASTRUCTURE)"
         else:
-            return "❓ UNKNOWN"
+            return "UNKNOWN"
     
     def detection_callback(self, msg):
         if len(msg.detections) > 0:
             timestamp = datetime.now().strftime("%H:%M:%S.%f")[:-3]
-            print(f"\n🔍 [{timestamp}] DETECTIONS FOUND: {len(msg.detections)} object(s)")
+            print(f"\n[{timestamp}] DETECTIONS FOUND: {len(msg.detections)} object(s)")
             print("=" * 60)
             
             for i, detection in enumerate(msg.detections):
@@ -70,10 +70,10 @@ class DetectionMonitor(Node):
                     height = bbox.size_y
                     
                     print(f"  Detection #{i+1}:")
-                    print(f"    🏷️  Class: {class_name} (ID: {class_id})")
-                    print(f"    📊 Confidence: {confidence:.1%}")
-                    print(f"    🎯 Priority: {priority}")
-                    print(f"    📐 BBox: center=({center_x:.0f},{center_y:.0f}), size=({width:.0f}x{height:.0f})")
+                    print(f"    Class: {class_name} (ID: {class_id})")
+                    print(f"    Confidence: {confidence:.1%}")
+                    print(f"    Priority: {priority}")
+                    print(f"    BBox: center=({center_x:.0f},{center_y:.0f}), size=({width:.0f}x{height:.0f})")
                     print()
             
             print("=" * 60)
@@ -89,7 +89,7 @@ def main(args=None):
     try:
         rclpy.spin(monitor)
     except KeyboardInterrupt:
-        print("\n\n🛑 Detection monitoring stopped.")
+        print("\n\nDetection monitoring stopped.")
     finally:
         monitor.destroy_node()
         rclpy.shutdown()

@@ -53,7 +53,7 @@ class DetectionToMarkers(Node):
             10
         )
         
-        self.get_logger().info('🔍 Detection to Markers Converter Started')
+        self.get_logger().info('Detection to Markers Converter Started')
         self.get_logger().info('📡 Converting /camera/detections to /camera/detections/markers')
     
     def detection_callback(self, msg):
@@ -119,7 +119,7 @@ class DetectionToMarkers(Node):
         self.marker_pub.publish(marker_array)
         
         if marker_array.markers:
-            self.get_logger().debug(f'📊 Published {len(marker_array.markers)} markers')
+            self.get_logger().debug(f'Published {len(marker_array.markers)} markers')
 
 def main():
     rclpy.init()
@@ -129,7 +129,7 @@ def main():
     try:
         rclpy.spin(converter)
     except KeyboardInterrupt:
-        print("\n🛑 Detection to Markers Converter stopped by user")
+        print("\nDetection to Markers Converter stopped by user")
     finally:
         converter.destroy_node()
         rclpy.shutdown()

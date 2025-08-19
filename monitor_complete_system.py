@@ -108,8 +108,7 @@ class CompleteSystemMonitor(Node):
         self.create_timer(2.0, self.display_system_status)
         self.create_timer(10.0, self.write_summary_json)
         
-        self.get_logger().info('🔍 Complete Traffic Crossing Assistant System Monitor Started')
-        self.get_logger().info('📊 Monitoring all system components and decision reasoning')
+        self.get_logger().info('Monitoring all system components and decision reasoning')
     
     def setup_subscriptions(self):
         """Setup subscriptions to all system topics"""
@@ -333,31 +332,31 @@ class CompleteSystemMonitor(Node):
             'max_ms': float(arr.max()),
             'std_ms': float(arr.std(ddof=1)) if arr.size > 1 else 0.0,
         }
-    
+
     
     def display_system_status(self):
         """Display comprehensive system status"""
         avg_fps = np.mean(self.fps_stats) if self.fps_stats else 0
         
         print("\n" + "="*80)
-        print("🚦 COMPLETE TRAFFIC CROSSING ASSISTANT SYSTEM STATUS")
+        print("COMPLETE TRAFFIC CROSSING ASSISTANT SYSTEM STATUS")
         print("="*80)
         
         # System component status
-        print("🔧 SYSTEM COMPONENTS:")
+        print("SYSTEM COMPONENTS:")
         for component, status in self.system_status.items():
-            status_icon = "✅" if status else "❌"
-            print(f"   {status_icon} {component.replace('_', ' ').title()}")
+            status_text = "OK" if status else "DOWN"
+            print(f"   {status_text} {component.replace('_', ' ').title()}")
         
         # Performance
-        print(f"\n⚡ PERFORMANCE: {avg_fps:.1f} FPS, {self.frame_count} frames processed")
+        print(f"\nPERFORMANCE: {avg_fps:.1f} FPS, {self.frame_count} frames processed")
         
         # Current frame detections
         current_time = time.time()
         time_since_last_detection = current_time - self.last_detection_time
         
         if self.detection_stats and time_since_last_detection < 2.0:
-            print(f"\n🎯 CURRENT YOLOV8 DETECTIONS:")
+            print(f"\nCURRENT YOLOV8 DETECTIONS:")
             sorted_stats = sorted(self.detection_stats.items(), key=lambda x: x[1], reverse=True)
             for class_id, count in sorted_stats:
                 class_name = self.class_names.get(int(class_id), f'Unknown({class_id})')
@@ -365,7 +364,7 @@ class CompleteSystemMonitor(Node):
                 print(f"   {class_name}: {count} objects (conf: {confidence:.3f})")
             print(f"   (Last detection: {time_since_last_detection:.1f}s ago)")
         else:
-            print(f"\n🎯 CURRENT YOLOV8 DETECTIONS: No objects detected in current frame")
+            print(f"\nCURRENT YOLOV8 DETECTIONS: No objects detected in current frame")
             if time_since_last_detection < 10.0:
                 print(f"   (Last detection: {time_since_last_detection:.1f}s ago)")
         
@@ -377,7 +376,7 @@ class CompleteSystemMonitor(Node):
         su = self._summarize(self.sort_update_ms)
         st = self._summarize(self.sort_threat_ms)
         
-        print(f"\n⏱️ LATENCIES:")
+        print(f"\nLATENCIES:")
         print(f"   YOLOv8 inference: {det if det else 'n/a'}")
         print(f"   End-to-end decision: {e2e if e2e else 'n/a'}")
         print(f"   Detection->Vehicle Threat: {d2t if d2t else 'n/a'}")
@@ -385,46 +384,47 @@ class CompleteSystemMonitor(Node):
         print(f"   SORT update: {su if su else 'n/a'}, SORT threat: {st if st else 'n/a'}")
         
         # Current decision and reasoning
-        print(f"\n🎯 CURRENT DECISION: {self.latest_decision}")
-        print(f"🧠 DECISION REASONING: {self.latest_reasoning}")
+        print(f"\nCURRENT DECISION: {self.latest_decision}")
+        print(f"DECISION REASONING: {self.latest_reasoning}")
         
         # Decision counts
         if self.decision_counts:
             print(f"   Decision counts: {dict(self.decision_counts)}")
         
         # Traffic light analysis
-        print(f"\n🚦 TRAFFIC LIGHT ANALYSIS:")
+        print(f"\nTRAFFIC LIGHT ANALYSIS:")
         print(f"   State: {self.traffic_light_state}")
         print(f"   Confidence: {self.traffic_light_confidence:.3f}")
         
         # Vehicle threat analysis
-        print(f"\n🚗 VEHICLE THREAT ANALYSIS:")
-        print(f"   Immediate Danger: {'🚨 YES' if self.immediate_danger else '✅ No'}")
+        print(f"\nVEHICLE THREAT ANALYSIS:")
+        print(f"   Immediate Danger: {'YES' if self.immediate_danger else 'No'}")
         print(f"   Time to Collision: {self.time_to_collision:.2f}s")
         print(f"   Threat Status: {self.vehicle_threat_status}")
         
         # Vehicle analyzer debug messages
         if self.vehicle_debug_messages:
-            print(f"\n🔍 VEHICLE ANALYZER DEBUG:")
+            print(f"\nVEHICLE ANALYZER DEBUG:")
             for msg in self.vehicle_debug_messages:
                 print(f"   {msg}")
         
         # Crosswalk analysis
-        print(f"\n🚶 CROSSWALK ANALYSIS:")
-        print(f"   Detected: {'✅ Yes' if self.crosswalk_detected else '❌ No'}")
+        print(f"\nCROSSWALK ANALYSIS:")
+        print(f"   Detected: {'Yes' if self.crosswalk_detected else 'No'}")
         print(f"   Confidence: {self.crosswalk_confidence:.3f}")
         
         # Motion compensation
-        print(f"\n📹 MOTION COMPENSATION:")
+        print(f"\nMOTION COMPENSATION:")
         print(f"   Quality: {self.motion_compensation_quality:.3f}")
-        print(f"   Excessive Motion: {'⚠️ Yes' if self.excessive_motion_detected else '✅ No'}")
+        print(f"   Excessive Motion: {'Yes' if self.excessive_motion_detected else 'No'}")
         
         # Recent decision history
         if self.decision_history:
-            print(f"\n📋 RECENT DECISIONS:")
+            print(f"\nRECENT DECISIONS:")
             for i, decision_info in enumerate(list(self.decision_history)[-3:]):
                 time_ago = time.time() - decision_info['timestamp']
-                print(f"   {i+1}. {decision_info['decision']} ({time_ago:.1f}s ago)")
+                decision_str = decision_info['decision']
+                print(f"   {i+1}. {decision_str} ({time_ago:.1f}s ago)")
         
         print("="*80)
         print("Press Ctrl+C to stop monitoring")
@@ -477,10 +477,10 @@ def main():
     try:
         rclpy.spin(monitor)
     except KeyboardInterrupt:
-        print("\n🛑 Complete system monitoring stopped by user")
+        print("\nComplete system monitoring stopped by user")
     finally:
         monitor.destroy_node()
         rclpy.shutdown()
- 
+
 if __name__ == '__main__':
     main() 

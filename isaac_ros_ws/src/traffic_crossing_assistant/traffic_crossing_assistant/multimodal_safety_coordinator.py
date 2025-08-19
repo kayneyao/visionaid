@@ -45,7 +45,7 @@ class MultimodalSafetyCoordinator(Node):
         # Bridge for image conversion
         self.bridge = CvBridge()
         
-        # Subscriptions - Get results from your decision_engine
+        # Subscriptions - Ingest results from decision engine
         self.image_sub = self.create_subscription(
             Image, '/camera/color/image_raw',
             self.image_callback, 10)
@@ -54,7 +54,7 @@ class MultimodalSafetyCoordinator(Node):
             Detection2DArray, '/camera/detections',
             self.detection_callback, 10)
         
-        # KEY: Subscribe to your decision_engine results
+        # KEY: Subscribe to decision engine results
         self.decision_sub = self.create_subscription(
             String, '/crossing_decision',
             self.decision_callback, 10)
@@ -81,11 +81,11 @@ class MultimodalSafetyCoordinator(Node):
         self.get_logger().info('🧠 Multimodal Safety Coordinator initialized')
     
     def setup_vlm_model(self):
-        """Use your BLIP-2 loading strategy for LLaVA"""
+        """Initialize VLM model using BLIP-2-style loading flow"""
         try:
             model_name = "llava-hf/llava-v1.6-mistral-7b-hf"
             
-            # Apply your memory management approach
+            # Apply memory management actions
             if torch.cuda.is_available():
                 torch.cuda.empty_cache()
             
@@ -94,7 +94,7 @@ class MultimodalSafetyCoordinator(Node):
                 model_name,
                 torch_dtype=torch.float16,
                 device_map="auto",
-                load_in_4bit=True  # Your optimization approach
+                load_in_4bit=True  # Optimization approach
             )
             
             self.get_logger().info('✅ LLaVA model loaded for traffic safety')

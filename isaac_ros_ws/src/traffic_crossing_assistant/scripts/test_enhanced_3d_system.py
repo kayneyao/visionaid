@@ -55,7 +55,7 @@ class Enhanced3DSystemTester(Node):
         # Test timer
         self.create_timer(5.0, self.run_system_tests)
         
-        self.get_logger().info('🧪 Enhanced 3D System Tester initialized')
+        self.get_logger().info('Enhanced 3D System Tester initialized')
         self.get_logger().info('Testing: 3D depth projection, ego-motion compensation, TTC analysis')
     
     def immediate_danger_callback(self, msg: Bool):
@@ -141,7 +141,7 @@ class Enhanced3DSystemTester(Node):
         """Run comprehensive system validation tests"""
         elapsed_time = time.time() - self.test_start_time
         
-        self.get_logger().info('🧪 Running Enhanced 3D System Tests...')
+        self.get_logger().info('Running Enhanced 3D System Tests...')
         
         # Test 1: Basic Topic Reception
         self.test_topic_reception()
@@ -160,7 +160,7 @@ class Enhanced3DSystemTester(Node):
         
         # Stop testing after 30 seconds
         if elapsed_time > 30.0:
-            self.get_logger().info('✅ Enhanced 3D System Testing Complete')
+            self.get_logger().info('Enhanced 3D System Testing Complete')
             rclpy.shutdown()
     
     def test_topic_reception(self):
@@ -177,9 +177,9 @@ class Enhanced3DSystemTester(Node):
         
         for topic in required_topics:
             if self.test_results[topic]:
-                self.get_logger().info(f'✅ {topic}: Topic received')
+                self.get_logger().info(f'{topic}: Topic received')
             else:
-                self.get_logger().warn(f'❌ {topic}: Topic not received')
+                self.get_logger().warn(f'{topic}: Topic not received')
     
     def test_data_validation(self):
         """Test data validity and ranges"""
@@ -193,18 +193,18 @@ class Enhanced3DSystemTester(Node):
         
         for test_key, test_name in validation_tests:
             if self.test_results[test_key]:
-                self.get_logger().info(f'✅ {test_name}: Valid data range')
+                self.get_logger().info(f'{test_name}: Valid data range')
             else:
-                self.get_logger().warn(f'❌ {test_name}: Invalid data range')
+                self.get_logger().warn(f'{test_name}: Invalid data range')
     
     def test_system_integration(self):
         """Test system integration and data flow"""
         if (self.test_results['immediate_danger_received'] and 
             self.test_results['ttc_received'] and 
             self.test_results['crossing_decision_received']):
-            self.get_logger().info('✅ System Integration: All core components communicating')
+            self.get_logger().info('System Integration: All core components communicating')
         else:
-            self.get_logger().warn('❌ System Integration: Missing core component communication')
+            self.get_logger().warn('System Integration: Missing core component communication')
     
     def test_performance_metrics(self):
         """Test performance metrics and timing"""
@@ -215,13 +215,13 @@ class Enhanced3DSystemTester(Node):
             if 'timestamp' in data:
                 age = current_time - data['timestamp']
                 if age < 2.0:
-                    self.get_logger().info(f'✅ {data_type}: Fresh data ({age:.1f}s old)')
+                    self.get_logger().info(f'{data_type}: Fresh data ({age:.1f}s old)')
                 else:
-                    self.get_logger().warn(f'❌ {data_type}: Stale data ({age:.1f}s old)')
+                    self.get_logger().warn(f'{data_type}: Stale data ({age:.1f}s old)')
     
     def print_test_report(self):
         """Print comprehensive test report"""
-        self.get_logger().info('📊 Enhanced 3D System Test Report')
+        self.get_logger().info('Enhanced 3D System Test Report')
         self.get_logger().info('=' * 50)
         
         # Current system state
@@ -254,9 +254,9 @@ class Enhanced3DSystemTester(Node):
         self.get_logger().info(f'Test Summary: {passed_tests}/{total_tests} tests passed ({success_rate:.1f}%)')
         
         if success_rate >= 80:
-            self.get_logger().info('🎉 Enhanced 3D System: PASSED')
+            self.get_logger().info('Enhanced 3D System: PASSED')
         else:
-            self.get_logger().warn('⚠️ Enhanced 3D System: NEEDS ATTENTION')
+            self.get_logger().warn('Enhanced 3D System: NEEDS ATTENTION')
 
 def main():
     rclpy.init()
