@@ -8,7 +8,7 @@ Updated for 11-class model: Only motorized vehicles are safety threats
 import rclpy
 from rclpy.node import Node
 from vision_msgs.msg import Detection2DArray
-from sensor_msgs.msg import Image
+from sensor_msgs.msg import Image, CameraInfo
 from std_msgs.msg import Bool, String, Float32
 from geometry_msgs.msg import Point, Vector3
 from nav_msgs.msg import Odometry
@@ -55,9 +55,13 @@ class VehicleMovementAnalyzer(Node):
         
         # RealSense D435 camera intrinsics (from configuration)
         self.camera_intrinsics = {
-            'fx': 617.0, 'fy': 617.0,  # Focal lengths
-            'cx': 320.0, 'cy': 240.0   # Principal point
+            'fx': 617.0, 'fy': 617.0,
+            'cx': 320.0, 'cy': 240.0,
+            'width': 640, 'height': 480
         }
+        self.have_camera_info = False
+        self.color_resolution = (640, 480)
+        self.depth_resolution = None
         
         # NEW: SORT tracker for robust multi-object tracking
         self.sort_tracker = SORTTracker(
@@ -93,20 +97,28 @@ class VehicleMovementAnalyzer(Node):
             self.detection_callback, 10)
         
         # Use sensor-data QoS for depth (RealSense publishes best-effort)
-        sensor_qos = QoSProfile(
+        # Match RealSense publisher QoS: RELIABLE + TRANSIENT_LOCAL
+        depth_qos = QoSProfile(
             depth=5,
-            reliability=ReliabilityPolicy.BEST_EFFORT,
-            durability=DurabilityPolicy.VOLATILE
+            reliability=ReliabilityPolicy.RELIABLE,
+            durability=DurabilityPolicy.TRANSIENT_LOCAL
         )
         
         self.depth_sub = self.create_subscription(
             Image, '/camera/camera/aligned_depth_to_color/image_raw',
-            self.depth_callback, sensor_qos)
+            self.depth_callback, depth_qos)
         
-        # Also subscribe to the alternate aligned depth topic to avoid remap mismatches
-        self.depth_sub_alt = self.create_subscription(
-            Image, '/camera/aligned_depth_to_color/image_raw',
-            self.depth_callback, sensor_qos)
+        # Subscribe to Color CameraInfo to use true intrinsics and resolution
+        self.color_info_sub = self.create_subscription(
+            CameraInfo, '/camera/camera/color/camera_info',
+            self.color_info_callback, 10)
+        # Depth CameraInfo (aligned to color); try both possible namespaces
+        self.depth_info_sub = self.create_subscription(
+            CameraInfo, '/camera/camera/aligned_depth_to_color/camera_info',
+            self.depth_info_callback, 10)
+        self.depth_info_sub_alt = self.create_subscription(
+            CameraInfo, '/camera/aligned_depth_to_color/camera_info',
+            self.depth_info_callback, 10)
         
         # Ego-motion from RTAB-Map
         self.odom_sub = self.create_subscription(
@@ -144,6 +156,10 @@ class VehicleMovementAnalyzer(Node):
         self.debug_pub = self.create_publisher(
             String, '/vehicle_analyzer_debug', 10)
         
+        # Depth status publisher
+        self.depth_status_pub = self.create_publisher(
+            String, '/traffic_safety/depth_status', 10)
+        
         self.get_logger().info('Enhanced Vehicle Movement Analyzer initialized (Priority 1)')
         self.get_logger().info('SORT tracking + Kalman filters + HMM traffic light tracking')
         self.get_logger().info('Robust multi-object tracking with data association')
@@ -164,19 +180,53 @@ class VehicleMovementAnalyzer(Node):
                 depth_img = self.bridge.imgmsg_to_cv2(msg, desired_encoding='16UC1')
             
             self.current_depth_image = depth_img
+            self.depth_resolution = (depth_img.shape[1], depth_img.shape[0])
             import time as _t
             self.last_depth_time = _t.time()
+            
+            # Publish depth status
+            depth_status_msg = String()
+            depth_status_msg.data = f"DEPTH RECEIVED: {depth_img.shape[1]}x{depth_img.shape[0]} @ {depth_img.dtype}"
+            self.depth_status_pub.publish(depth_status_msg)
+            
             dbg = String(); dbg.data = "Depth frame received"; self.debug_pub.publish(dbg)
         except Exception as e:
             try:
                 # Last resort: attempt 16UC1 directly
                 self.current_depth_image = self.bridge.imgmsg_to_cv2(msg, '16UC1')
+                self.depth_resolution = (self.current_depth_image.shape[1], self.current_depth_image.shape[0])
                 import time as _t
                 self.last_depth_time = _t.time()
+                
+                # Publish depth status
+                depth_status_msg = String()
+                depth_status_msg.data = f"DEPTH RECEIVED: {self.current_depth_image.shape[1]}x{self.current_depth_image.shape[0]} @ {self.current_depth_image.dtype}"
+                self.depth_status_pub.publish(depth_status_msg)
+                
                 dbg = String(); dbg.data = "Depth frame received (16UC1 fallback)"; self.debug_pub.publish(dbg)
             except Exception:
                 self.current_depth_image = None
+                
+                # Publish depth failure status
+                depth_status_msg = String()
+                depth_status_msg.data = f"DEPTH FAILED: {e}"
+                self.depth_status_pub.publish(depth_status_msg)
+                
                 self.get_logger().warn(f'Depth conversion failed: {e}')
+
+    def color_info_callback(self, msg: CameraInfo):
+        self.camera_intrinsics['fx'] = msg.k[0]
+        self.camera_intrinsics['fy'] = msg.k[4]
+        self.camera_intrinsics['cx'] = msg.k[2]
+        self.camera_intrinsics['cy'] = msg.k[5]
+        self.camera_intrinsics['width'] = msg.width
+        self.camera_intrinsics['height'] = msg.height
+        self.color_resolution = (msg.width, msg.height)
+        self.have_camera_info = True
+
+    def depth_info_callback(self, msg: CameraInfo):
+        # Track depth resolution for scaling if not equal to color
+        self.depth_resolution = (msg.width, msg.height)
     
     def odometry_callback(self, msg: Odometry):
         """Track camera ego-motion for compensation"""
@@ -216,10 +266,16 @@ class VehicleMovementAnalyzer(Node):
         total_detections = len(msg.detections)
         vehicle_detections_found = 0
         
-        # Treat depth as available only if a recent frame arrived (<= 0.2s)
-        has_recent_depth = (self.current_depth_image is not None and (current_time - (self.last_depth_time or 0)) <= 0.2)
+        # Treat depth as available only if a recent frame arrived (<= 0.5s, relaxed)
+        has_recent_depth = (self.current_depth_image is not None and (current_time - (self.last_depth_time or 0)) <= 0.5)
         if not has_recent_depth:
             use_2d_fallback = True
+            
+            # Publish no depth status
+            depth_status_msg = String()
+            depth_status_msg.data = "NO DEPTH: Using 2D fallback analysis"
+            self.depth_status_pub.publish(depth_status_msg)
+            
             debug_msg = String()
             debug_msg.data = "No recent depth frame - using 2D fallback analysis"
             self.debug_pub.publish(debug_msg)
@@ -414,14 +470,38 @@ class VehicleMovementAnalyzer(Node):
             self.debug_pub.publish(debug_msg)
             
             # Check if position is valid
-            if (0 <= center_y < self.current_depth_image.shape[0] and 
-                0 <= center_x < self.current_depth_image.shape[1]):
+            if self.current_depth_image is None:
+                return None
+
+            # If depth and color resolutions differ, scale color pixel to depth pixel space
+            dx, dy = center_x, center_y
+            if self.depth_resolution is not None and self.color_resolution is not None:
+                dw, dh = self.depth_resolution
+                cw, ch = self.color_resolution
+                if dw != cw or dh != ch:
+                    scale_x = dw / max(cw, 1)
+                    scale_y = dh / max(ch, 1)
+                    dx = int(round(center_x * scale_x))
+                    dy = int(round(center_y * scale_y))
+
+            if (0 <= dy < self.current_depth_image.shape[0] and 
+                0 <= dx < self.current_depth_image.shape[1]):
                 
-                # Get depth value
-                depth_mm = self.current_depth_image[center_y, center_x]
+                # Robust depth: median of a growing window around the center to avoid zeros
+                depth_mm = 0
+                for radius in (1, 2, 3):  # up to 7x7 window
+                    y0 = max(dy - radius, 0)
+                    y1 = min(dy + radius + 1, self.current_depth_image.shape[0])
+                    x0 = max(dx - radius, 0)
+                    x1 = min(dx + radius + 1, self.current_depth_image.shape[1])
+                    patch = self.current_depth_image[y0:y1, x0:x1]
+                    valid = patch[patch > 0]
+                    if valid.size > 0:
+                        depth_mm = int(np.median(valid))
+                        break
                 if depth_mm == 0:  # Invalid depth
                     debug_msg = String()
-                    debug_msg.data = f'Invalid depth: {depth_mm}mm at ({center_x},{center_y})'
+                    debug_msg.data = f'Invalid depth: {depth_mm}mm at ({dx},{dy})'
                     self.debug_pub.publish(debug_msg)
                     return None
                 
@@ -434,8 +514,8 @@ class VehicleMovementAnalyzer(Node):
                 cy = self.camera_intrinsics['cy']
                 
                 # 3D projection formula
-                X = (center_x - cx) * depth_m / fx
-                Y = (center_y - cy) * depth_m / fy
+                X = (center_x - cx) * depth_m / max(fx, 1e-6)
+                Y = (center_y - cy) * depth_m / max(fy, 1e-6)
                 Z = depth_m
                 
                 return Point(x=X, y=Y, z=Z)

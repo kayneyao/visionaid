@@ -66,7 +66,6 @@ def generate_launch_description():
         parameters=[taiwan_config],
         remappings=[
             ('/camera/detections', '/camera/detections'),
-            ('/camera/camera/aligned_depth_to_color/image_raw', '/camera/aligned_depth_to_color/image_raw'),
             ('/rtabmap/odom', '/rtabmap/odom'),
             ('/immediate_crossing_danger', '/traffic_safety/immediate_crossing_danger'),
             ('/vehicle_threat_status', '/traffic_safety/vehicle_threat_status'),

@@ -1,27 +1,52 @@
 {
   "latency_ms": {
     "yolov8_inference": {
-      "count": 300,
-      "mean_ms": 50.57406266530355,
-      "min_ms": 40.175437927246094,
-      "max_ms": 57.04641342163086,
-      "std_ms": 4.508660771695628
+      "count": 2698,
+      "mean_ms": 51.019190858257005,
+      "min_ms": 40.09675979614258,
+      "max_ms": 66.81704521179199,
+      "std_ms": 5.232225541707322
     },
     "end_to_end_decision": {
-      "count": 100,
-      "mean_ms": 54.54815864562988,
-      "min_ms": 51.630258560180664,
-      "max_ms": 59.32283401489258,
-      "std_ms": 2.172135944224499
+      "count": 900,
+      "mean_ms": 60.059822930230034,
+      "min_ms": 35.017967224121094,
+      "max_ms": 83.29200744628906,
+      "std_ms": 10.505553001613201
     },
-    "detection_to_vehicle_threat": {},
-    "detection_to_ttc": {},
-    "sort_update": {},
-    "sort_threat": {}
+    "detection_to_vehicle_threat": {
+      "count": 5396,
+      "mean_ms": 1.5147335004417697,
+      "min_ms": 0.1347064971923828,
+      "max_ms": 6.518363952636719,
+      "std_ms": 0.6798394444206917
+    },
+    "detection_to_ttc": {
+      "count": 5396,
+      "mean_ms": 1.4511069781343702,
+      "min_ms": 0.10061264038085938,
+      "max_ms": 6.4754486083984375,
+      "std_ms": 0.6694097159865466
+    },
+    "sort_update": {
+      "count": 2698,
+      "mean_ms": 0.11164811560628678,
+      "min_ms": 0.014781951904296875,
+      "max_ms": 0.8563995361328125,
+      "std_ms": 0.12610343735715054
+    },
+    "sort_threat": {
+      "count": 2698,
+      "mean_ms": 0.022852040821751282,
+      "min_ms": 0.003337860107421875,
+      "max_ms": 0.22673606872558594,
+      "std_ms": 0.02467458762402763
+    }
   },
   "decision_counts": {
-    "MANUAL|0.10": 49,
-    "SAFE_TO_CROSS|0.50": 51
+    "WAIT_FOR_VEHICLES|0.95": 669,
+    "MANUAL|0.10": 230,
+    "WAIT_FOR_TRAFFIC_LIGHT|0.45": 1
   },
   "traffic_light": {
     "state": "unknown",
@@ -29,8 +54,8 @@
   },
   "vehicle": {
     "immediate_danger": false,
-    "ttc_s": 0.0,
-    "threat_status": "No threat"
+    "ttc_s": 999.0,
+    "threat_status": "SAFE: 0 vehicles monitored, TTC>8.0s"
   },
   "crosswalk": {
     "detected": false,
@@ -41,8 +66,8 @@
     "excessive_motion": false
   },
   "performance": {
-    "avg_detection_fps": 31.764051993870247,
-    "frames_processed": 300
+    "avg_detection_fps": 30.94676029991323,
+    "frames_processed": 2698
   },
-  "timestamp": "2025-08-13T18:36:54.689126"
+  "timestamp": "2025-08-19T18:51:46.131969"
 }

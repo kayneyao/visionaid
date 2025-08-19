@@ -86,6 +86,11 @@ class CompleteSystemMonitor(Node):
         # Vehicle analyzer debug messages
         self.vehicle_debug_messages = []
         
+        # Depth status tracking
+        self.depth_status = "No depth data"
+        self.last_depth_received = 0.0
+        self.depth_frames_received = 0
+        
         # Latency tracking
         self.image_stamp_window = deque(maxlen=5000)  # (stamp_sec, wall_time_sec)
         self.last_detection_wall_time = None
@@ -173,6 +178,10 @@ class CompleteSystemMonitor(Node):
         # Vehicle analyzer debug messages
         self.vehicle_debug_sub = self.create_subscription(
             String, '/vehicle_analyzer_debug', self.vehicle_debug_callback, 10)
+        
+        # Depth status from vehicle analyzer
+        self.depth_status_sub = self.create_subscription(
+            String, '/traffic_safety/depth_status', self.depth_status_callback, 10)
         
         # Tracking timing (JSON) from analyzer
         self.tracking_timing_sub = self.create_subscription(
@@ -308,6 +317,10 @@ class CompleteSystemMonitor(Node):
         if len(self.vehicle_debug_messages) > 5:
             self.vehicle_debug_messages.pop(0)
     
+    def depth_status_callback(self, msg):
+        """Track depth status from vehicle analyzer"""
+        self.depth_status = msg.data
+    
     def tracking_timing_callback(self, msg: String):
         """Receive SORT timing JSON from analyzer"""
         try:
@@ -417,6 +430,10 @@ class CompleteSystemMonitor(Node):
         print(f"\nMOTION COMPENSATION:")
         print(f"   Quality: {self.motion_compensation_quality:.3f}")
         print(f"   Excessive Motion: {'Yes' if self.excessive_motion_detected else 'No'}")
+        
+        # Depth status
+        print(f"\nDEPTH STATUS:")
+        print(f"   Status: {self.depth_status}")
         
         # Recent decision history
         if self.decision_history:
