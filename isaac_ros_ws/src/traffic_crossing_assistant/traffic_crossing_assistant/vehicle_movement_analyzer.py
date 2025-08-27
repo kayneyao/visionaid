@@ -340,7 +340,7 @@ class VehicleMovementAnalyzer(Node):
                         self.debug_pub.publish(debug_msg)
                         
                         threat_level = self.analyze_2d_threat(detection.bbox, class_id, confidence)
-                        if threat_level > 0.2:  # Only consider significant threats (relaxed)
+                        if threat_level > 0.6:  # Only consider high threats (conservative)
                             vehicle_data = {
                                 'class_id': class_id,
                                 'class_name': self.vehicle_classes[class_id],
@@ -702,11 +702,11 @@ class VehicleMovementAnalyzer(Node):
                 
                 # Debug: Log threat analysis
                 debug_msg = String()
-                debug_msg.data = f'2D threat check: {vehicle["class_name"]} threat={threat_level:.3f} > 0.3 = {threat_level > 0.3}'
+                debug_msg.data = f'2D threat check: {vehicle["class_name"]} threat={threat_level:.3f} > 0.7 = {threat_level > 0.7}'
                 self.debug_pub.publish(debug_msg)
                 
                 # High threat level indicates immediate danger
-                if threat_level > 0.3:  # Lower threshold for 2D analysis (consistent with fallback)
+                if threat_level > 0.7:  # Only very high threats trigger immediate danger
                     immediate_danger = True
                     min_ttc = 1.0  # Immediate threat
                     max_velocity = 20.0  # Assume typical vehicle speed
