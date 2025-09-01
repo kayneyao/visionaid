@@ -41,7 +41,7 @@ class HMMTrafficLightTracker:
         # State change tracking
         self.last_state_change_time = time.time()
         self.state_persistence_count = 0
-        self.min_persistence_frames = 3
+        self.min_persistence_frames = 1
         
         # Emission model parameters
         self.emission_std = 0.1  # Standard deviation for emission probabilities

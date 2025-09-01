@@ -129,12 +129,12 @@ class TrafficLightAnalyzer(Node):
             best_green = max(light_detections['green_lights'],
                            key=lambda x: x['confidence'])
             
-            # ADDITIONAL SAFETY CHECK: Require very high confidence for green lights
-            if best_green['confidence'] >= 0.6:  # Lowered from 0.8 for sensitivity (was extra high threshold for safety)
-                self.get_logger().info(f'SAFETY: Green light confirmed with high confidence {best_green["confidence"]:.3f}')
+            # ADDITIONAL SAFETY CHECK: Require minimal confidence for green lights (lowered for sensitivity)
+            if best_green['confidence'] >= 0.1:  # Lowered from 0.6 for faster green light detection
+                self.get_logger().info(f'SAFETY: Green light confirmed with confidence {best_green["confidence"]:.3f}')
                 return TrafficLightState.GREEN, best_green['confidence']
             else:
-                self.get_logger().warn(f'SAFETY: Green light detected but confidence too low ({best_green["confidence"]:.3f} < 0.6) - treating as unknown')
+                self.get_logger().warn(f'SAFETY: Green light detected but confidence too low ({best_green["confidence"]:.3f} < 0.1) - treating as unknown')
                 return TrafficLightState.UNKNOWN, 0.0
         
         # Priority 3: Yellow light detection (proceed with caution)

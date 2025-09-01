@@ -340,7 +340,7 @@ class VehicleMovementAnalyzer(Node):
                         self.debug_pub.publish(debug_msg)
                         
                         threat_level = self.analyze_2d_threat(detection.bbox, class_id, confidence)
-                        if threat_level > 0.6:  # Only consider high threats (conservative)
+                        if threat_level > 0.75:  # Only consider very high threats (more conservative)
                             vehicle_data = {
                                 'class_id': class_id,
                                 'class_name': self.vehicle_classes[class_id],
@@ -572,9 +572,9 @@ class VehicleMovementAnalyzer(Node):
         
         # Combine threats
         total_threat = (
-            crossing_path_threat * 0.6 +    # Position is most important
+            crossing_path_threat * 0.5 +    # Position is important but not dominant
             size_threat * 0.3 +             # Size matters
-            confidence * 0.1                # Confidence matters
+            confidence * 0.2                # Confidence matters more
         ) * vehicle_weight
         
         # Debug output
@@ -702,11 +702,11 @@ class VehicleMovementAnalyzer(Node):
                 
                 # Debug: Log threat analysis
                 debug_msg = String()
-                debug_msg.data = f'2D threat check: {vehicle["class_name"]} threat={threat_level:.3f} > 0.7 = {threat_level > 0.7}'
+                debug_msg.data = f'2D threat check: {vehicle["class_name"]} threat={threat_level:.3f} > 0.85 = {threat_level > 0.85}'
                 self.debug_pub.publish(debug_msg)
                 
                 # High threat level indicates immediate danger
-                if threat_level > 0.7:  # Only very high threats trigger immediate danger
+                if threat_level > 0.85:  # Only extremely high threats trigger immediate danger
                     immediate_danger = True
                     min_ttc = 1.0  # Immediate threat
                     max_velocity = 20.0  # Assume typical vehicle speed

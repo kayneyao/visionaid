@@ -1,0 +1,1 @@
+error: [Errno 17] File exists: '/home/sophie/visionaid-1/build/traffic_crossing_assistant/launch/taiwan_complete_system.launch.py' -> '/home/sophie/visionaid-1/install/traffic_crossing_assistant/share/traffic_crossing_assistant/launch/taiwan_complete_system.launch.py'

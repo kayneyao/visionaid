@@ -1,61 +1,59 @@
 {
   "latency_ms": {
     "yolov8_inference": {
-      "count": 2698,
-      "mean_ms": 51.019190858257005,
-      "min_ms": 40.09675979614258,
-      "max_ms": 66.81704521179199,
-      "std_ms": 5.232225541707322
+      "count": 1499,
+      "mean_ms": 54.512257572807734,
+      "min_ms": 42.62137413024902,
+      "max_ms": 368.67833137512207,
+      "std_ms": 16.011879900120427
     },
     "end_to_end_decision": {
-      "count": 900,
-      "mean_ms": 60.059822930230034,
-      "min_ms": 35.017967224121094,
-      "max_ms": 83.29200744628906,
-      "std_ms": 10.505553001613201
+      "count": 500,
+      "mean_ms": 64.08493995666504,
+      "min_ms": 37.81270980834961,
+      "max_ms": 404.8011302947998,
+      "std_ms": 28.266061885177145
     },
     "detection_to_vehicle_threat": {
-      "count": 5396,
-      "mean_ms": 1.5147335004417697,
-      "min_ms": 0.1347064971923828,
-      "max_ms": 6.518363952636719,
-      "std_ms": 0.6798394444206917
+      "count": 2989,
+      "mean_ms": 1.5863292230814745,
+      "min_ms": 0.07224082946777344,
+      "max_ms": 5.129098892211914,
+      "std_ms": 0.5085482067218146
     },
     "detection_to_ttc": {
-      "count": 5396,
-      "mean_ms": 1.4511069781343702,
-      "min_ms": 0.10061264038085938,
-      "max_ms": 6.4754486083984375,
-      "std_ms": 0.6694097159865466
+      "count": 2989,
+      "mean_ms": 1.533815317546376,
+      "min_ms": 0.0514984130859375,
+      "max_ms": 5.072116851806641,
+      "std_ms": 0.5031658834728344
     },
     "sort_update": {
-      "count": 2698,
-      "mean_ms": 0.11164811560628678,
-      "min_ms": 0.014781951904296875,
-      "max_ms": 0.8563995361328125,
-      "std_ms": 0.12610343735715054
+      "count": 1499,
+      "mean_ms": 0.23692396977012994,
+      "min_ms": 0.13971328735351562,
+      "max_ms": 0.7638931274414062,
+      "std_ms": 0.059437415524831685
     },
     "sort_threat": {
-      "count": 2698,
-      "mean_ms": 0.022852040821751282,
-      "min_ms": 0.003337860107421875,
-      "max_ms": 0.22673606872558594,
-      "std_ms": 0.02467458762402763
+      "count": 1499,
+      "mean_ms": 0.03953835739939908,
+      "min_ms": 0.021457672119140625,
+      "max_ms": 0.18930435180664062,
+      "std_ms": 0.011868325199696016
     }
   },
   "decision_counts": {
-    "WAIT_FOR_VEHICLES|0.95": 669,
-    "MANUAL|0.10": 230,
-    "WAIT_FOR_TRAFFIC_LIGHT|0.45": 1
+    "WAIT_FOR_VEHICLES|0.95": 500
   },
   "traffic_light": {
     "state": "unknown",
     "confidence": 0.0
   },
   "vehicle": {
-    "immediate_danger": false,
-    "ttc_s": 999.0,
-    "threat_status": "SAFE: 0 vehicles monitored, TTC>8.0s"
+    "immediate_danger": true,
+    "ttc_s": 1.0,
+    "threat_status": "IMMEDIATE_DANGER: TTC=1.0s, Vel=20.0m/s"
   },
   "crosswalk": {
     "detected": false,
@@ -66,8 +64,8 @@
     "excessive_motion": false
   },
   "performance": {
-    "avg_detection_fps": 30.94676029991323,
-    "frames_processed": 2698
+    "avg_detection_fps": 31.05985203158405,
+    "frames_processed": 1499
   },
-  "timestamp": "2025-08-19T18:51:46.131969"
+  "timestamp": "2025-09-01T21:12:43.112499"
 }
