@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_nitros/isaac_ros_nitros_topic_tools/include/isaac_ros_nitros_topic_tools/isaac_ros_nitros_topic_tools_common.hpp

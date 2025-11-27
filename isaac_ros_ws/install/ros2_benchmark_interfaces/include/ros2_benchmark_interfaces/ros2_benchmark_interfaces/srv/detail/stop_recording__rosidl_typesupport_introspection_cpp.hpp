@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/build/ros2_benchmark_interfaces/rosidl_typesupport_introspection_cpp/ros2_benchmark_interfaces/srv/detail/stop_recording__rosidl_typesupport_introspection_cpp.hpp

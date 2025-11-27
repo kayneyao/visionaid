@@ -44,16 +44,10 @@ def generate_launch_description():
                 'queue_size': 10,
                 'subscribe_imu': True,
                 'wait_imu_to_init': True,
-                'approx_sync_max_interval': 0.003,  # 3 ms (try 0.002–0.004)
+                'stereo': True, 
 
                 'rtabmap_args': (
-                    '--Stereo/MaxDisparity 192 '
-                    '--Vis/PnPReprojError 5.0 --Vis/MinInliers 12 '
-                    '--Kp/MaxFeatures 1200 --GFTT/QualityLevel 0.0005 --GFTT/MinDistance 5 '
-                    '--Vis/MinDepth 0.2 --Vis/MaxDepth 5.0 '
-                    # Optional if you still get resets:
-                    '--Vis/MinDepth 0.2 --Vis/MaxDepth 5.0 '
-                    '--Odom/Strategy 1 --Odom/GuessMotion true'
+                    '--delete_db_on_start'
                 )
             }],
             remappings=[
@@ -65,3 +59,4 @@ def generate_launch_description():
             ],
         ),
     ])
+# ros2 launch rtabmap_launch rtabmap.launch.py    rtabmap_args:="--delete_db_on_start"    left_image_topic:=/camera/camera/infra1/image_rect_raw    right_image_topic:=/camera/camera/infra2/image_rect_raw    left_camera_info_topic:=/camera/camera/infra1/camera_info    right_camera_info_topic:=/camera/camera/infra2/camera_info    stereo:=true   frame_id:=camera_link

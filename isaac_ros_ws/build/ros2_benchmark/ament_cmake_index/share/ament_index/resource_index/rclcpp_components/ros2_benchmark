@@ -1,3 +1,0 @@
-ros2_benchmark::DataLoaderNode;lib/libdata_loader_node.so
-ros2_benchmark::PlaybackNode;lib/libplayback_node.so
-ros2_benchmark::MonitorNode;lib/libmonitor_node.so

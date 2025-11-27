@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/build/yolov8_bdd100k_detection/launch/yolov8_full_pipeline.launch.py

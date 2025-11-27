@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_visual_slam_interfaces/rosidl_generator_py/isaac_ros_visual_slam_interfaces/srv/_get_all_poses_s.c

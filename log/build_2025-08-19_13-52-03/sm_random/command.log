@@ -1,0 +1,2 @@
+Invoking command in '/home/kanye/Documents/visionaid/build/sm_random': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/Schweizer-Messer/sm_random -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/sm_random
+Invoked command in '/home/kanye/Documents/visionaid/build/sm_random' returned '1': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/Schweizer-Messer/sm_random -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/sm_random

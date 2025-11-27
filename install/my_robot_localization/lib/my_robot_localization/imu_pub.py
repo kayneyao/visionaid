@@ -12,7 +12,7 @@ class SerialImuMin(Node):
         super().__init__('serial_imu_min')
 
         # ---- Parameters ----
-        self.declare_parameter('port', '/dev/ttyACM1')
+        self.declare_parameter('port', '/dev/ttyACM0')
         self.declare_parameter('baud', 921600)
         self.declare_parameter('period', 0.01)          # seconds (e.g., 0.01 -> 100 Hz)
         self.declare_parameter('frame_imu', 'imu_link')

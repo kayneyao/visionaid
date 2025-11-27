@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_nitros_twist_type/ament_cmake_core/isaac_ros_nitros_twist_typeConfig-version.cmake

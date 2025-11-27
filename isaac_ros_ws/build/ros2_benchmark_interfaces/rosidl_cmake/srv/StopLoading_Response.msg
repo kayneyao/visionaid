@@ -1,3 +1,0 @@
-
-
-# No response fields

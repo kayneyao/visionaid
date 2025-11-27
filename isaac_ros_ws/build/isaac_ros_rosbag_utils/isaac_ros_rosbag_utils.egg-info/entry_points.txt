@@ -1,4 +1,0 @@
-[console_scripts]
-extract_edex = isaac_ros_rosbag_utils.scripts.extract_edex:main
-extract_urdf = isaac_ros_rosbag_utils.scripts.extract_urdf:main
-

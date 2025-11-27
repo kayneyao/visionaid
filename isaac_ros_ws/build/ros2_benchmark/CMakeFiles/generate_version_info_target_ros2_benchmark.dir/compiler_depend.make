@@ -1,2 +1,0 @@
-# Empty custom commands generated dependencies file for generate_version_info_target_ros2_benchmark.
-# This may be replaced when dependencies are built.

@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/src/isaac_ros_common/isaac_ros_nova_interfaces/msg/EncoderTicks.msg

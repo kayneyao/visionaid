@@ -1,2 +1,0 @@
-nvidia::isaac_ros::nitros_bridge::ImageConverterNode;lib/libimage_converter_node.so
-nvidia::isaac_ros::nitros_bridge::TensorListConverterNode;lib/libtensor_list_converter_node.so

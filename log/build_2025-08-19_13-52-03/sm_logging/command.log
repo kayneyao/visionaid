@@ -1,0 +1,2 @@
+Invoking command in '/home/kanye/Documents/visionaid/build/sm_logging': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/Schweizer-Messer/sm_logging -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/sm_logging
+Invoked command in '/home/kanye/Documents/visionaid/build/sm_logging' returned '1': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/Schweizer-Messer/sm_logging -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/sm_logging

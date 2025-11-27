@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/src/ros2_benchmark/ros2_benchmark/../scripts/image_proc_rectify_node.py

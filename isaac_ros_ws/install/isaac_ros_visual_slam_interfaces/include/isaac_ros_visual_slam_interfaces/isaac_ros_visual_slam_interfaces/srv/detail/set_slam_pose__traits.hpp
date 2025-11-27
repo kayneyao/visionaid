@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/build/isaac_ros_visual_slam_interfaces/rosidl_generator_cpp/isaac_ros_visual_slam_interfaces/srv/detail/set_slam_pose__traits.hpp

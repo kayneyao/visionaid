@@ -1,0 +1,21 @@
+[0.101s] Invoking command in '/home/kanye/Documents/visionaid/build/aslam_time': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/aslam_cv/aslam_time -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/aslam_time
+[1.232s] [31mCMake Error at CMakeLists.txt:4 (find_package):
+[1.232s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[1.232s]   asked CMake to find a package configuration file provided by "catkin", but
+[1.232s]   CMake did not find one.
+[1.233s] 
+[1.233s]   Could not find a package configuration file provided by "catkin" with any
+[1.233s]   of the following names:
+[1.233s] 
+[1.233s]     catkinConfig.cmake
+[1.233s]     catkin-config.cmake
+[1.233s] 
+[1.233s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[1.233s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[1.233s]   provides a separate development package or SDK, be sure it has been
+[1.233s]   installed.
+[1.233s] 
+[1.233s] [0m
+[1.233s] -- Configuring incomplete, errors occurred!
+[1.233s] See also "/home/kanye/Documents/visionaid/build/aslam_time/CMakeFiles/CMakeOutput.log".
+[1.869s] Invoked command in '/home/kanye/Documents/visionaid/build/aslam_time' returned '1': /usr/bin/cmake /home/kanye/Documents/visionaid/calibration/camera/kalibr/aslam_cv/aslam_time -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/kanye/Documents/visionaid/install/aslam_time

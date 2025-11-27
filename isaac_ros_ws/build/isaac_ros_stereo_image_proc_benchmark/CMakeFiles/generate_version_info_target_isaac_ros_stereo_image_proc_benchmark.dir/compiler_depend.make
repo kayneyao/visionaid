@@ -1,2 +1,0 @@
-# Empty custom commands generated dependencies file for generate_version_info_target_isaac_ros_stereo_image_proc_benchmark.
-# This may be replaced when dependencies are built.

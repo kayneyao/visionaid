@@ -1,1 +1,0 @@
-/home/sophie/visionaid/isaac_ros_ws/build/ros2_benchmark_interfaces/ament_cmake_environment_hooks/pythonpath.sh
